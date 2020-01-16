@@ -1,30 +1,25 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import styled from 'styled-components'
 
 import Nav from './Nav'
 import Footer from './Footer'
 import './Layout.css'
 import { ReactChildren } from '../types'
+import { HEADER_HEIGHT } from '../constants/measurements'
+
+const Main = styled.div<{}>`
+  min-height: calc(100vh - ${HEADER_HEIGHT} - 88px);
+`
 
 interface ILayoutProps {
   children: ReactChildren
 }
 
 const Layout = ({ children }: ILayoutProps): React.ReactElement => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Nav siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
+      <Nav />
+      <Main>{children}</Main>
       <Footer />
     </>
   )

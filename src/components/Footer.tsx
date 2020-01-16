@@ -1,5 +1,11 @@
 import React from 'react'
 
+import { P, Container } from '../shared'
+
 export default (): React.ReactElement => (
-  <footer>Penn Labs © {new Date().getFullYear()}</footer>
+  <footer>
+    <Container>
+      <P>Penn Labs © {new Date().getFullYear()}</P>
+    </Container>
+  </footer>
 )
