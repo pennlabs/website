@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { H1, P, H3 } from '../../shared'
+import { H1, P, H3, Section, Container, Row, Col } from '../../shared'
 import { Link } from 'gatsby'
 
 interface IProductOverview {
@@ -30,17 +30,19 @@ const productOverviews: IProductOverview[] = [
 ]
 
 export const Products = (): React.ReactElement => (
-  <div>
-    <H1>Our products</H1>
-    <P>For academics, campus life, and everything in-between</P>
-    <div>
-      {productOverviews.map(({ title, description, slug }) => (
-        <div key={slug}>
-          <H3>{title}</H3>
-          <P>{description}</P>
-          <Link to={slug}>Learn more &rarr;</Link>
-        </div>
-      ))}
-    </div>
-  </div>
+  <Section>
+    <Container>
+      <H1>Our products</H1>
+      <P>For academics, campus life, and everything in-between</P>
+      <Row>
+        {productOverviews.map(({ title, description, slug }) => (
+          <Col key={slug} sm={12} md={4}>
+            <H3>{title}</H3>
+            <P>{description}</P>
+            <Link to={slug}>Learn more &rarr;</Link>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  </Section>
 )

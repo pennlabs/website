@@ -1,0 +1,24 @@
+export const HEADER_HEIGHT = '54px'
+export const HEADER_Z_INDEX = 1000
+
+export const MARGIN = '0.4rem'
+export const MARGIN_LG = '0.8rem'
+
+export const BORDER_RADIUS = '3px'
+export const BORDER_RADIUS_LG = '9px'
+
+export const SHORT_ANIMATION_DURATION = 200
+export const LONG_ANIMATION_DURATION = 400
+
+type TScreenWidth = string
+
+export const DESKTOP: TScreenWidth = '1248px'
+export const TABLET: TScreenWidth = '992px'
+export const PHONE: TScreenWidth = '584px'
+
+type TMediaQuery = string
+
+export const minWidth = (w: TScreenWidth): TMediaQuery =>
+  `@media screen and (min-width: ${w})`
+export const maxWidth = (w: TScreenWidth): TMediaQuery =>
+  `@media screen and (max-width: ${w})`

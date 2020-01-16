@@ -1,7 +1,22 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import { DARK_GRAY } from '../constants/colors'
 
-export const P = styled.p``
+interface ITextProps {
+  color?: string
+  opacity?: number
+  sm?: boolean
+  mb0?: boolean
+}
+
+export const P = styled.p<ITextProps>(
+  ({ color, opacity, mb0, sm }) => css`
+    color: ${color || DARK_GRAY};
+    opacity: ${opacity || 1.0};
+    ${mb0 && 'margin-bottom: 0;'}
+    ${sm && 'font-size: 80%;'}
+  `,
+)
 
 export const H1 = ({ children, ...rest }) => (
   <P as="h1" {...rest}>

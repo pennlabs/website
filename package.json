@@ -1,7 +1,7 @@
 {
   "name": "pennlabs.org",
   "private": true,
-  "description": "TODO",
+  "description": "Built for students, by students. Penn Labs is the student software development organization improving life at the University of Pennsylvania.",
   "version": "0.1.0",
   "author": "Penn Labs <contact@pennlabs.org>",
   "dependencies": {
@@ -14,6 +14,7 @@
     "gatsby-plugin-sharp": "^2.3.5",
     "gatsby-plugin-styled-components": "^3.1.17",
     "gatsby-plugin-typescript": "^2.1.26",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-filesystem": "^2.1.40",
     "gatsby-transformer-sharp": "^2.3.7",
     "react": "^16.12.0",
@@ -35,7 +36,17 @@
     "typescript": "^3.7.4"
   },
   "keywords": [
-    "TODO"
+    "technologies",
+    "software",
+    "students",
+    "university",
+    "university of pennsylvania",
+    "penn",
+    "upenn",
+    "education",
+    "academics",
+    "productivity",
+    "college"
   ],
   "license": "MIT",
   "scripts": {
