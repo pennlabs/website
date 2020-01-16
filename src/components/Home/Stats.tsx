@@ -40,6 +40,7 @@ export const Stats = (): React.ReactElement => (
   <Section>
     <Container>
       <H1>By the numbers</H1>
+      <P>Here's what we've gotten done</P>
       <Row margin={MARGIN_LG}>
         {stats.map(({ color, title, description }: IStat) => (
           <Col sm={12} md={4} margin={MARGIN_LG}>
