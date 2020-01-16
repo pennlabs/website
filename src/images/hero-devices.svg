@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="630px" height="650px" viewBox="0 0 630 650" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="439px" height="621px" viewBox="0 0 439 621" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
     <title>illos</title>
     <desc>Created with Sketch.</desc>
@@ -86,8 +86,8 @@
         </linearGradient>
     </defs>
     <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop-Copy" transform="translate(-211.000000, -160.000000)">
-            <g id="illos" transform="translate(499.500000, 488.500000) rotate(-12.000000) translate(-499.500000, -488.500000) translate(217.000000, 192.000000)">
+        <g transform="translate(-585.000000, 0.000000)" id="illos">
+            <g transform="translate(873.502514, 299.495816) rotate(-12.000000) translate(-873.502514, -299.495816) translate(591.002514, 2.995816)">
                 <g id="PCR-ipad" transform="translate(55.000000, 0.000000)">
                     <g id="Rectangle">
                         <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
@@ -342,7 +342,7 @@
                         <mask id="mask-22" fill="white">
                             <use xlink:href="#path-21"></use>
                         </mask>
-                        <use id="Mask" stroke="#D8E0E9" stroke-width="2" fill="#C2CBD8" xlink:href="#path-21"></use>
+                        <use id="Mask" stroke="#D8E0E9" fill="#C2CBD8" xlink:href="#path-21"></use>
                         <g id="Pmob-screenshot" mask="url(#mask-22)">
                             <g transform="translate(0.179560, 0.220711)">
                                 <rect id="Background" fill="#FFFFFF" fill-rule="evenodd" x="0" y="0" width="126.666667" height="191.79402"></rect>
