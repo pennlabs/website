@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="606px" height="472px" viewBox="0 0 606 472" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Path 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="53.5323367%" y1="0%" x2="53.5323367%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F5F7FF" offset="0%"></stop>
+            <stop stop-color="#E7ECFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Copy" transform="translate(-127.000000, -606.000000)" fill="url(#linearGradient-1)">
+            <path d="M590.576767,595.122304 C707.834329,634.145741 727.827268,740.487419 699.506734,809.768466 C686.230766,842.245713 716.167655,924.105309 667.050244,957.792014 C617.932833,991.478719 593.965088,948.596881 517.112837,944.625851 C452.992829,941.312708 464.687361,1127.29385 288.007393,1112.4903 C239.820576,1108.45285 121.864011,1000.14606 143.964828,883.242841 C161.777487,789.022016 314.126887,683.772869 332.105797,664.926991 C385.425285,609.036366 473.319205,556.098866 590.576767,595.122304 Z" id="Path-3" transform="translate(426.087170, 847.507695) rotate(16.000000) translate(-426.087170, -847.507695) "></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="370px" height="391px" viewBox="0 0 370 391" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Path 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="53.5323367%" y1="0%" x2="53.5323367%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#F5F7FF" offset="0%"></stop>
+            <stop stop-color="#E7ECFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Copy" transform="translate(-754.000000, -176.000000)" fill="url(#linearGradient-1)">
+            <path d="M1018.27476,189.122304 C1135.53232,228.145741 1136.11451,404.028757 1107.79397,473.309804 C1079.47344,542.590851 1010.88706,581.809804 885.345425,514.309804 C759.80379,446.809804 706.484302,314.817616 759.80379,258.926991 C813.123278,203.036366 901.017198,150.098866 1018.27476,189.122304 Z" id="Path-3" transform="translate(931.235775, 362.491597) rotate(16.000000) translate(-931.235775, -362.491597) "></path>
+        </g>
+    </g>
+</svg>
