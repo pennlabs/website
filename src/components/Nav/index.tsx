@@ -23,7 +23,7 @@ const StyledNav = styled.nav<{ active: boolean }>`
   z-index: ${HEADER_Z_INDEX};
   width: 100%;
   min-height: ${HEADER_HEIGHT};
-  background: ${WHITE_ALPHA(0.8)};
+  background: ${WHITE_ALPHA(0.9)};
 
   ${maxWidth(PHONE)} {
     padding-top: 0.5rem;

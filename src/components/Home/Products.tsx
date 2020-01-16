@@ -1,11 +1,39 @@
 import React from 'react'
-
-import { H1, P, H3, Section, Container, Col, Row } from '../../shared'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
+
+import {
+  H1,
+  P,
+  H2,
+  Section,
+  Container,
+  Col,
+  Row,
+  ChevronRight,
+} from '../../shared'
+import { INTER } from '../../constants/fonts'
+import { maxWidth, PHONE } from '../../constants/measurements'
 
 const pcrImg = require('../../images/products/pcr-home.svg') as string // tslint:disable-line
 const pennMobileImg = require('../../images/products/penn-mobile-home.svg') as string // tslint:disable-line
 const pennClubsImg = require('../../images/products/clubs-home.svg') as string // tslint:disable-line
+
+const Image = styled.img`
+  width: 100%;
+`
+
+const StyledContainer = styled(Container)<{ isEven: boolean }>`
+  text-align: ${props => (props.isEven ? 'right' : 'left')};
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  ${maxWidth(PHONE)} {
+    display: block;
+    text-align: center;
+  }
+`
 
 interface IProductOverview {
   title: string
@@ -13,8 +41,6 @@ interface IProductOverview {
   slug: string
   image: string
 }
-
-// TODO images
 
 const productOverviews: IProductOverview[] = [
   {
@@ -48,16 +74,35 @@ export const Products = (): React.ReactElement => (
       ({ title, description, slug, image }: IProductOverview, idx: number) => {
         const isEven: boolean = idx % 2 === 0
         return (
-          <Row style={{ flexDirection: isEven ? 'row' : 'row-reverse' }}>
+          <Row
+            style={{
+              flexDirection: isEven ? 'row-reverse' : 'row',
+              marginTop: '3rem',
+              marginBottom: '3rem',
+            }}
+          >
             <Col>
-              <img src={image} />
+              <Image src={image} />
             </Col>
-            <Col>
-              <Container>
-                <H3>{title}</H3>
-                <P>{description}</P>
-                <Link to={slug}>Learn more &rarr;</Link>
-              </Container>
+            <Col flex>
+              <StyledContainer>
+                <H2 style={{ marginBottom: '0.5rem', fontFamily: INTER }}>
+                  {title}
+                </H2>
+                <P lg>{description}</P>
+                <Link to={slug} style={{ marginBottom: 0 }}>
+                  Learn more{' '}
+                  <ChevronRight
+                    style={{
+                      marginTop: '-6px',
+                      marginLeft: '-4px',
+                      marginBottom: '-7px',
+                      marginRight: '-8px',
+                      transform: 'scale(0.75)',
+                    }}
+                  />
+                </Link>
+              </StyledContainer>
             </Col>
           </Row>
         )
