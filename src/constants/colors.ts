@@ -1,4 +1,5 @@
 export const WHITE = '#ffffff'
+export const WHITE_ALPHA = (a: number) => `rgba(255, 255, 255, ${a})`
 export const BLACK = '#000000'
 export const BLACK_ALPHA = (a: number) => `rgba(0, 0, 0, ${a})`
 export const DARK_GRAY = '#4A4A4A'

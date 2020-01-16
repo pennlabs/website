@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { H1, P, H3, Section, Container, Row, Col } from '../../shared'
+import { H1, P, H3, Section, Container, Col, Row } from '../../shared'
 import { Link } from 'gatsby'
 
 interface IProductOverview {
@@ -34,15 +34,24 @@ export const Products = (): React.ReactElement => (
     <Container>
       <H1>Our products</H1>
       <P>For academics, campus life, and everything in-between</P>
-      <Row>
-        {productOverviews.map(({ title, description, slug }) => (
-          <Col key={slug} sm={12} md={4}>
-            <H3>{title}</H3>
-            <P>{description}</P>
-            <Link to={slug}>Learn more &rarr;</Link>
-          </Col>
-        ))}
-      </Row>
     </Container>
+
+    {productOverviews.map(
+      ({ title, description, slug }: IProductOverview, idx: number) => {
+        const isEven: boolean = idx % 2 === 0
+        return (
+          <Row style={{ flexDirection: isEven ? 'row' : 'row-reverse' }}>
+            <Col>Image Goes Here</Col>
+            <Col>
+              <Container>
+                <H3>{title}</H3>
+                <P>{description}</P>
+                <Link to={slug}>Learn more &rarr;</Link>
+              </Container>
+            </Col>
+          </Row>
+        )
+      },
+    )}
   </Section>
 )

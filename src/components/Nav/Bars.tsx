@@ -2,7 +2,7 @@ import React from 'react'
 import s from 'styled-components'
 
 import { minWidth, PHONE } from '../../constants/measurements'
-import { BLACK } from '../../constants/colors'
+import { DARK_GRAY } from '../../constants/colors'
 
 const Wrapper = s.div`
   padding: 10px 1rem;
@@ -25,7 +25,7 @@ const Bar = s.span`
   height: 2px;
   margin-bottom: 3px;
   display: block;
-  background: ${BLACK};
+  background: ${DARK_GRAY};
 `
 
 export const Bars = ({ handleClick }): React.ReactElement => (

@@ -12,7 +12,7 @@ import {
   HEADER_HEIGHT,
   HEADER_Z_INDEX,
 } from '../../constants/measurements'
-import { WHITE } from '../../constants/colors'
+import { WHITE_ALPHA, WHITE } from '../../constants/colors'
 
 const StyledNav = styled.nav`
   padding-top: 0.5rem;
@@ -22,8 +22,11 @@ const StyledNav = styled.nav`
   z-index: ${HEADER_Z_INDEX};
   width: 100%;
   min-height: ${HEADER_HEIGHT};
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-  background: ${WHITE};
+  background: ${WHITE_ALPHA(0.8)};
+
+  ${maxWidth(PHONE)} {
+    background: ${WHITE};
+  }
 `
 
 const StyledContainer = styled(Container)`

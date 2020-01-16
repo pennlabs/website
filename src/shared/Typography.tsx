@@ -6,14 +6,16 @@ interface ITextProps {
   color?: string
   opacity?: number
   sm?: boolean
+  lg?: boolean
   mb0?: boolean
 }
 
 export const P = styled.p<ITextProps>(
-  ({ color, opacity, mb0, sm }) => css`
+  ({ color, opacity, mb0, sm, lg }) => css`
     color: ${color || DARK_GRAY};
     opacity: ${opacity || 1.0};
     ${mb0 && 'margin-bottom: 0;'}
+    ${lg && 'font-size: 120%;'}
     ${sm && 'font-size: 80%;'}
   `,
 )

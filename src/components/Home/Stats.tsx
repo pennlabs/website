@@ -9,6 +9,7 @@ const StatWrapper = styled.div<{ color: string }>`
   background: ${props => props.color};
   padding: 1rem;
   border-radius: ${BORDER_RADIUS_LG};
+  margin-bottom: 1.5rem;
 `
 
 interface IStat {

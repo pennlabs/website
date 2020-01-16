@@ -98,40 +98,18 @@ const ColWrapper = s.div<IColProps>`
   overflow-x: visible;
 
   ${maxWidth(PHONE)} {
-    ${({ sm }) =>
-      sm &&
-      `
-      width: ${percent(sm)};
-      flex: none;
-    `}
-
+    ${({ sm }) => sm && `width: ${percent(sm)}; flex: none;`}
     ${({ offsetSm }) => offsetSm && `margin-left: ${percent(offsetSm)};`}
   }
 
   ${minWidth(PHONE)} {
-    ${({ md }) =>
-      md &&
-      `
-      width: ${percent(md)}
-      flex: none;
-    `}
-
+    ${({ md }) => md && `width: ${percent(md)}; flex: none;`}
     ${({ offsetMd }) => offsetMd && `margin-left: ${percent(offsetMd)};`}
   }
 
   ${minWidth(TABLET)} {
-    ${({ lg }) =>
-      lg &&
-      `
-      width: ${percent(lg)}
-      flex: none;
-    `}
-
-    ${({ offsetLg }) =>
-      offsetLg &&
-      `
-      margin-left: ${percent(offsetLg)};
-    `}
+    ${({ lg }) => lg && `width: ${percent(lg)}; flex: none;`}
+    ${({ offsetLg }) => offsetLg && `margin-left: ${percent(offsetLg)};`}
   }
 
   ${({ flex }) => flex && `display: flex;`}
@@ -143,11 +121,7 @@ const ColContainer = s.div<IColProps>`
   position: relative;
 
   ${({ margin }) =>
-    margin &&
-    `
-    margin-left: ${margin};
-    margin-right: ${margin};
-  `}
+    margin && `margin-left: ${margin}; margin-right: ${margin};`}
 `
 
 export const Col = ({ margin, children, background, ...other }: IColProps) => (

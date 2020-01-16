@@ -10,6 +10,7 @@ import {
   SHORT_ANIMATION_DURATION,
 } from '../../constants/measurements'
 import { BLACK } from '../../constants/colors'
+import { WORK_SANS } from '../../constants/fonts'
 
 interface ILinksProps {
   active: boolean
@@ -42,7 +43,6 @@ const Spacer = styled.div<{}>`
 `
 
 const StyledLink = styled(Link)`
-  text-transform: uppercase;
   height: 2rem;
   line-height: 2rem;
   margin-left: 1rem;
@@ -50,8 +50,8 @@ const StyledLink = styled(Link)`
   opacity: 0.6;
   text-decoration: none;
   cursor: pointer;
-  font-size: 80%;
   transition: opacity ${SHORT_ANIMATION_DURATION}ms ease;
+  font-family: ${WORK_SANS};
 
   &:visited {
     color: ${BLACK};
