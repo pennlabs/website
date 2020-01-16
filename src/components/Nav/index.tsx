@@ -11,12 +11,13 @@ import {
   PHONE,
   HEADER_HEIGHT,
   HEADER_Z_INDEX,
+  MOBILE_HEADER_HEIGHT,
 } from '../../constants/measurements'
-import { WHITE_ALPHA, WHITE } from '../../constants/colors'
+import { WHITE_ALPHA, WHITE, BLACK_ALPHA } from '../../constants/colors'
 
-const StyledNav = styled.nav<{}>`
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+const StyledNav = styled.nav<{ active: boolean }>`
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   position: fixed;
   top: 0;
   z-index: ${HEADER_Z_INDEX};
@@ -25,7 +26,16 @@ const StyledNav = styled.nav<{}>`
   background: ${WHITE_ALPHA(0.8)};
 
   ${maxWidth(PHONE)} {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     background: ${WHITE};
+    min-height: 0;
+    max-height: ${props => {
+      // Kinda kills the close transition, but it's a hack to get the height right
+      return props.active ? '100vh' : MOBILE_HEADER_HEIGHT
+    }};
+    overflow: hidden;
+    box-shadow: 0 1px 8px ${BLACK_ALPHA(0.2)};
   }
 `
 
@@ -48,7 +58,7 @@ export const Nav = (): React.ReactElement => {
   const [active, setActive] = useState<boolean>(false)
   return (
     <>
-      <StyledNav>
+      <StyledNav active={active}>
         <StyledContainer>
           <Logo />
           <Bars handleClick={() => setActive(!active)} />

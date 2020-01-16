@@ -1,5 +1,6 @@
-export const HEADER_HEIGHT = '54px'
+export const HEADER_HEIGHT = '72px'
 export const HEADER_Z_INDEX = 1000
+export const MOBILE_HEADER_HEIGHT = '52px'
 
 export const MARGIN = '0.4rem'
 export const MARGIN_LG = '0.8rem'

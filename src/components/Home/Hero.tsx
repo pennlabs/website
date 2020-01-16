@@ -36,8 +36,8 @@ const StyledDevices = styled.img`
 `
 
 const TextContainer = styled(Container)`
-  margin-top: 20vh;
-  margin-bottom: 20vh;
+  margin-top: calc(50vh - 84px);
+  margin-bottom: calc(50vh - 84px);
 
   ${maxWidth(TABLET)} {
     margin-top: 1.5rem;
