@@ -6,8 +6,8 @@ import { minWidth, maxWidth, PHONE, TABLET } from '../constants/measurements'
 const percent = (numCols: number): string => (numCols / 12) * 100 + '%'
 
 export const Section = s.section<{}>`
-  margin-top: 5vh;
-  margin-bottom: 5vh;
+  margin-top: 7.5vh;
+  margin-bottom: 7.5vh;
 `
 
 interface IContainerTagProps {
@@ -120,13 +120,21 @@ const ColContainer = s.div<IColProps>`
   overflow-x: visible;
   position: relative;
 
+  ${({ flex }) => flex && `display: flex; flex: 1;`}
+
   ${({ margin }) =>
     margin && `margin-left: ${margin}; margin-right: ${margin};`}
 `
 
-export const Col = ({ margin, children, background, ...other }: IColProps) => (
-  <ColWrapper {...other}>
-    <ColContainer margin={margin} background={background}>
+export const Col = ({
+  margin,
+  children,
+  background,
+  flex,
+  ...other
+}: IColProps) => (
+  <ColWrapper flex={flex} {...other}>
+    <ColContainer flex={flex} margin={margin} background={background}>
       {children}
     </ColContainer>
   </ColWrapper>

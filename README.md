@@ -9,3 +9,4 @@ Website for Penn Labs.
 - [ ] Favicon
 - [ ] Content
 - [ ] Styles
+- [ ] Parallax scrolling (nngngg)

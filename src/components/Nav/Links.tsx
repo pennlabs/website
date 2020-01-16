@@ -47,7 +47,7 @@ const StyledLink = styled(Link)<{}>`
   line-height: 2rem;
   margin-left: 1rem;
   color: ${BLACK};
-  opacity: 0.8;
+  opacity: 0.64;
   text-decoration: none;
   cursor: pointer;
   transition: opacity ${SHORT_ANIMATION_DURATION}ms ease;
