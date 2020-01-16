@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { BLACK } from '../constants/colors'
+import { DARK_GRAY } from '../constants/colors'
 
 interface ITextProps {
   color?: string
@@ -11,7 +11,7 @@ interface ITextProps {
 
 export const P = styled.p<ITextProps>(
   ({ color, opacity, mb0, sm }) => css`
-    color: ${color || BLACK};
+    color: ${color || DARK_GRAY};
     opacity: ${opacity || 1.0};
     ${mb0 && 'margin-bottom: 0;'}
     ${sm && 'font-size: 80%;'}
