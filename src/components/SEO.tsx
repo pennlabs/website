@@ -1,16 +1,27 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React, { ReactElement } from 'react'
+import Helmet from 'react-helmet'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+const IMAGE = 'TODO'
+const URL = 'pennlabs.org'
 
-function SEO({ description, lang, meta, title }) {
+type Meta =
+  | { name: string; content: any; property?: undefined }
+  | { property: string; content: any; name?: undefined }
+
+export interface ISEOProps {
+  description?: string
+  lang?: string
+  meta?: Meta[]
+  title?: string
+}
+
+function SEO({
+  description = '',
+  lang = 'en',
+  meta = [],
+  title = '',
+}: ISEOProps): ReactElement {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -22,7 +33,7 @@ function SEO({ description, lang, meta, title }) {
           }
         }
       }
-    `
+    `,
   )
 
   const metaDescription = description || site.siteMetadata.description
@@ -40,6 +51,10 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
+          name: `author`,
+          content: `Penn Labs <contact@${URL}>`,
+        },
+        {
           property: `og:title`,
           content: title,
         },
@@ -50,6 +65,22 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:url`,
+          content: URL,
+        },
+        {
+          property: `og:image`,
+          content: IMAGE,
+        },
+        {
+          property: `og:image-alt`,
+          content: 'Penn Labs Logo',
+        },
+        {
+          name: `twitter:site`,
+          content: URL,
         },
         {
           name: `twitter:card`,
@@ -67,22 +98,17 @@ function SEO({ description, lang, meta, title }) {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `twitter:image`,
+          content: IMAGE,
+        },
+        {
+          name: `twitter:image-alt`,
+          content: 'Penn Labs logo',
+        },
       ].concat(meta)}
     />
   )
-}
-
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
-SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default SEO
