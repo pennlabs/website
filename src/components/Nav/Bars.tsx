@@ -4,7 +4,7 @@ import s from 'styled-components'
 import { minWidth, PHONE } from '../../constants/measurements'
 import { DARK_GRAY } from '../../constants/colors'
 
-const Wrapper = s.div`
+const Wrapper = s.div<{}>`
   padding: 10px 1rem;
   cursor: pointer;
   position: absolute;
@@ -20,7 +20,7 @@ const Wrapper = s.div`
   }
 `
 
-const Bar = s.span`
+const Bar = s.span<{}>`
   width: 16px;
   height: 2px;
   margin-bottom: 3px;

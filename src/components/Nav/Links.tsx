@@ -42,7 +42,7 @@ const Spacer = styled.div<{}>`
   }
 `
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(Link)<{}>`
   height: 2rem;
   line-height: 2rem;
   margin-left: 1rem;

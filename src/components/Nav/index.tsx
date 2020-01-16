@@ -14,7 +14,7 @@ import {
 } from '../../constants/measurements'
 import { WHITE_ALPHA, WHITE } from '../../constants/colors'
 
-const StyledNav = styled.nav`
+const StyledNav = styled.nav<{}>`
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   position: fixed;
@@ -29,7 +29,7 @@ const StyledNav = styled.nav`
   }
 `
 
-const StyledContainer = styled(Container)`
+const StyledContainer = styled(Container)<{}>`
   display: flex;
   flex-direction: row;
 
@@ -38,7 +38,7 @@ const StyledContainer = styled(Container)`
   }
 `
 
-const NavSpace = styled.div`
+const NavSpace = styled.div<{}>`
   height: ${HEADER_HEIGHT};
   width: 100%;
   display: block;
