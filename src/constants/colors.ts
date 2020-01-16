@@ -1,1 +1,11 @@
 export const WHITE = '#ffffff'
+export const BLACK = '000000'
+export const DARK_GRAY = '#4A4A4A'
+export const ALLBIRDS_GRAY = '#EAEAEA'
+
+export const LABS_BLUE = '#209CEE'
+export const LILAC = '#E7ECFF'
+export const TEAL = '#18A2B8'
+export const GREEN = '#6CCD97'
+export const YELLOW = '#E9C84D'
+export const PINK = '#F67C83'
