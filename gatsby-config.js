@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `pennlabs.org`,
+    description: `Built for students, by students. Penn Labs is the student software development organization improving life at the University of Pennsylvania.`,
+    author: `Penn Labs <contact@pennlabs.org>`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -21,10 +21,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#209CEE`,
+        theme_color: `#209CEE`,
         display: `minimal-ui`,
-        icon: `src/images/beaker_favicon.png`, // This path is relative to the root of the site.
+        icon: `src/images/beaker-favicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-typescript`,

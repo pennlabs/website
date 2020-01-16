@@ -5,14 +5,16 @@ import { BLACK } from '../constants/colors'
 interface ITextProps {
   color?: string
   opacity?: number
+  sm?: boolean
   mb0?: boolean
 }
 
 export const P = styled.p<ITextProps>(
-  ({ color, opacity, mb0 }) => css`
+  ({ color, opacity, mb0, sm }) => css`
     color: ${color || BLACK};
     opacity: ${opacity || 1.0};
     ${mb0 && 'margin-bottom: 0;'}
+    ${sm && 'font-size: 80%;'}
   `,
 )
 
