@@ -6,6 +6,7 @@ export const DARK_GRAY = '#4A4A4A'
 export const ALLBIRDS_GRAY = '#EAEAEA'
 
 export const LABS_BLUE = '#209CEE'
+export const LABS_BLUE_DARK = '#0068AC'
 export const LILAC = '#E7ECFF'
 export const TEAL = '#18A2B8'
 export const GREEN = '#6CCD97'
