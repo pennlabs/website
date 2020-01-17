@@ -52,6 +52,10 @@ const NavSpace = styled.div<{}>`
   height: ${HEADER_HEIGHT};
   width: 100%;
   display: block;
+
+  ${maxWidth(PHONE)} {
+    height: ${MOBILE_HEADER_HEIGHT};
+  }
 `
 
 export const Nav = (): React.ReactElement => {

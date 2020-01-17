@@ -11,6 +11,7 @@ import {
 import { Blob1 } from './Blobs'
 
 const devicesPath = require('../../images/hero-devices.svg') as string // tslint:disable-line
+const mobileDevicesPath = require('../../images/hero-devices-mobile.svg') as string // tslint:disable-line
 
 const DesktopStyledDevices = styled.div`
   position: absolute;
@@ -22,6 +23,7 @@ const DesktopStyledDevices = styled.div`
   background-position: right;
   background-size: contain;
   background-repeat: no-repeat;
+  background-image: url(${devicesPath});
 
   ${maxWidth(TABLET)} {
     display: none;
@@ -29,9 +31,9 @@ const DesktopStyledDevices = styled.div`
 `
 
 const MobileStyledDevices = styled.img`
-  width: 75%;
+  width: 100%;
   height: auto;
-  margin-left: 25%;
+  margin-bottom: 0;
 
   ${minWidth(TABLET)} {
     display: none;
@@ -43,7 +45,7 @@ const TextContainer = styled(Container)`
   margin-bottom: calc(50vh - 80px);
 
   ${maxWidth(TABLET)} {
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
   }
 
@@ -68,10 +70,10 @@ const StyledP = styled(P)`
 export const Hero = (): React.ReactElement => (
   <>
     <Blob1 />
-    <DesktopStyledDevices style={{ backgroundImage: `url(${devicesPath})` }} />
+    <DesktopStyledDevices />
     <TextContainer>
       <Row>
-        <Col sm={12} lg={6}>
+        <Col sm={12} md={8} lg={6}>
           <StyledH1>Built for students, by students</StyledH1>
           <StyledP lg mb0>
             We're connecting students, resources, and data to improve life at
@@ -80,6 +82,6 @@ export const Hero = (): React.ReactElement => (
         </Col>
       </Row>
     </TextContainer>
-    <MobileStyledDevices src={devicesPath} />
+    <MobileStyledDevices src={mobileDevicesPath} />
   </>
 )
