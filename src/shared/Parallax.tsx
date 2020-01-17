@@ -15,7 +15,6 @@ export const ParallaxWrapper = ({ children }: IParallaxWrapperProps) => {
     if (innerWidth > 584) {
       setDisabled(false)
     } else {
-      console.log('disabled')
       setDisabled(true)
     }
   })
