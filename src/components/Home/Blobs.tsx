@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { maxWidth, PHONE, TABLET } from '../../constants/measurements'
-import { Parallax } from 'react-scroll-parallax'
-import { ParallaxWrapper } from '../../shared'
 
 const blob1Path = require('../../images/blob1.svg') as string // tslint:disable-line
 const blob2Path = require('../../images/blob2-partial.svg') as string // tslint:disable-line
