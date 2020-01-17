@@ -6,8 +6,10 @@ Website for Penn Labs.
 
 ### TODO
 
-- [ ] Favicon
+- [x] Favicon
 - [ ] Content
 - [ ] Styles
 - [ ] Parallax scrolling (nngngg)
-- [ ] Horizontally oriented hero image on mobile
+- [x] Horizontally oriented hero image on mobile
+- [ ] Fade in animations
+- [ ] Product pages

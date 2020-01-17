@@ -18,3 +18,15 @@ export const ChevronRight = props => {
     </svg>
   )
 }
+
+export const LinkChevronRight = props => (
+  <ChevronRight
+    style={{
+      marginTop: '-6px',
+      marginLeft: '-4px',
+      marginBottom: '-7px',
+      marginRight: '-8px',
+      transform: 'scale(0.75)',
+    }}
+  />
+)

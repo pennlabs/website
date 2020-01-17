@@ -6,8 +6,8 @@ import { minWidth, maxWidth, PHONE, TABLET } from '../constants/measurements'
 const percent = (numCols: number): string => (numCols / 12) * 100 + '%'
 
 export const Section = s.section<{}>`
-  margin-top: 7.5vh;
-  margin-bottom: 7.5vh;
+  padding-top: 7.5vh;
+  padding-bottom: 7.5vh;
 `
 
 interface IContainerTagProps {

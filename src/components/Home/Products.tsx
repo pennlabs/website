@@ -11,6 +11,7 @@ import {
   Col,
   Row,
   ChevronRight,
+  LinkChevronRight,
 } from '../../shared'
 import { INTER } from '../../constants/fonts'
 import { maxWidth, TABLET, PHONE } from '../../constants/measurements'
@@ -115,16 +116,7 @@ export const Products = (): React.ReactElement => (
                   </H2>
                   <P lg>{description}</P>
                   <Link to={slug} style={{ marginBottom: 0 }}>
-                    Learn more{' '}
-                    <ChevronRight
-                      style={{
-                        marginTop: '-6px',
-                        marginLeft: '-4px',
-                        marginBottom: '-7px',
-                        marginRight: '-8px',
-                        transform: 'scale(0.75)',
-                      }}
-                    />
+                    Learn more <LinkChevronRight />
                   </Link>
                 </StyledContainer>
               </Col>

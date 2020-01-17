@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 const logoPath = require('../../images/labs-full-logo.svg') as string // tslint:disable-line
 
@@ -10,5 +11,7 @@ const Image = styled.img<{}>`
 `
 
 export const Logo = (): React.ReactElement => (
-  <Image src={logoPath} alt="Penn Labs" />
+  <Link to="/">
+    <Image src={logoPath} alt="Penn Labs" />
+  </Link>
 )
