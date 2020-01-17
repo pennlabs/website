@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { H1, P, Container, Row, Col } from '../../shared'
+import { H1, P, Container, Row, Col, ParallaxWrapper } from '../../shared'
 import {
   maxWidth,
   TABLET,
@@ -9,6 +9,7 @@ import {
   DESKTOP,
 } from '../../constants/measurements'
 import { Blob1 } from './Blobs'
+import { Parallax } from 'react-scroll-parallax'
 
 const devicesPath = require('../../images/hero-devices.svg') as string // tslint:disable-line
 const mobileDevicesPath = require('../../images/hero-devices-mobile.svg') as string // tslint:disable-line
@@ -74,11 +75,13 @@ export const Hero = (): React.ReactElement => (
     <TextContainer>
       <Row>
         <Col sm={12} md={8} lg={6}>
-          <StyledH1>Built for students, by students</StyledH1>
-          <StyledP lg mb0>
-            We're connecting students, resources, and data to improve life at
-            Penn.
-          </StyledP>
+          <ParallaxWrapper>
+            <StyledH1>Built for students, by students</StyledH1>
+            <StyledP lg mb0>
+              We're connecting students, resources, and data to improve life at
+              Penn.
+            </StyledP>
+          </ParallaxWrapper>
         </Col>
       </Row>
     </TextContainer>

@@ -10,12 +10,13 @@ import {
   Container,
   Col,
   Row,
-  ChevronRight,
   LinkChevronRight,
+  ParallaxWrapper,
 } from '../../shared'
 import { INTER } from '../../constants/fonts'
 import { maxWidth, TABLET, PHONE } from '../../constants/measurements'
 import { Blob3, Blob4 } from './Blobs'
+import { Parallax } from 'react-scroll-parallax'
 
 const pcrImg = require('../../images/products/pcr-home.svg') as string // tslint:disable-line
 const pennMobileImg = require('../../images/products/penn-mobile-home.svg') as string // tslint:disable-line
@@ -79,8 +80,10 @@ const productOverviews: IProductOverview[] = [
 export const Products = (): React.ReactElement => (
   <Section>
     <Container>
-      <H1>Our products</H1>
-      <P>For academics, campus life, and everything in-between</P>
+      <ParallaxWrapper>
+        <H1>Our products</H1>
+        <P>For academics, campus life, and everything in-between</P>
+      </ParallaxWrapper>
     </Container>
 
     {productOverviews.map(
@@ -98,7 +101,6 @@ export const Products = (): React.ReactElement => (
         return (
           <React.Fragment key={title}>
             {additionalComponent || null}
-
             <Row
               style={{
                 flexDirection: isEven ? 'row-reverse' : 'row',

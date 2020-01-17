@@ -1,7 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { H1, H2, P, Container, Section, Row, Col } from '../../shared'
+import {
+  H1,
+  H2,
+  P,
+  Container,
+  Section,
+  Row,
+  Col,
+  ParallaxWrapper,
+} from '../../shared'
 import { TEAL, PINK, GREEN, WHITE } from '../../constants/colors'
 import {
   BORDER_RADIUS_LG,
@@ -10,6 +19,7 @@ import {
   PHONE,
 } from '../../constants/measurements'
 import { Blob2 } from './Blobs'
+import { Parallax } from 'react-scroll-parallax'
 
 const StatWrapper = styled.div<{ color: string }>`
   background: ${props => props.color};
@@ -55,20 +65,22 @@ export const Stats = (): React.ReactElement => (
   <Section>
     <Blob2 />
     <Container>
-      <H1>By the numbers</H1>
-      <P>Here's what we've gotten done</P>
-      <Row margin={MARGIN_LG}>
-        {stats.map(({ color, title, description }: IStat) => (
-          <Col sm={12} md={4} margin={MARGIN_LG} flex key={title}>
-            <StatWrapper color={color}>
-              <H2 color={WHITE}>{title}</H2>
-              <P color={WHITE} opacity={0.8} mb0>
-                {description}
-              </P>
-            </StatWrapper>
-          </Col>
-        ))}
-      </Row>
+      <ParallaxWrapper>
+        <H1>By the numbers</H1>
+        <P>Here's what we've gotten done</P>
+        <Row margin={MARGIN_LG}>
+          {stats.map(({ color, title, description }: IStat) => (
+            <Col sm={12} md={4} margin={MARGIN_LG} flex key={title}>
+              <StatWrapper color={color}>
+                <H2 color={WHITE}>{title}</H2>
+                <P color={WHITE} opacity={0.8} mb0>
+                  {description}
+                </P>
+              </StatWrapper>
+            </Col>
+          ))}
+        </Row>
+      </ParallaxWrapper>
     </Container>
   </Section>
 )

@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 import Nav from './Nav'
 import Footer from './Footer'
@@ -17,11 +18,11 @@ interface ILayoutProps {
 
 const Layout = ({ children }: ILayoutProps): React.ReactElement => {
   return (
-    <>
+    <ParallaxProvider>
       <Nav />
       <Main>{children}</Main>
       <Footer />
-    </>
+    </ParallaxProvider>
   )
 }
 
