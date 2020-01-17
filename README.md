@@ -10,3 +10,4 @@ Website for Penn Labs.
 - [ ] Content
 - [ ] Styles
 - [ ] Parallax scrolling (nngngg)
+- [ ] Horizontally oriented hero image on mobile

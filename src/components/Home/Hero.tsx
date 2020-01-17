@@ -8,22 +8,9 @@ import {
   minWidth,
   DESKTOP,
 } from '../../constants/measurements'
+import { Blob1 } from './Blobs'
 
-const blob1Path = require('../../images/blob1.svg') as string // tslint:disable-line
 const devicesPath = require('../../images/hero-devices.svg') as string // tslint:disable-line
-
-const StyledBlob = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 75%;
-  height: auto;
-  z-index: -2;
-
-  ${maxWidth(TABLET)} {
-    width: 90%;
-  }
-`
 
 const DesktopStyledDevices = styled.div`
   position: absolute;
@@ -80,7 +67,7 @@ const StyledP = styled(P)`
 
 export const Hero = (): React.ReactElement => (
   <>
-    <StyledBlob src={blob1Path} />
+    <Blob1 />
     <DesktopStyledDevices style={{ backgroundImage: `url(${devicesPath})` }} />
     <TextContainer>
       <Row>

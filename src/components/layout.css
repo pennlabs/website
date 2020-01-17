@@ -45,10 +45,15 @@ a {
   -webkit-text-decoration-skip: objects;
   text-decoration: none !important;
   color: #209cee;
+  transition: color 200ms ease;
 }
 a:active,
 a:hover {
   outline-width: 0;
+  color: #0068ac;
+}
+a:focus {
+  color: #0068ac;
 }
 abbr[title] {
   border-bottom: none;

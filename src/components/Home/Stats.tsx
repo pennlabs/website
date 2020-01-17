@@ -9,6 +9,7 @@ import {
   maxWidth,
   PHONE,
 } from '../../constants/measurements'
+import { Blob2 } from './Blobs'
 
 const StatWrapper = styled.div<{ color: string }>`
   background: ${props => props.color};
@@ -52,12 +53,13 @@ const stats: IStat[] = [
 
 export const Stats = (): React.ReactElement => (
   <Section>
+    <Blob2 />
     <Container>
       <H1>By the numbers</H1>
       <P>Here's what we've gotten done</P>
       <Row margin={MARGIN_LG}>
         {stats.map(({ color, title, description }: IStat) => (
-          <Col sm={12} md={4} margin={MARGIN_LG} flex>
+          <Col sm={12} md={4} margin={MARGIN_LG} flex key={title}>
             <StatWrapper color={color}>
               <H2 color={WHITE}>{title}</H2>
               <P color={WHITE} opacity={0.8} mb0>
