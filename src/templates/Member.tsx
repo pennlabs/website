@@ -1,10 +1,101 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { IMember } from '../shared/Icons/types'
-import { Container, Section, H1, P } from '../shared'
+import { IMember, Subset } from '../shared/Icons/types'
+import {
+  Section,
+  H1,
+  P,
+  Tags,
+  GitHubIcon,
+  LinkedInIcon,
+  LinkIcon,
+  Row,
+  Col,
+  BookOpenIcon,
+  HomeIcon,
+  CalendarIcon,
+  LogOutIcon,
+  WideContainer,
+  MediumContainer,
+} from '../shared'
+import {
+  M2,
+  BORDER_RADIUS_LG,
+  M1,
+  M3,
+  maxWidth,
+  PHONE,
+  M4,
+} from '../constants/measurements'
+import { DARK_GRAY } from '../constants/colors'
+
+type ILinks = Subset<
+  IMember,
+  {
+    github?: string
+    linkedin?: string
+    website?: string
+  }
+>
+
+const LinksTag = styled.div<{}>`
+  a {
+    color: ${DARK_GRAY} !important;
+    opacity: 0.5;
+    margin-right: ${M2};
+    transform: scale(0.8);
+
+    svg {
+      stroke-width: 1.8px;
+    }
+
+    :hover,
+    :focus,
+    :active {
+      opacity: 0.75;
+    }
+  }
+`
+
+const Links = ({ github, linkedin, website }: ILinks) => (
+  <LinksTag>
+    {github && (
+      <a href={github} target="_BLANK">
+        <GitHubIcon />
+      </a>
+    )}
+    {linkedin && (
+      <a href={linkedin} target="_BLANK">
+        <LinkedInIcon />
+      </a>
+    )}
+    {website && (
+      <a href={website} target="_BLANK">
+        <LinkIcon />
+      </a>
+    )}
+  </LinksTag>
+)
+
+const ProfilePicture = styled.div<{ src: string }>`
+  height: 10.4rem;
+  width: 10.4rem;
+  margin-right: ${M2};
+  background-image: url(${props => props.src});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: ${BORDER_RADIUS_LG};
+
+  ${maxWidth(PHONE)} {
+    margin-right: 0;
+    margin-bottom: ${M3};
+  }
+`
 
 interface IMemberTemplateProps {
   data: {
@@ -12,19 +103,35 @@ interface IMemberTemplateProps {
   }
 }
 
-interface ITableRow {
-  label: string
-  value?: string | number | boolean
+const Detail = ({ text, Icon }) => {
+  if (!text) return null
+  return (
+    <Col sm={12} margin={M1}>
+      <Icon
+        style={{
+          transform: 'scale(0.8)',
+          position: 'absolute',
+          color: DARK_GRAY,
+          opacity: 0.8,
+          marginTop: '-2px',
+        }}
+      />
+      <P sm style={{ marginLeft: M4 }} mb2>
+        {text}
+      </P>
+    </Col>
+  )
 }
 
-const TableRow = ({ label, value }: ITableRow) => {
-  if (!value) return null
-  return (
-    <tr>
-      <td>{label}</td>
-      <td>{value}</td>
-    </tr>
-  )
+const Studies = ({ major, school }: { major?: string; school?: string }) => {
+  const getStudiesText = (): string | null => {
+    if (!major && !school) return null
+    if (!major) return `Studies in ${school}`
+    if (!school) return `Studies ${major}`
+    return `Studies ${major} in ${school}`
+  }
+
+  return <Detail text={getStudiesText()} Icon={BookOpenIcon} />
 }
 
 const MemberTemplate = ({ data }: IMemberTemplateProps) => {
@@ -32,7 +139,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
     member: {
       bio,
       github,
-      graduation_year,
+      graduation_year: gradYear,
       linkedin,
       location,
       photo,
@@ -40,7 +147,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
       student: { name, major, school },
       team,
       website,
-      year_joined,
+      year_joined: yearJoined,
     },
   } = data
 
@@ -49,23 +156,38 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
   return (
     <Layout>
       <SEO title={name} />
-      <Container>
+      <MediumContainer>
         <Section>
-          <H1>{name}</H1>
-          {photo && <img src={photo} alt={`${name}'s profile picture`} />}
-          {bio && <P>{bio}</P>}
-          <table>
-            <tbody>
-              <TableRow label="Team" value={team} />
-              <TableRow
-                label={roleNames.length === 1 ? 'Role' : 'Roles in Labs'}
-                value={roleNames.join(', ')}
-              />
-              <TableRow label="Graduation year" value={graduation_year} />
-            </tbody>
-          </table>
+          <Row style={{ marginBottom: M3 }}>
+            {photo && <ProfilePicture src={photo} />}
+            <Col flex>
+              <div style={{ width: '100%', alignSelf: 'center' }}>
+                <H1 mb2>{name}</H1>
+                <div style={{ marginBottom: M1 }}>
+                  <Tags tags={roleNames} />
+                </div>
+                <P mb2>Part of {team}</P>
+                <Links github={github} linkedin={linkedin} website={website} />
+              </div>
+            </Col>
+          </Row>
         </Section>
-      </Container>
+
+        {bio && <P>{bio}</P>}
+
+        <Section>
+          <Row margin={M1}>
+            <Studies major={major} school={school} />
+            {location && <Detail text={`From ${location}`} Icon={HomeIcon} />}
+            {yearJoined && (
+              <Detail text={`Member since ${yearJoined}`} Icon={CalendarIcon} />
+            )}
+            {gradYear && (
+              <Detail text={`Graduates in ${gradYear}`} Icon={LogOutIcon} />
+            )}
+          </Row>
+        </Section>
+      </MediumContainer>
     </Layout>
   )
 }

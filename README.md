@@ -21,3 +21,4 @@ Website for Penn Labs.
 - [ ] Blog
 - [ ] Apply page
 - [ ] Team page
+- [ ] List blog posts by member on member show page

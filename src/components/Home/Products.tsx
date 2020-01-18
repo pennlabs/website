@@ -10,13 +10,12 @@ import {
   Container,
   Col,
   Row,
-  LinkChevronRight,
+  LinkChevronRightIcon,
   ParallaxWrapper,
 } from '../../shared'
 import { INTER } from '../../constants/fonts'
 import { maxWidth, TABLET, PHONE } from '../../constants/measurements'
 import { Blob3, Blob4 } from './Blobs'
-import { Parallax } from 'react-scroll-parallax'
 
 const pcrImg = require('../../images/products/pcr-home.svg') as string // tslint:disable-line
 const pennMobileImg = require('../../images/products/penn-mobile-home.svg') as string // tslint:disable-line
@@ -118,7 +117,7 @@ export const Products = (): React.ReactElement => (
                   </H2>
                   <P lg>{description}</P>
                   <Link to={slug} style={{ marginBottom: 0 }}>
-                    Learn more <LinkChevronRight />
+                    Learn more <LinkChevronRightIcon />
                   </Link>
                 </StyledContainer>
               </Col>

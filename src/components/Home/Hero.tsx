@@ -8,7 +8,7 @@ import {
   Row,
   Col,
   BtnLink,
-  LinkExternalLink,
+  LinkExternalLinkIcon,
 } from '../../shared'
 import {
   maxWidth,
@@ -93,7 +93,7 @@ export const Hero = (): React.ReactElement => (
               View Products
             </BtnLink>
             <a href={GITHUB_ROUTE} target="_BLANK">
-              GitHub <LinkExternalLink />
+              GitHub <LinkExternalLinkIcon />
             </a>
           </div>
         </Col>

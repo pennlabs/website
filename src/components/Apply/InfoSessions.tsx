@@ -1,5 +1,5 @@
 import React from 'react'
-import { Section, H2, BtnAnchor, LinkExternalLink } from '../../shared'
+import { Section, H2, BtnAnchor, LinkExternalLinkIcon } from '../../shared'
 import { INFO_SESSIONS_EVENT_ROUTE } from '../../constants/routes'
 
 export const InfoSessions = () => (
@@ -40,7 +40,7 @@ export const InfoSessions = () => (
     </table>
     {INFO_SESSIONS_EVENT_ROUTE && (
       <BtnAnchor href={INFO_SESSIONS_EVENT_ROUTE} target="_BLANK">
-        Facebook Event <LinkExternalLink />
+        Facebook Event <LinkExternalLinkIcon />
       </BtnAnchor>
     )}
   </Section>
