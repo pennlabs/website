@@ -7,7 +7,10 @@
 // You can delete this file if you're not using it
 
 const fetch = require('node-fetch')
+const path = require(`path`)
 const crypto = require('crypto')
+
+const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
 
 const getHash = jawn =>
   crypto
@@ -15,7 +18,37 @@ const getHash = jawn =>
     .update(JSON.stringify(jawn))
     .digest(`hex`)
 
-exports.sourceNodes = async ({ actions }) => {
+const getTeamNode = team => {
+  const { name, description } = team
+  return {
+    // Required fields
+    id: name,
+    parent: `__SOURCE__`,
+    internal: {
+      type: `Team`, // name of the graphQL query --> allRandomUser {}
+      // contentDigest will be added just after but it is required
+    },
+    children: [],
+
+    // Other fields that you want to query with GraphQL
+    description,
+    name,
+  }
+}
+
+const getMemberNode = member => {
+  const { url } = member
+  return {
+    id: url,
+    internal: {
+      type: `Member`,
+    },
+    children: [],
+    ...member,
+  }
+}
+
+const createTeamAndMemberNodes = async ({ actions }) => {
   /**
    * Create a mapping from the Penn Labs API for teams to the Gatsby data store.
    * Effetively, make an Object for each Team and for each Member. Each Team has
@@ -26,7 +59,7 @@ exports.sourceNodes = async ({ actions }) => {
    */
 
   // Set of actions given to use from Gatsby
-  const { createNode, createParentChildLink } = actions
+  const { createNode } = actions
 
   const createNodeWrapper = jawn => {
     // Get content digest of node and add it to the node
@@ -42,47 +75,65 @@ exports.sourceNodes = async ({ actions }) => {
     `https://platform.pennlabs.org/org/teams/?format=json`,
   ).then(res => res.json())
 
-  teams.map(async (team, i) => {
-    const { name, description, members } = team
-    // Create your node object
-    const teamNode = {
-      // Required fields
-      id: `${i}`,
-      parent: `__SOURCE__`,
-      internal: {
-        type: `Team`, // name of the graphQL query --> allRandomUser {}
-        // contentDigest will be added just after but it is required
-      },
-      children: [],
+  await Promise.all(
+    teams.map(async team => {
+      const { members } = team
+      const memberNodes = members.map(member => getMemberNode(member))
 
-      // Other fields that you want to query with GraphQL
-      description,
-      name,
-    }
+      await Promise.all(memberNodes.map(member => createNodeWrapper(member)))
 
-    const memberNodes = members.map((member, memberIdx) => {
-      const { url } = member
-      const memberNode = {
-        id: url,
-        internal: {
-          type: `Member`,
-        },
-        children: [],
-        ...member,
-      }
-
-      return memberNode
-    })
-
-    await Promise.all(memberNodes.map(member => createNodeWrapper(member)))
-
-    // Create node with the gatsby createNode() API
-    await createNodeWrapper(teamNode)
-
-    await memberNodes.map(memberNode =>
-      createParentChildLink({ parent: teamNode, child: memberNode }),
-    )
-  })
+      // Create node with the gatsby createNode() API
+      const teamNode = getTeamNode(team)
+      teamNode.children = memberNodes.map(({ id }) => id)
+      return createNodeWrapper(teamNode)
+    }),
+  )
 
   return
+}
+
+exports.sourceNodes = async ({ actions }) => {
+  /**
+   * Create a mapping from the Penn Labs API for teams to the Gatsby data store.
+   * Effetively, make an Object for each Team and for each Member. Each Team has
+   * many Members and each Member has one Team (many-to-one relationship.)
+   *
+   * After completing this, we can source the data into our components via
+   * GraphQL, which is nice, though the code below is not particularly nice.
+   */
+
+  await createTeamAndMemberNodes({ actions })
+  return
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+
+  // Retrieve ID's of all team members
+  const {
+    data: {
+      allMember: { edges },
+    },
+  } = await graphql(`
+    query {
+      allMember {
+        edges {
+          node {
+            id
+          }
+        }
+      }
+    }
+  `)
+  const ids = edges.map(({ node: { id } }) => id)
+  await ids.map(id =>
+    createPage({
+      path: `/team/${id}`,
+      component: MemberTemplate,
+      context: {
+        // Data passed to context is available in page queries as GraphQL vars
+        id: id,
+      },
+    }),
+  )
 }

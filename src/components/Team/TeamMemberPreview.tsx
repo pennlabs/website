@@ -2,20 +2,22 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 
-import { Col, H4, P } from '../../shared'
+import { Col, P, Tags } from '../../shared'
 import {
-  MARGIN_LG,
+  M2,
   BORDER_RADIUS,
   BORDER_RADIUS_LG,
   SHORT_ANIMATION_DURATION,
+  M4,
+  M3,
 } from '../../constants/measurements'
 import { TEAM_MEMBER_ROUTE } from '../../constants/routes'
 import { BLACK_ALPHA } from '../../constants/colors'
 import { IMember } from '../../shared/Icons/types'
 
 const StyledLink = styled(Link)<{}>`
-  margin: -${MARGIN_LG};
-  padding: ${MARGIN_LG};
+  margin: -${M2};
+  padding: ${M2};
   border-radius: ${BORDER_RADIUS_LG};
   display: block;
   box-shadow: 0 0 0 ${BLACK_ALPHA(0.25)};
@@ -48,15 +50,15 @@ export const TeamMemberPreview = ({
   photo,
   year_joined: yearJoined,
 }: IMember) => (
-  <Col margin={MARGIN_LG} sm={12} md={6} lg={3} key={url}>
+  <Col margin={M2} sm={12} md={6} lg={3} key={url}>
     <StyledLink to={TEAM_MEMBER_ROUTE(url)}>
-      {photo && <Image src={photo} style={{ marginBottom: MARGIN_LG }} />}
-      <P mb2 lg>
+      {photo && <Image src={photo} style={{ marginBottom: M2 }} />}
+      <P mb1 lg>
         <strong>{name}</strong>
       </P>
-      <P sm mb1>
-        {roles.map(({ name: roleName }) => roleName).join(', ')}
-      </P>
+      <div style={{ marginBottom: M3 }}>
+        <Tags tags={roles.map(({ name: roleName }) => roleName)} />
+      </div>
       {yearJoined && (
         <P mb0 sm>
           Member since {yearJoined}

@@ -3,8 +3,11 @@ export const HEADER_Z_INDEX = 1000
 export const MOBILE_HEADER_HEIGHT = '52px'
 export const FOOTER_HEIGHT = '72px'
 
-export const MARGIN = '0.4rem'
-export const MARGIN_LG = '0.8rem'
+export const M0 = '0'
+export const M1 = '0.4rem'
+export const M2 = '0.8rem'
+export const M3 = '1.2rem'
+export const M4 = '1.6rem'
 
 export const BORDER_RADIUS = '3px'
 export const BORDER_RADIUS_LG = '9px'
