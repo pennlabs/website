@@ -14,12 +14,11 @@ import {
 import { TEAL, PINK, GREEN, WHITE } from '../../constants/colors'
 import {
   BORDER_RADIUS_LG,
-  MARGIN_LG,
+  M2,
   maxWidth,
   PHONE,
 } from '../../constants/measurements'
 import { Blob2 } from './Blobs'
-import { Parallax } from 'react-scroll-parallax'
 
 const StatWrapper = styled.div<{ color: string }>`
   background: ${props => props.color};
@@ -68,9 +67,9 @@ export const Stats = (): React.ReactElement => (
       <ParallaxWrapper>
         <H1>By the numbers</H1>
         <P>Here's what we've gotten done</P>
-        <Row margin={MARGIN_LG}>
+        <Row margin={M2}>
           {stats.map(({ color, title, description }: IStat) => (
-            <Col sm={12} md={4} margin={MARGIN_LG} flex key={title}>
+            <Col sm={12} md={4} margin={M2} flex key={title}>
               <StatWrapper color={color}>
                 <H2 color={WHITE}>{title}</H2>
                 <P color={WHITE} opacity={0.8} mb0>

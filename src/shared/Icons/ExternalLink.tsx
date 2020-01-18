@@ -2,7 +2,7 @@ import React from 'react'
 
 import { IIconProps } from './types'
 
-export const ChevronRight = (props: IIconProps) => {
+export const ExternalLink = (props: IIconProps) => {
   return (
     <svg
       width={24}
@@ -13,22 +13,22 @@ export const ChevronRight = (props: IIconProps) => {
       strokeWidth={2}
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="prefix__feather prefix__feather-chevron-right"
+      className="prefix__feather prefix__feather-external-link"
       {...props}
     >
-      <path d="M9 18l6-6-6-6" />
+      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
     </svg>
   )
 }
 
-export const LinkChevronRight = (props: IIconProps) => (
-  <ChevronRight
+export const LinkExternalLink = (props: IIconProps) => (
+  <ExternalLink
     style={{
       marginTop: '-6px',
       marginLeft: '-4px',
-      marginBottom: '-7px',
+      marginBottom: '-5.6px',
       marginRight: '-8px',
-      transform: 'scale(0.75)',
+      transform: 'scale(0.64)',
     }}
     {...props}
   />
