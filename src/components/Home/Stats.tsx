@@ -11,7 +11,12 @@ import {
   Col,
   ParallaxWrapper,
 } from '../../shared'
-import { TEAL, PINK, GREEN, WHITE } from '../../constants/colors'
+import {
+  WHITE,
+  TEAL_ALPHA,
+  PINK_ALPHA,
+  GREEN_ALPHA,
+} from '../../constants/colors'
 import {
   BORDER_RADIUS_LG,
   M2,
@@ -20,12 +25,13 @@ import {
 } from '../../constants/measurements'
 import { Blob2 } from './Blobs'
 
-const StatWrapper = styled.div<{ color: string }>`
-  background: ${props => props.color};
+const StatWrapper = styled.div<{ colorAlpha: (a: number) => string }>`
+  background: ${props => props.colorAlpha(1)};
   padding: 1rem;
   border-radius: ${BORDER_RADIUS_LG};
   margin-bottom: 1.5rem;
   width: 100%;
+  box-shadow: 0 1px 8px ${props => props.colorAlpha(0.5)};
 
   display: flex;
   justify-content: space-between;
@@ -37,24 +43,24 @@ const StatWrapper = styled.div<{ color: string }>`
 `
 
 interface IStat {
-  color: string
+  colorAlpha: (a: number) => string
   title: string
   description: string
 }
 
 const stats: IStat[] = [
   {
-    color: TEAL,
+    colorAlpha: TEAL_ALPHA,
     title: '9 years',
     description: 'of supporting the Penn community',
   },
   {
-    color: PINK,
+    colorAlpha: PINK_ALPHA,
     title: '100k unique users',
     description: 'across 11 student-developed applications',
   },
   {
-    color: GREEN,
+    colorAlpha: GREEN_ALPHA,
     title: '$930k handled',
     description: 'through our Common Funding Application',
   },
@@ -68,9 +74,9 @@ export const Stats = (): React.ReactElement => (
         <H1>By the numbers</H1>
         <P>Here's what we've gotten done</P>
         <Row margin={M2}>
-          {stats.map(({ color, title, description }: IStat) => (
+          {stats.map(({ colorAlpha, title, description }: IStat) => (
             <Col sm={12} md={4} margin={M2} flex key={title}>
-              <StatWrapper color={color}>
+              <StatWrapper colorAlpha={colorAlpha}>
                 <H2 color={WHITE}>{title}</H2>
                 <P color={WHITE} opacity={0.8} mb0>
                   {description}

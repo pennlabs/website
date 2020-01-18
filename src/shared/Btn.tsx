@@ -9,6 +9,7 @@ import {
   RED,
   DARK_RED,
   OUTLINE,
+  LABS_BLUE_ALPHA,
 } from '../constants/colors'
 import {
   maxWidth,
@@ -59,11 +60,13 @@ const getKindStyles = (kind?: EBtnKind, disabled?: boolean): string => {
     background: ${LABS_BLUE};
     color: ${WHITE} !important;
     border-color: ${LABS_BLUE_DEEP};
+    box-shadow: 0 1px 6px ${LABS_BLUE_ALPHA(0.5)};
 
     &:hover,
     &:active,
     &:focus {
       background: ${disabled ? LABS_BLUE : LABS_BLUE_DEEP};
+      box-shadow: 0 0 2px ${LABS_BLUE_ALPHA(0.75)};
     }`
 }
 
