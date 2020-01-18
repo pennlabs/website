@@ -3,6 +3,8 @@ import React from 'react'
 import { P, Container } from '../shared'
 import { PINK } from '../constants/colors'
 
+// TODO facebook and github
+
 export default (): React.ReactElement => (
   <footer>
     <Container>
