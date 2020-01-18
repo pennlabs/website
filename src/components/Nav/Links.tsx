@@ -11,6 +11,14 @@ import {
 } from '../../constants/measurements'
 import { BLACK } from '../../constants/colors'
 import { WORK_SANS } from '../../constants/fonts'
+import {
+  ABOUT_ROUTE,
+  TEAM_ROUTE,
+  PRODUCTS_ROUTE,
+  RESOURCES_ROUTE,
+  BLOG_ROUTE,
+  APPLY_ROUTE,
+} from '../../constants/routes'
 
 interface ILinksProps {
   active: boolean
@@ -77,21 +85,21 @@ const StyledLink = styled(Link)<{}>`
   }
 `
 
-const links: string[] = [
-  'About',
-  'Team',
-  'Products',
-  'Resources',
-  'Blog',
-  'Apply',
+const links: string[][] = [
+  ['About', ABOUT_ROUTE],
+  ['Team', TEAM_ROUTE],
+  ['Products', PRODUCTS_ROUTE],
+  ['Resources', RESOURCES_ROUTE],
+  ['Blog', BLOG_ROUTE],
+  ['Apply', APPLY_ROUTE],
 ]
 
 export const Links = ({ active }: ILinksProps): React.ReactElement => (
   <LinksWrapper active={active}>
     <Spacer />
-    {links.map((link: string) => (
-      <StyledLink to={`/${link.toLowerCase()}`} key={link}>
-        {link}
+    {links.map(([text, link]) => (
+      <StyledLink to={link} key={link}>
+        {text}
       </StyledLink>
     ))}
   </LinksWrapper>
