@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
@@ -7,6 +8,8 @@ import {
   Section,
   Container,
   P,
+  Row,
+  Col,
   H3,
   BtnAnchor,
   LinkExternalLink,
@@ -16,7 +19,15 @@ import {
 } from '../shared'
 import { M2, M3 } from '../constants/measurements'
 
-// TODO images
+const deskPath = require('../images/hero-resources.svg') as string // tslint:disable-line
+
+const DeskTag = styled.img`
+  margin-left: 30%;
+  width: 70%;
+  height: auto;
+`
+
+export const Desk = () => <DeskTag src={deskPath} />
 
 interface IResource {
   name: string
@@ -54,17 +65,24 @@ const ResourcesPage = (): React.ReactElement => (
     <SEO title="Resources" />
     <Container>
       <Section>
-        <H1 mb1>Resources</H1>
-        <H3 style={{ fontWeight: 400 }}>
-          Tutorials and data for building your own products
-        </H3>
+        <Row margin={M2}>
+          <Col sm={12} md={6} margin={M2}>
+            <H1 mb1>Resources</H1>
+            <H3 style={{ fontWeight: 400 }}>
+              Tutorials and data for building your own products
+            </H3>
 
-        <P>
-          We're dedicated to giving back to the community - here are some guides
-          and tutorials we've written to help everybody build products like
-          ours. We also maintain free APIs and SDKs with support for Javascript,
-          Python, Ruby and OAuth.
-        </P>
+            <P>
+              We're dedicated to giving back to the community - here are some guides
+              and tutorials we've written to help everybody build products like
+              ours. We also maintain free APIs and SDKs with support for Javascript,
+              Python, Ruby and OAuth.
+            </P>
+          </Col>
+          <Col sm={12} md={6} margin={M2}>
+            <Desk/>
+          </Col>
+        </Row>
       </Section>
       <Section>
         {resources.map(({ name, demoLink, docsLink, tags }) => (
