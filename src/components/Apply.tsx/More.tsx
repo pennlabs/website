@@ -1,6 +1,6 @@
 import React from 'react'
 import { Section, H2, H3, P, Row, Col, Card } from '../../shared'
-import { M2 } from '../../constants/measurements'
+import { M1 } from '../../constants/measurements'
 
 interface IMore {
   title: string
@@ -33,12 +33,12 @@ const more: IMore[] = [
 export const More = () => (
   <Section>
     <H2>More About Us</H2>
-    <Row margin={M2}>
+    <Row margin={M1}>
       {more.map(({ title, content }) => (
-        <Col key={title} margin={M2} sm={12} md={6} lg={3}>
+        <Col key={title} margin={M1} sm={12} md={6} lg={3} flex>
           <Card shaded bordered>
             <H3>{title}</H3>
-            <P>{content}</P>
+            <P mb0>{content}</P>
           </Card>
         </Col>
       ))}
