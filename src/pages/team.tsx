@@ -1,11 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { Container, H3, Section, P, Row, Col, H4 } from '../shared'
-import { MARGIN_LG } from '../constants/measurements'
+import { Container, H3, Section, P, Row, Col, H4, H1 } from '../shared'
+import {
+  MARGIN_LG,
+  BORDER_RADIUS_LG,
+  SHORT_ANIMATION_DURATION,
+} from '../constants/measurements'
+import { BLACK_ALPHA } from '../constants/colors'
 
 interface IRole {
   name: string
@@ -31,6 +36,22 @@ interface ITeam {
   members: IMember[]
 }
 
+const StyledLink = styled(Link)<{}>`
+  margin: -${MARGIN_LG};
+  padding: ${MARGIN_LG};
+  border-radius: ${BORDER_RADIUS_LG};
+  display: block;
+  box-shadow: 0 0 0 ${BLACK_ALPHA(0.25)};
+  transition: box-shadow ${SHORT_ANIMATION_DURATION}ms ease;
+  margin-bottom: 1.45rem;
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0 1px 12px ${BLACK_ALPHA(0.25)};
+  }
+`
+
 const Image = styled.div<{ src: string }>`
   background-position: center;
   background-repeat: no-repeat;
@@ -40,6 +61,7 @@ const Image = styled.div<{ src: string }>`
   height: auto;
   padding-top: 100%;
   margin-bottom: 1.45rem;
+  border-radius: ${BORDER_RADIUS_LG};
 `
 
 const AboutPage = (): React.ReactElement => {
@@ -82,6 +104,9 @@ const AboutPage = (): React.ReactElement => {
     <Layout>
       <SEO title="Team" />
       <Container>
+        <Section>
+          <H1>Team</H1>
+        </Section>
         {teams.map(({ name, description, members }: ITeam) => (
           <Section key={name}>
             <H3>{name}</H3>
@@ -105,17 +130,25 @@ const AboutPage = (): React.ReactElement => {
                     lg={3}
                     key={`${memberName}-${major}-${school}-${year_joined}`}
                   >
-                    <Image src={photo} />
-                    <H4>{memberName}</H4>
-                    <P sm>{roles.map(({ name }) => name).join(', ')}</P>
-                    {major ? (
+                    <StyledLink to="TODO">
+                      <Image src={photo} />
+                      <H4>{memberName}</H4>
                       <P sm>
-                        Studies {major}
-                        {school && ` in ${school}`}
+                        {roles.map(({ name: roleName }) => roleName).join(', ')}
                       </P>
-                    ) : (
-                      school && <P sm>{school}</P>
-                    )}
+                      {major ? (
+                        <P sm mb0>
+                          Studies {major}
+                          {school && ` in ${school}`}
+                        </P>
+                      ) : (
+                        school && (
+                          <P sm mb0>
+                            {school}
+                          </P>
+                        )
+                      )}
+                    </StyledLink>
                   </Col>
                 ),
               )}

@@ -77,7 +77,14 @@ const StyledLink = styled(Link)<{}>`
   }
 `
 
-const links: string[] = ['About', 'Team', 'Products', 'Blog', 'Apply']
+const links: string[] = [
+  'About',
+  'Team',
+  'Products',
+  'Resources',
+  'Blog',
+  'Apply',
+]
 
 export const Links = ({ active }: ILinksProps): React.ReactElement => (
   <LinksWrapper active={active}>

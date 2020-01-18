@@ -1,7 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { H1, P, Container, Row, Col, ParallaxWrapper } from '../../shared'
+import {
+  H1,
+  P,
+  Container,
+  Row,
+  Col,
+  BtnLink,
+  LinkExternalLink,
+} from '../../shared'
 import {
   maxWidth,
   TABLET,
@@ -9,7 +17,7 @@ import {
   DESKTOP,
 } from '../../constants/measurements'
 import { Blob1 } from './Blobs'
-import { Parallax } from 'react-scroll-parallax'
+import { GITHUB_ROUTE, PRODUCTS_ROUTE } from '../../constants/routes'
 
 const devicesPath = require('../../images/hero-devices.svg') as string // tslint:disable-line
 const mobileDevicesPath = require('../../images/hero-devices-mobile.svg') as string // tslint:disable-line
@@ -51,7 +59,7 @@ const TextContainer = styled(Container)`
   }
 
   ${minWidth(DESKTOP)} {
-    margin-top: calc(44vh - 96px);
+    margin-top: calc(40vh - 96px);
     margin-bottom: calc(50vh - 80px);
   }
 `
@@ -75,13 +83,19 @@ export const Hero = (): React.ReactElement => (
     <TextContainer>
       <Row>
         <Col sm={12} md={8} lg={6}>
-          <ParallaxWrapper>
-            <StyledH1>Built for students, by students</StyledH1>
-            <StyledP lg mb0>
-              We're connecting students, resources, and data to improve life at
-              Penn.
-            </StyledP>
-          </ParallaxWrapper>
+          <StyledH1>Built for students, by students</StyledH1>
+          <StyledP lg>
+            We're connecting students, resources, and data to improve life at
+            Penn.
+          </StyledP>
+          <div>
+            <BtnLink to={PRODUCTS_ROUTE} style={{ marginRight: '1rem' }}>
+              View Products
+            </BtnLink>
+            <a href={GITHUB_ROUTE} target="_BLANK">
+              GitHub <LinkExternalLink />
+            </a>
+          </div>
         </Col>
       </Row>
     </TextContainer>
