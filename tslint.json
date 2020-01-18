@@ -4,7 +4,7 @@
     "member-ordering": false,
     "object-literal-sort-keys": false,
     "ordered-imports": false,
-    "quotemark": [true, "single", "avoid-escape"],
+    "quotemark": [true, "single", "avoid-escape", "jsx-double"],
     "no-consecutive-blank-lines": false,
     "lines-between-class-members": [true, 1],
     "semicolon": [true, "never"],

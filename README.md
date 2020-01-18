@@ -17,7 +17,7 @@ Website for Penn Labs.
 - [ ] Bio as markdown
 - [ ] Illustrations on about page
 - [ ] Products page
-- [ ] Resources page
+- [x] Resources page
 - [ ] Blog
 - [ ] Apply page
 - [ ] Team page

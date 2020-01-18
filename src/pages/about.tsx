@@ -9,8 +9,8 @@ const AboutPage = (): React.ReactElement => (
     <SEO title="About" />
     <Container>
       <Section>
-        <H6>About Penn Labs</H6>
         <H1>A Story of Building Tools that Matter</H1>
+        <H3 style={{ fontWeight: 400 }}>About Penn Labs</H3>
       </Section>
 
       <Section>

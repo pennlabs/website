@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { Container, H3, Section, P, Row, H1, H2 } from '../shared'
+import { Container, H3, Section, P, Row, H1, H2, Col } from '../shared'
 import { M2 } from '../constants/measurements'
 import { TeamMemberPreview } from '../components/Team/TeamMemberPreview'
 import { ITeam, IMember } from '../shared/Icons/types'
@@ -52,7 +52,11 @@ const AboutPage = (): React.ReactElement => {
         {teams.map(({ name, description, children: members }: ITeam) => (
           <Section key={name}>
             <H2 mb2>{name}</H2>
-            <P mb4>{description}</P>
+            <Row>
+              <Col sm={12} md={10} lg={8}>
+                <P mb4>{description}</P>
+              </Col>
+            </Row>
 
             <Row margin={M2}>
               {members.map((props: IMember) => (

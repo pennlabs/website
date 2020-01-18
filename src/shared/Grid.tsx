@@ -159,6 +159,19 @@ interface IContainerProps {
   foreground?: string
 }
 
+export const WideContainer = ({
+  children,
+  ...props
+}: IContainerProps): ReactElement => (
+  <Container {...props}>
+    <Row>
+      <Col sm={12} md={11} offsetMd={0.5} lg={10} offsetLg={1}>
+        {children}
+      </Col>
+    </Row>
+  </Container>
+)
+
 export const MediumContainer = ({
   children,
   ...props

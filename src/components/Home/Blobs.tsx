@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { maxWidth, PHONE, TABLET } from '../../constants/measurements'
 
-const blob1Path = require('../../images/blob1.svg') as string // tslint:disable-line
-const blob2Path = require('../../images/blob2-partial.svg') as string // tslint:disable-line
-const blob3Path = require('../../images/blob3.svg') as string // tslint:disable-line
-const blob4Path = require('../../images/blob4.svg') as string // tslint:disable-line
+const blob1Path = require('../../images/blobs/blob1.svg') as string // tslint:disable-line
+const blob2Path = require('../../images/blobs/blob2-partial.svg') as string // tslint:disable-line
+const blob3Path = require('../../images/blobs/blob3.svg') as string // tslint:disable-line
+const blob4Path = require('../../images/blobs/blob4.svg') as string // tslint:disable-line
 
 const Blob1Tag = styled.img`
   position: absolute;
