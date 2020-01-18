@@ -8,13 +8,21 @@ interface ITextProps {
   sm?: boolean
   lg?: boolean
   mb0?: boolean
+  mb1?: boolean
+  mb2?: boolean
+  mb3?: boolean
+  mb4?: boolean
 }
 
 export const P = styled.p<ITextProps>(
-  ({ color, opacity, mb0, sm, lg }) => css`
+  ({ color, opacity, mb0, mb1, mb2, mb3, mb4, sm, lg }) => css`
     color: ${color || DARK_GRAY};
     opacity: ${opacity || 1.0};
     ${mb0 && 'margin-bottom: 0;'}
+    ${mb1 && 'margin-bottom: 0.4rem;'}
+    ${mb2 && 'margin-bottom: 0.8rem;'}
+    ${mb3 && 'margin-bottom: 1.2rem;'}
+    ${mb4 && 'margin-bottom: 1.6rem;'}
     ${lg && 'font-size: 120%; line-height: 1.375;'}
     ${sm && 'font-size: 80%; line-height: 1.375;'}
   `,

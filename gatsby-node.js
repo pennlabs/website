@@ -16,14 +16,33 @@ const getHash = jawn =>
     .digest(`hex`)
 
 exports.sourceNodes = async ({ actions }) => {
-  const { createNode } = actions
+  /**
+   * Create a mapping from the Penn Labs API for teams to the Gatsby data store.
+   * Effetively, make an Object for each Team and for each Member. Each Team has
+   * many Members and each Member has one Team (many-to-one relationship.)
+   *
+   * After completing this, we can source the data into our components via
+   * GraphQL, which is nice, though the code below is not particularly nice.
+   */
+
+  // Set of actions given to use from Gatsby
+  const { createNode, createParentChildLink } = actions
+
+  const createNodeWrapper = jawn => {
+    // Get content digest of node and add it to the node
+    const digest = getHash(jawn)
+    jawn.internal.contentDigest = digest
+
+    // Register node in Gatsby
+    return createNode(jawn)
+  }
 
   // fetch raw data from the randomuser api
   const teams = await fetch(
     `https://platform.pennlabs.org/org/teams/?format=json`,
   ).then(res => res.json())
 
-  teams.map((team, i) => {
+  teams.map(async (team, i) => {
     const { name, description, members } = team
     // Create your node object
     const teamNode = {
@@ -39,18 +58,30 @@ exports.sourceNodes = async ({ actions }) => {
       // Other fields that you want to query with GraphQL
       description,
       name,
-      members,
-      // etc...
     }
 
-    // Get content digest of node. (Required field)
-    const contentDigest = getHash(teamNode)
+    const memberNodes = members.map((member, memberIdx) => {
+      const { url } = member
+      const memberNode = {
+        id: url,
+        internal: {
+          type: `Member`,
+        },
+        children: [],
+        ...member,
+      }
 
-    // Add it to userNode
-    teamNode.internal.contentDigest = contentDigest
+      return memberNode
+    })
+
+    await Promise.all(memberNodes.map(member => createNodeWrapper(member)))
 
     // Create node with the gatsby createNode() API
-    createNode(teamNode)
+    await createNodeWrapper(teamNode)
+
+    await memberNodes.map(memberNode =>
+      createParentChildLink({ parent: teamNode, child: memberNode }),
+    )
   })
 
   return

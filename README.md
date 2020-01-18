@@ -7,6 +7,7 @@ Website for Penn Labs.
 ### TODO
 
 - [x] Favicon
+- [ ] Analytics
 - [ ] Content
 - [ ] Styles
 - [ ] Parallax scrolling (nngngg)
@@ -14,3 +15,4 @@ Website for Penn Labs.
 - [ ] Fade in animations
 - [ ] Product pages
 - [ ] Be able to load member images with gatsby-image: https://github.com/graysonhicks/gatsby-plugin-remote-images
+- [ ] Fix "member since"
