@@ -13,7 +13,8 @@ export const LABS_BLUE = LABS_BLUE_ALPHA(1)
 export const LABS_BLUE_DEEP = '#1c97e8'
 export const LABS_BLUE_DARK = '#0068AC'
 export const LILAC = '#E7ECFF'
-export const PURPLE = '#B1C1FB'
+export const PURPLE_DEEP = '#A3A7FE'
+export const PURPLE_DARK = '#9381FD'
 export const INDIGO = '#4156a3'
 export const TEAL_ALPHA = (a: number) => `rgba(24, 162, 184, ${a})`
 export const TEAL = TEAL_ALPHA(1)

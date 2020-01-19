@@ -1,5 +1,5 @@
 import React from 'react'
-import { Section, H2, H3, P, Row, Col, Card } from '../../shared'
+import { Section, Container, H2, H3, P, Row, Col, Card } from '../../shared'
 import { M1 } from '../../constants/measurements'
 
 interface IMore {
@@ -16,7 +16,7 @@ const more: IMore[] = [
   {
     title: 'Hone Your Skills',
     content:
-      "Skill levels vary when joining Labs, but building and maintaining production-quality products used by thousands of students every day is great real-world experience that's hard to get anywhere else on campus. Our members are highly sought after, becoming teaching assistants, working for prestigious companies around the world, and launching their own startups.",
+      "Building and maintaining production-quality products used by thousands of students every day is great real-world experience that's hard to get anywhere else on campus. Our members are highly sought-after, becoming teaching assistants, working for prestigious companies around the world, and launching their own startups.",
   },
   {
     title: 'Modern Engineering',
@@ -32,16 +32,18 @@ const more: IMore[] = [
 
 export const More = () => (
   <Section>
-    <H2>More About Us</H2>
-    <Row margin={M1}>
-      {more.map(({ title, content }) => (
-        <Col key={title} margin={M1} sm={12} md={6} lg={3} flex>
-          <Card shaded bordered>
-            <H3>{title}</H3>
-            <P mb0>{content}</P>
-          </Card>
-        </Col>
-      ))}
-    </Row>
+    <Container>
+      <H2>More About Us</H2>
+      <Row margin={M1}>
+        {more.map(({ title, content }) => (
+          <Col key={title} margin={M1} sm={12} md={6} lg={3} flex>
+            <Card shaded bordered>
+              <H3>{title}</H3>
+              <P mb0>{content}</P>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   </Section>
 )
