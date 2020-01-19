@@ -173,7 +173,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
           </Row>
         </Section>
 
-        {bio && <P>{bio}</P>}
+        {bio && <div dangerouslySetInnerHTML={{ __html: bio }} />}
 
         <Section>
           <Row margin={M1}>
