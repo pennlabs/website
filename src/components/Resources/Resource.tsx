@@ -8,8 +8,7 @@ import {
   Tags,
   BtnAnchor,
   EBtnSize,
-  LinkExternalLink,
-  Row,
+  LinkExternalLinkIcon,
   Flex,
 } from '../../shared'
 import { M1, M3, M2 } from '../../constants/measurements'
@@ -44,14 +43,14 @@ export const Resource = ({
           href={docsLink}
           target="_BLANK"
         >
-          Docs <LinkExternalLink />
+          Docs <LinkExternalLinkIcon />
         </BtnAnchor>
         <a
           href={demoLink}
           target="_BLANK"
           style={{ marginBottom: 0, fontSize: '80%' }}
         >
-          Demo <LinkExternalLink />
+          Demo <LinkExternalLinkIcon />
         </a>
       </div>
     </Card>

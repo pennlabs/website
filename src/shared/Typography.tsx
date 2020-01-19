@@ -1,9 +1,10 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { DARK_GRAY } from '../constants/colors'
+import { DARK_GRAY, WHITE } from '../constants/colors'
 import { M0, M1, M2, M3, M4 } from '../constants/measurements'
 
 interface ITextProps {
+  white?: boolean
   color?: string
   opacity?: number
   sm?: boolean
@@ -16,8 +17,8 @@ interface ITextProps {
 }
 
 export const P = styled.p<ITextProps>(
-  ({ color, opacity, mb0, mb1, mb2, mb3, mb4, sm, lg }) => css`
-    color: ${color || DARK_GRAY};
+  ({ white, color, opacity, mb0, mb1, mb2, mb3, mb4, sm, lg }) => css`
+    color: ${white ? WHITE : color || DARK_GRAY};
     opacity: ${opacity || 1.0};
     ${mb0 && `margin-bottom: ${M0};`}
     ${mb1 && `margin-bottom: ${M1};`}

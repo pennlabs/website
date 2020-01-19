@@ -9,6 +9,10 @@
 const fetch = require('node-fetch')
 const path = require(`path`)
 const crypto = require('crypto')
+const remark = require('remark')
+const html = require('remark-html')
+
+const markdownProcessor = remark().use(html)
 
 const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
 
@@ -36,15 +40,18 @@ const getTeamNode = team => {
   }
 }
 
-const getMemberNode = member => {
-  const { url } = member
+const getMemberNode = async member => {
+  const { url, bio, ...rest } = member
+  const { contents: bioAsHtml } = await markdownProcessor.process(bio || '')
   return {
     id: url,
     internal: {
       type: `Member`,
     },
     children: [],
-    ...member,
+    url,
+    bio: bioAsHtml,
+    ...rest,
   }
 }
 
@@ -78,7 +85,9 @@ const createTeamAndMemberNodes = async ({ actions }) => {
   await Promise.all(
     teams.map(async team => {
       const { members } = team
-      const memberNodes = members.map(member => getMemberNode(member))
+      const memberNodes = await Promise.all(
+        members.map(member => getMemberNode(member)),
+      )
 
       await Promise.all(memberNodes.map(member => createNodeWrapper(member)))
 
@@ -105,6 +114,14 @@ exports.sourceNodes = async ({ actions }) => {
   await createTeamAndMemberNodes({ actions })
   return
 }
+
+// exports.onCreateNode = ({ actions, node }) => {
+//   const { type } = node.internal
+//   if (type !== `Member`) return
+//   const { bio } = node
+//   const bioAsHtml = markdownProcessor.process(bio)
+//   node.bio = bioAsHtml
+// }
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions

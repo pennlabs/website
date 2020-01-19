@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import { Section, Container, H1, H3, BtnAnchor, LinkExternalLink } from '../../shared'
 import { APPLY_FORM_ROUTE } from '../../constants/routes'

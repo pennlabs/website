@@ -1,3 +1,7 @@
+// Generic types
+export type Subset<T extends U, U> = U
+
+// Data types
 export interface IIconProps {
   color?: string
   style?: React.CSSProperties
