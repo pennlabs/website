@@ -127,8 +127,6 @@ exports.onCreateNode = ({ node, actions }) => {
         value: `Labs__Member__${node.slug}`,
       })
     }
-  } else if (type === 'GhostPostAuthors') {
-    console.log(node)
   }
 }
 
@@ -230,7 +228,6 @@ const createPostPages = (posts, createPage) => {
     // This part here defines, that our posts will use
     // a `/:slug/` permalink.
     node.url = `blog/post/${node.slug}/`
-    console.log(node.authors.map(({ slug }) => slug))
 
     createPage({
       path: node.url,
@@ -306,15 +303,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             id
+            url
           }
         }
       }
     }
   `)
-  const ids = edges.map(({ node: { id } }) => id)
-  await ids.map(id =>
+  const ids = edges.map(({ node: { id, url } }) => ({ id, url }))
+  await ids.map(({ id, url }) =>
     createPage({
-      path: `/team/${id}`,
+      path: `/team/${url}`,
       component: MemberTemplate,
       context: {
         // Data passed to context is available in page queries as GraphQL vars
