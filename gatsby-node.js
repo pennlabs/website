@@ -11,6 +11,7 @@ const path = require(`path`)
 const crypto = require('crypto')
 const remark = require('remark')
 const html = require('remark-html')
+const { paginate } = require('gatsby-awesome-pagination');
 const { postsPerPage } = require('./src/constants/blog.ts')
 
 const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
@@ -367,24 +368,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allGhostPost.edges
 
   // Load templates
-  const indexTemplate = path.resolve(`./src/templates/blog.js`)
+  const indexTemplate = path.resolve(`./src/templates/blog.tsx`)
 
   createTagPages(tags, createPage)
   // createAuthorPages(authors)
   createPostPages(posts, createPage)
 
-  // // Create pagination
-  // paginate({
-  //   createPage,
-  //   items: posts,
-  //   itemsPerPage: postsPerPage,
-  //   component: indexTemplate,
-  //   pathPrefix: ({ pageNumber }) => {
-  //     if (pageNumber === 0) {
-  //       return `/`
-  //     } else {
-  //       return `/page`
-  //     }
-  //   },
-  // })
+  // Create pagination
+  paginate({
+    createPage,
+    items: posts,
+    itemsPerPage: postsPerPage,
+    component: indexTemplate,
+    pathPrefix: ({ pageNumber }) => {
+      if (pageNumber === 0) {
+        return `/blog`
+      } else {
+        return `/blog/page`
+      }
+    },
+  })
 }
