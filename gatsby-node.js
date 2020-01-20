@@ -11,7 +11,7 @@ const path = require(`path`)
 const crypto = require('crypto')
 const remark = require('remark')
 const html = require('remark-html')
-const { paginate } = require('gatsby-awesome-pagination');
+const { paginate } = require('gatsby-awesome-pagination')
 const { postsPerPage } = require('./src/constants/blog.ts')
 
 const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
@@ -318,6 +318,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       context: {
         // Data passed to context is available in page queries as GraphQL vars
         id: id,
+        url: url,
       },
     }),
   )

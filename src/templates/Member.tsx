@@ -220,7 +220,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
 }
 
 export const query = graphql`
-  query($id: String!) {
+  query($id: String!, $url: String!) {
     member(id: { eq: $id }) {
       bio
       github
@@ -239,6 +239,14 @@ export const query = graphql`
       team
       website
       year_joined(formatString: "YYYY")
+    }
+    allGhostPost(filter: {authors: {elemMatch: {slug: {eq: $url}}}}) {
+      edges {
+        node {
+          slug,
+          title
+        }
+      }
     }
   }
 `
