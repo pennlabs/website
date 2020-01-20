@@ -41,7 +41,7 @@ import './post.css'
 
 const PostTemplate = ({ data, location, pageContext }) => {
   const post = data.ghostPost
-  const authors = data.allMember
+  const authors = data.allMember.nodes
   console.log('DAVISDEBUG', authors)
 
   return (

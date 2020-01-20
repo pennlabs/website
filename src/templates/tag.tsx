@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/Layout'
@@ -45,7 +45,7 @@ const TagTemplate = ({ data, location, pageContext }) => {
           <h1>{tag.name}</h1>
           <ul>
             {posts.map(({ node: post }) => (
-              <li key={post.slug}>{post.title}</li>
+              <li key={post.slug}><Link to={`/blog/post/${post.slug}/`}>{post.title}</Link></li>
             ))}
           </ul>
         </Section>
