@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
 
@@ -40,27 +39,30 @@ import { DARK_GRAY } from '../constants/colors'
 import './post.css'
 
 const PostTemplate = ({ data, location, pageContext }) => {
-  const post = data.ghostPost
-  const authors = data.allMember.nodes
-  console.log('DAVISDEBUG', authors)
+  const {
+    title,
+    feature_image,
+    html,
+    codeinjection_head,
+    codeinjection_foot
+  } = data.ghostPost
 
+  const authors = data.allMember.nodes
+
+  const htmlContent = codeinjection_head || '' + html + codeinjection_foot || ''
   return (
     <Layout>
-      <SEO title={post.title} />
+      <SEO title={title} />
       <MediumContainer>
         <Section>
-          <H1>{post.title}</H1>
+          <H1>{title}</H1>
           <pre>{JSON.stringify(authors)}</pre>
-          <img src={post.feature_image} />
+          <img src={feature_image} />
           <div className={'post-full-content content'}>
             <div
               className="post-content"
               dangerouslySetInnerHTML={{
-                __html: `
-${post.codeinjection_head || ''}
-${post.html}
-${post.codeinjection_foot || ''}
-                `,
+                __html: htmlContent,
               }}
             />
           </div>

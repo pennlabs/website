@@ -32,20 +32,21 @@ import {
   M4,
 } from '../constants/measurements'
 import { DARK_GRAY } from '../constants/colors'
+import { BLOG_POST_ROUTE } from '../constants/routes'
 
 const TagTemplate = ({ data, location, pageContext }) => {
-  const tag = data.ghostTag
+  const { name } = data.ghostTag
   const posts = data.allGhostPost.edges
 
   return (
     <Layout>
-      <SEO title={tag.name} />
+      <SEO title={name} />
       <MediumContainer>
         <Section>
-          <h1>{tag.name}</h1>
+          <h1>{name}</h1>
           <ul>
             {posts.map(({ node: post }) => (
-              <li key={post.slug}><Link to={`/blog/post/${post.slug}/`}>{post.title}</Link></li>
+              <li key={post.slug}><Link to={BLOG_POST_ROUTE(post.slug)}>{post.title}</Link></li>
             ))}
           </ul>
         </Section>

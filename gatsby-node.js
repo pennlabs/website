@@ -16,8 +16,13 @@ const { postsPerPage } = require('./src/constants/blog.ts')
 
 const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
 const ProductTemplate = path.resolve(`src/templates/Product.tsx`)
+const TagTemplate = path.resolve(`./src/templates/Tag.tsx`)
+const PostTemplate = path.resolve(`./src/templates/Post.tsx`)
+const BlogIndexTemplate = path.resolve(`./src/templates/BlogIndex.tsx`)
 
 const markdownProcessor = remark().use(html)
+
+const GhostAuthorType = `GhostAuthor`
 
 const getHash = jawn =>
   crypto
@@ -120,9 +125,14 @@ exports.sourceNodes = async ({ actions }) => {
 
 exports.onCreateNode = ({ node, actions }) => {
   const { type } = node.internal
-  if (type === 'GhostAuthor') {
+  const { createNodeField } = actions
+  if (type === GhostAuthorType) {
     if (node.slug !== 'data-schema-author') {
-      actions.createNodeField({
+      // create a foreign key relationship between an author in Ghost and a
+      // Labs member.
+      // Original inspiration: https://github.com/gatsbyjs/gatsby/issues/1583#issuecomment-317827660
+      // Now has documentation: https://www.gatsbyjs.org/docs/node-creation/#foreign-key-reference-___node
+      createNodeField({
         node,
         name: `member___NODE`,
         value: `Labs__Member__${node.slug}`,
@@ -132,99 +142,34 @@ exports.onCreateNode = ({ node, actions }) => {
 }
 
 const createTagPages = (tags, createPage) => {
-  const tagsTemplate = path.resolve(`./src/templates/tag.tsx`)
-
   tags.forEach(({ node }) => {
     const totalPosts = node.postCount !== null ? node.postCount : 0
-    const numberOfPages = Math.ceil(totalPosts / postsPerPage)
 
     // This part here defines, that our tag pages will use
     // a `/tag/:slug/` permalink.
-    node.url = `/tag/${node.slug}/`
+    node.url = `/blog/tag/${node.slug}/`
 
-    Array.from({ length: numberOfPages }).forEach((_, i) => {
-      const currentPage = i + 1
-      const prevPageNumber = currentPage <= 1 ? null : currentPage - 1
-      const nextPageNumber =
-        currentPage + 1 > numberOfPages ? null : currentPage + 1
-      const previousPagePath = prevPageNumber
-        ? prevPageNumber === 1
-          ? node.url
-          : `${node.url}page/${prevPageNumber}/`
-        : null
-      const nextPagePath = nextPageNumber
-        ? `${node.url}page/${nextPageNumber}/`
-        : null
-
-      createPage({
-        path: i === 0 ? node.url : `${node.url}page/${i + 1}/`,
-        component: tagsTemplate,
-        context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
-          slug: node.slug,
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numberOfPages: numberOfPages,
-          humanPageNumber: currentPage,
-          prevPageNumber: prevPageNumber,
-          nextPageNumber: nextPageNumber,
-          previousPagePath: previousPagePath,
-          nextPagePath: nextPagePath,
-        },
-      })
-    })
-  })
-}
-
-const createAuthorPages = authors => {
-  const authorTemplate = path.resolve(`./src/templates/author.js`)
-
-  authors.forEach(({ node }) => {
-    const totalPosts = node.postCount !== null ? node.postCount : 0
-    const numberOfPages = Math.ceil(totalPosts / postsPerPage)
-
-    // This part here defines, that our author pages will use
-    // a `/author/:slug/` permalink.
-    node.url = `/author/${node.slug}/`
-
-    Array.from({ length: numberOfPages }).forEach((_, i) => {
-      const currentPage = i + 1
-      const prevPageNumber = currentPage <= 1 ? null : currentPage - 1
-      const nextPageNumber =
-        currentPage + 1 > numberOfPages ? null : currentPage + 1
-      const previousPagePath = prevPageNumber
-        ? prevPageNumber === 1
-          ? node.url
-          : `${node.url}page/${prevPageNumber}/`
-        : null
-      const nextPagePath = nextPageNumber
-        ? `${node.url}page/${nextPageNumber}/`
-        : null
-
-      createPage({
-        path: i === 0 ? node.url : `${node.url}page/${i + 1}/`,
-        component: authorTemplate,
-        context: {
-          // Data passed to context is available
-          // in page queries as GraphQL variables.
-          slug: node.slug,
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numberOfPages: numberOfPages,
-          humanPageNumber: currentPage,
-          prevPageNumber: prevPageNumber,
-          nextPageNumber: nextPageNumber,
-          previousPagePath: previousPagePath,
-          nextPagePath: nextPagePath,
-        },
-      })
+    // paginate
+    paginate({
+      createPage,
+      items: Array.from({ length: totalPosts }),
+      itemsPerPage: postsPerPage,
+      component: TagTemplate,
+      pathPrefix: ({ pageNumber }) => {
+        if (pageNumber === 0) {
+          return `/blog/tag/${node.slug}`
+        } else {
+          return `/blog/tag/${node.slug}/page`
+        }
+      },
+      context: {
+        slug: node.slug,
+      },
     })
   })
 }
 
 const createPostPages = (posts, createPage) => {
-  const postTemplate = path.resolve(`./src/templates/post.tsx`)
   posts.forEach(({ node }) => {
     // This part here defines, that our posts will use
     // a `/:slug/` permalink.
@@ -232,7 +177,7 @@ const createPostPages = (posts, createPage) => {
 
     createPage({
       path: node.url,
-      component: postTemplate,
+      component: PostTemplate,
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
@@ -346,15 +291,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-      allGhostAuthor(sort: { order: ASC, fields: name }) {
-        edges {
-          node {
-            slug
-            url
-            postCount
-          }
-        }
-      }
     }
   `)
 
@@ -362,25 +298,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (result.errors) {
     throw new Error(result.errors)
   }
-
-  // Extract query results
-  const tags = result.data.allGhostTag.edges
-  const authors = result.data.allGhostAuthor.edges
-  const posts = result.data.allGhostPost.edges
-
-  // Load templates
-  const indexTemplate = path.resolve(`./src/templates/blog.tsx`)
+  const {
+    allGhostTag: { edges: tags },
+    allGhostPost: { edges: posts },
+  } = result.data
 
   createTagPages(tags, createPage)
-  // createAuthorPages(authors)
   createPostPages(posts, createPage)
 
-  // Create pagination
+  // Create pagination for the index page.
   paginate({
     createPage,
     items: posts,
     itemsPerPage: postsPerPage,
-    component: indexTemplate,
+    component: BlogIndexTemplate,
     pathPrefix: ({ pageNumber }) => {
       if (pageNumber === 0) {
         return `/blog`

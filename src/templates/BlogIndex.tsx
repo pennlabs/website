@@ -1,14 +1,13 @@
 import React from 'react'
-
 import { graphql, Link } from 'gatsby'
-
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { H1, Section, Container } from '../shared'
+import BLOG_POST_ROUTE from '../constants/routes'
 
 const BlogPage = ({data}): React.ReactElement => {
-  const posts = data.allGhostPost.edges
+  const { edges: posts} = data.allGhostPost
 
   return (
     <Layout>
@@ -18,7 +17,7 @@ const BlogPage = ({data}): React.ReactElement => {
           <H1>Blog</H1>
           <ul>
             {posts.map(({ node: post }) => (
-              <li key={post.slug}><Link to={`/blog/post/${post.slug}/`}>{post.title}</Link></li>
+              <li key={post.slug}><Link to={BLOG_POST_ROUTE(post.slug)}>{post.title}</Link></li>
             ))}
           </ul>
         </Section>

@@ -53,7 +53,6 @@ module.exports = {
         apiUrl: `https://ghost.pennlabs.org`,
         contentApiKey: process.env.GHOST_API_KEY,
         version: `v3`, // Ghost API version, optional, defaults to "v3".
-        // Pass in "v2" if your Ghost install is not on 3.0 yet!!!
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
