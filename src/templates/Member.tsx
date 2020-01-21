@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/Layout'
@@ -21,6 +21,7 @@ import {
   MediumContainer,
   Card,
   HR,
+  H2,
 } from '../shared'
 import {
   M2,
@@ -124,9 +125,19 @@ const ProfilePicture = styled.div<{ src: string }>`
   }
 `
 
+interface IGhostAllPost {
+  node: {
+    slug: string
+    title: string
+  }
+}
+
 interface IMemberTemplateProps {
   data: {
     member: IMember
+    allGhostPost: {
+      edges: Array<IGhostAllPost>
+    }
   }
 }
 
@@ -176,9 +187,11 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
       website,
       year_joined: yearJoined,
     },
+    allGhostPost: { edges: postEdges },
   } = data
 
   const roleNames = roles.map(({ name: roleName }) => roleName)
+  const posts = postEdges.map(({ node }) => ({ ...node }))
 
   return (
     <Layout>
@@ -214,6 +227,20 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
             <Detail text={`Graduates in ${gradYear}`} Icon={LogOutIcon} />
           )}
         </Row>
+        {posts.length > 0 ? (
+          <Section>
+            <H2>Writings</H2>
+            <P>
+              <ul>
+                {posts.map(post => (
+                  <li key={post.slug}>
+                    <Link to={`/blog/post/${post.slug}/`}>{post.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </P>
+          </Section>
+        ) : null}
       </MediumContainer>
     </Layout>
   )
@@ -240,10 +267,10 @@ export const query = graphql`
       website
       year_joined(formatString: "YYYY")
     }
-    allGhostPost(filter: {authors: {elemMatch: {slug: {eq: $url}}}}) {
+    allGhostPost(filter: { authors: { elemMatch: { slug: { eq: $url } } } }) {
       edges {
         node {
-          slug,
+          slug
           title
         }
       }
