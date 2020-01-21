@@ -1,5 +1,14 @@
 /*
- * Much of this CSS comes from github.com/TryGhost/Casper, which is licensed under the MIT License.
+ * Ghost gives us HTML markup with classes which represent elements with different styles. Since we're
+ * basically rolling our own Ghost theme here, much of this CSS is coming from the default theme, Casper,
+ * which is licensed under the MIT License at https://github.com/TryGhost/Casper.
+ * Elements that are styled here include:
+ *  - Images (wide + full width)
+ *  - "Bookmark" elements like what you see on Medium and in Notion
+ *  - Image captions
+ * 
+ * Image galleries, which can be created from the Ghost editor, are not yet supported. Images will appear
+ * sequentially on the page.
  */
  :root {
   /* Colours */
