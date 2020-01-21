@@ -36,6 +36,7 @@ import {
   TABLET,
 } from '../constants/measurements'
 import { DARK_GRAY } from '../constants/colors'
+import { BLOG_POST_ROUTE } from '../constants/routes'
 
 type ILinks = Subset<
   IMember,
@@ -234,7 +235,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
               <ul>
                 {posts.map(post => (
                   <li key={post.slug}>
-                    <Link to={`/blog/post/${post.slug}/`}>{post.title}</Link>
+                    <Link to={BLOG_POST_ROUTE(post.slug)}>{post.title}</Link>
                   </li>
                 ))}
               </ul>

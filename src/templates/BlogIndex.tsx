@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { H1, Section, Container } from '../shared'
-import BLOG_POST_ROUTE from '../constants/routes'
+import { BLOG_POST_ROUTE } from '../constants/routes'
 
 const BlogPage = ({data}): React.ReactElement => {
   const { edges: posts} = data.allGhostPost
