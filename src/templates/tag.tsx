@@ -36,7 +36,7 @@ import { BLOG_POST_ROUTE } from '../constants/routes'
 
 const TagTemplate = ({ data, location, pageContext }) => {
   const { name } = data.ghostTag
-  const posts = data.allGhostPost.edges
+  const { edges: posts } = data.allGhostPost
 
   return (
     <Layout>
