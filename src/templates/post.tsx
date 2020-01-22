@@ -44,7 +44,8 @@ const PostTemplate = ({ data, location, pageContext }) => {
     feature_image,
     html,
     codeinjection_head,
-    codeinjection_foot
+    codeinjection_foot,
+    excerpt,
   } = data.ghostPost
 
   const authors = data.allMember.nodes
@@ -52,7 +53,7 @@ const PostTemplate = ({ data, location, pageContext }) => {
   const htmlContent = codeinjection_head || '' + html + codeinjection_foot || ''
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} image={feature_image} description={excerpt} />
       <MediumContainer>
         <Section>
           <H1>{title}</H1>
@@ -81,6 +82,7 @@ export const pageQuery = graphql`
       codeinjection_head
       codeinjection_foot
       feature_image
+      excerpt
       tags {
         name
         slug

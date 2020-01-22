@@ -196,7 +196,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
 
   return (
     <Layout>
-      <SEO title={name} />
+      <SEO title={name} description={bio} image={photo} />
       <MediumContainer>
         <StyledCard shaded>
           <Row>

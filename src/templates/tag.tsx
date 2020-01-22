@@ -35,12 +35,12 @@ import { DARK_GRAY } from '../constants/colors'
 import { BLOG_POST_ROUTE } from '../constants/routes'
 
 const TagTemplate = ({ data, location, pageContext }) => {
-  const { name } = data.ghostTag
+  const { name, description } = data.ghostTag
   const { edges: posts } = data.allGhostPost
 
   return (
     <Layout>
-      <SEO title={name} />
+      <SEO title={name} description={description} />
       <MediumContainer>
         <Section>
           <h1>{name}</h1>
