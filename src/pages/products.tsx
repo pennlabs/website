@@ -1,12 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { H1, Section, Container, Card, H3, P, Col, Row, Flex } from '../shared'
+import {
+  H1,
+  Section,
+  Card,
+  H3,
+  P,
+  Col,
+  Row,
+  Flex,
+  WideContainer,
+} from '../shared'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 import { getPathFromFileAbsolutePath } from '../helpers'
 import { M2, minWidth, DESKTOP, M4 } from '../constants/measurements'
+
+const TextWrapper = styled.div<{}>`
+  align-self: center;
+`
 
 const Logo = styled.img<{}>`
   width: 3.6rem;
@@ -23,6 +38,7 @@ const Logo = styled.img<{}>`
 const ProductsPage = (): React.ReactElement => {
   const {
     allMarkdownRemark: { edges: products },
+    file: { childImageSharp },
   } = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -39,15 +55,38 @@ const ProductsPage = (): React.ReactElement => {
           }
         }
       }
+      file(relativePath: { eq: "test-products-hero.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1024) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
   return (
     <Layout>
       <SEO title="Products" />
-      <Container>
+      <WideContainer>
         <Section>
-          <H1>Products</H1>
+          <Row margin={M2}>
+            <Col sm={12} md={6} margin={M2} flex>
+              <TextWrapper>
+                <H1 mb1>Products</H1>
+                <H3 style={{ fontWeight: 400 }}>TODO</H3>
+                <P>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat.
+                </P>
+              </TextWrapper>
+            </Col>
+            <Col sm={12} md={6} margin={M2}>
+              <Img style={{ width: '100%' }} fluid={childImageSharp.fluid} />
+            </Col>
+          </Row>
         </Section>
         <Section>
           <Row margin={M2}>
@@ -66,7 +105,7 @@ const ProductsPage = (): React.ReactElement => {
                 return (
                   <Col key={title} margin={M2} sm={12} md={6}>
                     <Link to={getPathFromFileAbsolutePath(fileAbsolutePath)}>
-                      <Card shaded hoverable clickable>
+                      <Card shaded hoverable clickable bordered>
                         <Flex>
                           <Logo src={imagePath} alt={`${title} logo`} />
                           <Col>
@@ -82,7 +121,7 @@ const ProductsPage = (): React.ReactElement => {
             )}
           </Row>
         </Section>
-      </Container>
+      </WideContainer>
     </Layout>
   )
 }

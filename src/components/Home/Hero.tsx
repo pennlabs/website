@@ -9,6 +9,7 @@ import {
   Col,
   BtnLink,
   LinkExternalLinkIcon,
+  Fade,
 } from '../../shared'
 import {
   maxWidth,
@@ -83,19 +84,25 @@ export const Hero = (): React.ReactElement => (
     <TextContainer>
       <Row>
         <Col sm={12} md={8} lg={6}>
-          <StyledH1>Built for students, by students</StyledH1>
-          <StyledP lg>
-            We're connecting students, resources, and data to improve life at
-            Penn.
-          </StyledP>
-          <div>
-            <BtnLink to={PRODUCTS_ROUTE} style={{ marginRight: '1rem' }}>
-              View Products
-            </BtnLink>
-            <a href={GITHUB_ROUTE} target="_BLANK">
-              GitHub <LinkExternalLinkIcon />
-            </a>
-          </div>
+          <Fade delay={400}>
+            <StyledH1>Built for students, by students</StyledH1>
+          </Fade>
+          <Fade delay={800}>
+            <StyledP lg>
+              We're connecting students, resources, and data to improve life at
+              Penn.
+            </StyledP>
+          </Fade>
+          <Fade delay={1200}>
+            <div>
+              <BtnLink to={PRODUCTS_ROUTE} style={{ marginRight: '1rem' }}>
+                View Products
+              </BtnLink>
+              <a href={GITHUB_ROUTE} target="_BLANK">
+                GitHub <LinkExternalLinkIcon />
+              </a>
+            </div>
+          </Fade>
         </Col>
       </Row>
     </TextContainer>

@@ -9,6 +9,7 @@ import {
   LinkChevronRightIcon,
   ParallaxWrapper,
   BtnLink,
+  Fade,
 } from '../../shared'
 import { INTER } from '../../constants/fonts'
 import { PRODUCTS_ROUTE } from '../../constants/routes'
@@ -52,10 +53,12 @@ export const Products = (): React.ReactElement => {
   return (
     <Section>
       <Container>
-        <ParallaxWrapper>
-          <H1>Our products</H1>
-          <P>For academics, campus life, and everything in-between</P>
-        </ParallaxWrapper>
+        <Fade>
+          <ParallaxWrapper>
+            <H1>Our products</H1>
+            <P>For academics, campus life, and everything in-between</P>
+          </ParallaxWrapper>
+        </Fade>
       </Container>
 
       {products.map(
@@ -83,16 +86,20 @@ export const Products = (): React.ReactElement => {
                 imagePath={imagePath}
                 justifyImage={justifyImage}
               >
-                <H1 style={{ marginBottom: '0.5rem', fontFamily: INTER }}>
-                  {title}
-                </H1>
-                <P lg>{description}</P>
-                <Link
-                  to={getPathFromFileAbsolutePath(fileAbsolutePath)}
-                  style={{ marginBottom: 0 }}
-                >
-                  Learn more <LinkChevronRightIcon />
-                </Link>
+                <Fade>
+                  <div>
+                    <H1 style={{ marginBottom: '0.5rem', fontFamily: INTER }}>
+                      {title}
+                    </H1>
+                    <P lg>{description}</P>
+                    <Link
+                      to={getPathFromFileAbsolutePath(fileAbsolutePath)}
+                      style={{ marginBottom: 0 }}
+                    >
+                      Learn more <LinkChevronRightIcon />
+                    </Link>
+                  </div>
+                </Fade>
               </ProductOverview>
             </React.Fragment>
           )

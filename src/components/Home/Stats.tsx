@@ -10,6 +10,7 @@ import {
   Row,
   Col,
   ParallaxWrapper,
+  Fade,
 } from '../../shared'
 import {
   WHITE,
@@ -71,20 +72,26 @@ export const Stats = (): React.ReactElement => (
     <Blob2 />
     <Container>
       <ParallaxWrapper>
-        <H1>By the numbers</H1>
-        <P>Here's what we've gotten done</P>
-        <Row margin={M2}>
-          {stats.map(({ colorAlpha, title, description }: IStat) => (
-            <Col sm={12} md={4} margin={M2} flex key={title}>
-              <StatWrapper colorAlpha={colorAlpha}>
-                <H2 color={WHITE}>{title}</H2>
-                <P color={WHITE} opacity={0.8} mb0>
-                  {description}
-                </P>
-              </StatWrapper>
-            </Col>
-          ))}
-        </Row>
+        <Fade delay={400}>
+          <div>
+            <H1>By the numbers</H1>
+            <P>Here's what we've gotten done</P>
+          </div>
+        </Fade>
+        <Fade delay={800}>
+          <Row margin={M2}>
+            {stats.map(({ colorAlpha, title, description }: IStat) => (
+              <Col sm={12} md={4} margin={M2} flex key={title}>
+                <StatWrapper colorAlpha={colorAlpha}>
+                  <H2 color={WHITE}>{title}</H2>
+                  <P color={WHITE} opacity={0.8} mb0>
+                    {description}
+                  </P>
+                </StatWrapper>
+              </Col>
+            ))}
+          </Row>
+        </Fade>
       </ParallaxWrapper>
     </Container>
   </Section>
