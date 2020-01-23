@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="320px" height="320px" viewBox="0 0 320 320" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-107.000000, -8.000000)">
+            <g id="Group-2" transform="translate(107.000000, 8.000000)">
+                <g id="Group" fill-rule="nonzero">
+                    <rect id="Rectangle" fill="#29B770" x="0" y="0" width="320" height="320"></rect>
+                    <rect id="Rectangle" fill="#FFFFFF" x="20" y="20" width="280" height="280"></rect>
+                </g>
+                <text id="CFA" font-family="WorkSans-Bold, Work Sans" font-size="110" font-weight="bold" fill="#29B770">
+                    <tspan x="55" y="197">CFA</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
