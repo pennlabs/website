@@ -1,6 +1,7 @@
 ---
 title: 'Common Funding Application'
 description: 'TODO'
+logo: '../../images/products/logos/cfa-logo.svg'
 image: null
 justifyImage: null
 showOnHomepage: false

@@ -1,6 +1,7 @@
 ---
 title: 'Penn Basics'
 description: 'TODO'
+logo: '../../images/products/logos/basics-logo.svg'
 image: null
 justifyImage: null
 showOnHomepage: false

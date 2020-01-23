@@ -1,6 +1,7 @@
 ---
 title: 'Penn Course Review'
 description: 'Professor and course ratings'
+logo: '../../images/products/logos/pcr-logo.svg'
 image: '../../images/products/pcr-home.svg'
 justifyImage: 'right'
 showOnHomepage: true

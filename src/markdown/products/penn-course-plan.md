@@ -1,6 +1,7 @@
 ---
 title: 'Penn Course Plan'
 description: 'TODO'
+logo: '../../images/products/logos/pcp-logo.svg'
 image: null
 justifyImage: null
 showOnHomepage: false

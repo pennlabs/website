@@ -1,6 +1,7 @@
 ---
 title: 'Penn Mobile'
 description: 'Campus essentials, on the go'
+logo: '../../images/products/logos/penn-mobile-logo.svg'
 image: '../../images/products/penn-mobile-home.svg'
 justifyImage: 'left'
 showOnHomepage: true

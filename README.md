@@ -24,3 +24,4 @@ Website for Penn Labs.
 - [ ] Team page
 - [ ] List blog posts by member on member show page
 - [ ] Logo for each product
+- [ ] Fix issue with loading product images at runtime

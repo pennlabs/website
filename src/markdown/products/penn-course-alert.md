@@ -1,6 +1,7 @@
 ---
 title: 'Penn Course Alert'
 description: 'TODO'
+logo: '../../images/products/logos/pca-logo.svg'
 image: null
 justifyImage: null
 showOnHomepage: false

@@ -1,6 +1,7 @@
 ---
 title: 'Penn Clubs'
 description: 'Discover clubs all year-round'
+logo: '../../images/products/logos/clubs-logo.svg'
 image: '../../images/products/clubs-home.svg'
 justifyImage: 'right'
 showOnHomepage: true
