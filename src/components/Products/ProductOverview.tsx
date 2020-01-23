@@ -29,8 +29,8 @@ const StyledContainer = styled(Container)<{ isEven: boolean }>`
 `
 
 interface IProductOverviewProps {
-  justifyImage: 'left' | 'right'
-  imagePath: string
+  justifyImage: 'left' | 'right' | undefined
+  imagePath: string | undefined
   children: ReactChildren
 }
 
@@ -49,9 +49,11 @@ export const ProductOverview = ({
           marginBottom: '3rem',
         }}
       >
-        <Col sm={12} md={12} lg={6}>
-          <Image src={imagePath} isEven={isRight} />
-        </Col>
+        {imagePath && (
+          <Col sm={12} md={12} lg={6}>
+            <Image src={imagePath} isEven={isRight} />
+          </Col>
+        )}
         <Col sm={12} md={12} lg={6} flex>
           <StyledContainer isEven={isRight}>{children}</StyledContainer>
         </Col>

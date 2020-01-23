@@ -23,3 +23,4 @@ Website for Penn Labs.
 - [ ] Apply page
 - [ ] Team page
 - [ ] List blog posts by member on member show page
+- [ ] Logo for each product

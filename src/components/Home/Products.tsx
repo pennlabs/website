@@ -8,8 +8,10 @@ import {
   Container,
   LinkChevronRightIcon,
   ParallaxWrapper,
+  BtnLink,
 } from '../../shared'
 import { INTER } from '../../constants/fonts'
+import { PRODUCTS_ROUTE } from '../../constants/routes'
 import { Blob3, Blob4 } from './Blobs'
 import { getPathFromFileAbsolutePath } from '../../helpers'
 import { ProductOverview } from '../Products/ProductOverview'
@@ -96,6 +98,12 @@ export const Products = (): React.ReactElement => {
           )
         },
       )}
+
+      <div style={{ textAlign: 'center' }}>
+        <BtnLink to={PRODUCTS_ROUTE}>
+          View all products <LinkChevronRightIcon />
+        </BtnLink>
+      </div>
     </Section>
   )
 }

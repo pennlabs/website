@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import {
@@ -7,8 +7,10 @@ import {
   Section,
   H1,
   H3,
+  BtnLink,
   LinkChevronRightIcon,
 } from '../shared'
+import { ProductOverview } from '../components/Products/ProductOverview'
 import { PRODUCTS_ROUTE } from '../constants/routes'
 
 const ProductTemplate = ({
@@ -16,30 +18,29 @@ const ProductTemplate = ({
 }) => {
   const { markdownRemark } = data // data.markdownRemark holds your post data
   const {
-    frontmatter: { title, description, image },
+    frontmatter: { title, description, image, justifyImage },
     html,
   } = markdownRemark
   const { relativePath } = image || {}
 
   // Dynamically import asset as an SVG
-  const imagePath: string | null = relativePath
+  const imagePath: string | undefined = relativePath
     ? require(`../images/${relativePath}`)
-    : null
+    : undefined
 
   return (
     <Layout>
       <SEO title={name} />
+      <ProductOverview imagePath={imagePath} justifyImage={justifyImage}>
+        <H1>{title}</H1>
+        <H3 normal>{description}</H3>
+      </ProductOverview>
       <MediumContainer>
-        <Section>
-          <H1>{title}</H1>
-          <H3 normal>{description}</H3>
-          {imagePath && <img src={imagePath} alt={title} />}
-        </Section>
         <div dangerouslySetInnerHTML={{ __html: html }} />
-        <Section>
-          <Link to={PRODUCTS_ROUTE}>
+        <Section style={{ textAlign: 'center' }}>
+          <BtnLink to={PRODUCTS_ROUTE}>
             View all products <LinkChevronRightIcon />
-          </Link>
+          </BtnLink>
         </Section>
       </MediumContainer>
     </Layout>
@@ -54,6 +55,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        justifyImage
         image {
           relativePath
         }
