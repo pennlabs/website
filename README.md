@@ -15,6 +15,7 @@ Website for Penn Labs.
 - [ ] Analytics
 - [ ] Fade in animations
 - [ ] Product pages
+- [ ] All products page
 - [ ] Be able to load member images with gatsby-image: https://github.com/graysonhicks/gatsby-plugin-remote-images
 - [ ] Illustrations on about page
 - [ ] Products page

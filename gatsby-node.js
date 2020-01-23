@@ -12,9 +12,10 @@ const crypto = require('crypto')
 const remark = require('remark')
 const html = require('remark-html')
 
-const markdownProcessor = remark().use(html)
-
 const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
+const ProductTemplate = path.resolve(`src/templates/Product.tsx`)
+
+const markdownProcessor = remark().use(html)
 
 const getHash = jawn =>
   crypto
@@ -123,8 +124,12 @@ exports.sourceNodes = async ({ actions }) => {
 //   node.bio = bioAsHtml
 // }
 
-exports.createPages = async ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
+
+  /**
+   * Create pages for members
+   */
 
   // Retrieve ID's of all team members
   const {
@@ -153,4 +158,45 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     }),
   )
+
+  /**
+   * Create pages for products
+   */
+  const result = await graphql(`
+    {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___title] }) {
+        edges {
+          node {
+            fileAbsolutePath
+          }
+        }
+      }
+    }
+  `)
+
+  const { errors, data } = result
+
+  if (errors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  const {
+    allMarkdownRemark: { edges: products },
+  } = data
+  products.forEach(({ node }) => {
+    const { fileAbsolutePath } = node
+
+    // Example: /Users/JawnSmith/projects/pennlabs.org/src/markdown/products/penn-mobile.md
+    // -> 'products/penn-mobile
+    const productPagePath = fileAbsolutePath
+      .split('/markdown')[1]
+      .split('.md')[0]
+
+    createPage({
+      path: productPagePath,
+      component: ProductTemplate,
+      context: { fileAbsolutePath }, // additional data can be passed via context
+    })
+  })
 }

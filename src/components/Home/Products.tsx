@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
+
+// TODO BLOBS
 
 import {
   H1,
@@ -16,10 +18,7 @@ import {
 import { INTER } from '../../constants/fonts'
 import { maxWidth, TABLET, PHONE } from '../../constants/measurements'
 import { Blob3, Blob4 } from './Blobs'
-
-const pcrImg = require('../../images/products/pcr-home.svg') as string // tslint:disable-line
-const pennMobileImg = require('../../images/products/penn-mobile-home.svg') as string // tslint:disable-line
-const pennClubsImg = require('../../images/products/clubs-home.svg') as string // tslint:disable-line
+import { getPathFromFileAbsolutePath } from '../../helpers'
 
 const Image = styled.img<{ isEven: boolean }>`
   width: 100%;
@@ -45,86 +44,91 @@ const StyledContainer = styled(Container)<{ isEven: boolean }>`
   }
 `
 
-interface IProductOverview {
-  title: string
-  description: string
-  slug: string
-  image: string
-  additionalComponent?: React.ReactNode
+const productIndexToAdditionalComponent = [<Blob3 />, null, <Blob4 />]
+
+export const Products = (): React.ReactElement => {
+  const {
+    allMarkdownRemark: { edges: products },
+  } = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark(sort: { order: ASC, fields: frontmatter___order }) {
+        edges {
+          node {
+            fileAbsolutePath
+            frontmatter {
+              description
+              title
+              justifyImage
+              image {
+                relativePath
+              }
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <Section>
+      <Container>
+        <ParallaxWrapper>
+          <H1>Our products</H1>
+          <P>For academics, campus life, and everything in-between</P>
+        </ParallaxWrapper>
+      </Container>
+
+      {products.map(
+        (
+          {
+            node: {
+              fileAbsolutePath,
+              frontmatter: {
+                description,
+                title,
+                justifyImage,
+                image: { relativePath: relativeImagePath },
+              },
+            },
+          },
+          idx: number,
+        ) => {
+          // Dynamically import the image as an SVG
+          const image = require(`../../images/${relativeImagePath}`) as string
+
+          const isRight = justifyImage === 'right'
+          return (
+            <React.Fragment key={fileAbsolutePath}>
+              {productIndexToAdditionalComponent[idx] || null}
+              <Row
+                style={{
+                  flexDirection: isRight ? 'row-reverse' : 'row',
+                  marginTop: '3rem',
+                  marginBottom: '3rem',
+                }}
+              >
+                <Col sm={12} md={12} lg={6}>
+                  <Image src={image} isEven={isRight} />
+                </Col>
+                <Col sm={12} md={12} lg={6} flex>
+                  <StyledContainer isEven={isRight}>
+                    <H2 style={{ marginBottom: '0.5rem', fontFamily: INTER }}>
+                      {title}
+                    </H2>
+                    <P lg>{description}</P>
+                    <Link
+                      to={getPathFromFileAbsolutePath(fileAbsolutePath)}
+                      style={{ marginBottom: 0 }}
+                    >
+                      Learn more <LinkChevronRightIcon />
+                    </Link>
+                  </StyledContainer>
+                </Col>
+              </Row>
+            </React.Fragment>
+          )
+        },
+      )}
+    </Section>
+  )
 }
-
-const productOverviews: IProductOverview[] = [
-  {
-    title: 'Penn Course Review',
-    description: 'Professor and course ratings',
-    slug: 'penn-course-review',
-    image: pcrImg,
-    additionalComponent: <Blob3 />,
-  },
-  {
-    title: 'Penn Mobile',
-    description: 'Campus essentials, on the go',
-    slug: 'penn-mobile',
-    image: pennMobileImg,
-  },
-  {
-    title: 'Penn Clubs',
-    description: 'Discover clubs all year-round',
-    slug: 'penn-clubs',
-    image: pennClubsImg,
-    additionalComponent: <Blob4 />,
-  },
-]
-
-export const Products = (): React.ReactElement => (
-  <Section>
-    <Container>
-      <ParallaxWrapper>
-        <H1>Our products</H1>
-        <P>For academics, campus life, and everything in-between</P>
-      </ParallaxWrapper>
-    </Container>
-
-    {productOverviews.map(
-      (
-        {
-          title,
-          description,
-          slug,
-          image,
-          additionalComponent,
-        }: IProductOverview,
-        idx: number,
-      ) => {
-        const isEven: boolean = idx % 2 === 0
-        return (
-          <React.Fragment key={title}>
-            {additionalComponent || null}
-            <Row
-              style={{
-                flexDirection: isEven ? 'row-reverse' : 'row',
-                marginTop: '3rem',
-                marginBottom: '3rem',
-              }}
-            >
-              <Col sm={12} md={12} lg={6}>
-                <Image src={image} isEven={isEven} />
-              </Col>
-              <Col sm={12} md={12} lg={6} flex>
-                <StyledContainer isEven={isEven}>
-                  <H2 style={{ marginBottom: '0.5rem', fontFamily: INTER }}>
-                    {title}
-                  </H2>
-                  <P lg>{description}</P>
-                  <Link to={slug} style={{ marginBottom: 0 }}>
-                    Learn more <LinkChevronRightIcon />
-                  </Link>
-                </StyledContainer>
-              </Col>
-            </Row>
-          </React.Fragment>
-        )
-      },
-    )}
-  </Section>
-)
