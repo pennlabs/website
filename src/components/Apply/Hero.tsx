@@ -1,6 +1,13 @@
 import React from 'react'
 
-import { Section, Container, H1, H3, BtnAnchor, LinkExternalLink } from '../../shared'
+import {
+  Section,
+  Container,
+  H1,
+  H3,
+  BtnAnchor,
+  LinkExternalLinkIcon,
+} from '../../shared'
 import { APPLY_FORM_ROUTE } from '../../constants/routes'
 
 export const Hero = () => (
@@ -12,9 +19,9 @@ export const Hero = () => (
       </H3>
       {APPLY_FORM_ROUTE && (
         <BtnAnchor href={APPLY_FORM_ROUTE} target="_BLANK">
-          Apply Now <LinkExternalLink />
+          Apply Now <LinkExternalLinkIcon />
         </BtnAnchor>
       )}
-    </Container> 
+    </Container>
   </Section>
 )
