@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { H1, Section, Container, P, H3, H6 } from '../shared'
+import { H1, Section, Container, P, H3, H4 } from '../shared'
 
 const AboutPage = (): React.ReactElement => (
   <Layout>
@@ -10,7 +10,7 @@ const AboutPage = (): React.ReactElement => (
     <Container>
       <Section>
         <H1>A Story of Building Tools that Matter</H1>
-        <H3 style={{ fontWeight: 400 }}>About Penn Labs</H3>
+        <H3 normal>About Penn Labs</H3>
       </Section>
 
       <Section>
@@ -18,7 +18,7 @@ const AboutPage = (): React.ReactElement => (
           We’re a team of product designers, software engineers, and business
           developers.
         </H3>
-        <H6>Our Mission</H6>
+        <H4 normal>Our Mission</H4>
         <P>
           We believe in improving the Penn community. In addition to creating
           open-source, quality products, we give back with educational resources
@@ -28,7 +28,7 @@ const AboutPage = (): React.ReactElement => (
 
       <Section>
         <H3>Founding</H3>
-        <H6>Humble beginnings at a hackathon</H6>
+        <H4 normal>Humble beginnings at a hackathon</H4>
         <P>
           In 2011, we got our start at Penn’s student-run hackathon, PennApps. A
           small team was working on what’s now called Penn Course Review.
@@ -48,7 +48,7 @@ const AboutPage = (): React.ReactElement => (
 
       <Section>
         <H3>Growing Our Reach</H3>
-        <H6>University support for our mission</H6>
+        <H4 normal>University support for our mission</H4>
         <P>
           So we hit the ground running. We believe that when it comes to
           improving life for students, students themselves are the best-equipped
@@ -86,7 +86,7 @@ const AboutPage = (): React.ReactElement => (
 
       <Section>
         <H3>Today</H3>
-        <H6>For academics, campus life, and everything in-between</H6>
+        <H4 normal>For academics, campus life, and everything in-between</H4>
         <P>
           Yes, we’re biased, but we believe that Penn Labs is an organization
           like no other. We run like a startup and grow as a family. We’re

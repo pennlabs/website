@@ -14,9 +14,7 @@ export const Hero = () => (
   <Section>
     <Container>
       <H1>Come build with us</H1>
-      <H3 style={{ fontWeight: 400 }}>
-        Join the Penn Labs community this Spring.
-      </H3>
+      <H3 normal>Join the Penn Labs community this Spring.</H3>
       {APPLY_FORM_ROUTE && (
         <BtnAnchor href={APPLY_FORM_ROUTE} target="_BLANK">
           Apply Now <LinkExternalLinkIcon />

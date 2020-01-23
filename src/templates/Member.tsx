@@ -19,17 +19,21 @@ import {
   HomeIcon,
   CalendarIcon,
   LogOutIcon,
-  WideContainer,
   MediumContainer,
+  Card,
+  HR,
 } from '../shared'
 import {
   M2,
-  BORDER_RADIUS_LG,
+  BORDER_RADIUS,
   M1,
   M3,
   maxWidth,
   PHONE,
   M4,
+  minWidth,
+  DESKTOP,
+  TABLET,
 } from '../constants/measurements'
 import { DARK_GRAY } from '../constants/colors'
 
@@ -61,6 +65,19 @@ const LinksTag = styled.div<{}>`
   }
 `
 
+const StyledCard = styled(Card)<{}>`
+  padding: ${M4};
+  margin-top: ${M2};
+
+  ${minWidth(DESKTOP)} {
+    margin-top: 7.5vh;
+  }
+
+  ${maxWidth(PHONE)} {
+    padding: ${M2};
+  }
+`
+
 const Links = ({ github, linkedin, website }: ILinks) => (
   <LinksTag>
     {github && (
@@ -89,11 +106,22 @@ const ProfilePicture = styled.div<{ src: string }>`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: ${BORDER_RADIUS_LG};
+  border-radius: ${BORDER_RADIUS};
+  margin-bottom: 0;
+
+  ${maxWidth(DESKTOP)} {
+    margin-bottom: ${M3};
+  }
 
   ${maxWidth(PHONE)} {
+    width: 100%;
+    height: auto;
+    padding-top: 100%;
     margin-right: 0;
-    margin-bottom: ${M3};
+  }
+
+  ${minWidth(DESKTOP)} {
+    margin-right: ${M4};
   }
 `
 
@@ -157,8 +185,8 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
     <Layout>
       <SEO title={name} />
       <MediumContainer>
-        <Section>
-          <Row style={{ marginBottom: M3 }}>
+        <StyledCard shaded>
+          <Row>
             {photo && <ProfilePicture src={photo} />}
             <Col flex>
               <div style={{ width: '100%', alignSelf: 'center' }}>
@@ -171,22 +199,22 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
               </div>
             </Col>
           </Row>
-        </Section>
+        </StyledCard>
 
         {bio && <div dangerouslySetInnerHTML={{ __html: bio }} />}
 
-        <Section>
-          <Row margin={M1}>
-            <Studies major={major} school={school} />
-            {location && <Detail text={`From ${location}`} Icon={HomeIcon} />}
-            {yearJoined && (
-              <Detail text={`Member since ${yearJoined}`} Icon={CalendarIcon} />
-            )}
-            {gradYear && (
-              <Detail text={`Graduates in ${gradYear}`} Icon={LogOutIcon} />
-            )}
-          </Row>
-        </Section>
+        <HR />
+
+        <Row margin={M1}>
+          <Studies major={major} school={school} />
+          {location && <Detail text={`From ${location}`} Icon={HomeIcon} />}
+          {yearJoined && (
+            <Detail text={`Member since ${yearJoined}`} Icon={CalendarIcon} />
+          )}
+          {gradYear && (
+            <Detail text={`Graduates in ${gradYear}`} Icon={LogOutIcon} />
+          )}
+        </Row>
       </MediumContainer>
     </Layout>
   )

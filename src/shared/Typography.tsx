@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { DARK_GRAY, WHITE } from '../constants/colors'
+import { DARK_GRAY, WHITE, BORDER } from '../constants/colors'
 import { M0, M1, M2, M3, M4 } from '../constants/measurements'
 
 interface ITextProps {
@@ -14,10 +14,25 @@ interface ITextProps {
   mb2?: boolean
   mb3?: boolean
   mb4?: boolean
+  normal?: boolean
+  bold?: boolean
 }
 
 export const P = styled.p<ITextProps>(
-  ({ white, color, opacity, mb0, mb1, mb2, mb3, mb4, sm, lg }) => css`
+  ({
+    white,
+    color,
+    opacity,
+    mb0,
+    mb1,
+    mb2,
+    mb3,
+    mb4,
+    sm,
+    lg,
+    normal,
+    bold,
+  }) => css`
     color: ${white ? WHITE : color || DARK_GRAY};
     opacity: ${opacity || 1.0};
     ${mb0 && `margin-bottom: ${M0};`}
@@ -27,6 +42,8 @@ export const P = styled.p<ITextProps>(
     ${mb4 && `margin-bottom: ${M4};`}
     ${lg && 'font-size: 120%; line-height: 1.375;'}
     ${sm && 'font-size: 80%; line-height: 1.375;'}
+    ${normal && 'font-weight: 400;'}
+    ${bold && 'font-weight: 700;'}
   `,
 )
 
@@ -60,3 +77,9 @@ export const H6 = ({ children, ...rest }) => (
     {children}
   </P>
 )
+
+export const HR = styled.hr`
+  background: ${BORDER};
+  margin-top: ${M4};
+  margin-bottom: ${M4};
+`
