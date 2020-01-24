@@ -54,6 +54,10 @@ export const Flex = s.div`
   display: flex;
 `
 
+export const VFlex = s(Flex)`
+  flex-direction: column;
+`
+
 interface IRowProps {
   margin?: string
   alwaysFlex?: boolean

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { IMember, Subset } from '../shared/Icons/types'
+import { IMember, Subset } from '../types'
 import {
   Section,
   H1,
@@ -46,7 +46,9 @@ const TagTemplate = ({ data, location, pageContext }) => {
           <h1>{name}</h1>
           <ul>
             {posts.map(({ node: post }) => (
-              <li key={post.slug}><Link to={BLOG_POST_ROUTE(post.slug)}>{post.title}</Link></li>
+              <li key={post.slug}>
+                <Link to={BLOG_POST_ROUTE(post.slug)}>{post.title}</Link>
+              </li>
             ))}
           </ul>
         </Section>

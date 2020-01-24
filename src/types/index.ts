@@ -38,3 +38,26 @@ export interface ITeam {
   description: string
   children: IMember[]
 }
+
+export interface IGhostTag {
+  slug: string
+  name?: string
+}
+
+export interface IGhostAuthor {
+  slug: string
+  name?: string
+}
+
+export interface IGhostPost {
+  slug: string
+  title: string
+  excerpt?: string
+  feature_image?: string
+  reading_time?: number
+  tags?: IGhostTag[]
+  authors?: IGhostAuthor[]
+  html?: string
+  codeinjection_head?: string
+  codeinjection_foot?: string
+}
