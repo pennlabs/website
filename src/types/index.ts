@@ -3,6 +3,9 @@ import React from 'react'
 // Generic types
 export type Subset<T extends U, U> = U
 
+/**
+ * Stuff that goes inside of the parent component
+ */
 export type ReactChildren = React.ReactNode | React.ReactNodeArray
 
 // Data types used throughout the app

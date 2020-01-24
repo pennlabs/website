@@ -2,10 +2,22 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { ReactChildren } from '../types'
 
-const FadeNode = styled.div<{ delay?: number; show: boolean }>(
-  ({ show, delay }) => css`
+interface IFadeNodeProps {
+  delay?: number
+  show: boolean
+  distance?: string
+}
+
+interface IFadeProps {
+  delay?: number
+  distance?: string
+  children: ReactChildren
+}
+
+const FadeNode = styled.div<IFadeNodeProps>(
+  ({ show, delay, distance }) => css`
     opacity: 0;
-    transform: translate(0, 10%);
+    transform: translate(0, ${distance || '10%'});
     transition: opacity ${delay || 400}ms ease-out,
       transform ${delay || 400}ms ease-out;
     will-change: opacity, visibility;
@@ -19,12 +31,17 @@ const FadeNode = styled.div<{ delay?: number; show: boolean }>(
   `,
 )
 
-interface IFadeProps {
-  delay?: number
-  children: ReactChildren
-}
-
-export const Fade = ({ delay, children }: IFadeProps) => {
+/**
+ * Wrapper component to fade content in when it enters the scrollview
+ *
+ * NOTE can have odd impacts on display, especially when there are several
+ * children. Sometimes help to put a single `<div />` inside the fade
+ *
+ * @property {number} delay           - how long the animation takes
+ * @property {string} distance        - distance component slides up
+ * @property {ReactChildren} children - content to fade in
+ */
+export const Fade = ({ delay, distance, children }: IFadeProps) => {
   const domRef = React.useRef()
 
   const [show, setShow] = React.useState(false)
@@ -47,7 +64,7 @@ export const Fade = ({ delay, children }: IFadeProps) => {
   }, [])
 
   return (
-    <FadeNode ref={domRef} show={show} delay={delay}>
+    <FadeNode ref={domRef} show={show} delay={delay} distance={distance}>
       {children}
     </FadeNode>
   )

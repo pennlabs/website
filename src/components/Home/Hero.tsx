@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import {
   H1,
@@ -23,6 +23,22 @@ import { GITHUB_ROUTE, PRODUCTS_ROUTE } from '../../constants/routes'
 const devicesPath = require('../../images/hero-devices.svg') as string // tslint:disable-line
 const mobileDevicesPath = require('../../images/hero-devices-mobile.svg') as string // tslint:disable-line
 
+const fade = keyframes`
+  0% {
+    opacity: 0;
+    transform: translate(1%, 2%);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: translate(0, 0);
+  }
+
+  100% {
+    opacity: 1;
+  }
+`
+
 const DesktopStyledDevices = styled.div`
   position: absolute;
   right: 0;
@@ -34,6 +50,7 @@ const DesktopStyledDevices = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-image: url(${devicesPath});
+  animation: ${fade} 600ms ease-out;
 
   ${maxWidth(TABLET)} {
     display: none;

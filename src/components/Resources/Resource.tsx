@@ -27,7 +27,7 @@ export const Resource = ({
   tags,
   imagePath,
 }: IResource) => (
-  <Col key={name} margin={M1} flex>
+  <Col key={name} margin={M1} flex sm={12} md={4}>
     <Card shaded hoverable bordered style={{ width: '100%' }}>
       <Flex>
         <Logo src={imagePath} alt={name} />

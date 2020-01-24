@@ -1,8 +1,8 @@
 import React from 'react'
-import { Hero } from './Hero'
+import { ResourcesHero } from './Hero'
 import { IResource } from './types'
 import { Resource } from './Resource'
-import { Section, Row } from '../../shared'
+import { Section, Row, Fade } from '../../shared'
 import { M1 } from '../../constants/measurements'
 
 const pcpLogoPath = require('../../images/resources/pcp-logo.svg') as string // tslint:disable-line
@@ -35,13 +35,15 @@ const resources: IResource[] = [
 
 export const Resources = () => (
   <>
-    <Hero />
+    <ResourcesHero />
     <Section style={{ paddingTop: 0 }}>
-      <Row margin={M1}>
-        {resources.map(props => (
-          <Resource key={props.name} {...props} />
-        ))}
-      </Row>
+      <Fade>
+        <Row margin={M1}>
+          {resources.map(props => (
+            <Resource key={props.name} {...props} />
+          ))}
+        </Row>
+      </Fade>
     </Section>
   </>
 )

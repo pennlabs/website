@@ -16,7 +16,8 @@ Website for Penn Labs.
 - [ ] Analytics
 - [ ] Fade in animations
 - [ ] Product pages
-- [ ] Be able to load member images with gatsby-image: https://github.com/graysonhicks/gatsby-plugin-remote-images
+- [ ] Fix laggy SVG loading on first page load
+- [ ] Be able to load member images with gatsby-image for lazy loading: https://github.com/graysonhicks/gatsby-plugin-remote-images
 - [ ] Illustrations on about page
 - [ ] Products page
 - [ ] Blog
@@ -25,3 +26,4 @@ Website for Penn Labs.
 - [ ] List blog posts by member on member show page
 - [ ] Logo for each product
 - [ ] Fix issue with loading product images at runtime
+- [ ] Suggestions form (either Airtable or Typeform?)
