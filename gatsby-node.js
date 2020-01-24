@@ -11,6 +11,8 @@ const path = require(`path`)
 const crypto = require('crypto')
 const remark = require('remark')
 const html = require('remark-html')
+const markdownProcessor = remark().use(html)
+
 const { paginate } = require('gatsby-awesome-pagination')
 const { postsPerPage } = require('./src/constants/blog.ts')
 
@@ -295,9 +297,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   `)
 
   // Check for any errors
-  if (result.errors) {
-    throw new Error(result.errors)
+  const { errors } = result
+  if (errors) {
+    throw new Error(errors)
   }
+
   const {
     allGhostTag: { edges: tags },
     allGhostPost: { edges: posts },
