@@ -21,6 +21,7 @@ import {
   MediumContainer,
   Card,
   HR,
+  Section,
   H2,
 } from '../shared'
 import {

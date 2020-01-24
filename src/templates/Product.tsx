@@ -46,7 +46,7 @@ const ProductTemplate = ({
 
   return (
     <Layout>
-      <SEO title={name} />
+      <SEO title={title} />
       <ProductOverview imagePath={imagePath} justifyImage={justifyImage}>
         <Logo src={logoPath} alt={title} />
         <H1>{title}</H1>
