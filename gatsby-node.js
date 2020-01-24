@@ -190,48 +190,7 @@ const createPostPages = (posts, createPage) => {
   })
 }
 
-const createProductPages = async ({ graphql, createPage, reporter }) => {
-  /**
-   * Create pages for products
-   */
-  const result = await graphql(`
-    {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___title] }) {
-        edges {
-          node {
-            fileAbsolutePath
-          }
-        }
-      }
-    }
-  `)
-
-  const { errors, data } = result
-
-  if (errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
-  }
-
-  const {
-    allMarkdownRemark: { edges: products },
-  } = data
-  products.forEach(({ node }) => {
-    const { fileAbsolutePath } = node
-
-    // Example: /Users/JawnSmith/projects/pennlabs.org/src/markdown/products/penn-mobile.md
-    // -> 'products/penn-mobile
-    const productPagePath = fileAbsolutePath
-      .split('/markdown')[1]
-      .split('.md')[0]
-
-    createPage({
-      path: productPagePath,
-      component: ProductTemplate,
-      context: { fileAbsolutePath }, // additional data can be passed via context
-    })
-  })
-}
+const createProductPages = async ({ graphql, createPage, reporter }) => {}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -270,9 +229,54 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }),
   )
 
-  createProductPages({ graphql, createPage, reporter })
+  /**
+   * Create pages for products
+   */
+  const {
+    errors: mdErrors,
+    data: {
+      allMarkdownRemark: { edges: products },
+    },
+  } = await graphql(`
+    {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___title] }) {
+        edges {
+          node {
+            fileAbsolutePath
+          }
+        }
+      }
+    }
+  `)
 
-  const result = await graphql(`
+  if (mdErrors) {
+    reporter.panicOnBuild(`Error while running GraphQL query.`)
+    return
+  }
+
+  products.forEach(({ node }) => {
+    const { fileAbsolutePath } = node
+
+    // Example: /Users/JawnSmith/projects/pennlabs.org/src/markdown/products/penn-mobile.md
+    // -> 'products/penn-mobile
+    const productPagePath = fileAbsolutePath
+      .split('/markdown')[1]
+      .split('.md')[0]
+
+    createPage({
+      path: productPagePath,
+      component: ProductTemplate,
+      context: { fileAbsolutePath }, // additional data can be passed via context
+    })
+  })
+
+  const {
+    errors: ghostErrors,
+    data: {
+      allGhostTag: { edges: tags },
+      allGhostPost: { edges: posts },
+    },
+  } = await graphql(`
     {
       allGhostPost(sort: { order: ASC, fields: published_at }) {
         edges {
@@ -296,16 +300,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `)
 
-  // Check for any errors
-  const { errors } = result
-  if (errors) {
-    throw new Error(errors)
+  if (ghostErrors) {
+    throw new Error(ghostErrors)
   }
-
-  const {
-    allGhostTag: { edges: tags },
-    allGhostPost: { edges: posts },
-  } = result.data
 
   createTagPages(tags, createPage)
   createPostPages(posts, createPage)
