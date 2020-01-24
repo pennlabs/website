@@ -4,9 +4,8 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { IMember, Subset } from '../shared/Icons/types'
+import { IMember, Subset } from '../types'
 import {
-  Section,
   H1,
   P,
   Tags,

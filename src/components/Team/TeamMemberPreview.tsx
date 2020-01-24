@@ -13,7 +13,7 @@ import {
 } from '../../constants/measurements'
 import { TEAM_MEMBER_ROUTE } from '../../constants/routes'
 import { BLACK_ALPHA } from '../../constants/colors'
-import { IMember } from '../../shared/Icons/types'
+import { IMember } from '../../types'
 
 const StyledLink = styled(Link)<{}>`
   margin: -${M2};

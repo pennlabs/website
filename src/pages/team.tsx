@@ -3,10 +3,10 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { Container, H3, Section, P, Row, H1, H2, Col } from '../shared'
+import { Container, Section, P, Row, H1, H2, Col } from '../shared'
 import { M2 } from '../constants/measurements'
 import { TeamMemberPreview } from '../components/Team/TeamMemberPreview'
-import { ITeam, IMember } from '../shared/Icons/types'
+import { ITeam, IMember } from '../types'
 
 const AboutPage = (): React.ReactElement => {
   const {
