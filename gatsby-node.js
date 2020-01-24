@@ -11,7 +11,6 @@ const path = require(`path`)
 const crypto = require('crypto')
 const remark = require('remark')
 const html = require('remark-html')
-const markdownProcessor = remark().use(html)
 
 const { paginate } = require('gatsby-awesome-pagination')
 const { postsPerPage } = require('./src/constants/blog.ts')
@@ -189,8 +188,6 @@ const createPostPages = (posts, createPage) => {
     })
   })
 }
-
-const createProductPages = async ({ graphql, createPage, reporter }) => {}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
