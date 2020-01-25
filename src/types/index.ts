@@ -41,7 +41,9 @@ export interface ITeam {
 
 export interface IGhostTag {
   slug: string
-  name?: string
+  name: string
+  description?: string
+  feature_image?: string
 }
 
 export interface IGhostAuthor {

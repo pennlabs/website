@@ -9,6 +9,7 @@ import { BLOG_POST_ROUTE, TEAM_MEMBER_ROUTE } from '../constants/routes'
 import { BORDER_RADIUS } from '../constants/measurements'
 import { IGhostPost } from '../types'
 import Posts from '../components/Blog/Posts'
+import Pagination from '../shared/Pagination'
 
 interface IBlogTemplateProps {
   data: {
@@ -16,9 +17,13 @@ interface IBlogTemplateProps {
       edges: Array<{ node: IGhostPost }>
     }
   }
+  pageContext: object
 }
 
-const BlogPage = ({ data }: IBlogTemplateProps): React.ReactElement => {
+const BlogPage = ({
+  data,
+  pageContext,
+}: IBlogTemplateProps): React.ReactElement => {
   const {
     allGhostPost: { edges: postNodes },
   } = data
@@ -32,6 +37,7 @@ const BlogPage = ({ data }: IBlogTemplateProps): React.ReactElement => {
         <Section>
           <H1>Blog</H1>
           <Posts posts={posts} />
+          <Pagination pageContext={pageContext} />
         </Section>
       </Container>
     </Layout>

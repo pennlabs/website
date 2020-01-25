@@ -1,1 +1,1 @@
-exports.postsPerPage = 10
+exports.postsPerPage = 6

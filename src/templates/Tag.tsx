@@ -7,20 +7,33 @@ import SEO from '../components/SEO'
 import Posts from '../components/Blog/Posts'
 
 import { Section, H1, WideContainer } from '../shared'
+import { IGhostTag, IGhostPost } from '../types'
+import Pagination from '../shared/Pagination'
 
-const TagTemplate = ({ data }) => {
-  const { name, description } = data.ghostTag
+interface ITagTemplateProps {
+  data: {
+    ghostTag: IGhostTag
+    allGhostPost: {
+      edges: Array<{ node: IGhostPost }>
+    }
+  }
+  pageContext: object
+}
+
+const TagTemplate = ({ data, pageContext }: ITagTemplateProps) => {
+  const { name, description, feature_image } = data.ghostTag
   const { edges: postNodes } = data.allGhostPost
 
   const posts = postNodes.map(({ node: post }) => post)
 
   return (
     <Layout>
-      <SEO title={name} description={description} />
+      <SEO title={name} description={description} image={feature_image} />
       <WideContainer>
         <Section>
           <H1>{name}</H1>
           <Posts posts={posts} />
+          <Pagination pageContext={pageContext} />
         </Section>
       </WideContainer>
     </Layout>

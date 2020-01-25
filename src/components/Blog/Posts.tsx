@@ -19,6 +19,7 @@ const PostThumbnail = styled.img`
 
 const PostCard = styled(Card)`
   flex-basis: 30%;
+  max-width: 50%;
   min-width: 14rem;
   flex-grow: 1;
   margin-right: 1.5rem;
