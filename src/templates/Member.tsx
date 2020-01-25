@@ -187,7 +187,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
   } = data
 
   const roleNames = roles.map(({ name: roleName }) => roleName)
-  const posts = postEdges.map(({ node }) => ({ ...node }))
+  const posts = postEdges.map(({ node }) => node)
 
   return (
     <Layout>

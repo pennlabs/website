@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Byline from '../components/Blog/Byline'
 import MemberBio from '../components/Blog/MemberBio'
-import { LinkedTags } from '../shared'
+import { LinkedTags, HR } from '../shared'
 import { IMember, IGhostPost } from '../types'
 import { BLOG_TAG_ROUTE } from '../constants/routes'
 
@@ -65,6 +65,7 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
                 }}
               />
             </div>
+            <HR />
             <footer>
               <VFlex>
                 {authors.map(a => (
