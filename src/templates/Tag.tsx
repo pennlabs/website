@@ -4,55 +4,25 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { IMember, Subset } from '../types'
-import {
-  Section,
-  H1,
-  P,
-  Tags,
-  GitHubIcon,
-  LinkedInIcon,
-  LinkIcon,
-  Row,
-  Col,
-  BookOpenIcon,
-  HomeIcon,
-  CalendarIcon,
-  LogOutIcon,
-  WideContainer,
-  MediumContainer,
-} from '../shared'
-import {
-  M2,
-  BORDER_RADIUS_LG,
-  M1,
-  M3,
-  maxWidth,
-  PHONE,
-  M4,
-} from '../constants/measurements'
-import { DARK_GRAY } from '../constants/colors'
-import { BLOG_POST_ROUTE } from '../constants/routes'
+import Posts from '../components/Blog/Posts'
 
-const TagTemplate = ({ data, location, pageContext }) => {
+import { Section, H1, WideContainer } from '../shared'
+
+const TagTemplate = ({ data }) => {
   const { name, description } = data.ghostTag
-  const { edges: posts } = data.allGhostPost
+  const { edges: postNodes } = data.allGhostPost
+
+  const posts = postNodes.map(({ node: post }) => post)
 
   return (
     <Layout>
       <SEO title={name} description={description} />
-      <MediumContainer>
+      <WideContainer>
         <Section>
-          <h1>{name}</h1>
-          <ul>
-            {posts.map(({ node: post }) => (
-              <li key={post.slug}>
-                <Link to={BLOG_POST_ROUTE(post.slug)}>{post.title}</Link>
-              </li>
-            ))}
-          </ul>
+          <H1>{name}</H1>
+          <Posts posts={posts} />
         </Section>
-      </MediumContainer>
+      </WideContainer>
     </Layout>
   )
 }
@@ -74,6 +44,8 @@ export const pageQuery = graphql`
         node {
           slug
           title
+          excerpt
+          feature_image
         }
       }
     }

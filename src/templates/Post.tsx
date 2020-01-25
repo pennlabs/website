@@ -5,57 +5,16 @@ import styled from 'styled-components'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Byline from '../components/Blog/Byline'
+import MemberBio from '../components/Blog/MemberBio'
+import { LinkedTags } from '../shared'
 import { IMember, IGhostPost } from '../types'
+import { BLOG_TAG_ROUTE } from '../constants/routes'
 
 import { Section, H1, MediumContainer, Card, VFlex, Flex, P } from '../shared'
-import { BORDER_RADIUS_LG, minWidth, PHONE } from '../constants/measurements'
 
 // Ghost gives us HTML classes which need to be styled directly,
 // so those styles are included in post.css
 import './post.css'
-
-const Thumbnail = styled.img`
-  max-height: 4rem;
-  border-radius: ${BORDER_RADIUS_LG};
-  margin-bottom: 0;
-  min-height: 10rem;
-  margin-left: 1em;
-
-  ${minWidth('0px')} {
-    min-height: 5rem;
-  }
-
-  ${minWidth(PHONE)} {
-    min-height: 10rem;
-  }
-`
-
-const CenteredFlex = styled(Flex)`
-  align-items: center;
-`
-
-const AuthorBio = styled.div`
-  flex-basis: 2;
-`
-
-const AuthorDetail = ({
-  author: {
-    url,
-    photo = '',
-    bio = '',
-    student: { name },
-  },
-}) => (
-  <Card bordered>
-    <CenteredFlex>
-      <div>
-        <P>{name}</P>
-        <P sm dangerouslySetInnerHTML={{ __html: bio }} />
-      </div>
-      <Thumbnail src={photo} />
-    </CenteredFlex>
-  </Card>
-)
 
 interface IPostTemplateProps {
   data: {
@@ -74,12 +33,15 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
     codeinjection_head,
     codeinjection_foot,
     excerpt,
+    tags,
   } = data.ghostPost
 
   const authors = data.allMember.nodes
-
   const htmlContent =
     (codeinjection_head || '') + html + (codeinjection_foot || '')
+
+  const tagToUrl = {}
+  tags.forEach(({ name, slug }) => (tagToUrl[name] = BLOG_TAG_ROUTE(slug)))
 
   return (
     <Layout>
@@ -88,7 +50,10 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
         <Section>
           <article>
             <header>
-              <H1>{title}</H1>
+              <H1 mb1>{title}</H1>
+              <P mb1>
+                <LinkedTags tagToUrl={tagToUrl} />
+              </P>
               <Byline authorsAsMembers={authors} />
               <img src={feature_image} />
             </header>
@@ -103,7 +68,7 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
             <footer>
               <VFlex>
                 {authors.map(a => (
-                  <AuthorDetail author={a} />
+                  <MemberBio author={a} />
                 ))}
               </VFlex>
             </footer>

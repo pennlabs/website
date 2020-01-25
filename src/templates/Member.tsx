@@ -4,7 +4,8 @@ import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { IMember, Subset } from '../types'
+import Posts from '../components/Blog/Posts'
+import { IMember, Subset, IGhostPost } from '../types'
 import {
   H1,
   P,
@@ -127,18 +128,11 @@ const ProfilePicture = styled.div<{ src: string }>`
   }
 `
 
-interface IGhostAllPost {
-  node: {
-    slug: string
-    title: string
-  }
-}
-
 interface IMemberTemplateProps {
   data: {
     member: IMember
     allGhostPost: {
-      edges: Array<IGhostAllPost>
+      edges: Array<{ node: IGhostPost }>
     }
   }
 }
@@ -230,18 +224,12 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
           )}
         </Row>
         {posts.length > 0 ? (
-          <Section>
-            <H2>Writings</H2>
-            <P>
-              <ul>
-                {posts.map(post => (
-                  <li key={post.slug}>
-                    <Link to={BLOG_POST_ROUTE(post.slug)}>{post.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            </P>
-          </Section>
+          <>
+            <HR />
+            <Row margin={M1}>
+              <Posts posts={posts} />
+            </Row>
+          </>
         ) : null}
       </MediumContainer>
     </Layout>
@@ -274,6 +262,8 @@ export const query = graphql`
         node {
           slug
           title
+          excerpt
+          feature_image
         }
       }
     }

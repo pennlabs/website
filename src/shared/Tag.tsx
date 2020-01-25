@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import styled from 'styled-components'
 import { LILAC, INDIGO } from '../constants/colors'
 import { BORDER_RADIUS } from '../constants/measurements'
@@ -25,6 +26,22 @@ export const Tags = ({ tags }: ITagsProps) => {
     <span style={{ marginBottom: '-4rem' }}>
       {tags.map(tag => (
         <Tag key={tag}>{tag}</Tag>
+      ))}
+    </span>
+  )
+}
+
+interface ILinkedTagsProps {
+  tagToUrl: Object
+}
+export const LinkedTags = ({ tagToUrl }: ILinkedTagsProps) => {
+  if (!tagToUrl) return null
+  return (
+    <span style={{ marginBottom: '-4rem' }}>
+      {Object.keys(tagToUrl).map((tagText, i) => (
+        <Link to={tagToUrl[tagText]}>
+          <Tag key={i}>{tagText}</Tag>
+        </Link>
       ))}
     </span>
   )
