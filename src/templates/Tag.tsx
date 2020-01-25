@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Posts from '../components/Blog/Posts'
 
-import { Section, H1, WideContainer } from '../shared'
+import { Section, H1, WideContainer, P } from '../shared'
 import { IGhostTag, IGhostPost } from '../types'
 import Pagination from '../shared/Pagination'
 
@@ -32,6 +32,7 @@ const TagTemplate = ({ data, pageContext }: ITagTemplateProps) => {
       <WideContainer>
         <Section>
           <H1>{name}</H1>
+          <P>{description}</P>
           <Posts posts={posts} />
           <Pagination pageContext={pageContext} />
         </Section>
