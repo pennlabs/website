@@ -1,10 +1,11 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { IMember, Subset } from '../types'
+import Posts from '../components/Blog/Posts'
+import { IMember, Subset, IGhostPost } from '../types'
 import {
   H1,
   P,
@@ -21,6 +22,8 @@ import {
   MediumContainer,
   Card,
   HR,
+  Section,
+  H2,
 } from '../shared'
 import {
   M2,
@@ -35,6 +38,7 @@ import {
   TABLET,
 } from '../constants/measurements'
 import { DARK_GRAY } from '../constants/colors'
+import { BLOG_POST_ROUTE } from '../constants/routes'
 
 type ILinks = Subset<
   IMember,
@@ -127,6 +131,9 @@ const ProfilePicture = styled.div<{ src: string }>`
 interface IMemberTemplateProps {
   data: {
     member: IMember
+    allGhostPost: {
+      edges: Array<{ node: IGhostPost }>
+    }
   }
 }
 
@@ -176,13 +183,15 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
       website,
       year_joined: yearJoined,
     },
+    allGhostPost: { edges: postEdges },
   } = data
 
   const roleNames = roles.map(({ name: roleName }) => roleName)
+  const posts = postEdges.map(({ node }) => node)
 
   return (
     <Layout>
-      <SEO title={name} />
+      <SEO title={name} description={bio} image={photo} />
       <MediumContainer>
         <StyledCard shaded>
           <Row>
@@ -214,13 +223,21 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
             <Detail text={`Graduates in ${gradYear}`} Icon={LogOutIcon} />
           )}
         </Row>
+        {posts.length > 0 ? (
+          <>
+            <HR />
+            <Row margin={M1}>
+              <Posts posts={posts} />
+            </Row>
+          </>
+        ) : null}
       </MediumContainer>
     </Layout>
   )
 }
 
 export const query = graphql`
-  query($id: String!) {
+  query($id: String!, $url: String!) {
     member(id: { eq: $id }) {
       bio
       github
@@ -239,6 +256,16 @@ export const query = graphql`
       team
       website
       year_joined(formatString: "YYYY")
+    }
+    allGhostPost(filter: { authors: { elemMatch: { slug: { eq: $url } } } }) {
+      edges {
+        node {
+          slug
+          title
+          excerpt
+          feature_image
+        }
+      }
     }
   }
 `

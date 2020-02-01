@@ -47,6 +47,14 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-source-ghost`,
+      options: {
+        apiUrl: `https://ghost.pennlabs.org`,
+        contentApiKey: process.env.GHOST_API_KEY,
+        version: `v3`, // Ghost API version, optional, defaults to "v3".
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

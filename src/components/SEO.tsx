@@ -14,6 +14,8 @@ export interface ISEOProps {
   lang?: string
   meta?: Meta[]
   title?: string
+  image?: string
+  url?: string
 }
 
 function SEO({
@@ -21,6 +23,8 @@ function SEO({
   lang = 'en',
   meta = [],
   title = '',
+  image = IMAGE,
+  url = URL,
 }: ISEOProps): ReactElement {
   const { site } = useStaticQuery(
     graphql`
@@ -68,11 +72,11 @@ function SEO({
         },
         {
           property: `og:url`,
-          content: URL,
+          content: url,
         },
         {
           property: `og:image`,
-          content: IMAGE,
+          content: image,
         },
         {
           property: `og:image-alt`,
@@ -80,7 +84,7 @@ function SEO({
         },
         {
           name: `twitter:site`,
-          content: URL,
+          content: url,
         },
         {
           name: `twitter:card`,
@@ -100,7 +104,7 @@ function SEO({
         },
         {
           name: `twitter:image`,
-          content: IMAGE,
+          content: image,
         },
         {
           name: `twitter:image-alt`,

@@ -12,10 +12,18 @@ const crypto = require('crypto')
 const remark = require('remark')
 const html = require('remark-html')
 
+const { paginate } = require('gatsby-awesome-pagination')
+const { postsPerPage } = require('./src/constants/blog.ts')
+
 const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
 const ProductTemplate = path.resolve(`src/templates/Product.tsx`)
+const TagTemplate = path.resolve(`./src/templates/Tag.tsx`)
+const PostTemplate = path.resolve(`./src/templates/Post.tsx`)
+const BlogIndexTemplate = path.resolve(`./src/templates/BlogIndex.tsx`)
 
 const markdownProcessor = remark().use(html)
+
+const GhostAuthorType = `GhostAuthor`
 
 const getHash = jawn =>
   crypto
@@ -45,7 +53,7 @@ const getMemberNode = async member => {
   const { url, bio, ...rest } = member
   const { contents: bioAsHtml } = await markdownProcessor.process(bio || '')
   return {
-    id: url,
+    id: `Labs__Member__${url}`,
     internal: {
       type: `Member`,
     },
@@ -116,13 +124,70 @@ exports.sourceNodes = async ({ actions }) => {
   return
 }
 
-// exports.onCreateNode = ({ actions, node }) => {
-//   const { type } = node.internal
-//   if (type !== `Member`) return
-//   const { bio } = node
-//   const bioAsHtml = markdownProcessor.process(bio)
-//   node.bio = bioAsHtml
-// }
+exports.onCreateNode = ({ node, actions }) => {
+  const { type } = node.internal
+  const { createNodeField } = actions
+  if (type === GhostAuthorType) {
+    if (node.slug !== 'data-schema-author') {
+      // create a foreign key relationship between an author in Ghost and a
+      // Labs member.
+      // Original inspiration: https://github.com/gatsbyjs/gatsby/issues/1583#issuecomment-317827660
+      // Now has documentation: https://www.gatsbyjs.org/docs/node-creation/#foreign-key-reference-___node
+      createNodeField({
+        node,
+        name: `member___NODE`,
+        value: `Labs__Member__${node.slug}`,
+      })
+    }
+  }
+}
+
+const createTagPages = (tags, createPage) => {
+  tags.forEach(({ node }) => {
+    const totalPosts = node.postCount || 0
+
+    // This part here defines, that our tag pages will use
+    // a `/tag/:slug/` permalink.
+    node.url = `/blog/tag/${node.slug}/`
+
+    // paginate
+    paginate({
+      createPage,
+      items: Array.from({ length: totalPosts }),
+      itemsPerPage: postsPerPage,
+      component: TagTemplate,
+      pathPrefix: ({ pageNumber }) => {
+        if (pageNumber === 0) {
+          return `/blog/tag/${node.slug}`
+        } else {
+          return `/blog/tag/${node.slug}/page`
+        }
+      },
+      context: {
+        slug: node.slug,
+      },
+    })
+  })
+}
+
+const createPostPages = (posts, createPage) => {
+  posts.forEach(({ node: { slug, authors } }) => {
+    // This part here defines, that our posts will use
+    // a `/:slug/` permalink.
+    const url = `blog/post/${slug}/`
+
+    createPage({
+      path: url,
+      component: PostTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        slug: slug,
+        authors: authors.map(({ slug }) => slug),
+      },
+    })
+  })
+}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -142,19 +207,20 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         edges {
           node {
             id
+            url
           }
         }
       }
     }
   `)
-  const ids = edges.map(({ node: { id } }) => id)
-  await ids.map(id =>
+  await edges.map(({ node: { id, url } }) =>
     createPage({
-      path: `/team/${id}`,
+      path: `/team/${url}`,
       component: MemberTemplate,
       context: {
         // Data passed to context is available in page queries as GraphQL vars
-        id: id,
+        id,
+        url,
       },
     }),
   )
@@ -162,7 +228,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   /**
    * Create pages for products
    */
-  const result = await graphql(`
+  const {
+    errors: mdErrors,
+    data: {
+      allMarkdownRemark: { edges: products },
+    },
+  } = await graphql(`
     {
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___title] }) {
         edges {
@@ -174,16 +245,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `)
 
-  const { errors, data } = result
-
-  if (errors) {
+  if (mdErrors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
 
-  const {
-    allMarkdownRemark: { edges: products },
-  } = data
   products.forEach(({ node }) => {
     const { fileAbsolutePath } = node
 
@@ -198,5 +264,57 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: ProductTemplate,
       context: { fileAbsolutePath }, // additional data can be passed via context
     })
+  })
+
+  const {
+    errors: ghostErrors,
+    data: {
+      allGhostTag: { edges: tags },
+      allGhostPost: { edges: posts },
+    },
+  } = await graphql(`
+    {
+      allGhostPost(sort: { order: ASC, fields: published_at }) {
+        edges {
+          node {
+            slug
+            authors {
+              slug
+            }
+          }
+        }
+      }
+      allGhostTag(sort: { order: ASC, fields: name }) {
+        edges {
+          node {
+            slug
+            url
+            postCount
+          }
+        }
+      }
+    }
+  `)
+
+  if (ghostErrors) {
+    throw new Error(ghostErrors)
+  }
+
+  createTagPages(tags, createPage)
+  createPostPages(posts, createPage)
+
+  // Create pagination for the index page.
+  paginate({
+    createPage,
+    items: posts,
+    itemsPerPage: postsPerPage,
+    component: BlogIndexTemplate,
+    pathPrefix: ({ pageNumber }) => {
+      if (pageNumber === 0) {
+        return `/blog`
+      } else {
+        return `/blog/page`
+      }
+    },
   })
 }
