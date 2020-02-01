@@ -53,7 +53,7 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
   if (!authorsAsMembers) {
     authorsAsMembers = authors
       .map(({ slug }) => slugToMember[slug])
-      .filter(mem => !!mem)
+      .filter(mem => Boolean(mem))
   }
 
   if (authorsAsMembers.length === 0) {
@@ -64,7 +64,7 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
     <BylineContainer>
       By{' '}
       {authorsAsMembers.map(({ url, student: { name } }) => (
-        <InlineListElement>
+        <InlineListElement key={url}>
           <Link to={TEAM_MEMBER_ROUTE(url)}>{name}</Link>
         </InlineListElement>
       ))}

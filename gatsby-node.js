@@ -144,7 +144,7 @@ exports.onCreateNode = ({ node, actions }) => {
 
 const createTagPages = (tags, createPage) => {
   tags.forEach(({ node }) => {
-    const totalPosts = node.postCount !== null ? node.postCount : 0
+    const totalPosts = node.postCount || 0
 
     // This part here defines, that our tag pages will use
     // a `/tag/:slug/` permalink.
@@ -171,19 +171,19 @@ const createTagPages = (tags, createPage) => {
 }
 
 const createPostPages = (posts, createPage) => {
-  posts.forEach(({ node }) => {
+  posts.forEach(({ node: { slug, authors } }) => {
     // This part here defines, that our posts will use
     // a `/:slug/` permalink.
-    node.url = `blog/post/${node.slug}/`
+    const url = `blog/post/${slug}/`
 
     createPage({
-      path: node.url,
+      path: url,
       component: PostTemplate,
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.
-        slug: node.slug,
-        authors: node.authors.map(({ slug }) => slug),
+        slug: slug,
+        authors: authors.map(({ slug }) => slug),
       },
     })
   })
@@ -213,15 +213,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     }
   `)
-  const ids = edges.map(({ node: { id, url } }) => ({ id, url }))
-  await ids.map(({ id, url }) =>
+  await edges.map(({ node: { id, url } }) =>
     createPage({
       path: `/team/${url}`,
       component: MemberTemplate,
       context: {
         // Data passed to context is available in page queries as GraphQL vars
-        id: id,
-        url: url,
+        id,
+        url,
       },
     }),
   )

@@ -39,8 +39,8 @@ export const LinkedTags = ({ tagToUrl }: ILinkedTagsProps) => {
   return (
     <span style={{ marginBottom: '-4rem' }}>
       {Object.keys(tagToUrl).map((tagText, i) => (
-        <Link to={tagToUrl[tagText]}>
-          <Tag key={i}>{tagText}</Tag>
+        <Link key={i} to={tagToUrl[tagText]}>
+          <Tag>{tagText}</Tag>
         </Link>
       ))}
     </span>

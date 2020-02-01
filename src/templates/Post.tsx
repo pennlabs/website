@@ -36,7 +36,7 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
     tags,
   } = data.ghostPost
 
-  const authors = data.allMember.nodes
+  const { nodes: authors } = data.allMember
   const htmlContent =
     (codeinjection_head || '') + html + (codeinjection_foot || '')
 

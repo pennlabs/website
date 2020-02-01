@@ -43,6 +43,15 @@ interface IMemberBioProps {
   author: IMember
 }
 
+const Bio = styled.div`
+  font-size: 0.8rem;
+  line-height: 1rem;
+  margin-bottom: 0.5rem;
+  & > p {
+    margin-bottom: 0;
+  }
+`
+
 const MemberBio = ({
   author: {
     url,
@@ -55,7 +64,7 @@ const MemberBio = ({
     <CenteredFlex>
       <div>
         <P>{name}</P>
-        <P sm mb1 dangerouslySetInnerHTML={{ __html: bio }} />
+        <Bio dangerouslySetInnerHTML={{ __html: bio }} />
         <P sm>
           <Link to={TEAM_MEMBER_ROUTE(url)}>Learn More</Link>
         </P>
