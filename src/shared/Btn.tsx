@@ -133,6 +133,7 @@ export const BtnAnchor = s.a<IBtnProps>(Btn)
 
 interface ILinkProps {
   to: string
+  rel?: string
   style?: React.CSSProperties
 }
 

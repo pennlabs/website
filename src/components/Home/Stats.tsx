@@ -11,6 +11,7 @@ import {
   Col,
   ParallaxWrapper,
   Fade,
+  Blob2,
 } from '../../shared'
 import {
   WHITE,
@@ -24,7 +25,6 @@ import {
   maxWidth,
   PHONE,
 } from '../../constants/measurements'
-import { Blob2 } from './Blobs'
 
 const StatWrapper = styled.div<{ colorAlpha: (a: number) => string }>`
   background: ${props => props.colorAlpha(1)};

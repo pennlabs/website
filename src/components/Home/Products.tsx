@@ -10,10 +10,11 @@ import {
   ParallaxWrapper,
   BtnLink,
   Fade,
+  Blob3,
+  Blob4,
 } from '../../shared'
 import { INTER } from '../../constants/fonts'
 import { PRODUCTS_ROUTE } from '../../constants/routes'
-import { Blob3, Blob4 } from './Blobs'
 import { getPathFromFileAbsolutePath } from '../../helpers'
 import { ProductOverview } from '../Products/ProductOverview'
 

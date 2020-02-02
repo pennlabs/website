@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import { P } from './Typography'
+import { BtnLink, EBtnSize } from './Btn'
 
 const Pagination = ({ pageContext }) => {
   const {
@@ -12,25 +13,31 @@ const Pagination = ({ pageContext }) => {
 
   return (
     <nav role="navigation">
-      <span>
-        {previousPagePath && (
-          <Link to={previousPagePath} rel="prev">
-            &larr; Newer Posts
-          </Link>
-        )}
-      </span>{' '}
+      {previousPagePath && (
+        <BtnLink
+          to={previousPagePath}
+          rel="prev"
+          size={EBtnSize.SM}
+          style={{ marginRight: '1rem' }}
+        >
+          &larr; Previous page
+        </BtnLink>
+      )}
       {numberOfPages > 1 && (
-        <span className="pagination-location">
+        <P sm style={{ display: 'inline-block' }}>
           Page {humanPageNumber} of {numberOfPages}
-        </span>
-      )}{' '}
-      <span>
-        {nextPagePath && (
-          <Link to={nextPagePath} rel="next">
-            Older Posts &rarr;
-          </Link>
-        )}
-      </span>
+        </P>
+      )}
+      {nextPagePath && (
+        <BtnLink
+          to={nextPagePath}
+          size={EBtnSize.SM}
+          rel="next"
+          style={{ marginLeft: '1rem' }}
+        >
+          Next page &rarr;
+        </BtnLink>
+      )}
     </nav>
   )
 }

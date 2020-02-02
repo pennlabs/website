@@ -10,6 +10,7 @@ import {
   BtnLink,
   LinkExternalLinkIcon,
   Fade,
+  Blob1,
 } from '../../shared'
 import {
   maxWidth,
@@ -17,7 +18,6 @@ import {
   minWidth,
   DESKTOP,
 } from '../../constants/measurements'
-import { Blob1 } from './Blobs'
 import { GITHUB_ROUTE, PRODUCTS_ROUTE } from '../../constants/routes'
 
 const devicesPath = require('../../images/hero-devices.svg') as string // tslint:disable-line
