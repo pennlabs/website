@@ -3,6 +3,7 @@ import {
   M2,
   BORDER_RADIUS_LG,
   SHORT_ANIMATION_DURATION,
+  LONG_ANIMATION_DURATION,
 } from '../constants/measurements'
 import { WHITE, BORDER, BLACK_ALPHA } from '../constants/colors'
 
@@ -22,11 +23,23 @@ export const Card = styled.div<ICardProps>`
   box-shadow: 0 0 0 ${BLACK_ALPHA(0)};
   ${props => props.bordered && `border: 1px solid ${BORDER};`}
   ${props => props.shaded && `box-shadow: 0 1px 6px ${BLACK_ALPHA(0.125)};`}
-  ${props => props.clickable && `cursor: pointer;`}
+  ${props =>
+    props.clickable &&
+    `
+    cursor: pointer;
+    transform: translateY(0);
+    transition: all ${LONG_ANIMATION_DURATION}ms ease;
+
+    :hover,
+    :active,
+    :focus {
+      transform: translateY(-2px);
+    }
+  `}
   ${props =>
     props.hoverable &&
     `
-    transition: box-shadow ${SHORT_ANIMATION_DURATION}ms ease;
+    transition: all ${SHORT_ANIMATION_DURATION}ms ease;
 
     :hover,
     :active,

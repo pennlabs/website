@@ -1,26 +1,12 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import { Hero } from '../../shared'
 
-export const ProductsHero = () => {
-  const {
-    file: { childImageSharp },
-  } = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "product-lab-hero.svg" }) {
-        childImageSharp {
-          fluid(maxWidth: 1024) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
+const imgPath = require('../../images/product-lab-hero.svg') as string // tslint:disable-line
 
+export const ProductsHero = () => {
   return (
     <Hero
-      Image={<Img style={{ width: '100%' }} fluid={childImageSharp.fluid} />}
+      Image={<img style={{ width: '100%' }} src={imgPath} />}
       title="Products"
       subtitle="TODO"
       body={`
