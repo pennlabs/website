@@ -8,7 +8,7 @@ export const ProductsHero = () => {
     file: { childImageSharp },
   } = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "test-products-hero.png" }) {
+      file(relativePath: { eq: "product-lab-hero.svg" }) {
         childImageSharp {
           fluid(maxWidth: 1024) {
             ...GatsbyImageSharpFluid
