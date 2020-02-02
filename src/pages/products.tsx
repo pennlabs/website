@@ -46,7 +46,7 @@ const ProductCard = ({
 }: IProductCard): React.ReactElement => {
   const imagePath = require(`../images/${logoPath}`)
   return (
-    <Col margin={M2} sm={12} md={6} flex>
+    <Col margin={M2} sm={12} md={12} lg={6} flex>
       <Link
         to={getPathFromFileAbsolutePath(fileAbsolutePath)}
         style={{ width: '100%', display: 'flex' }}

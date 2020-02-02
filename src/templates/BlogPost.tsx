@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Byline from '../components/Blog/Byline'
 import MemberBio from '../components/Blog/MemberBio'
-import { LinkedTags, HR, Fade } from '../shared'
+import { LinkedTags, HR, Fade, WideContainer } from '../shared'
 import { IMember, IGhostPost } from '../types'
 import { BLOG_TAG_ROUTE } from '../constants/routes'
 
@@ -47,29 +47,34 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
   return (
     <Layout>
       <SEO title={title} image={feature_image} description={excerpt} />
-      <MediumContainer>
-        <Section>
-          <article>
-            <Fade distance={M1}>
-              <header>
+
+      <Section>
+        <article>
+          <Fade distance={M1}>
+            <header style={{ width: '100%' }}>
+              <MediumContainer>
                 <H1 mb1>{title}</H1>
                 <P mb1>
                   <LinkedTags tagToUrl={tagToUrl} />
                 </P>
                 <Byline authorsAsMembers={authors} />
+              </MediumContainer>
+              <WideContainer>
                 <img src={feature_image} />
-              </header>
-            </Fade>
-            <Fade delay={450} distance={M1}>
-              <div className={'post-full-content content'}>
-                <section
-                  className="post-content"
-                  dangerouslySetInnerHTML={{
-                    __html: htmlContent,
-                  }}
-                />
-              </div>
-            </Fade>
+              </WideContainer>
+            </header>
+          </Fade>
+
+          <MediumContainer>
+            <div className={'post-full-content content'}>
+              <section
+                className="post-content"
+                dangerouslySetInnerHTML={{
+                  __html: htmlContent,
+                }}
+              />
+            </div>
+
             <footer>
               <VFlex>
                 {authors.map(a => (
@@ -77,9 +82,9 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
                 ))}
               </VFlex>
             </footer>
-          </article>
-        </Section>
-      </MediumContainer>
+          </MediumContainer>
+        </article>
+      </Section>
     </Layout>
   )
 }

@@ -22,7 +22,7 @@ Website for Penn Labs.
 - [x] Animate member page
 - [ ] Blobs on resources
 - [ ] Blobs on products
-- [ ] Analytics
+- [ ] Google Analytics
 - [ ] Product pages content
 - [ ] Be able to load member images with gatsby-image for lazy loading: https://github.com/graysonhicks/gatsby-plugin-remote-images
 - [ ] Illustrations on about page
