@@ -1,19 +1,24 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Hero } from '../../shared'
 
-const imgPath = require('../../images/product-lab-hero.svg') as string // tslint:disable-line
+const productsPath = require('../../images/hero-products.svg') as string // tslint:disable-line
+
+const Products = styled.img`
+  width: 90%;
+  margin-left: 5%;
+  height: auto;
+`
 
 export const ProductsHero = () => {
   return (
     <Hero
-      Image={<img style={{ width: '100%' }} src={imgPath} />}
+      Image={<Products src={productsPath} />}
       title="Products"
-      subtitle="TODO"
+      subtitle="From academics to campus life, to everything in between"
       body={`
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-        enim ad minim veniam, quis nostrud exercitation ullamco laboris
-        nisi ut aliquip ex ea commodo consequat.
+        Our products are intended to solve everyday problems for you, so that
+        you can focus on the more important parts of life at Penn.
       `}
     />
   )
