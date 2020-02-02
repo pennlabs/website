@@ -16,15 +16,23 @@ import {
   VFlex,
   Flex,
   P,
+  H4,
+  LinkChevronRightIcon,
+  Fade,
 } from '../../shared'
-import { BORDER_RADIUS_LG, minWidth, PHONE } from '../../constants/measurements'
+import {
+  BORDER_RADIUS_LG,
+  minWidth,
+  PHONE,
+  M1,
+} from '../../constants/measurements'
 
 const Thumbnail = styled.img`
-  max-height: 4rem;
+  min-height: 4rem;
   border-radius: ${BORDER_RADIUS_LG};
   margin-bottom: 0;
-  min-height: 10rem;
-  margin-left: 1em;
+  max-height: 10rem;
+  margin-right: 1em;
 
   ${minWidth('0px')} {
     min-height: 5rem;
@@ -44,12 +52,8 @@ interface IMemberBioProps {
 }
 
 const Bio = styled.div`
-  font-size: 0.8rem;
-  line-height: 1rem;
-  margin-bottom: 0.5rem;
-  & > p {
-    margin-bottom: 0;
-  }
+  font-size: 80%;
+  line-height: 1.375;
 `
 
 const MemberBio = ({
@@ -60,18 +64,23 @@ const MemberBio = ({
     student: { name },
   },
 }: IMemberBioProps): React.ReactElement => (
-  <Card bordered>
-    <CenteredFlex>
-      <div>
-        <P>{name}</P>
-        <Bio dangerouslySetInnerHTML={{ __html: bio }} />
-        <P sm>
-          <Link to={TEAM_MEMBER_ROUTE(url)}>Learn More</Link>
-        </P>
-      </div>
-      <Thumbnail src={photo} />
-    </CenteredFlex>
-  </Card>
+  <Fade distance={M1}>
+    <Card shaded>
+      <CenteredFlex>
+        <Thumbnail src={photo} />
+        <div>
+          <H4>{name}</H4>
+          <Bio dangerouslySetInnerHTML={{ __html: bio }} />
+
+          <div style={{ transform: 'scale(0.8)', transformOrigin: 'top left' }}>
+            <Link to={TEAM_MEMBER_ROUTE(url)}>
+              Learn more <LinkChevronRightIcon />
+            </Link>
+          </div>
+        </div>
+      </CenteredFlex>
+    </Card>
+  </Fade>
 )
 
 export default MemberBio

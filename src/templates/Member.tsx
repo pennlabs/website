@@ -22,8 +22,8 @@ import {
   MediumContainer,
   Card,
   HR,
-  Section,
-  H2,
+  H3,
+  Fade,
 } from '../shared'
 import {
   M2,
@@ -35,10 +35,8 @@ import {
   M4,
   minWidth,
   DESKTOP,
-  TABLET,
 } from '../constants/measurements'
 import { DARK_GRAY } from '../constants/colors'
-import { BLOG_POST_ROUTE } from '../constants/routes'
 
 type ILinks = Subset<
   IMember,
@@ -193,39 +191,58 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
     <Layout>
       <SEO title={name} description={bio} image={photo} />
       <MediumContainer>
-        <StyledCard shaded>
-          <Row>
-            {photo && <ProfilePicture src={photo} />}
-            <Col flex>
-              <div style={{ width: '100%', alignSelf: 'center' }}>
-                <H1 mb2>{name}</H1>
-                <div style={{ marginBottom: M1 }}>
-                  <Tags tags={roleNames} />
+        <Fade distance={M1}>
+          <StyledCard shaded>
+            <Row>
+              {photo && <ProfilePicture src={photo} />}
+              <Col flex>
+                <div style={{ width: '100%', alignSelf: 'center' }}>
+                  <H1 mb2>{name}</H1>
+                  <div style={{ marginBottom: M1 }}>
+                    <Tags tags={roleNames} />
+                  </div>
+                  <P mb2>Part of {team}</P>
+                  <Links
+                    github={github}
+                    linkedin={linkedin}
+                    website={website}
+                  />
                 </div>
-                <P mb2>Part of {team}</P>
-                <Links github={github} linkedin={linkedin} website={website} />
-              </div>
-            </Col>
+              </Col>
+            </Row>
+          </StyledCard>
+        </Fade>
+
+        {bio && (
+          <Fade distance={M1} delay={450}>
+            <div dangerouslySetInnerHTML={{ __html: bio }} />
+          </Fade>
+        )}
+
+        <Fade>
+          <HR />
+        </Fade>
+
+        <Fade delay={500} distance={M1}>
+          <Row margin={M1}>
+            <Studies major={major} school={school} />
+            {location && <Detail text={`From ${location}`} Icon={HomeIcon} />}
+            {yearJoined && (
+              <Detail text={`Member since ${yearJoined}`} Icon={CalendarIcon} />
+            )}
+            {gradYear && (
+              <Detail text={`Graduates in ${gradYear}`} Icon={LogOutIcon} />
+            )}
           </Row>
-        </StyledCard>
-
-        {bio && <div dangerouslySetInnerHTML={{ __html: bio }} />}
-
-        <HR />
-
-        <Row margin={M1}>
-          <Studies major={major} school={school} />
-          {location && <Detail text={`From ${location}`} Icon={HomeIcon} />}
-          {yearJoined && (
-            <Detail text={`Member since ${yearJoined}`} Icon={CalendarIcon} />
-          )}
-          {gradYear && (
-            <Detail text={`Graduates in ${gradYear}`} Icon={LogOutIcon} />
-          )}
-        </Row>
+        </Fade>
         {posts.length > 0 ? (
           <>
-            <HR />
+            <Fade>
+              <HR />
+            </Fade>
+            <Fade>
+              <H3>Posts</H3>
+            </Fade>
             <Row margin={M1}>
               <Posts posts={posts} />
             </Row>

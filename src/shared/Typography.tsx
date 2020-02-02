@@ -82,4 +82,6 @@ export const HR = styled.hr`
   background: ${BORDER};
   margin-top: ${M4};
   margin-bottom: ${M4};
+  display: block;
+  width: 100%;
 `

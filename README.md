@@ -18,6 +18,8 @@ Website for Penn Labs.
 - [x] Fix laggy SVG loading on first page load; this was fixed by adding fade in animations to things visible in the viewport on page load
 - [x] Animate product show page
 - [x] Add links to visit products
+- [x] Animate blog index page
+- [x] Animate member page
 - [ ] Blobs on resources
 - [ ] Blobs on products
 - [ ] Analytics
@@ -25,14 +27,17 @@ Website for Penn Labs.
 - [ ] Be able to load member images with gatsby-image for lazy loading: https://github.com/graysonhicks/gatsby-plugin-remote-images
 - [ ] Illustrations on about page
 - [ ] Products page
-- [ ] Blog
+- [ ] Animate blog post page
+- [ ] Port over blog content
 - [ ] Apply page
 - [ ] Team page
 - [ ] List blog posts by member on member show page
 - [ ] Fix issue with loading product images at runtime
 - [ ] Suggestions form (either Airtable or Typeform?)
 - [ ] Load blog images with gatsby image sharp
-- [ ] Blog 5 styles
-- [ ] TODOs on products page
+- [ ] Blob 5 styles
 - [ ] About page animations
 - [ ] Images for all of the products
+- [ ] Show images of authors on blog posts
+- [ ] Style author preview at bottom of blog post; especially on mobile
+- [ ] Use Gatsby image for author preview...

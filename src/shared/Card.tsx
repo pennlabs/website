@@ -44,7 +44,7 @@ export const Card = styled.div<ICardProps>`
     :hover,
     :active,
     :focus {
-      box-shadow: 0 1px 8px ${BLACK_ALPHA(0.25)};
+      box-shadow: 0 2px 12px ${BLACK_ALPHA(0.25)};
     }
   `}
 `

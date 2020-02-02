@@ -88,7 +88,7 @@ export const Products = (): React.ReactElement => {
                 justifyImage={justifyImage}
               >
                 <Fade>
-                  <div>
+                  <div style={{ width: '100%' }}>
                     <H1 style={{ marginBottom: '0.5rem', fontFamily: INTER }}>
                       {title}
                     </H1>

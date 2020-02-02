@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Byline from '../components/Blog/Byline'
 import MemberBio from '../components/Blog/MemberBio'
-import { LinkedTags, HR } from '../shared'
+import { LinkedTags, HR, Fade } from '../shared'
 import { IMember, IGhostPost } from '../types'
 import { BLOG_TAG_ROUTE } from '../constants/routes'
 
@@ -15,6 +15,7 @@ import { Section, H1, MediumContainer, Card, VFlex, Flex, P } from '../shared'
 // Ghost gives us HTML classes which need to be styled directly,
 // so those styles are included in post.css
 import './post.css'
+import { M1 } from '../constants/measurements'
 
 interface IPostTemplateProps {
   data: {
@@ -49,23 +50,26 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
       <MediumContainer>
         <Section>
           <article>
-            <header>
-              <H1 mb1>{title}</H1>
-              <P mb1>
-                <LinkedTags tagToUrl={tagToUrl} />
-              </P>
-              <Byline authorsAsMembers={authors} />
-              <img src={feature_image} />
-            </header>
-            <div className={'post-full-content content'}>
-              <section
-                className="post-content"
-                dangerouslySetInnerHTML={{
-                  __html: htmlContent,
-                }}
-              />
-            </div>
-            <HR />
+            <Fade distance={M1}>
+              <header>
+                <H1 mb1>{title}</H1>
+                <P mb1>
+                  <LinkedTags tagToUrl={tagToUrl} />
+                </P>
+                <Byline authorsAsMembers={authors} />
+                <img src={feature_image} />
+              </header>
+            </Fade>
+            <Fade delay={450} distance={M1}>
+              <div className={'post-full-content content'}>
+                <section
+                  className="post-content"
+                  dangerouslySetInnerHTML={{
+                    __html: htmlContent,
+                  }}
+                />
+              </div>
+            </Fade>
             <footer>
               <VFlex>
                 {authors.map(a => (

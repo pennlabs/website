@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import { Card, VFlex, H4, P, Flex } from '../../shared'
+import { Card, VFlex, H4, P, Flex, Fade } from '../../shared'
 
 import { BLOG_POST_ROUTE } from '../../constants/routes'
-import { BORDER_RADIUS } from '../../constants/measurements'
+import { BORDER_RADIUS, M2 } from '../../constants/measurements'
 import { IGhostPost } from '../../types'
 
 const PostThumbnail = styled.img`
@@ -29,7 +29,7 @@ const Post = ({
 }: // authors = [],
 IGhostPost) => {
   return (
-    <PostCard bordered hoverable>
+    <PostCard bordered hoverable clickable>
       <Link to={BLOG_POST_ROUTE(slug)}>
         <VFlex>
           <H4 mb2>{title}</H4>
@@ -49,11 +49,13 @@ const PostList = styled(Flex)`
 `
 
 const Posts = ({ posts }) => (
-  <PostList>
-    {posts.map((post: IGhostPost) => (
-      <Post key={post.slug} {...post} />
-    ))}
-  </PostList>
+  <Fade distance={M2}>
+    <PostList>
+      {posts.map((post: IGhostPost) => (
+        <Post key={post.slug} {...post} />
+      ))}
+    </PostList>
+  </Fade>
 )
 
 export default Posts
