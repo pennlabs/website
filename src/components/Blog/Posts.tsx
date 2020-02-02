@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import { Card, VFlex, H4, P, Flex, Fade } from '../../shared'
+import { Card, VFlex, H3, P, Flex, Fade } from '../../shared'
 
 import { BLOG_POST_ROUTE } from '../../constants/routes'
 import { BORDER_RADIUS, M2 } from '../../constants/measurements'
@@ -21,18 +21,12 @@ const PostCard = styled(Card)`
   margin-right: 1.5rem;
 `
 
-const Post = ({
-  slug,
-  title,
-  excerpt,
-  feature_image,
-}: // authors = [],
-IGhostPost) => {
+const Post = ({ slug, title, excerpt, feature_image }: IGhostPost) => {
   return (
     <PostCard bordered hoverable clickable>
       <Link to={BLOG_POST_ROUTE(slug)}>
         <VFlex>
-          <H4 mb2>{title}</H4>
+          <H3 mb2>{title}</H3>
           <PostThumbnail src={feature_image} />
           <P mb1 sm>
             {excerpt}

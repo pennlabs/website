@@ -34,6 +34,8 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
     codeinjection_head,
     codeinjection_foot,
     excerpt,
+    reading_time: readingTime,
+    published_at: publishedAt,
     tags,
   } = data.ghostPost
 
@@ -53,14 +55,17 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
           <Fade distance={M1}>
             <header style={{ width: '100%' }}>
               <MediumContainer>
-                <H1 mb1>{title}</H1>
+                <H1 mb2>{title}</H1>
                 <P mb1>
                   <LinkedTags tagToUrl={tagToUrl} />
                 </P>
                 <Byline authorsAsMembers={authors} />
+                <P sm opacity={0.64}>
+                  {publishedAt} • {readingTime} min read
+                </P>
               </MediumContainer>
               <WideContainer>
-                <img src={feature_image} />
+                <img src={feature_image} style={{ width: '100%' }} />
               </WideContainer>
             </header>
           </Fade>
@@ -99,6 +104,8 @@ export const pageQuery = graphql`
       codeinjection_foot
       feature_image
       excerpt
+      published_at(formatString: "MMM DD, YYYY")
+      reading_time
       tags {
         name
         slug

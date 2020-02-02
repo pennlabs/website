@@ -4,18 +4,31 @@ import styled from 'styled-components'
 
 import { TEAM_MEMBER_ROUTE } from '../../constants/routes'
 import { IGhostAuthor, IMember } from '../../types'
+import { M1 } from '../../constants/measurements'
+import { P } from '../../shared'
 
-const InlineListElement = styled.span`
-  &:not(:last-child) {
-    &:after {
-      content: ', ';
-    }
-  }
+const Thumbnail = styled.img`
+  width: 1.6rem;
+  height: 1.6rem;
+  object-fit: cover;
+  margin-right: ${M1};
+  border-radius: 50%;
+  display: inline-block;
+  margin-bottom: 0;
+`
+
+const AuthorLink = styled(Link)`
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
 `
 
 const BylineContainer = styled.div`
   font-size: 0.75rem;
   padding-bottom: 1rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
 `
 
 interface IBylineProps {
@@ -32,6 +45,7 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
         edges {
           node {
             url
+            photo
             student {
               name
             }
@@ -56,17 +70,18 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
       .filter(mem => Boolean(mem))
   }
 
+  // If there are no authors
   if (authorsAsMembers.length === 0) {
-    return <BylineContainer />
+    return null
   }
 
   return (
     <BylineContainer>
-      By{' '}
-      {authorsAsMembers.map(({ url, student: { name } }) => (
-        <InlineListElement key={url}>
-          <Link to={TEAM_MEMBER_ROUTE(url)}>{name}</Link>
-        </InlineListElement>
+      {authorsAsMembers.map(({ url, photo, student: { name } }) => (
+        <AuthorLink key={url} to={TEAM_MEMBER_ROUTE(url)}>
+          <Thumbnail src={photo} />
+          <span>{name}</span>
+        </AuthorLink>
       ))}
     </BylineContainer>
   )
