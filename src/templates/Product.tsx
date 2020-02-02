@@ -10,10 +10,15 @@ import {
   H3,
   BtnLink,
   LinkChevronRightIcon,
+  Fade,
+  LinkExternalLinkIcon,
+  BtnAnchor,
+  EBtnSize,
+  Buttons,
 } from '../shared'
 import { ProductOverview } from '../components/Products/ProductOverview'
 import { PRODUCTS_ROUTE } from '../constants/routes'
-import { M4 } from '../constants/measurements'
+import { M4, M2 } from '../constants/measurements'
 
 const Logo = styled.img<{}>`
   height: 3.2rem;
@@ -31,6 +36,9 @@ const ProductTemplate = ({
       description,
       image,
       justifyImage,
+      link,
+      appStoreLink,
+      googlePlayLink,
       logo: { relativePath: logoRelativePath },
     },
     html,
@@ -48,12 +56,39 @@ const ProductTemplate = ({
     <Layout>
       <SEO title={title} />
       <ProductOverview imagePath={imagePath} justifyImage={justifyImage}>
-        <Logo src={logoPath} alt={title} />
-        <H1>{title}</H1>
-        <H3 normal>{description}</H3>
+        <Fade delay={400}>
+          <Logo src={logoPath} alt={title} />
+        </Fade>
+        <Fade delay={450}>
+          <H1>{title}</H1>
+        </Fade>
+        <Fade delay={500}>
+          <H3 normal>{description}</H3>
+        </Fade>
+        <Fade delay={550}>
+          <Buttons>
+            {link && (
+              <BtnAnchor href={link} target="_BLANK" size={EBtnSize.SM}>
+                Website <LinkExternalLinkIcon />
+              </BtnAnchor>
+            )}
+            {appStoreLink && (
+              <BtnAnchor href={link} target="_BLANK" size={EBtnSize.SM}>
+                App Store <LinkExternalLinkIcon />
+              </BtnAnchor>
+            )}
+            {googlePlayLink && (
+              <BtnAnchor href={link} target="_BLANK" size={EBtnSize.SM}>
+                Google Play <LinkExternalLinkIcon />
+              </BtnAnchor>
+            )}
+          </Buttons>
+        </Fade>
       </ProductOverview>
       <MediumContainer>
-        <div dangerouslySetInnerHTML={{ __html: html }} />
+        <Fade distance={M2}>
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        </Fade>
         <Section style={{ textAlign: 'center' }}>
           <BtnLink to={PRODUCTS_ROUTE}>
             View all products <LinkChevronRightIcon />
@@ -73,6 +108,9 @@ export const pageQuery = graphql`
         title
         description
         justifyImage
+        link
+        appStoreLink
+        googlePlayLink
         image {
           relativePath
         }

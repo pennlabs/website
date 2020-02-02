@@ -43,8 +43,7 @@ const FadeNode = styled.div<IFadeNodeProps>(
  */
 export const Fade = ({ delay, distance, children }: IFadeProps) => {
   const domRef = React.useRef()
-
-  const [show, setShow] = React.useState(false)
+  const [show, setShow] = React.useState<boolean>(false)
 
   React.useEffect(() => {
     const observer = new IntersectionObserver(entries => {

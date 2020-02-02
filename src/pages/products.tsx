@@ -59,7 +59,7 @@ const ProductsPage = (): React.ReactElement => {
       <WideContainer>
         <ProductsHero />
         <Section>
-          <Fade>
+          <Fade distance={M2}>
             <Row margin={M2}>
               {products.map(
                 ({

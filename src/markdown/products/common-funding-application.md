@@ -6,6 +6,7 @@ image: null
 justifyImage: null
 showOnHomepage: false
 orderOnHomepage: -1
+link: 'https://penncfa.com/'
 ---
 
 # Stuffs

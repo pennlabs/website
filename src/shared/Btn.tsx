@@ -157,3 +157,20 @@ export const BtnLink = ({ to, fullWidth, ...rest }: IBtnLinkProps) => (
     <BtnBtn fullWidth={fullWidth} {...rest} tabIndex={-1} />
   </BtnLinkLink>
 )
+
+export const Buttons = s.div`
+  a,
+  input {
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+`

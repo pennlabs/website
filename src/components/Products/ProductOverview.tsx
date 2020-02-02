@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { ReactChildren } from '../../types'
-import { Row, Col, Container } from '../../shared'
+import { Row, Col, Container, Fade } from '../../shared'
 import { maxWidth, TABLET, PHONE } from '../../constants/measurements'
 
 const Image = styled.img<{ isEven: boolean }>`
@@ -51,7 +51,9 @@ export const ProductOverview = ({
       >
         {imagePath && (
           <Col sm={12} md={12} lg={6}>
-            <Image src={imagePath} isEven={isRight} />
+            <Fade distance="1.45rem">
+              <Image src={imagePath} isEven={isRight} />
+            </Fade>
           </Col>
         )}
         <Col sm={12} md={12} lg={6} flex>

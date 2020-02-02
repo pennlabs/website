@@ -8,10 +8,6 @@ import { BLOG_POST_ROUTE } from '../../constants/routes'
 import { BORDER_RADIUS } from '../../constants/measurements'
 import { IGhostPost } from '../../types'
 
-interface IPostComponentProps {
-  post: IGhostPost
-}
-
 const PostThumbnail = styled.img`
   object-fit: contain;
   border-radius: ${BORDER_RADIUS};
@@ -26,8 +22,12 @@ const PostCard = styled(Card)`
 `
 
 const Post = ({
-  post: { slug, title, excerpt, feature_image, authors = [] },
-}: IPostComponentProps) => {
+  slug,
+  title,
+  excerpt,
+  feature_image,
+}: // authors = [],
+IGhostPost) => {
   return (
     <PostCard bordered hoverable>
       <Link to={BLOG_POST_ROUTE(slug)}>
@@ -50,8 +50,8 @@ const PostList = styled(Flex)`
 
 const Posts = ({ posts }) => (
   <PostList>
-    {posts.map(post => (
-      <Post key={post.slug} post={post} />
+    {posts.map((post: IGhostPost) => (
+      <Post key={post.slug} {...post} />
     ))}
   </PostList>
 )

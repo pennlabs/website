@@ -1,22 +1,9 @@
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
-import styled from 'styled-components'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import {
-  H1,
-  H4,
-  Section,
-  Container,
-  Card,
-  P,
-  Flex,
-  VFlex,
-  Hero,
-} from '../shared'
-import { BLOG_POST_ROUTE, TEAM_MEMBER_ROUTE } from '../constants/routes'
-import { BORDER_RADIUS } from '../constants/measurements'
+import { H1, Section, Container } from '../shared'
 import { IGhostPost } from '../types'
 import Posts from '../components/Blog/Posts'
 import Pagination from '../shared/Pagination'

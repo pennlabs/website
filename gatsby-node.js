@@ -18,7 +18,7 @@ const { postsPerPage } = require('./src/constants/blog.ts')
 const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
 const ProductTemplate = path.resolve(`src/templates/Product.tsx`)
 const TagTemplate = path.resolve(`./src/templates/Tag.tsx`)
-const PostTemplate = path.resolve(`./src/templates/Post.tsx`)
+const BlogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`)
 const BlogIndexTemplate = path.resolve(`./src/templates/BlogIndex.tsx`)
 
 const markdownProcessor = remark().use(html)
@@ -178,7 +178,7 @@ const createPostPages = (posts, createPage) => {
 
     createPage({
       path: url,
-      component: PostTemplate,
+      component: BlogPostTemplate,
       context: {
         // Data passed to context is available
         // in page queries as GraphQL variables.

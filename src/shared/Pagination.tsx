@@ -12,7 +12,7 @@ const Pagination = ({ pageContext }) => {
   } = pageContext
 
   return (
-    <nav role="navigation">
+    <nav role="navigation" style={{ marginTop: '1.45rem' }}>
       {previousPagePath && (
         <BtnLink
           to={previousPagePath}
