@@ -1,6 +1,6 @@
 ---
 title: 'Common Funding Application'
-description: 'TODO'
+description: 'Request funding from sources across Penn'
 logo: '../../images/products/logos/cfa-logo.svg'
 image: null
 justifyImage: null

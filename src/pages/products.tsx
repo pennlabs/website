@@ -31,6 +31,40 @@ const Logo = styled.img<{}>`
   }
 `
 
+interface IProductCard {
+  title: string
+  description: string
+  logoPath: string
+  fileAbsolutePath: string
+}
+
+const ProductCard = ({
+  title,
+  description,
+  fileAbsolutePath,
+  logoPath,
+}: IProductCard): React.ReactElement => {
+  const imagePath = require(`../images/${logoPath}`)
+  return (
+    <Col margin={M2} sm={12} md={6} flex>
+      <Link
+        to={getPathFromFileAbsolutePath(fileAbsolutePath)}
+        style={{ width: '100%', display: 'flex' }}
+      >
+        <Card shaded hoverable clickable bordered style={{ width: '100%' }}>
+          <Flex>
+            <Logo src={imagePath} alt={`${title} logo`} />
+            <Col>
+              <H3 mb1>{title}</H3>
+              <P mb0>{description}</P>
+            </Col>
+          </Flex>
+        </Card>
+      </Link>
+    </Col>
+  )
+}
+
 const ProductsPage = (): React.ReactElement => {
   const {
     allMarkdownRemark: { edges: products },
@@ -71,24 +105,15 @@ const ProductsPage = (): React.ReactElement => {
                       logo: { relativePath },
                     },
                   },
-                }) => {
-                  const imagePath = require(`../images/${relativePath}`)
-                  return (
-                    <Col key={title} margin={M2} sm={12} md={6}>
-                      <Link to={getPathFromFileAbsolutePath(fileAbsolutePath)}>
-                        <Card shaded hoverable clickable bordered>
-                          <Flex>
-                            <Logo src={imagePath} alt={`${title} logo`} />
-                            <Col>
-                              <H3 mb1>{title}</H3>
-                              <P mb0>{description}</P>
-                            </Col>
-                          </Flex>
-                        </Card>
-                      </Link>
-                    </Col>
-                  )
-                },
+                }) => (
+                  <ProductCard
+                    key={title}
+                    title={title}
+                    description={description}
+                    fileAbsolutePath={fileAbsolutePath}
+                    logoPath={relativePath}
+                  />
+                ),
               )}
             </Row>
           </Fade>

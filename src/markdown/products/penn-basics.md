@@ -1,6 +1,6 @@
 ---
 title: 'Penn Basics'
-description: 'TODO'
+description: 'Learn more about what Penn has to offer'
 logo: '../../images/products/logos/basics-logo.svg'
 image: null
 justifyImage: null

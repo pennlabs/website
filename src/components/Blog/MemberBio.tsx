@@ -2,24 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-import Layout from '../Layout'
-import SEO from '../SEO'
-import Byline from './Byline'
-import { IMember, IGhostPost } from '../../types'
+import { IMember } from '../../types'
 import { TEAM_MEMBER_ROUTE } from '../../constants/routes'
 
-import {
-  Section,
-  H1,
-  MediumContainer,
-  Card,
-  VFlex,
-  Flex,
-  P,
-  H4,
-  LinkChevronRightIcon,
-  Fade,
-} from '../../shared'
+import { Card, Flex, H4, LinkChevronRightIcon, Fade } from '../../shared'
 import {
   BORDER_RADIUS_LG,
   minWidth,
