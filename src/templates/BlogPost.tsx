@@ -1,16 +1,15 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Byline from '../components/Blog/Byline'
 import MemberBio from '../components/Blog/MemberBio'
-import { LinkedTags, HR, Fade, WideContainer } from '../shared'
+import { LinkedTags, Fade, WideContainer } from '../shared'
 import { IMember, IGhostPost } from '../types'
 import { BLOG_TAG_ROUTE } from '../constants/routes'
 
-import { Section, H1, MediumContainer, Card, VFlex, Flex, P } from '../shared'
+import { Section, H1, MediumContainer, VFlex, P } from '../shared'
 
 // Ghost gives us HTML classes which need to be styled directly,
 // so those styles are included in post.css
@@ -83,7 +82,7 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
             <footer>
               <VFlex>
                 {authors.map(a => (
-                  <MemberBio author={a} />
+                  <MemberBio key={a.url} author={a} />
                 ))}
               </VFlex>
             </footer>

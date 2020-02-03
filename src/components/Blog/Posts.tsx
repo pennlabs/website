@@ -5,7 +5,12 @@ import styled from 'styled-components'
 import { Card, VFlex, H3, P, Flex, Fade } from '../../shared'
 
 import { BLOG_POST_ROUTE } from '../../constants/routes'
-import { BORDER_RADIUS, M2 } from '../../constants/measurements'
+import {
+  BORDER_RADIUS,
+  M2,
+  maxWidth,
+  PHONE,
+} from '../../constants/measurements'
 import { IGhostPost } from '../../types'
 
 const PostThumbnail = styled.img`
@@ -19,6 +24,11 @@ const PostCard = styled(Card)`
   min-width: 14rem;
   flex-grow: 1;
   margin-right: 1.5rem;
+
+  ${maxWidth(PHONE)} {
+    max-width: none;
+    width: 100%;
+  }
 `
 
 const Post = ({ slug, title, excerpt, feature_image }: IGhostPost) => {
@@ -40,6 +50,10 @@ const Post = ({ slug, title, excerpt, feature_image }: IGhostPost) => {
 const PostList = styled(Flex)`
   flex-wrap: wrap;
   justify-content: space-between;
+
+  ${maxWidth(PHONE)} {
+    display: block;
+  }
 `
 
 const Posts = ({ posts }) => (

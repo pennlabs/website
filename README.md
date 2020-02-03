@@ -20,6 +20,7 @@ Website for Penn Labs.
 - [x] Add links to visit products
 - [x] Animate blog index page
 - [x] Animate member page
+- [x] Style author preview at bottom of blog post; especially on mobile
 - [ ] Blobs on resources
 - [ ] Blobs on products
 - [ ] Google Analytics
@@ -28,8 +29,8 @@ Website for Penn Labs.
 - [ ] Illustrations on about page
 - [ ] Products page
 - [ ] Animate blog post page
-- [ ] Port over blog content
-- [ ] Apply page
+- [ ] Port over blog content from Medium
+- [ ] Apply page; note that apps are no longer open
 - [ ] Team page
 - [ ] List blog posts by member on member show page
 - [ ] Fix issue with loading product images at runtime
@@ -39,5 +40,4 @@ Website for Penn Labs.
 - [ ] About page animations
 - [ ] Images for all of the products
 - [ ] Show images of authors on blog posts
-- [ ] Style author preview at bottom of blog post; especially on mobile
 - [ ] Use Gatsby image for author preview...

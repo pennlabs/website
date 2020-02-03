@@ -57,6 +57,7 @@ export interface IGhostPost {
   excerpt?: string
   feature_image?: string
   reading_time?: number
+  published_at?: string
   tags?: IGhostTag[]
   authors?: IGhostAuthor[]
   html?: string

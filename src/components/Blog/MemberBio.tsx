@@ -11,6 +11,8 @@ import {
   minWidth,
   PHONE,
   M1,
+  maxWidth,
+  M2,
 } from '../../constants/measurements'
 
 const Thumbnail = styled.img`
@@ -18,14 +20,24 @@ const Thumbnail = styled.img`
   border-radius: ${BORDER_RADIUS_LG};
   margin-bottom: 0;
   max-height: 10rem;
-  margin-right: 1em;
-
-  ${minWidth('0px')} {
-    min-height: 5rem;
-  }
+  margin-right: 1rem;
 
   ${minWidth(PHONE)} {
     min-height: 10rem;
+  }
+
+  ${maxWidth(PHONE)} {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    min-height: 0;
+    max-height: none;
+  }
+
+  ${maxWidth('400px')} {
+    height: 2.5rem;
+    width: 2.5rem;
+    margin-right: ${M2};
   }
 `
 
@@ -40,6 +52,16 @@ interface IMemberBioProps {
 const Bio = styled.div`
   font-size: 80%;
   line-height: 1.375;
+
+  p {
+    margin-bottom: ${M2};
+  }
+`
+
+const StyledCenteredFlex = styled(CenteredFlex)`
+  ${maxWidth(PHONE)} {
+    align-items: start;
+  }
 `
 
 const MemberBio = ({
@@ -52,10 +74,10 @@ const MemberBio = ({
 }: IMemberBioProps): React.ReactElement => (
   <Fade distance={M1}>
     <Card shaded>
-      <CenteredFlex>
+      <StyledCenteredFlex>
         <Thumbnail src={photo} />
         <div>
-          <H4>{name}</H4>
+          <H4 mb2>{name}</H4>
           <Bio dangerouslySetInnerHTML={{ __html: bio }} />
 
           <div style={{ transform: 'scale(0.8)', transformOrigin: 'top left' }}>
@@ -64,7 +86,7 @@ const MemberBio = ({
             </Link>
           </div>
         </div>
-      </CenteredFlex>
+      </StyledCenteredFlex>
     </Card>
   </Fade>
 )

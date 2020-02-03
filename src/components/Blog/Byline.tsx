@@ -4,8 +4,7 @@ import styled from 'styled-components'
 
 import { TEAM_MEMBER_ROUTE } from '../../constants/routes'
 import { IGhostAuthor, IMember } from '../../types'
-import { M1 } from '../../constants/measurements'
-import { P } from '../../shared'
+import { M1, M2, maxWidth } from '../../constants/measurements'
 
 const Thumbnail = styled.img`
   width: 1.6rem;
@@ -18,17 +17,26 @@ const Thumbnail = styled.img`
 `
 
 const AuthorLink = styled(Link)`
-  margin-right: 0.5rem;
+  margin-right: ${M2};
   display: flex;
   align-items: center;
 `
 
 const BylineContainer = styled.div`
-  font-size: 0.75rem;
-  padding-bottom: 1rem;
+  padding-bottom: ${M2};
   width: 100%;
   display: flex;
   align-items: center;
+  font-size: 80%;
+
+  ${maxWidth('400px')} {
+    display: block;
+    padding-bottom: 0;
+
+    > a {
+      margin-bottom: ${M2};
+    }
+  }
 `
 
 interface IBylineProps {
