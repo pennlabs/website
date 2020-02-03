@@ -1,13 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { M2 } from '../constants/measurements'
+import { M2, maxWidth, DESKTOP } from '../constants/measurements'
 import { Section, Row, Col } from './Grid'
 import { Fade } from './Fade'
 import { H1, H3, P } from './Typography'
 
 const TextWrapper = styled.div<{}>`
   align-self: center;
+`
+
+const ImgWrapper = styled.div<{}>`
+  ${maxWidth(DESKTOP)} {
+    padding-left: 5%;
+    width: 100%;
+  }
 `
 
 interface IHeroProps {
@@ -36,7 +43,7 @@ export const Hero = ({ Image, title, subtitle, body }: IHeroProps) => {
         </Col>
         <Col sm={12} md={6} margin={M2}>
           <Fade delay={400} distance="1rem">
-            {Image}
+            <ImgWrapper>{Image}</ImgWrapper>
           </Fade>
         </Col>
       </Row>

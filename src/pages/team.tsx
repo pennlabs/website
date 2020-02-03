@@ -7,6 +7,7 @@ import { Container, Section, P, Row, H1, H2, Col, Hero, Fade } from '../shared'
 import { M2 } from '../constants/measurements'
 import { TeamMemberPreview } from '../components/Team/TeamMemberPreview'
 import { ITeam, IMember } from '../types'
+import { TeamHero } from '../components/Team/Hero'
 
 const AboutPage = (): React.ReactElement => {
   const {
@@ -46,17 +47,7 @@ const AboutPage = (): React.ReactElement => {
     <Layout>
       <SEO title="Team" />
       <Container>
-        <Hero
-          title="Team"
-          subtitle="TODO"
-          body={`
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-            enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.
-          `}
-          Image={<P>TODO</P>}
-        />
+        <TeamHero />
         {teams.map(({ name, description, children: members }: ITeam) => (
           <Fade key={name} distance="1rem">
             <Section key={name}>
