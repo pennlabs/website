@@ -17,3 +17,4 @@ export const APPLY_FORM_ROUTE = 'https://airtable.com/shrvvvrVR4E2VZDUo'
 export const INFO_SESSIONS_EVENT_ROUTE =
   'https://www.facebook.com/events/501928857100288/'
 export const STACK_ROUTE = 'https://stackshare.io/companies/penn-labs'
+export const FEEDBACK_ROUTE = 'https://airtable.com/shrwIkxqODSvOeLdh'

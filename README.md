@@ -21,6 +21,7 @@ Website for Penn Labs.
 - [x] Animate blog index page
 - [x] Animate member page
 - [x] Style author preview at bottom of blog post; especially on mobile
+- [x] Suggestions form (either Airtable or Typeform?)
 - [ ] Blobs on resources
 - [ ] Blobs on products
 - [ ] Google Analytics
@@ -34,7 +35,6 @@ Website for Penn Labs.
 - [ ] Team page
 - [ ] List blog posts by member on member show page
 - [ ] Fix issue with loading product images at runtime
-- [ ] Suggestions form (either Airtable or Typeform?)
 - [ ] Load blog images with gatsby image sharp
 - [ ] Blob 5 styles
 - [ ] About page animations

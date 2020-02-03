@@ -7,6 +7,7 @@ import Footer from './Footer'
 import './Layout.css'
 import { ReactChildren } from '../types'
 import { HEADER_HEIGHT, FOOTER_HEIGHT } from '../constants/measurements'
+import { Feedback } from './misc/Feedback'
 
 const Main = styled.div<{}>`
   min-height: calc(100vh - ${HEADER_HEIGHT} - ${FOOTER_HEIGHT});
@@ -22,6 +23,7 @@ const Layout = ({ children }: ILayoutProps): React.ReactElement => {
       <Nav />
       <Main>{children}</Main>
       <Footer />
+      <Feedback />
     </ParallaxProvider>
   )
 }
