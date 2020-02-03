@@ -80,7 +80,7 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
 
   // If there are no authors
   if (authorsAsMembers.length === 0) {
-    return null
+    return <BylineContainer>By the Penn Labs Team</BylineContainer>
   }
 
   return (
