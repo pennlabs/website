@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero } from '../../shared'
+import { Hero, Img } from '../../shared'
 
 const deskPath = require('../../images/hero-resources.svg') as string // tslint:disable-line
 
@@ -13,6 +13,6 @@ export const ResourcesHero = () => (
       ours. We also maintain free APIs and SDKs with support for
       Javascript, Python, Ruby and OAuth.
     `}
-    Image={<img src={deskPath} />}
+    Image={<Img src={deskPath} fullWidth mb0 />}
   />
 )

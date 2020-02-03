@@ -41,3 +41,4 @@ Website for Penn Labs.
 - [ ] Images for all of the products
 - [ ] Show images of authors on blog posts
 - [ ] Use Gatsby image for author preview...
+- [ ] Animate apply page

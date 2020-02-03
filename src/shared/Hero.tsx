@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { M2, maxWidth, DESKTOP } from '../constants/measurements'
+import { M2, maxWidth, DESKTOP, PHONE } from '../constants/measurements'
 import { Section, Row, Col } from './Grid'
 import { Fade } from './Fade'
 import { H1, H3, P } from './Typography'
@@ -13,6 +13,11 @@ const TextWrapper = styled.div<{}>`
 const ImgWrapper = styled.div<{}>`
   ${maxWidth(DESKTOP)} {
     padding-left: 5%;
+    width: 100%;
+  }
+
+  ${maxWidth(PHONE)} {
+    padding: 0 10%;
     width: 100%;
   }
 `

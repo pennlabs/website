@@ -1,12 +1,12 @@
 import React from 'react'
-import { Hero } from '../../shared'
+import { Hero, Img } from '../../shared'
 
 const productsPath = require('../../images/hero-products.svg') as string // tslint:disable-line
 
 export const ProductsHero = () => {
   return (
     <Hero
-      Image={<img src={productsPath} />}
+      Image={<Img src={productsPath} fullWidth mb0 />}
       title="Products"
       subtitle="From academics to campus life, to everything in between"
       body={`
