@@ -42,3 +42,4 @@ Website for Penn Labs.
 - [ ] Show images of authors on blog posts
 - [ ] Use Gatsby image for author preview...
 - [ ] Animate apply page
+- [ ] Link to join listserv (Mailchimp)

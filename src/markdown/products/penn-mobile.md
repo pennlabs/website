@@ -1,6 +1,6 @@
 ---
 title: 'Penn Mobile'
-description: 'Campus essentials, on the go'
+description: 'Making it easy to Thrive at Penn, on the go'
 logo: '../../images/products/logos/penn-mobile-logo.svg'
 image: '../../images/products/penn-mobile-home.svg'
 justifyImage: 'left'
@@ -10,4 +10,16 @@ appStoreLink: 'https://apps.apple.com/us/app/penn-mobile/id944829399'
 googlePlayLink: 'https://play.google.com/store/apps/details?id=com.pennapps.labs.pennmobile&hl=en_US'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Penn Mobile is Penn's official student app. We're bringing campus essentials to the fingertips of over 2000 monthly users. 
+
+## Book it
+Reserve GSRs all across campus, from Huntsman to Van Pelt. Push notifications ensure you'll never miss an upcoming reservation.
+
+## Campus life, simplified
+From a list of essential university phone numbers, to the front page of the Daily Pennsylvanian, it's almost guaranteed that you can find it on Penn Mobile.
+
+## Feeling hungry?
+Browse dining and retail options, with hours and menus. 
+
+## Laundry without the wait
+Check your go-to laundry rooms to see whether washers and dryers are available (or how long they'll take to free up).
