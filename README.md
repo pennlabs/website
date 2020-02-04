@@ -25,20 +25,20 @@ Website for Penn Labs.
 - [ ] Blobs on resources
 - [ ] Blobs on products
 - [ ] Google Analytics
-- [ ] Product pages content
+- [x] Product pages content
 - [ ] Be able to load member images with gatsby-image for lazy loading: https://github.com/graysonhicks/gatsby-plugin-remote-images
 - [ ] Illustrations on about page
-- [ ] Products page
+- [x] Products page
 - [ ] Animate blog post page
 - [ ] Port over blog content from Medium
 - [ ] Apply page; note that apps are no longer open
-- [ ] Team page
+- [x] Team page
 - [ ] List blog posts by member on member show page
 - [ ] Fix issue with loading product images at runtime
 - [ ] Load blog images with gatsby image sharp
 - [ ] Blob 5 styles
 - [ ] About page animations
-- [ ] Images for all of the products
+- [x] Images for all of the products
 - [ ] Show images of authors on blog posts
 - [ ] Use Gatsby image for author preview...
 - [ ] Animate apply page
