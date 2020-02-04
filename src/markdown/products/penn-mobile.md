@@ -22,4 +22,4 @@ From a list of essential university phone numbers, to the front page of the Dail
 Browse dining and retail options, with hours and menus. 
 
 ## Laundry without the wait
-Check your go-to laundry rooms to see whether washers and dryers are available (or how long they'll take to free up).
+Check your go-to laundry rooms to see whether washers and dryers are available (or how long they'll take to free up). A daily activity graph lets you see the most and least busy times to do your laundry.
