@@ -22,6 +22,9 @@ Website for Penn Labs.
 - [x] Animate member page
 - [x] Style author preview at bottom of blog post; especially on mobile
 - [x] Suggestions form (either Airtable or Typeform?)
+- [x] Animate blog post page
+- [x] Team page
+- [x] List blog posts by member on member show page
 - [ ] Blobs on resources
 - [ ] Blobs on products
 - [ ] Google Analytics
@@ -42,4 +45,6 @@ Website for Penn Labs.
 - [ ] Show images of authors on blog posts
 - [ ] Use Gatsby image for author preview...
 - [ ] Animate apply page
+- [ ] Apply page hero image and hero content
+- [ ] Metadata, metadata image
 - [ ] Link to join listserv (Mailchimp)
