@@ -1,10 +1,9 @@
 /**
  * Implement Gatsby's Node APIs in this file.
  *
- * See: https://www.gatsbyjs.org/docs/node-apis/
+ * NOTE these files which Gatsby builds on directly do not have TypeScript
+ * support (hence the use of vanilla JS)
  */
-
-// You can delete this file if you're not using it
 
 const fetch = require('node-fetch')
 const path = require(`path`)
@@ -20,6 +19,12 @@ const ProductTemplate = path.resolve(`src/templates/Product.tsx`)
 const TagTemplate = path.resolve(`./src/templates/Tag.tsx`)
 const BlogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`)
 const BlogIndexTemplate = path.resolve(`./src/templates/BlogIndex.tsx`)
+
+// Ensure that env is set correctly
+const { GHOST_API_KEY } = process.env
+if (!GHOST_API_KEY) {
+  throw new Error('Missing GHOST_API_KEY in env')
+}
 
 const markdownProcessor = remark().use(html)
 
