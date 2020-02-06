@@ -36,14 +36,13 @@ Website for Penn Labs.
 - [x] Be able to load member images with gatsby-image for lazy loading: https://github.com/graysonhicks/gatsby-plugin-remote-images
 - [x] Use Gatsby image for author preview...
 - [x] Load blog images with gatsby image sharp
+- [x] Safari: add intersection observer polyfill
 - [x] Illustrations on about page
-
 - [ ] Apply page; note that apps are no longer open
 - [ ] Animate apply page
 - [ ] Apply page hero image and hero content
 - [ ] Blog index page hero image and hero content
 - [ ] Link to join listserv (Mailchimp)
-- [ ] Safari: images in SVG's don't load correctly
 
 ### Longer term todo
 
