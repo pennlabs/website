@@ -2,7 +2,8 @@ import React, { ReactElement } from 'react'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 
-const IMAGE = 'TODO'
+const IMAGE =
+  'https://pennlabs-assets.s3.amazonaws.com/metadata-images/penn-labs.png'
 const URL = 'pennlabs.org'
 
 type Meta =
