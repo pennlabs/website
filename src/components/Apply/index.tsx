@@ -7,12 +7,12 @@ import { ApplicationProcess } from './ApplicationProcess'
 import { More } from './More'
 
 export const Apply = () => (
-  <>
-    <ApplyHero />
-    <WhyLabs />
-    <InfoSessions />
-    <OpenRoles />
-    <ApplicationProcess />
-    <More />
-  </>
+	<>
+		<ApplyHero />
+		<WhyLabs />
+		<InfoSessions />
+		<OpenRoles />
+		<ApplicationProcess />
+		<More />
+	</>
 )
