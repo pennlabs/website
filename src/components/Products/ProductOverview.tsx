@@ -64,31 +64,27 @@ export const ProductOverview = ({
   imagePath,
   fluid,
   children,
-}: IProductOverviewProps) => {
-  return (
-    <>
-      <Row
-        style={{
-          flexDirection: isRight ? 'row-reverse' : 'row',
-          marginTop: '3rem',
-          marginBottom: '3rem',
-        }}
-      >
-        {imagePath && (
-          <Col sm={12} md={12} lg={6}>
-            <Fade distance="1.45rem">
-              {fluid ? (
-                <Img src={fluid} isEven={isRight} />
-              ) : (
-                <Image src={imagePath} isEven={isRight} />
-              )}
-            </Fade>
-          </Col>
-        )}
-        <Col sm={12} md={12} lg={6} flex>
-          <StyledContainer isEven={isRight}>{children}</StyledContainer>
-        </Col>
-      </Row>
-    </>
-  )
-}
+}: IProductOverviewProps) => (
+  <Row
+    style={{
+      flexDirection: isRight ? 'row-reverse' : 'row',
+      marginTop: '3rem',
+      marginBottom: '3rem',
+    }}
+  >
+    {imagePath && (
+      <Col sm={12} md={12} lg={6}>
+        <Fade distance="1.45rem">
+          {fluid ? (
+            <Img fluid={fluid} isEven={isRight} />
+          ) : (
+            <Image src={imagePath} isEven={isRight} />
+          )}
+        </Fade>
+      </Col>
+    )}
+    <Col sm={12} md={12} lg={6} flex>
+      <StyledContainer isEven={isRight}>{children}</StyledContainer>
+    </Col>
+  </Row>
+)

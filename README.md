@@ -38,12 +38,12 @@ Website for Penn Labs.
 - [x] Load blog images with gatsby image sharp
 - [x] Safari: add intersection observer polyfill
 - [x] Illustrations on about page
+- [x] Add precommit hook
 - [ ] Apply page; note that apps are no longer open
 - [ ] Animate apply page
 - [ ] Apply page hero image and hero content
 - [ ] Blog index page hero image and hero content
 - [ ] Link to join listserv (Mailchimp)
-- [ ] Add precommit hook
 
 ### Longer term todo
 

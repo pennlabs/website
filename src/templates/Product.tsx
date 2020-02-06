@@ -45,6 +45,8 @@ const ProductTemplate = ({
     html,
   } = markdownRemark
   const { relativePath } = image || {}
+  // const fluid = null
+  console.log('screenshot', screenshot)
   const {
     childImageSharp: { fluid },
   } = screenshot || { childImageSharp: {} }
@@ -100,7 +102,6 @@ const ProductTemplate = ({
   )
 }
 
-// NOTE fileAbsolutePath is passed from the context in `gatsby-node.js`
 export const pageQuery = graphql`
   query($fileAbsolutePath: String!) {
     markdownRemark(fileAbsolutePath: { eq: $fileAbsolutePath }) {
@@ -114,8 +115,8 @@ export const pageQuery = graphql`
         googlePlayLink
         screenshot {
           childImageSharp {
-            fluid(maxWidth: 720) {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 1256) {
+              ...GatsbyImageSharpFluid_tracedSVG
             }
           }
         }
