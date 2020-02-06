@@ -12,7 +12,7 @@ const Image = styled.img<{}>`
 `
 
 export const Logo = (): React.ReactElement => (
-  <Link to={HOME_ROUTE}>
+  <Link to={HOME_ROUTE} style={{ lineHeight: 0 }}>
     <Image src={logoPath} alt="Penn Labs" />
   </Link>
 )

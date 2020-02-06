@@ -1,7 +1,12 @@
 import React from 'react'
 import s from 'styled-components'
 
-import { WHITE, LABS_BLUE, LABS_BLUE_DEEP } from '../../constants/colors'
+import {
+  WHITE,
+  LABS_BLUE,
+  LABS_BLUE_DEEP,
+  OUTLINE,
+} from '../../constants/colors'
 import { maxWidth, PHONE } from '../../constants/measurements'
 import { FEEDBACK_ROUTE } from '../../constants/routes'
 import { MessageIcon } from '../../shared'
@@ -36,6 +41,12 @@ const FeedbackLink = s.a<{}>`
   ${maxWidth(PHONE)} {
     bottom: ${OFFSET / 2}px;
     right: ${OFFSET / 2}px;
+  }
+
+  &:active,
+  &:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem ${OUTLINE};
   }
 `
 

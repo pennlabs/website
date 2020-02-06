@@ -158,6 +158,32 @@ export const BtnLink = ({ to, fullWidth, ...rest }: IBtnLinkProps) => (
   </BtnLinkLink>
 )
 
+interface IInputProps {
+  type?: string
+  value?: any
+  name?: string
+  onClick?: (event: React.MouseEvent<Element, MouseEvent>) => void
+}
+
+type IBtnInputProps = IBtnProps & IInputProps
+
+const BtnInputTag = s.input<IBtnInputProps>(Btn)
+
+/**
+ * Button to be used in form (primarily for submitting said form).
+ *
+ * @param props.style    - to apply to the button
+ * @param props.disabled - if the button should be unclickable and slightly
+ *                      transparent
+ * @param ...others
+ */
+export const BtnInput = ({
+  style,
+  ...rest
+}: IBtnInputProps & { pending?: boolean }) => (
+  <BtnInputTag style={{ marginBottom: 0, ...style }} {...rest} />
+)
+
 export const Buttons = s.div`
   a,
   input {

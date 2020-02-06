@@ -40,11 +40,12 @@ Website for Penn Labs.
 - [x] Illustrations on about page
 - [x] Add precommit hook
 - [x] Fix SVG rendering issues in Safari
+- [x] Link to join listserv (Mailchimp)
+- [x] Outlines on everything
 - [ ] Apply page; note that apps are no longer open
 - [ ] Animate apply page
 - [ ] Apply page hero image and hero content
 - [ ] Blog index page hero image and hero content
-- [ ] Link to join listserv (Mailchimp)
 
 ### Longer term todo
 
@@ -53,3 +54,4 @@ Website for Penn Labs.
 - [ ] More visual content for each product page in markdown
 - [ ] Debug exported graphql query error message when running `yarn dev`
 - [ ] Port over to `typescript-eslint` (`tslint` is deprecated)
+- [ ] Better mailchimp state management
