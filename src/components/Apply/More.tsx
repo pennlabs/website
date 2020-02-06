@@ -32,18 +32,16 @@ const more: IMore[] = [
 
 export const More = () => (
   <Section>
-    <Container>
-      <H2>More About Us</H2>
-      <Row margin={M1}>
-        {more.map(({ title, content }) => (
-          <Col key={title} margin={M1} sm={12} md={6} lg={3} flex>
-            <Card shaded bordered>
-              <H3>{title}</H3>
-              <P mb0>{content}</P>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+    <H2>More About Us</H2>
+    <Row margin={M1}>
+      {more.map(({ title, content }) => (
+        <Col key={title} margin={M1} sm={12} md={6} lg={6} flex>
+          <Card shaded bordered>
+            <H3>{title}</H3>
+            <P mb0>{content}</P>
+          </Card>
+        </Col>
+      ))}
+    </Row>
   </Section>
 )
