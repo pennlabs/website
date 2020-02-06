@@ -2,29 +2,18 @@ import React from 'react'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
+import { AboutHero } from '../components/About/Hero'
 import { H1, Section, Container, P, H3, H4 } from '../shared'
+
+const imgPath1 = require('../images/about/high-five.gif') as string // tslint:disable-line
+const imgPath2 = require('../images/about/speech-bubbles.gif') as string // tslint:disable-line
 
 const AboutPage = (): React.ReactElement => (
   <Layout>
     <SEO title="About" />
-    <Container>
-      <Section>
-        <H1>A Story of Building Tools that Matter</H1>
-        <H3 normal>About Penn Labs</H3>
-      </Section>
 
-      <Section>
-        <H3>
-          We’re a team of product designers, software engineers, and business
-          developers.
-        </H3>
-        <H4 normal>Our Mission</H4>
-        <P>
-          We believe in improving the Penn community. In addition to creating
-          open-source, quality products, we give back with educational resources
-          and technical support.
-        </P>
-      </Section>
+    <Container>
+      <AboutHero />
 
       <Section>
         <H3>Founding</H3>
@@ -44,6 +33,7 @@ const AboutPage = (): React.ReactElement => (
           was also tasked with a bigger goal: look for more ways to use
           technology to improve life at Penn.
         </P>
+        <img src={imgPath1} alt="High five" />
       </Section>
 
       <Section>
