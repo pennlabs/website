@@ -7,6 +7,7 @@ import { H1, Section, Container, Row, Col, P, H2, H3, H4 } from '../shared'
 import { M2 } from '../constants/measurements'
 
 const highfivePath = require('../images/about/high-five.gif') as string // tslint:disable-line
+const peoplelogoPath = require('../images/about/people-labs-logo.svg') as string // tslint:disable-line
 const speechbubblePath = require('../images/about/speech-bubbles.gif') as string // tslint:disable-line
 
 const AboutPage = (): React.ReactElement => (
@@ -18,10 +19,10 @@ const AboutPage = (): React.ReactElement => (
 
       <Section>
         <Row margin={M2}>
-          <Col sm={12} md={5} margin={M2}>
+          <Col sm={8} lg={5} margin={M2}>
             <img src={highfivePath} alt="High five" />
           </Col>
-          <Col sm={12} md={7} margin={M2}>
+          <Col sm={12} lg={7} margin={M2}>
             <H2>Founding</H2>
             <H3 normal>Humble beginnings at a hackathon</H3>
             <P>
@@ -40,7 +41,7 @@ const AboutPage = (): React.ReactElement => (
               technology to improve life at Penn.
             </P>
           </Col>
-        </Row>        
+        </Row>
       </Section>
 
       <Section>
@@ -54,27 +55,27 @@ const AboutPage = (): React.ReactElement => (
               to engage with users and provide meaningful solutions. With our core
               value of improving student life, we built a track record of creating real
               products with real impact. Soon, we established ourselves as Penn Labs and
-              became affiliated with the Undergraduate Assembly. This brought us into 
-              campus-wide conversations about addressing student needs. It also gave us 
-              a seat at the table with university administrators. 
+              became affiliated with the Undergraduate Assembly. This brought us into
+              campus-wide conversations about addressing student needs. It also gave us
+              a seat at the table with university administrators.
             </P>
             <P>
               Penn’s support is incredibly humbling and means a lot to us. This
               support comes in many forms, including financing, data, and access to
-              Penn’s technology infrastructure. With it, we’ve invested in cultivating a 
-              startup-like environment to build reliable, high quality products and uphold 
+              Penn’s technology infrastructure. With it, we’ve invested in cultivating a
+              startup-like environment to build reliable, high quality products and uphold
               industry standards in engineering and education.
             </P>
           </Col>
-          <Col sm={12} md={5} margin={M2}>
-            <img src={speechbubblePath} alt="People talking" />
+          <Col sm={8} md={5} margin={M2}>
+            <img src={peoplelogoPath} alt="People and Labs logo" />
           </Col>
-        </Row>        
+        </Row>
       </Section>
 
       <Section>
         <Row margin={M2}>
-          <Col sm={12} md={5} margin={M2}>
+          <Col sm={8} md={5} margin={M2}>
             <img src={speechbubblePath} alt="People talking" />
           </Col>
           <Col sm={12} md={7} margin={M2}>
@@ -89,12 +90,12 @@ const AboutPage = (): React.ReactElement => (
             <P>
               Innovation in technology has made a lot of what we do possible. Over
               the years, the horizon grows ever broader and barriers to entry
-              diminish. We can’t wait to see where this road takes us, as we continue 
+              diminish. We can’t wait to see where this road takes us, as we continue
               working toward our mission for many more years to come. We hope that we’re
               making Penn better for you.
             </P>
           </Col>
-        </Row>        
+        </Row>
       </Section>
     </Container>
   </Layout>
