@@ -39,6 +39,7 @@ Website for Penn Labs.
 - [x] Safari: add intersection observer polyfill
 - [x] Illustrations on about page
 - [x] Add precommit hook
+- [x] Fix SVG rendering issues in Safari
 - [ ] Apply page; note that apps are no longer open
 - [ ] Animate apply page
 - [ ] Apply page hero image and hero content

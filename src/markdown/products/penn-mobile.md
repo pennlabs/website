@@ -2,7 +2,7 @@
 title: 'Penn Mobile'
 description: 'Making it easy to Thrive at Penn, on the go'
 logo: '../../images/products/logos/penn-mobile-logo.svg'
-image: '../../images/products/penn-mobile-home.svg'
+screenshot: '../../images/products/mobile-product.png'
 justifyImage: 'left'
 showOnHomepage: true
 orderOnHomepage: 2

@@ -2,7 +2,7 @@
 title: 'Penn Course Alert'
 description: 'Get alerted when a course opens up, by email or text'
 logo: '../../images/products/logos/pca-logo.svg'
-image: '../../images/products/pca-product.svg'
+screenshot: '../../images/products/pca-product.png'
 justifyImage: 'right'
 showOnHomepage: false
 orderOnHomepage: -1

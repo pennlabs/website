@@ -34,7 +34,6 @@ const ProductTemplate = ({
     frontmatter: {
       title,
       description,
-      image,
       screenshot,
       justifyImage,
       link,
@@ -44,17 +43,10 @@ const ProductTemplate = ({
     },
     html,
   } = markdownRemark
-  const { relativePath } = image || {}
-  // const fluid = null
-  console.log('screenshot', screenshot)
+
   const {
     childImageSharp: { fluid },
   } = screenshot || { childImageSharp: {} }
-
-  // Dynamically import asset as an SVG
-  const imagePath: string | undefined = relativePath
-    ? require(`../images/${relativePath}`)
-    : undefined
 
   const logoPath = require(`../images/${logoRelativePath}`)
   const isRight = justifyImage === 'right'
@@ -62,7 +54,7 @@ const ProductTemplate = ({
   return (
     <Layout>
       <SEO title={title} />
-      <ProductOverview imagePath={imagePath} fluid={fluid} isRight={isRight}>
+      <ProductOverview fluid={fluid} isRight={isRight}>
         <Fade delay={400} distance={M2}>
           <div>
             <Logo src={logoPath} alt={title} />
@@ -119,9 +111,6 @@ export const pageQuery = graphql`
               ...GatsbyImageSharpFluid_tracedSVG
             }
           }
-        }
-        image {
-          relativePath
         }
         logo {
           relativePath

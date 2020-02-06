@@ -2,7 +2,6 @@
 title: 'Penn Course Review'
 description: 'The most trusted source of course and instructor ratings'
 logo: '../../images/products/logos/pcr-logo.svg'
-image: '../../images/products/pcr-home.svg'
 screenshot: '../../images/products/pcr-product.png'
 justifyImage: 'right'
 showOnHomepage: true

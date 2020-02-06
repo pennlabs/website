@@ -42,8 +42,12 @@ export const Products = (): React.ReactElement => {
               description
               title
               justifyImage
-              image {
-                relativePath
+              screenshot {
+                childImageSharp {
+                  fluid(maxWidth: 1256) {
+                    ...GatsbyImageSharpFluid_tracedSVG
+                  }
+                }
               }
             }
           }
@@ -72,20 +76,20 @@ export const Products = (): React.ReactElement => {
                 description,
                 title,
                 justifyImage,
-                image: { relativePath: relativeImagePath },
+                screenshot: {
+                  childImageSharp: { fluid },
+                },
               },
             },
           },
           idx: number,
         ) => {
-          // Dynamically import the image as an SVG
-          const imagePath = require(`../../images/${relativeImagePath}`) as string
           const isRight = justifyImage === 'right'
 
           return (
             <React.Fragment key={fileAbsolutePath}>
               {productIndexToAdditionalComponent[idx] || null}
-              <ProductOverview imagePath={imagePath} isRight={isRight}>
+              <ProductOverview fluid={fluid} isRight={isRight}>
                 <Fade>
                   <div style={{ width: '100%' }}>
                     <H1

@@ -2,7 +2,7 @@
 title: 'Common Funding Application'
 description: 'Bringing funding to student-organized events across campus'
 logo: '../../images/products/logos/cfa-logo.svg'
-image: '../../images/products/cfa-product.svg'
+screenshot: '../../images/products/cfa-product.png'
 justifyImage: 'right'
 showOnHomepage: false
 orderOnHomepage: -1

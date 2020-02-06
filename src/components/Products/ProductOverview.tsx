@@ -54,14 +54,12 @@ const StyledContainer = styled(Container)<{ isEven: boolean }>`
 
 interface IProductOverviewProps {
   isRight: boolean
-  imagePath: string | undefined
   children: ReactChildren
-  fluid?: FluidObject
+  fluid: FluidObject
 }
 
 export const ProductOverview = ({
   isRight,
-  imagePath,
   fluid,
   children,
 }: IProductOverviewProps) => (
@@ -72,14 +70,10 @@ export const ProductOverview = ({
       marginBottom: '3rem',
     }}
   >
-    {imagePath && (
+    {fluid && (
       <Col sm={12} md={12} lg={6}>
         <Fade distance="1.45rem">
-          {fluid ? (
-            <Img fluid={fluid} isEven={isRight} />
-          ) : (
-            <Image src={imagePath} isEven={isRight} />
-          )}
+          <Img fluid={fluid} isEven={isRight} />
         </Fade>
       </Col>
     )}

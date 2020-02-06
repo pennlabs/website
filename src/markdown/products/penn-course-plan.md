@@ -2,7 +2,7 @@
 title: 'Penn Course Plan'
 description: 'Smarter scheduling, with all the tools you need'
 logo: '../../images/products/logos/pcp-logo.svg'
-image: '../../images/products/pcp-product.svg'
+screenshot: '../../images/products/pcp-product.png'
 justifyImage: 'right'
 showOnHomepage: false
 orderOnHomepage: -1
