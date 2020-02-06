@@ -5,6 +5,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { H1, Section, Fade, WideContainer } from '../shared'
 import { IGhostPost } from '../types'
+import { BlogHero } from '../components/Blog/Hero'
 import Posts from '../components/Blog/Posts'
 import Pagination from '../shared/Pagination'
 
@@ -31,13 +32,9 @@ const BlogPage = ({
     <Layout>
       <SEO title="Blog" />
       <WideContainer>
-        <Section>
-          <Fade>
-            <H1>Blog</H1>
-          </Fade>
-          <Posts posts={posts} />
-          <Pagination pageContext={pageContext} />
-        </Section>
+        <BlogHero />
+        <Posts posts={posts} />
+        <Pagination pageContext={pageContext} />
       </WideContainer>
     </Layout>
   )

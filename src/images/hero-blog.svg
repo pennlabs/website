@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="519px" height="404px" viewBox="0 0 519 404" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M0,0 L29,0 L16.7628788,29.2400178 C16.3167251,30.3060807 15.2740781,31 14.1184211,31 C12.9672481,31 11.9332006,30.2959273 11.5113152,29.2248476 L0,0 L0,0 Z" id="path-1"></path>
+    </defs>
+    <g id="Members" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-Copy" transform="translate(-221.000000, -93.000000)">
+            <g id="Group-2" transform="translate(220.337996, 50.000000)">
+                <rect id="Rectangle" fill="#FCF5E8" transform="translate(260.500000, 256.684814) rotate(4.000000) translate(-260.500000, -256.684814) " x="12" y="82.6848138" width="497" height="348" rx="13"></rect>
+                <g id="Group-5" transform="translate(388.662004, 171.000000)">
+                    <path d="M81,53.404203 L54.0294096,81 L0,81 L0,0 L81,0 L81,53.404203 Z" id="Combined-Shape" fill="#E8F5F8"></path>
+                    <polygon id="Path-24" fill="#D5E6EA" points="54 81 81 53 54 53"></polygon>
+                </g>
+                <g id="Group-5" transform="translate(291.662004, 119.000000)" fill="#E8F5F8">
+                    <rect id="Combined-Shape" x="0" y="0" width="81" height="81"></rect>
+                </g>
+                <rect id="Rectangle" fill="#EFEFEF" transform="translate(224.662004, 277.000000) rotate(3.000000) translate(-224.662004, -277.000000) " x="133.662004" y="150" width="182" height="254"></rect>
+                <rect id="Rectangle" fill="#FFFFFF" x="133.662004" y="150" width="182" height="254"></rect>
+                <g id="pencil" transform="translate(342.162004, 343.500000) rotate(70.000000) translate(-342.162004, -343.500000) translate(327.662004, 258.000000)">
+                    <rect id="Rectangle" fill="#F67C83" x="0" y="-4.54747351e-13" width="29" height="34" rx="6"></rect>
+                    <rect id="Rectangle" fill="#FFD66F" x="0" y="29" width="29" height="111"></rect>
+                    <g id="Rectangle" transform="translate(0.000000, 140.000000)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <use id="Mask" fill="#FFE5C7" xlink:href="#path-1"></use>
+                        <rect fill="#4A4A4A" mask="url(#mask-2)" x="3.81578947" y="19.375" width="20.6052632" height="11.625"></rect>
+                    </g>
+                </g>
+                <g id="Group" transform="translate(123.662004, 100.000000) rotate(42.000000) translate(-123.662004, -100.000000) translate(44.662004, 37.000000)">
+                    <path d="M10,53 L32,53 C35.8659932,53 39,56.1340068 39,60 L39,66 C39,69.8659932 35.8659932,73 32,73 L10,73 C4.4771525,73 6.76353751e-16,68.5228475 0,63 C-6.76353751e-16,57.4771525 4.4771525,53 10,53 Z" id="Rectangle" fill="#24A2B7"></path>
+                    <circle id="Oval" fill="#24A2B7" cx="95" cy="63" r="63"></circle>
+                    <circle id="Oval" fill="#D29C77" cx="95" cy="63" r="54"></circle>
+                    <circle id="Oval" fill="#EAB088" cx="120.5" cy="35.5" r="6.5"></circle>
+                    <circle id="Oval" fill="#EAB088" cx="111" cy="46" r="3"></circle>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
