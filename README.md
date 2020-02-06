@@ -43,7 +43,6 @@ Website for Penn Labs.
 - [ ] Apply page hero image and hero content
 - [ ] Blog index page hero image and hero content
 - [ ] Link to join listserv (Mailchimp)
-- [ ] Safari: images in SVG's don't load correctly
 
 ### Longer term todo
 
