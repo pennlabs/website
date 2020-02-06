@@ -1,25 +1,25 @@
 import React from 'react'
 
 import {
-  Section,
-  Container,
-  H1,
-  H3,
+  Hero,
+  Img,
   BtnAnchor,
   LinkExternalLinkIcon,
 } from '../../shared'
 import { APPLY_FORM_ROUTE } from '../../constants/routes'
 
-export const Hero = () => (
-  <Section>
-    <Container>
-      <H1>Come build with us</H1>
-      <H3 normal>Join the Penn Labs community this Spring.</H3>
+const deskPath = require('../../images/hero-resources.svg') as string // tslint:disable-line
+
+export const ApplyHero = () => (
+  <Hero
+    title="Come Build with Us"
+    subtitle="Join the Penn Labs community this spring"
+    body=
       {APPLY_FORM_ROUTE && (
         <BtnAnchor href={APPLY_FORM_ROUTE} target="_BLANK">
           Apply Now <LinkExternalLinkIcon />
         </BtnAnchor>
       )}
-    </Container>
-  </Section>
+    Image={<Img src={deskPath} fullWidth mb0 />}
+  />
 )

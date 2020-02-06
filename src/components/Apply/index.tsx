@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero } from './Hero'
+import { ApplyHero } from './Hero'
 import { WhyLabs } from './WhyLabs'
 import { InfoSessions } from './InfoSessions'
 import { OpenRoles } from './OpenRoles'
@@ -8,7 +8,7 @@ import { More } from './More'
 
 export const Apply = () => (
   <>
-    <Hero />
+    <ApplyHero />
     <WhyLabs />
     <InfoSessions />
     <OpenRoles />
