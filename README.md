@@ -37,13 +37,13 @@ Website for Penn Labs.
 - [x] Use Gatsby image for author preview...
 - [x] Load blog images with gatsby image sharp
 - [x] Illustrations on about page
+
 - [ ] Apply page; note that apps are no longer open
 - [ ] Animate apply page
 - [ ] Apply page hero image and hero content
 - [ ] Blog index page hero image and hero content
 - [ ] Link to join listserv (Mailchimp)
-- [ ] Might need polyfill https://github.com/timhagn/gatsby-background-image/tree/master/packages/gatsby-background-image#important
-  - [ ] Test on Safari
+- [ ] Safari: images in SVG's don't load correctly
 
 ### Longer term todo
 
@@ -51,3 +51,4 @@ Website for Penn Labs.
 - [ ] Google tag manager
 - [ ] More visual content for each product page in markdown
 - [ ] Debug exported graphql query error message when running `yarn dev`
+- [ ] Port over to `typescript-eslint` (`tslint` is deprecated)

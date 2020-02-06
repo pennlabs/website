@@ -54,10 +54,10 @@ export const Hero = ({
             <Fade delay={400} distance={M1}>
               <H1 mb1>{title}</H1>
             </Fade>
-            <Fade delay={450} distance={M2}>
+            <Fade delay={450} distance={M1}>
               <H3 normal>{subtitle}</H3>
             </Fade>
-            <Fade delay={500} distance={M3}>
+            <Fade delay={500} distance={M1}>
               <P>{body}</P>
             </Fade>
           </TextWrapper>

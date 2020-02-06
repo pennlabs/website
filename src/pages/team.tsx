@@ -27,7 +27,7 @@ const TeamPage = (): React.ReactElement => {
                 photo
                 localImage {
                   childImageSharp {
-                    fluid(maxWidth: 312) {
+                    fluid(maxWidth: 612) {
                       ...GatsbyImageSharpFluid
                     }
                   }

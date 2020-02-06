@@ -3,7 +3,7 @@ import React from 'react'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { AboutHero } from '../components/About/Hero'
-import { H1, Section, Container, Row, Col, P, H2, H3, H4 } from '../shared'
+import { Section, Container, Row, Col, P, H2, H3, Img } from '../shared'
 import { M2 } from '../constants/measurements'
 
 const highfivePath = require('../images/about/high-five.gif') as string // tslint:disable-line
@@ -19,8 +19,8 @@ const AboutPage = (): React.ReactElement => (
 
       <Section>
         <Row margin={M2}>
-          <Col sm={8} lg={5} margin={M2}>
-            <img src={highfivePath} alt="High five" />
+          <Col sm={8} offsetSm={2} lg={5} offsetLg={0} margin={M2}>
+            <Img src={highfivePath} alt="High five" />
           </Col>
           <Col sm={12} lg={7} margin={M2}>
             <H2>Founding</H2>
@@ -46,7 +46,18 @@ const AboutPage = (): React.ReactElement => (
 
       <Section>
         <Row margin={M2}>
-          <Col sm={12} md={7} margin={M2}>
+          <Col
+            sm={8}
+            offsetSm={2}
+            md={6}
+            offsetMd={3}
+            lg={5}
+            offsetLg={7}
+            margin={M2}
+          >
+            <Img src={peoplelogoPath} alt="People and Labs logo" />
+          </Col>
+          <Col sm={12} md={12} lg={7} offsetLg={-12} margin={M2}>
             <H2>Growing Our Reach</H2>
             <H3 normal>University support for our mission</H3>
             <P>
@@ -69,18 +80,23 @@ const AboutPage = (): React.ReactElement => (
               education.
             </P>
           </Col>
-          <Col sm={8} md={5} margin={M2}>
-            <img src={peoplelogoPath} alt="People and Labs logo" />
-          </Col>
         </Row>
       </Section>
 
       <Section>
         <Row margin={M2}>
-          <Col sm={8} md={5} margin={M2}>
-            <img src={speechbubblePath} alt="People talking" />
+          <Col
+            offsetSm={2}
+            sm={8}
+            md={6}
+            offsetMd={3}
+            lg={5}
+            offsetLg={0}
+            margin={M2}
+          >
+            <Img src={speechbubblePath} alt="People talking" />
           </Col>
-          <Col sm={12} md={7} margin={M2}>
+          <Col sm={12} lg={7} margin={M2}>
             <H2>Penn Labs Today</H2>
             <H3 normal>
               For academics, campus life, and everything in-between

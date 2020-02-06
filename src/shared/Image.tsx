@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import Image from 'gatsby-image'
 
 interface IImg {
   mb0?: boolean
