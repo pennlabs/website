@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
@@ -100,13 +100,10 @@ const Links = ({ github, linkedin, website }: ILinks) => (
   </LinksTag>
 )
 
-const ProfilePicture = styled(Img)`
-  height: 10.4rem;
-  width: 10.4rem;
-  margin-right: ${M2};
-  object-fit: cover;
-  object-position: center;
+const ProfilePictureWrapper = styled.div`
   border-radius: ${BORDER_RADIUS};
+  overflow: hidden;
+  margin-right: ${M2};
   margin-bottom: 0;
 
   ${maxWidth(DESKTOP)} {
@@ -114,14 +111,26 @@ const ProfilePicture = styled(Img)`
   }
 
   ${maxWidth(PHONE)} {
-    width: 100%;
-    height: auto;
-    padding-top: 100%;
     margin-right: 0;
   }
 
   ${minWidth(DESKTOP)} {
     margin-right: ${M4};
+  }
+`
+
+const ProfilePicture = styled(BackgroundImage)`
+  height: 10.4rem;
+  width: 10.4rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 0;
+
+  ${maxWidth(PHONE)} {
+    width: 100%;
+    height: auto;
+    padding-top: 100%;
   }
 `
 
@@ -196,7 +205,11 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
         <Fade distance={M1}>
           <StyledCard shaded>
             <Row>
-              {fluid && <ProfilePicture fluid={fluid} />}
+              {fluid && (
+                <ProfilePictureWrapper>
+                  <ProfilePicture fluid={fluid} />
+                </ProfilePictureWrapper>
+              )}
               <Col flex>
                 <div style={{ width: '100%', alignSelf: 'center' }}>
                   <H1 mb2>{name}</H1>

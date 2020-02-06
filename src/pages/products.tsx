@@ -19,10 +19,13 @@ import { getPathFromFileAbsolutePath } from '../helpers'
 import { M2, minWidth, DESKTOP, M4 } from '../constants/measurements'
 import { ProductsHero } from '../components/Products/Hero'
 
-const Logo = styled.img<{}>`
+const Logo = styled.div<{ src: string }>`
   width: 3.6rem;
   height: 3.6rem;
-  object-fit: contain;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(${props => props.src});
   margin-right: ${M2};
   margin-bottom: 0;
 

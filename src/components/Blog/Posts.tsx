@@ -18,6 +18,7 @@ import { IGhostPost } from '../../types'
 const PostThumbnail = styled(Img)`
   object-fit: contain;
   object-position: center;
+  width: 100%;
   border-radius: ${BORDER_RADIUS};
   margin-bottom: ${M3};
 `

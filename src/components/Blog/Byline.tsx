@@ -1,26 +1,30 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import Img, { FluidObject, GatsbyImageProps } from 'gatsby-image'
+import { FluidObject, GatsbyImageProps } from 'gatsby-image'
+import BackgroundImage from 'gatsby-background-image'
 
 import { TEAM_MEMBER_ROUTE, HOME_ROUTE } from '../../constants/routes'
 import { IGhostAuthor, IMember } from '../../types'
 import { M1, M2, maxWidth } from '../../constants/measurements'
 
-const Thumbnail = styled.img`
-  width: 40px;
-  height: 40px;
-  object-fit: cover;
-  object-position: center;
+const THUMBNAIL_SIZE = '40px'
+
+const ThumbnailWrapper = styled.div`
   margin-right: ${M1};
   border-radius: 50%;
+  overflow: hidden;
   display: inline-block;
-  margin-bottom: 0;
 `
 
-const ThumbnailGatsbyImg = (props: { fluid: FluidObject }) => (
-  <Thumbnail as={Img} {...props} />
-)
+const Thumbnail = styled(BackgroundImage)`
+  width: ${THUMBNAIL_SIZE};
+  height: ${THUMBNAIL_SIZE};
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 0;
+`
 
 const AuthorLink = styled(Link)`
   margin-right: ${M2};
@@ -97,8 +101,10 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
     return (
       <BylineContainer>
         <AuthorLink to={HOME_ROUTE}>
-          <ThumbnailGatsbyImg fluid={pennLabsLogoFluid as FluidObject} /> Penn
-          Labs
+          <ThumbnailWrapper>
+            <Thumbnail fluid={pennLabsLogoFluid as FluidObject} />
+          </ThumbnailWrapper>{' '}
+          Penn Labs
         </AuthorLink>
       </BylineContainer>
     )
@@ -114,7 +120,9 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
     <BylineContainer>
       {authorsAsMembers.map(({ url, localImage, student: { name } }) => (
         <AuthorLink key={url} to={TEAM_MEMBER_ROUTE(url)}>
-          <ThumbnailGatsbyImg fluid={getMemberImage(localImage)} />
+          <ThumbnailWrapper>
+            <Thumbnail fluid={getMemberImage(localImage)} />
+          </ThumbnailWrapper>
           <span>{name}</span>
         </AuthorLink>
       ))}
