@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactNode } from 'react'
-import s from 'styled-components'
+import s, { css, FlattenSimpleInterpolation } from 'styled-components'
 
 import { minWidth, maxWidth, PHONE, TABLET } from '../constants/measurements'
 
@@ -8,6 +8,11 @@ const percent = (numCols: number): string => (numCols / 12) * 100 + '%'
 export const Section = s.section<{}>`
   padding-top: 7.5vh;
   padding-bottom: 7.5vh;
+
+  ${maxWidth(PHONE)} {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
 `
 
 interface IContainerTagProps {
@@ -95,40 +100,50 @@ export interface IColProps {
   background?: string
 }
 
-const ColWrapper = s.div<IColProps>`
-  flex: ${({ width }) => (width ? 'none' : 1)};
-  width: ${({ width }) => width || 'auto'};
-  overflow-y: ${({ overflowY }) => overflowY || 'visible'};
-  overflow-x: visible;
+const ColWrapper = s.div<IColProps>(
+  ({
+    width,
+    overflowY,
+    sm,
+    offsetSm,
+    md,
+    offsetMd,
+    lg,
+    offsetLg,
+    flex,
+  }): FlattenSimpleInterpolation => css`
+    flex: ${width ? 'none' : 1};
+    width: ${width || 'auto'};
+    overflow-y: ${overflowY || 'visible'};
+    overflow-x: visible;
 
-  ${minWidth('0px')} {
-    ${({ sm }) => sm && `width: ${percent(sm)}; flex: none;`}
-    ${({ offsetSm }) => offsetSm && `margin-left: ${percent(offsetSm)};`}
-  }
+    ${sm && `width: ${percent(sm)}; flex: none;`}
+    ${(offsetSm || offsetSm === 0) && `margin-left: ${percent(offsetSm)};`}
 
-  ${minWidth(PHONE)} {
-    ${({ md }) => md && `width: ${percent(md)}; flex: none;`}
-    ${({ offsetMd }) => offsetMd && `margin-left: ${percent(offsetMd)};`}
-  }
+    ${minWidth(PHONE)} {
+      ${md && `width: ${percent(md)}; flex: none;`}
+      ${(offsetMd || offsetMd === 0) && `margin-left: ${percent(offsetMd)};`}
+    }
 
-  ${minWidth(TABLET)} {
-    ${({ lg }) => lg && `width: ${percent(lg)}; flex: none;`}
-    ${({ offsetLg }) => offsetLg && `margin-left: ${percent(offsetLg)};`}
-  }
+    ${minWidth(TABLET)} {
+      ${lg && `width: ${percent(lg)}; flex: none;`}
+      ${(offsetLg || offsetLg === 0) && `margin-left: ${percent(offsetLg)};`}
+    }
 
-  ${({ flex }) => flex && `display: flex;`}
-`
+    ${flex && `display: flex;`}
+  `,
+)
 
-const ColContainer = s.div<IColProps>`
-  background: ${({ background }) => background || 'transparent'};
-  overflow-x: visible;
-  position: relative;
+const ColContainer = s.div<IColProps>(
+  ({ background, flex, margin }): FlattenSimpleInterpolation => css`
+    background: ${background || 'transparent'};
+    overflow-x: visible;
+    position: relative;
 
-  ${({ flex }) => flex && `display: flex; flex: 1;`}
-
-  ${({ margin }) =>
-    margin && `margin-left: ${margin}; margin-right: ${margin};`}
-`
+    ${flex && `display: flex; flex: 1;`}
+    ${margin && `margin-left: ${margin}; margin-right: ${margin};`}
+  `,
+)
 
 export const Col = ({
   margin,

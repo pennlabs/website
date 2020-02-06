@@ -16,13 +16,13 @@ import { BLACK_ALPHA } from '../../constants/colors'
 import { IMember } from '../../types'
 
 const StyledLink = styled(Link)<{}>`
-  margin: -${M2};
+  width: calc(100% + ${M2} + ${M2});
   padding: ${M2};
   border-radius: ${BORDER_RADIUS_LG};
   display: block;
   box-shadow: 0 0 0 ${BLACK_ALPHA(0.25)};
   transition: box-shadow ${SHORT_ANIMATION_DURATION}ms ease;
-  margin-bottom: 1.45rem;
+  margin: 0 -${M2} 1.45rem -${M2};
 
   &:hover,
   &:focus,
