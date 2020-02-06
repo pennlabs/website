@@ -43,6 +43,7 @@ Website for Penn Labs.
 - [ ] Apply page hero image and hero content
 - [ ] Blog index page hero image and hero content
 - [ ] Link to join listserv (Mailchimp)
+- [ ] Add precommit hook
 
 ### Longer term todo
 

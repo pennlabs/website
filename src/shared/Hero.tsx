@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 import styled from 'styled-components'
 
 import { M1, M2, M3, maxWidth, DESKTOP, PHONE } from '../constants/measurements'
@@ -26,7 +26,7 @@ interface IHeroProps {
   Image: React.ReactNode
   title: string
   subtitle: string
-  body: string
+  body?: string | ReactNode
 
   /**
    * If the image should be wrapped in a `<Fade />` component or not.
@@ -57,9 +57,11 @@ export const Hero = ({
             <Fade delay={450} distance={M1}>
               <H3 normal>{subtitle}</H3>
             </Fade>
-            <Fade delay={500} distance={M1}>
-              <P>{body}</P>
-            </Fade>
+            {body && (
+              <Fade delay={500} distance={M1}>
+                <P>{body}</P>
+              </Fade>
+            )}
           </TextWrapper>
         </Col>
         <Col sm={12} md={6} margin={M2}>

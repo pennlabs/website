@@ -65,10 +65,10 @@
     "build": "gatsby build",
     "dev": "gatsby develop",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "format": "prettier --write \"**/**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "lint": "tslint src/**/*.ts src/**/*.tsx",
+    "lint": "tslint src/**/**/*.ts src/**/**/*.tsx",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
