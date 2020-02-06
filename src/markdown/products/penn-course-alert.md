@@ -1,12 +1,21 @@
 ---
 title: 'Penn Course Alert'
-description: 'Get alerted when a course opens up, by text and email'
+description: 'Get alerted when a course opens up, by email or text'
 logo: '../../images/products/logos/pca-logo.svg'
-image: null
-justifyImage: null
+image: '../../images/products/pca-product.svg'
+justifyImage: 'right'
 showOnHomepage: false
 orderOnHomepage: -1
 link: 'https://penncoursealert.com/'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Trying to get into that one class that never seems to be open on Penn InTouch? We've got you covered.
+
+## "I _need_ that class"
+Search for the class, register for an alert, and we'll let you know the second it opens up!
+
+## Be in the know, in class and on the go
+Email and text alerts tell you when to sprint to Penn InTouch, whether you're on your phone or laptop.
+
+## See the past and the future
+[COMING SOON] See the history of when courses have been open and closed. Manage your alerts in one central dashboard.

@@ -43,3 +43,4 @@ Website for Penn Labs.
 - [ ] Animate apply page
 - [ ] Apply page hero image and hero content
 - [ ] Metadata, metadata image
+- [ ] Link to join listserv (Mailchimp)

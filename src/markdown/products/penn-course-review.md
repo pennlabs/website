@@ -1,6 +1,6 @@
 ---
 title: 'Penn Course Review'
-description: 'Professor and course ratings'
+description: 'The most trusted source of course and instructor ratings'
 logo: '../../images/products/logos/pcr-logo.svg'
 image: '../../images/products/pcr-home.svg'
 justifyImage: 'right'
@@ -9,4 +9,13 @@ orderOnHomepage: 1
 link: 'https://penncoursereview.com/'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Get the inside scoop on academics at Penn, so you can make informed decisions when it comes to your coursework.
+
+## Academics by the numbers
+Insightful metrics, from Course Quality to Amount Learned for Non-majors, on a simple 0-4 scale. 
+
+## Time is on your side
+Access years and years of data that help you make comparisons amongst courses or instructors. 
+
+## Prepare for the upcoming semester
+Penn Course Review integrates the most up-to-date information from the registrar. We tell you whether a course is offered this semester or how many sections are open, giving you valuable context while you're browsing.
