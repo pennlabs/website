@@ -9,7 +9,7 @@ export const TeamHero = () => (
     subtitle="The people behind the products"
     body={`
       Our products wouldn't exist without the commitment and hard work of our
-      members. We recruit the best rising developers at Penn to build the next
+      members. We recruit the best rising students at Penn to build the next
       generation of products. We structure our club to optimize for education
       and mobility between technologies and teams. At the end of the day, we’re
       a family that builds, learns, and plays together.

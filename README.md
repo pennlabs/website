@@ -22,18 +22,17 @@ Website for Penn Labs.
 - [x] Animate member page
 - [x] Style author preview at bottom of blog post; especially on mobile
 - [x] Suggestions form (either Airtable or Typeform?)
+- [x] Animate blog post page
+- [x] Team page
+- [x] List blog posts by member on member show page
 - [ ] Blobs on resources
 - [ ] Blobs on products
 - [ ] Google Analytics
 - [ ] Product pages content
 - [ ] Be able to load member images with gatsby-image for lazy loading: https://github.com/graysonhicks/gatsby-plugin-remote-images
 - [ ] Illustrations on about page
-- [ ] Products page
-- [ ] Animate blog post page
 - [ ] Port over blog content from Medium
 - [ ] Apply page; note that apps are no longer open
-- [ ] Team page
-- [ ] List blog posts by member on member show page
 - [ ] Fix issue with loading product images at runtime
 - [ ] Load blog images with gatsby image sharp
 - [ ] Blob 5 styles
@@ -42,3 +41,5 @@ Website for Penn Labs.
 - [ ] Show images of authors on blog posts
 - [ ] Use Gatsby image for author preview...
 - [ ] Animate apply page
+- [ ] Apply page hero image and hero content
+- [ ] Metadata, metadata image
