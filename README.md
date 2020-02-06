@@ -33,20 +33,21 @@ Website for Penn Labs.
 - [x] Metadata, metadata image
 - [x] Show images of authors on blog posts
 - [x] List blog posts by member on member show page
-- [ ] Be able to load member images with gatsby-image for lazy loading: https://github.com/graysonhicks/gatsby-plugin-remote-images
+- [x] Be able to load member images with gatsby-image for lazy loading: https://github.com/graysonhicks/gatsby-plugin-remote-images
+- [x] Use Gatsby image for author preview...
+- [x] Load blog images with gatsby image sharp
 - [ ] Illustrations on about page
 - [ ] Apply page; note that apps are no longer open
-- [ ] Fix issue with loading product images at runtime
-- [ ] Load blog images with gatsby image sharp
-- [ ] Use Gatsby image for author preview...
 - [ ] Animate apply page
 - [ ] Apply page hero image and hero content
 - [ ] Blog index page hero image and hero content
 - [ ] Link to join listserv (Mailchimp)
-- [ ] Debug exported graphql query error message when running `yarn dev`
+- [ ] Might need polyfill https://github.com/timhagn/gatsby-background-image/tree/master/packages/gatsby-background-image#important
+  - [ ] Test on Safari
 
 ### Longer term todo
 
 - [ ] More blog posts
 - [ ] Google tag manager
 - [ ] More visual content for each product page in markdown
+- [ ] Debug exported graphql query error message when running `yarn dev`

@@ -42,7 +42,7 @@ const TagTemplate = ({ data, pageContext }: ITagTemplateProps) => {
 }
 
 export const pageQuery = graphql`
-  query GhostTagQuery($slug: String!, $limit: Int!, $skip: Int!) {
+  query($slug: String!, $limit: Int!, $skip: Int!) {
     ghostTag(slug: { eq: $slug }) {
       name
       description
