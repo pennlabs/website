@@ -37,7 +37,7 @@ Website for Penn Labs.
 - [x] Use Gatsby image for author preview...
 - [x] Load blog images with gatsby image sharp
 - [x] Safari: add intersection observer polyfill
-- [ ] Illustrations on about page
+- [x] Illustrations on about page
 - [ ] Apply page; note that apps are no longer open
 - [ ] Animate apply page
 - [ ] Apply page hero image and hero content
