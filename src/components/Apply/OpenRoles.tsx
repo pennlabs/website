@@ -2,10 +2,20 @@ import React from 'react'
 import { Section, Container, H2, Row, Col, Card, H3, P } from '../../shared'
 import { M2 } from '../../constants/measurements'
 import { STACK_ROUTE } from '../../constants/routes'
+import { LABS_BLUE_ALPHA, LABS_BLUE_DARK } from '../../constants/colors'
 
 export const OpenRoles = () => (
   <Section>
     <H2>Open Roles</H2>
+
+    <Card
+      style={{ backgroundColor: LABS_BLUE_ALPHA(0.125), color: LABS_BLUE_DARK }}
+    >
+      <strong>Note:</strong> applications are currently closed. We generally
+      accept new members at the start of both the Fall and Spring semesters. If
+      you have a request, contact us via the feedback form in the bottom right
+      of the screen.
+    </Card>
 
     <Row margin={M2}>
       <Col margin={M2}>

@@ -42,10 +42,10 @@ Website for Penn Labs.
 - [x] Fix SVG rendering issues in Safari
 - [x] Link to join listserv (Mailchimp)
 - [x] Outlines on everything
-- [ ] Apply page; note that apps are no longer open
-- [ ] Animate apply page
-- [ ] Apply page hero image and hero content
-- [ ] Blog index page hero image and hero content
+- [x] Apply page; note that apps are no longer open
+- [x] Animate apply page
+- [x] Apply page hero image and hero content
+- [x] Blog index page hero image and hero content
 
 ### Longer term todo
 
