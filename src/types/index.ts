@@ -60,6 +60,9 @@ export interface IGhostPost {
   title: string
   excerpt?: string
   feature_image?: string
+  localImage?: {
+    childImageSharp: GatsbyImageProps
+  }
   reading_time?: number
   published_at?: string
   tags?: IGhostTag[]

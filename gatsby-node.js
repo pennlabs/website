@@ -234,7 +234,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allMarkdownRemark: { edges: products },
     },
   } = await graphql(`
-    {
+    query {
       allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___title] }) {
         edges {
           node {
@@ -273,7 +273,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       allGhostPost: { edges: posts },
     },
   } = await graphql(`
-    {
+    query {
       allGhostPost(sort: { order: ASC, fields: published_at }) {
         edges {
           node {

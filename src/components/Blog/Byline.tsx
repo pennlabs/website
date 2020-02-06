@@ -77,8 +77,6 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
     }
   `)
 
-  console.log('members', members)
-
   // This is really pretty ugly. But for some reason, GraphQL isn't picking up on the ghost <> labs
   // foreign key when the authors are in a list like they are under posts -- in that case,
   // the type seems to be GhostPostAuthor instead of GhostAuthor, which doesn't trigger
@@ -94,8 +92,6 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
       .filter(mem => Boolean(mem))
   }
 
-  console.log('authorsAsMembers', authorsAsMembers)
-
   // If there are no authors
   if (authorsAsMembers.length === 0) {
     return (
@@ -108,17 +104,11 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
     )
   }
 
-  const getMemberImage = (localImage: {
-    childImageSharp: GatsbyImageProps
-  }) => {
-    console.log('local image', localImage)
-    return (
-      (localImage &&
-        localImage.childImageSharp &&
-        localImage.childImageSharp.fluid) ||
-      pennLabsLogoFluid
-    )
-  }
+  const getMemberImage = (localImage: { childImageSharp: GatsbyImageProps }) =>
+    (localImage &&
+      localImage.childImageSharp &&
+      localImage.childImageSharp.fluid) ||
+    pennLabsLogoFluid
 
   return (
     <BylineContainer>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 
 import { Card, VFlex, H3, P, Flex, Fade } from '../../shared'
 
@@ -14,7 +15,7 @@ import {
 } from '../../constants/measurements'
 import { IGhostPost } from '../../types'
 
-const PostThumbnail = styled.img`
+const PostThumbnail = styled(Img)`
   object-fit: contain;
   object-position: center;
   border-radius: ${BORDER_RADIUS};
@@ -34,12 +35,17 @@ const PostCard = styled(Card)`
   }
 `
 
-const Post = ({ slug, title, excerpt, feature_image }: IGhostPost) => {
+const Post = ({
+  slug,
+  title,
+  excerpt,
+  localImage: { childImageSharp: { fluid } } = { childImageSharp: {} },
+}: IGhostPost) => {
   return (
     <PostCard bordered hoverable clickable shaded>
       <Link to={BLOG_POST_ROUTE(slug)}>
         <VFlex>
-          <PostThumbnail src={feature_image} />
+          {fluid && <PostThumbnail fluid={fluid} />}
           <H3 mb2>{title}</H3>
           <P mb1 sm>
             {excerpt}

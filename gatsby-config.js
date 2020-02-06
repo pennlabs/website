@@ -68,5 +68,12 @@ module.exports = {
         imagePath: 'photo',
       },
     },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'GhostPost',
+        imagePath: 'feature_image',
+      },
+    },
   ],
 }

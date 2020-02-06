@@ -255,7 +255,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
   )
 }
 
-export const query = graphql`
+export const pageQuery = graphql`
   query($id: String!, $url: String!) {
     member(id: { eq: $id }) {
       bio
@@ -289,7 +289,13 @@ export const query = graphql`
           slug
           title
           excerpt
-          feature_image
+          localImage {
+            childImageSharp {
+              fluid(maxWidth: 484) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }
