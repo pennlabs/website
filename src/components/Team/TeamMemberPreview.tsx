@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
+import BackgroundImage from 'gatsby-background-image'
 
 import { Col, P, Tags } from '../../shared'
 import {
@@ -8,7 +9,6 @@ import {
   BORDER_RADIUS,
   BORDER_RADIUS_LG,
   SHORT_ANIMATION_DURATION,
-  M4,
   M3,
 } from '../../constants/measurements'
 import { TEAM_MEMBER_ROUTE } from '../../constants/routes'
@@ -31,15 +31,13 @@ const StyledLink = styled(Link)<{}>`
   }
 `
 
-const Image = styled.div<{ src: string }>`
+const Image = styled(BackgroundImage)`
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  background-image: url(${props => props.src});
+  background-repeat: no-repeat;
   width: 100%;
-  height: auto;
   padding-top: 100%;
-  margin-bottom: 1.45rem;
+  margin-bottom: ${M2};
   border-radius: ${BORDER_RADIUS};
 `
 
@@ -47,12 +45,14 @@ export const TeamMemberPreview = ({
   student: { name },
   roles,
   url,
-  photo,
+  localImage: {
+    childImageSharp: { fluid },
+  },
   year_joined: yearJoined,
 }: IMember) => (
   <Col margin={M2} sm={12} md={6} lg={3} key={url}>
     <StyledLink to={TEAM_MEMBER_ROUTE(url)}>
-      {photo && <Image src={photo} style={{ marginBottom: M2 }} />}
+      {fluid && <Image fluid={fluid} />}
       <P mb1 lg>
         <strong>{name}</strong>
       </P>

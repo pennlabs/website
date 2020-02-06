@@ -8,37 +8,42 @@ import { ITeam } from '../types'
 import { TeamHero } from '../components/Team/Hero'
 import { Teams } from '../components/Team/Teams'
 
-const AboutPage = (): React.ReactElement => {
+const TeamPage = (): React.ReactElement => {
   const {
     allTeam: { edges },
-  } = useStaticQuery(
-    graphql`
-      query {
-        allTeam {
-          edges {
-            node {
-              name
-              description
-              children {
-                ... on Member {
-                  id
-                  student {
-                    name
+  } = useStaticQuery(graphql`
+    query {
+      allTeam(sort: { fields: name, order: ASC }) {
+        edges {
+          node {
+            name
+            description
+            children {
+              ... on Member {
+                id
+                student {
+                  name
+                }
+                photo
+                localImage {
+                  childImageSharp {
+                    fluid(maxWidth: 312) {
+                      ...GatsbyImageSharpFluid
+                    }
                   }
-                  photo
-                  url
-                  year_joined(formatString: "YYYY")
-                  roles {
-                    name
-                  }
+                }
+                url
+                year_joined(formatString: "YYYY")
+                roles {
+                  name
                 }
               }
             }
           }
         }
       }
-    `,
-  )
+    }
+  `)
 
   const teams: ITeam[] = edges.map(({ node }) => node)
 
@@ -53,4 +58,4 @@ const AboutPage = (): React.ReactElement => {
   )
 }
 
-export default AboutPage
+export default TeamPage

@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
@@ -29,6 +30,9 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
   const {
     title,
     feature_image,
+    localImage: {
+      childImageSharp: { fluid },
+    },
     html,
     codeinjection_head,
     codeinjection_foot,
@@ -63,9 +67,11 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
                   {publishedAt} • {readingTime} min read
                 </P>
               </MediumContainer>
-              <WideContainer>
-                <img src={feature_image} style={{ width: '100%' }} />
-              </WideContainer>
+              {fluid && (
+                <WideContainer>
+                  <Img fluid={fluid} style={{ width: '100%' }} />
+                </WideContainer>
+              )}
             </header>
           </Fade>
 
@@ -102,6 +108,13 @@ export const pageQuery = graphql`
       codeinjection_head
       codeinjection_foot
       feature_image
+      localImage {
+        childImageSharp {
+          fluid(maxWidth: 1248) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       excerpt
       published_at(formatString: "MMM DD, YYYY")
       reading_time
@@ -118,6 +131,13 @@ export const pageQuery = graphql`
         photo
         url
         bio
+        localImage {
+          childImageSharp {
+            fluid(maxWidth: 80) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         student {
           name
         }

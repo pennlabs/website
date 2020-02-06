@@ -9,7 +9,7 @@ export const AboutHero = () => {
     query {
       aboutHeroImg: file(relativePath: { eq: "labs-group-fall19.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 1024) {
+          fluid(maxWidth: 848) {
             ...GatsbyImageSharpFluid
           }
         }

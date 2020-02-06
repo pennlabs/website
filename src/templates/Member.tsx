@@ -1,6 +1,7 @@
 import React from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
@@ -99,14 +100,12 @@ const Links = ({ github, linkedin, website }: ILinks) => (
   </LinksTag>
 )
 
-const ProfilePicture = styled.div<{ src: string }>`
+const ProfilePicture = styled(Img)`
   height: 10.4rem;
   width: 10.4rem;
   margin-right: ${M2};
-  background-image: url(${props => props.src});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  object-fit: cover;
+  object-position: center;
   border-radius: ${BORDER_RADIUS};
   margin-bottom: 0;
 
@@ -175,6 +174,9 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
       linkedin,
       location,
       photo,
+      localImage: {
+        childImageSharp: { fluid },
+      },
       roles,
       student: { name, major, school },
       team,
@@ -194,7 +196,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
         <Fade distance={M1}>
           <StyledCard shaded>
             <Row>
-              {photo && <ProfilePicture src={photo} />}
+              {fluid && <ProfilePicture fluid={fluid} />}
               <Col flex>
                 <div style={{ width: '100%', alignSelf: 'center' }}>
                   <H1 mb2>{name}</H1>
@@ -253,7 +255,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
   )
 }
 
-export const query = graphql`
+export const pageQuery = graphql`
   query($id: String!, $url: String!) {
     member(id: { eq: $id }) {
       bio
@@ -270,6 +272,13 @@ export const query = graphql`
         major
         school
       }
+      localImage {
+        childImageSharp {
+          fluid(maxWidth: 484) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       team
       website
       year_joined(formatString: "YYYY")
@@ -280,7 +289,13 @@ export const query = graphql`
           slug
           title
           excerpt
-          feature_image
+          localImage {
+            childImageSharp {
+              fluid(maxWidth: 484) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

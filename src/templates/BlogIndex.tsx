@@ -44,7 +44,7 @@ const BlogPage = ({
 }
 
 export const pageQuery = graphql`
-  query GhostPostQuery($limit: Int!, $skip: Int!) {
+  query($limit: Int!, $skip: Int!) {
     allGhostPost(
       sort: { order: DESC, fields: [published_at] }
       limit: $limit
@@ -55,7 +55,13 @@ export const pageQuery = graphql`
           slug
           title
           excerpt
-          feature_image
+          localImage {
+            childImageSharp {
+              fluid(maxWidth: 484) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
           tags {
             slug
             name
