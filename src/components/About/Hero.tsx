@@ -2,6 +2,7 @@ import React from 'react'
 import { Hero, Img } from '../../shared'
 
 const productsPath = require('../../images/hero-products.svg') as string // tslint:disable-line
+//TODO: put labs-group-fall19.jpg as image
 
 export const AboutHero = () => {
   return (
