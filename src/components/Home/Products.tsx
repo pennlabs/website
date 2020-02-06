@@ -14,6 +14,7 @@ import {
   Blob4,
 } from '../../shared'
 import { INTER } from '../../constants/fonts'
+import { M1, M0 } from '../../constants/measurements'
 import { PRODUCTS_ROUTE } from '../../constants/routes'
 import { getPathFromFileAbsolutePath } from '../../helpers'
 import { ProductOverview } from '../Products/ProductOverview'
@@ -79,26 +80,31 @@ export const Products = (): React.ReactElement => {
         ) => {
           // Dynamically import the image as an SVG
           const imagePath = require(`../../images/${relativeImagePath}`) as string
+          const isRight = justifyImage === 'right'
 
           return (
             <React.Fragment key={fileAbsolutePath}>
               {productIndexToAdditionalComponent[idx] || null}
-              <ProductOverview
-                imagePath={imagePath}
-                justifyImage={justifyImage}
-              >
+              <ProductOverview imagePath={imagePath} isRight={isRight}>
                 <Fade>
                   <div style={{ width: '100%' }}>
-                    <H1 style={{ marginBottom: '0.5rem', fontFamily: INTER }}>
+                    <H1
+                      style={{ marginBottom: M1, fontFamily: INTER }}
+                      right={isRight}
+                    >
                       {title}
                     </H1>
-                    <P lg>{description}</P>
-                    <Link
-                      to={getPathFromFileAbsolutePath(fileAbsolutePath)}
-                      style={{ marginBottom: 0 }}
-                    >
-                      Learn more <LinkChevronRightIcon />
-                    </Link>
+                    <P lg right={isRight}>
+                      {description}
+                    </P>
+                    <P right={isRight} mb0>
+                      <Link
+                        to={getPathFromFileAbsolutePath(fileAbsolutePath)}
+                        style={{ marginBottom: M0 }}
+                      >
+                        Learn more <LinkChevronRightIcon />
+                      </Link>
+                    </P>
                   </div>
                 </Fade>
               </ProductOverview>

@@ -16,6 +16,9 @@ interface ITextProps {
   mb4?: boolean
   normal?: boolean
   bold?: boolean
+  left?: boolean
+  center?: boolean
+  right?: boolean
 }
 
 export const P = styled.p<ITextProps>(
@@ -32,6 +35,9 @@ export const P = styled.p<ITextProps>(
     lg,
     normal,
     bold,
+    left,
+    center,
+    right,
   }) => css`
     color: ${white ? WHITE : color || DARK_GRAY};
     opacity: ${opacity || 1.0};
@@ -44,6 +50,7 @@ export const P = styled.p<ITextProps>(
     ${sm && 'font-size: 80%; line-height: 1.375;'}
     ${normal && 'font-weight: 400;'}
     ${bold && 'font-weight: 700;'}
+    text-align: ${left ? 'left' : right ? 'right' : center ? 'center' : 'left'};
   `,
 )
 
