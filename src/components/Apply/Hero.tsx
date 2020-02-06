@@ -3,7 +3,7 @@ import React from 'react'
 import { Hero, Img, BtnAnchor, LinkExternalLinkIcon } from '../../shared'
 import { APPLY_FORM_ROUTE } from '../../constants/routes'
 
-const deskPath = require('../../images/hero-resources.svg') as string // tslint:disable-line
+const applyPath = require('../../images/hero-apply.svg') as string // tslint:disable-line
 
 export const ApplyHero = () => (
   <Hero
@@ -16,6 +16,6 @@ export const ApplyHero = () => (
         </BtnAnchor>
       )
     }
-    Image={<Img src={deskPath} fullWidth mb0 />}
+    Image={<Img src={applyPath} fullWidth mb0 />}
   />
 )
