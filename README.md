@@ -4,7 +4,7 @@ Website for Penn Labs.
 
 ---
 
-### TODO
+### Short term todo
 
 - [x] Favicon
 - [x] Parallax scrolling
@@ -25,26 +25,29 @@ Website for Penn Labs.
 - [x] Animate blog post page
 - [x] Team page
 - [x] List blog posts by member on member show page
-- [ ] Blobs on resources
-- [ ] Blobs on products
-- [ ] Google Analytics
+- [x] Port over blog content from Medium
+- [x] Google Analytics
+- [x] Images for all of the products
 - [x] Product pages content
+- [x] Team page
+- [ ] Metadata, metadata image
 - [ ] Be able to load member images with gatsby-image for lazy loading: https://github.com/graysonhicks/gatsby-plugin-remote-images
 - [ ] Illustrations on about page
-- [x] Products page
-- [ ] Animate blog post page
-- [ ] Port over blog content from Medium
 - [ ] Apply page; note that apps are no longer open
-- [x] Team page
 - [ ] List blog posts by member on member show page
 - [ ] Fix issue with loading product images at runtime
 - [ ] Load blog images with gatsby image sharp
 - [ ] Blob 5 styles
 - [ ] About page animations
-- [x] Images for all of the products
 - [ ] Show images of authors on blog posts
 - [ ] Use Gatsby image for author preview...
 - [ ] Animate apply page
 - [ ] Apply page hero image and hero content
-- [ ] Metadata, metadata image
+- [ ] Blog index page hero image and hero content
 - [ ] Link to join listserv (Mailchimp)
+
+### Longer term todo
+
+- [ ] More blog posts
+- [ ] Google tag manager
+- [ ] More visual content for each product page in markdown

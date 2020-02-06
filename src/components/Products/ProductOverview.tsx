@@ -22,24 +22,44 @@ const StyledContainer = styled(Container)<{ isEven: boolean }>`
   align-items: ${props => (props.isEven ? 'flex-end' : 'flex-start')};
   flex-direction: column;
 
+  ${props =>
+    props.isEven &&
+    `
+    * {
+      text-align: right;
+    }
+  `}
+
   ${maxWidth(TABLET)} {
     display: block;
-    text-align: center;
+    text-align: center !important;
+
+    * {
+      text-align: center !important;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      width: 100%;
+    }
   }
 `
 
 interface IProductOverviewProps {
-  justifyImage: 'left' | 'right' | undefined
+  isRight: boolean
   imagePath: string | undefined
   children: ReactChildren
 }
 
 export const ProductOverview = ({
-  justifyImage,
+  isRight,
   imagePath,
   children,
 }: IProductOverviewProps) => {
-  const isRight = justifyImage === 'right'
   return (
     <>
       <Row

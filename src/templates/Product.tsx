@@ -51,38 +51,35 @@ const ProductTemplate = ({
     : undefined
 
   const logoPath = require(`../images/${logoRelativePath}`)
+  const isRight = justifyImage === 'right'
 
   return (
     <Layout>
       <SEO title={title} />
-      <ProductOverview imagePath={imagePath} justifyImage={justifyImage}>
-        <Fade delay={400}>
-          <Logo src={logoPath} alt={title} />
-        </Fade>
-        <Fade delay={450}>
-          <H1>{title}</H1>
-        </Fade>
-        <Fade delay={500}>
-          <H3 normal>{description}</H3>
-        </Fade>
-        <Fade delay={550}>
-          <Buttons>
-            {link && (
-              <BtnAnchor href={link} target="_BLANK" size={EBtnSize.SM}>
-                Website <LinkExternalLinkIcon />
-              </BtnAnchor>
-            )}
-            {appStoreLink && (
-              <BtnAnchor href={link} target="_BLANK" size={EBtnSize.SM}>
-                App Store <LinkExternalLinkIcon />
-              </BtnAnchor>
-            )}
-            {googlePlayLink && (
-              <BtnAnchor href={link} target="_BLANK" size={EBtnSize.SM}>
-                Google Play <LinkExternalLinkIcon />
-              </BtnAnchor>
-            )}
-          </Buttons>
+      <ProductOverview imagePath={imagePath} isRight={isRight}>
+        <Fade delay={400} distance={M2}>
+          <div>
+            <Logo src={logoPath} alt={title} />
+            <H1>{title}</H1>
+            <H3 normal>{description}</H3>
+            <Buttons>
+              {link && (
+                <BtnAnchor href={link} target="_BLANK" size={EBtnSize.SM}>
+                  Website <LinkExternalLinkIcon />
+                </BtnAnchor>
+              )}
+              {appStoreLink && (
+                <BtnAnchor href={link} target="_BLANK" size={EBtnSize.SM}>
+                  App Store <LinkExternalLinkIcon />
+                </BtnAnchor>
+              )}
+              {googlePlayLink && (
+                <BtnAnchor href={link} target="_BLANK" size={EBtnSize.SM}>
+                  Google Play <LinkExternalLinkIcon />
+                </BtnAnchor>
+              )}
+            </Buttons>
+          </div>
         </Fade>
       </ProductOverview>
       <MediumContainer>

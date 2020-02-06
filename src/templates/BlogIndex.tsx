@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { H1, Section, Container, Fade } from '../shared'
+import { H1, Section, Fade, WideContainer } from '../shared'
 import { IGhostPost } from '../types'
 import Posts from '../components/Blog/Posts'
 import Pagination from '../shared/Pagination'
@@ -30,7 +30,7 @@ const BlogPage = ({
   return (
     <Layout>
       <SEO title="Blog" />
-      <Container>
+      <WideContainer>
         <Section>
           <Fade>
             <H1>Blog</H1>
@@ -38,7 +38,7 @@ const BlogPage = ({
           <Posts posts={posts} />
           <Pagination pageContext={pageContext} />
         </Section>
-      </Container>
+      </WideContainer>
     </Layout>
   )
 }

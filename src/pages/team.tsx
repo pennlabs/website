@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import { Container } from '../shared'
+import { WideContainer } from '../shared'
 import { ITeam } from '../types'
 import { TeamHero } from '../components/Team/Hero'
 import { Teams } from '../components/Team/Teams'
@@ -45,10 +45,10 @@ const AboutPage = (): React.ReactElement => {
   return (
     <Layout>
       <SEO title="Team" />
-      <Container>
+      <WideContainer>
         <TeamHero />
         <Teams teams={teams} />
-      </Container>
+      </WideContainer>
     </Layout>
   )
 }

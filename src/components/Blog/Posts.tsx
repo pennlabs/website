@@ -8,6 +8,7 @@ import { BLOG_POST_ROUTE } from '../../constants/routes'
 import {
   BORDER_RADIUS,
   M2,
+  M3,
   maxWidth,
   PHONE,
 } from '../../constants/measurements'
@@ -16,6 +17,7 @@ import { IGhostPost } from '../../types'
 const PostThumbnail = styled.img`
   object-fit: contain;
   border-radius: ${BORDER_RADIUS};
+  margin-bottom: ${M3};
 `
 
 const PostCard = styled(Card)`
@@ -23,7 +25,7 @@ const PostCard = styled(Card)`
   max-width: 50%;
   min-width: 14rem;
   flex-grow: 1;
-  margin-right: 1.5rem;
+  margin-right: ${M3};
 
   ${maxWidth(PHONE)} {
     max-width: none;
@@ -33,11 +35,11 @@ const PostCard = styled(Card)`
 
 const Post = ({ slug, title, excerpt, feature_image }: IGhostPost) => {
   return (
-    <PostCard bordered hoverable clickable>
+    <PostCard bordered hoverable clickable shaded>
       <Link to={BLOG_POST_ROUTE(slug)}>
         <VFlex>
-          <H3 mb2>{title}</H3>
           <PostThumbnail src={feature_image} />
+          <H3 mb2>{title}</H3>
           <P mb1 sm>
             {excerpt}
           </P>
