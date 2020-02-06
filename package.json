@@ -75,7 +75,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "yarn format && yarn lint"
+      "pre-commit": "yarn format && yarn lint"
     }
   },
   "repository": {

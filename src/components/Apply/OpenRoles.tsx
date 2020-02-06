@@ -20,8 +20,8 @@ export const OpenRoles = () => (
             </P>
             <P>
               While many of our developers have multiple interests and
-              responsibilities, here are the categories that we find useful to get
-              to know you by:
+              responsibilities, here are the categories that we find useful to
+              get to know you by:
             </P>
             <ul>
               <li>Backend web</li>
@@ -32,8 +32,8 @@ export const OpenRoles = () => (
               <li>iOS</li>
             </ul>
             <P>
-              <a href={STACK_ROUTE}>Check out our stack</a> to find out more about
-              the frameworks and tools we use in our products.
+              <a href={STACK_ROUTE}>Check out our stack</a> to find out more
+              about the frameworks and tools we use in our products.
             </P>
           </Card>
         </Col>
@@ -42,10 +42,10 @@ export const OpenRoles = () => (
             <H3>Product Design</H3>
             <P>
               Connect function with form to reach users and meet their needs
-              through UI/UX and graphic design. Designers create low to high-fidelity mockups,
-              prototypes, and graphic assets. They also manage the visual language
-              of the organization. Our toolkit includes Sketch, Figma, Zeplin,
-              and Adobe Suite.
+              through UI/UX and graphic design. Designers create low to
+              high-fidelity mockups, prototypes, and graphic assets. They also
+              manage the visual language of the organization. Our toolkit
+              includes Sketch, Figma, Zeplin, and Adobe Suite.
             </P>
           </Card>
 
@@ -53,11 +53,11 @@ export const OpenRoles = () => (
             <H3>Business Development</H3>
             <P>
               Our products need to be taken from "lab" to real world. BizDev
-              spearheads marketing, events, and collaborations to ensure that Penn
-              Labs reaches real users and meets their needs. If you want to be in
-              the tech industry and help grow an organization in all capacities
-              (strategy, user acquisition, finance, etc), this is the role for
-              you.
+              spearheads marketing, events, and collaborations to ensure that
+              Penn Labs reaches real users and meets their needs. If you want to
+              be in the tech industry and help grow an organization in all
+              capacities (strategy, user acquisition, finance, etc), this is the
+              role for you.
             </P>
           </Card>
         </Col>
