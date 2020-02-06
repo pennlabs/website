@@ -174,7 +174,7 @@ const createPostPages = (posts, createPage) => {
   posts.forEach(({ node: { slug, authors } }) => {
     // This part here defines, that our posts will use
     // a `/:slug/` permalink.
-    const url = `blog/post/${slug}/`
+    const url = `blog/${slug}/`
 
     createPage({
       path: url,

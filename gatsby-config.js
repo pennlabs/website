@@ -61,5 +61,12 @@ module.exports = {
         trackingId: 'UA-21029575-11',
       },
     },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'Member',
+        imagePath: 'photo',
+      },
+    },
   ],
 }

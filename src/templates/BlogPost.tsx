@@ -118,6 +118,13 @@ export const pageQuery = graphql`
         photo
         url
         bio
+        localImage {
+          childImageSharp {
+            fluid(maxWidth: 80) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         student {
           name
         }

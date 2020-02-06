@@ -1,23 +1,26 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import Img from 'gatsby-image'
+import Img, { FluidObject, GatsbyImageProps } from 'gatsby-image'
 
 import { TEAM_MEMBER_ROUTE, HOME_ROUTE } from '../../constants/routes'
 import { IGhostAuthor, IMember } from '../../types'
 import { M1, M2, maxWidth } from '../../constants/measurements'
 
 const Thumbnail = styled.img`
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 40px;
+  height: 40px;
   object-fit: cover;
+  object-position: center;
   margin-right: ${M1};
   border-radius: 50%;
   display: inline-block;
   margin-bottom: 0;
 `
 
-const ThumbnailGatsbyImg = props => <Thumbnail as={Img} {...props} />
+const ThumbnailGatsbyImg = (props: { fluid: FluidObject }) => (
+  <Thumbnail as={Img} {...props} />
+)
 
 const AuthorLink = styled(Link)`
   margin-right: ${M2};
@@ -58,7 +61,6 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
         edges {
           node {
             url
-            photo
             student {
               name
             }
@@ -67,13 +69,15 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
       }
       pennLabsLogoImg: file(relativePath: { eq: "labs-logo-gray.png" }) {
         childImageSharp {
-          fluid(maxWidth: 64, maxHeight: 64) {
+          fluid(maxWidth: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `)
+
+  console.log('members', members)
 
   // This is really pretty ugly. But for some reason, GraphQL isn't picking up on the ghost <> labs
   // foreign key when the authors are in a list like they are under posts -- in that case,
@@ -90,22 +94,37 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
       .filter(mem => Boolean(mem))
   }
 
+  console.log('authorsAsMembers', authorsAsMembers)
+
   // If there are no authors
   if (authorsAsMembers.length === 0) {
     return (
       <BylineContainer>
         <AuthorLink to={HOME_ROUTE}>
-          <ThumbnailGatsbyImg fluid={pennLabsLogoFluid} /> Penn Labs
+          <ThumbnailGatsbyImg fluid={pennLabsLogoFluid as FluidObject} /> Penn
+          Labs
         </AuthorLink>
       </BylineContainer>
     )
   }
 
+  const getMemberImage = (localImage: {
+    childImageSharp: GatsbyImageProps
+  }) => {
+    console.log('local image', localImage)
+    return (
+      (localImage &&
+        localImage.childImageSharp &&
+        localImage.childImageSharp.fluid) ||
+      pennLabsLogoFluid
+    )
+  }
+
   return (
     <BylineContainer>
-      {authorsAsMembers.map(({ url, photo, student: { name } }) => (
+      {authorsAsMembers.map(({ url, localImage, student: { name } }) => (
         <AuthorLink key={url} to={TEAM_MEMBER_ROUTE(url)}>
-          <Thumbnail src={photo} />
+          <ThumbnailGatsbyImg fluid={getMemberImage(localImage)} />
           <span>{name}</span>
         </AuthorLink>
       ))}

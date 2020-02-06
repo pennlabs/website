@@ -1,4 +1,5 @@
 import React from 'react'
+import { GatsbyImageProps } from 'gatsby-image'
 
 // Generic types
 export type Subset<T extends U, U> = U
@@ -31,6 +32,9 @@ export interface IMember {
   location?: string
   team?: string
   website?: string
+  localImage?: {
+    childImageSharp: GatsbyImageProps
+  }
 }
 
 export interface ITeam {

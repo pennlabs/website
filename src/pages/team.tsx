@@ -26,6 +26,13 @@ const AboutPage = (): React.ReactElement => {
                     name
                   }
                   photo
+                  localImage {
+                    childImageSharp {
+                      fluid(maxWidth: 312) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                  }
                   url
                   year_joined(formatString: "YYYY")
                   roles {
