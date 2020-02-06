@@ -10,10 +10,9 @@ export const WhyLabs = () => (
       Because we <span style={{ color: PINK }}>&hearts;</span> creators
     </H3>
     <P>
-      Penn Labs builds products that help students navigate life at Penn. Some
-      Penn Labs products that you may be familiar with include Penn Course
-      Review, Penn Mobile, and Penn Course Alert. All Penn students are eligible
-      to apply for any open position, regardless of their major or year.
+      If you love to build real products to help real people, this is the group
+      for you. All Penn students are eligible to apply for any open position,
+      regardless of their major or year.
     </P>
     <P>
       Our mission is to build tech products to serve all Penn students, a goal
