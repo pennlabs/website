@@ -35,6 +35,7 @@ const ProductTemplate = ({
       title,
       description,
       image,
+      screenshot,
       justifyImage,
       link,
       appStoreLink,
@@ -44,6 +45,9 @@ const ProductTemplate = ({
     html,
   } = markdownRemark
   const { relativePath } = image || {}
+  const {
+    childImageSharp: { fluid },
+  } = screenshot || { childImageSharp: {} }
 
   // Dynamically import asset as an SVG
   const imagePath: string | undefined = relativePath
@@ -56,7 +60,7 @@ const ProductTemplate = ({
   return (
     <Layout>
       <SEO title={title} />
-      <ProductOverview imagePath={imagePath} isRight={isRight}>
+      <ProductOverview imagePath={imagePath} fluid={fluid} isRight={isRight}>
         <Fade delay={400} distance={M2}>
           <div>
             <Logo src={logoPath} alt={title} />
@@ -108,6 +112,13 @@ export const pageQuery = graphql`
         link
         appStoreLink
         googlePlayLink
+        screenshot {
+          childImageSharp {
+            fluid(maxWidth: 720) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         image {
           relativePath
         }

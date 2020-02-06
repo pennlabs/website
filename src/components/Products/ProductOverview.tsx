@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import GatsbyImage, { FluidObject } from 'gatsby-image'
 import { ReactChildren } from '../../types'
 import { Row, Col, Container, Fade } from '../../shared'
 import { maxWidth, TABLET, PHONE } from '../../constants/measurements'
@@ -15,6 +16,8 @@ const Image = styled.img<{ isEven: boolean }>`
     ${props => (props.isEven ? 'padding-left: 1rem;' : 'padding-right: 1rem;')}
   }
 `
+
+const Img = props => <Image as={GatsbyImage} {...props} />
 
 const StyledContainer = styled(Container)<{ isEven: boolean }>`
   display: flex;
@@ -53,11 +56,13 @@ interface IProductOverviewProps {
   isRight: boolean
   imagePath: string | undefined
   children: ReactChildren
+  fluid?: FluidObject
 }
 
 export const ProductOverview = ({
   isRight,
   imagePath,
+  fluid,
   children,
 }: IProductOverviewProps) => {
   return (
@@ -72,7 +77,11 @@ export const ProductOverview = ({
         {imagePath && (
           <Col sm={12} md={12} lg={6}>
             <Fade distance="1.45rem">
-              <Image src={imagePath} isEven={isRight} />
+              {fluid ? (
+                <Img src={fluid} isEven={isRight} />
+              ) : (
+                <Image src={imagePath} isEven={isRight} />
+              )}
             </Fade>
           </Col>
         )}
