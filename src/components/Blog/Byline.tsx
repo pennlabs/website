@@ -1,20 +1,23 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import Img from 'gatsby-image'
 
-import { TEAM_MEMBER_ROUTE } from '../../constants/routes'
+import { TEAM_MEMBER_ROUTE, HOME_ROUTE } from '../../constants/routes'
 import { IGhostAuthor, IMember } from '../../types'
 import { M1, M2, maxWidth } from '../../constants/measurements'
 
 const Thumbnail = styled.img`
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 2.2rem;
+  height: 2.2rem;
   object-fit: cover;
   margin-right: ${M1};
   border-radius: 50%;
   display: inline-block;
   margin-bottom: 0;
 `
+
+const ThumbnailGatsbyImg = props => <Thumbnail as={Img} {...props} />
 
 const AuthorLink = styled(Link)`
   margin-right: ${M2};
@@ -27,7 +30,6 @@ const BylineContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  font-size: 80%;
 
   ${maxWidth('400px')} {
     display: block;
@@ -47,6 +49,9 @@ interface IBylineProps {
 const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
   const {
     allMember: { edges: members },
+    pennLabsLogoImg: {
+      childImageSharp: { fluid: pennLabsLogoFluid },
+    },
   } = useStaticQuery(graphql`
     query {
       allMember {
@@ -57,6 +62,13 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
             student {
               name
             }
+          }
+        }
+      }
+      pennLabsLogoImg: file(relativePath: { eq: "labs-logo-gray.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 64, maxHeight: 64) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -80,7 +92,13 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
 
   // If there are no authors
   if (authorsAsMembers.length === 0) {
-    return <BylineContainer>By the Penn Labs Team</BylineContainer>
+    return (
+      <BylineContainer>
+        <AuthorLink to={HOME_ROUTE}>
+          <ThumbnailGatsbyImg fluid={pennLabsLogoFluid} /> Penn Labs
+        </AuthorLink>
+      </BylineContainer>
+    )
   }
 
   return (

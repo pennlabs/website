@@ -34,6 +34,7 @@ export const Tags = ({ tags }: ITagsProps) => {
 interface ILinkedTagsProps {
   tagToUrl: object
 }
+
 export const LinkedTags = ({ tagToUrl }: ILinkedTagsProps) => {
   if (!tagToUrl) return null
   return (

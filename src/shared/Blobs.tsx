@@ -6,6 +6,7 @@ const blob1Path = require('../images/blobs/blob1.svg') as string // tslint:disab
 const blob2Path = require('../images/blobs/blob2-partial.svg') as string // tslint:disable-line
 const blob3Path = require('../images/blobs/blob3.svg') as string // tslint:disable-line
 const blob4Path = require('../images/blobs/blob4.svg') as string // tslint:disable-line
+const blob5Path = require('../images/blobs/blob5.svg') as string // tslint:disable-line
 
 interface IBlobProps {
   style?: React.CSSProperties
@@ -74,4 +75,22 @@ const Blob4Tag = styled.img`
 
 export const Blob4 = (props: IBlobProps) => (
   <Blob4Tag src={blob4Path} {...props} />
+)
+
+export const Blob5Tag = styled.img`
+  width: 45%;
+  height: auto;
+  position: absolute;
+  left: -5%;
+  top: 5%;
+
+  ${maxWidth(PHONE)} {
+    width: 60%;
+    left: -10%;
+    top: 0;
+  }
+`
+
+export const Blob5 = (props: IBlobProps) => (
+  <Blob5Tag src={blob5Path} {...props} />
 )
