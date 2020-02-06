@@ -29,10 +29,12 @@ Website for Penn Labs.
 - [x] Google Analytics
 - [x] Images for all of the products
 - [x] Product pages content
+- [x] Team page
 - [ ] Metadata, metadata image
 - [ ] Be able to load member images with gatsby-image for lazy loading: https://github.com/graysonhicks/gatsby-plugin-remote-images
 - [ ] Illustrations on about page
 - [ ] Apply page; note that apps are no longer open
+- [ ] List blog posts by member on member show page
 - [ ] Fix issue with loading product images at runtime
 - [ ] Load blog images with gatsby image sharp
 - [ ] Blob 5 styles

@@ -1,6 +1,6 @@
 ---
 title: 'Penn Course Plan'
-description: 'For the schedules that best fit your life'
+description: 'Smarter scheduling, with all the tools you need'
 logo: '../../images/products/logos/pcp-logo.svg'
 image: '../../images/products/pcp-product.svg'
 justifyImage: 'right'
