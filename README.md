@@ -27,6 +27,9 @@ Website for Penn Labs.
 - [x] List blog posts by member on member show page
 - [x] Port over blog content from Medium
 - [x] Google Analytics
+- [x] Images for all of the products
+- [x] Product pages content
+- [ ] Metadata, metadata image
 - [ ] Be able to load member images with gatsby-image for lazy loading: https://github.com/graysonhicks/gatsby-plugin-remote-images
 - [ ] Illustrations on about page
 - [ ] Apply page; note that apps are no longer open
@@ -34,17 +37,15 @@ Website for Penn Labs.
 - [ ] Load blog images with gatsby image sharp
 - [ ] Blob 5 styles
 - [ ] About page animations
-- [ ] Images for all of the products
 - [ ] Show images of authors on blog posts
 - [ ] Use Gatsby image for author preview...
 - [ ] Animate apply page
 - [ ] Apply page hero image and hero content
 - [ ] Blog index page hero image and hero content
-- [ ] Metadata, metadata image
 - [ ] Link to join listserv (Mailchimp)
-- [ ] Product pages content
 
 ### Longer term todo
 
 - [ ] More blog posts
 - [ ] Google tag manager
+- [ ] More visual content for each product page in markdown
