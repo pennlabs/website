@@ -1,7 +1,9 @@
 # Dockerignore-specific
-.git
+.git/
 .gitignore
 Dockerfile
+.circleci/
+k8s/
 
 
 # Logs
