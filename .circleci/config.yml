@@ -16,7 +16,6 @@ workflows:
     jobs:
       - react-tools/check
       - docker/publish:
-          name: publish-site
           requires:
             - react-tools/check
           image: pennlabs/website
@@ -26,6 +25,6 @@ workflows:
           <<: *branch-filters
       - helm-tools/deploy:
           requires:
-            - publish-site
+            - docker/publish
           context: k8s-deploy
           <<: *branch-filters
