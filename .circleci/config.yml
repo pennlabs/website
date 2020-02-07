@@ -20,7 +20,6 @@ workflows:
         name: publish-site
         requires:
           - react-tools/lint
-        cache_from: pennlabs/website
         image: pennlabs/website
         tag: '${CIRCLE_SHA1},latest'
         context: docker-publish
