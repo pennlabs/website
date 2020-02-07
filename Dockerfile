@@ -22,5 +22,3 @@ ENV GHOST_API_KEY ""
 
 FROM nginx:1.12
 COPY --from=build-deps /app/public/ /usr/share/nginx/html
-EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
