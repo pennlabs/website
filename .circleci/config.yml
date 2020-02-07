@@ -16,13 +16,12 @@ workflows:
   build-and-deploy:
     jobs:
       - react-tools/lint:
-        name: lint-site
       - docker/publish:
         name: publish-site
         requires:
-          - lint-site
-        cache_from: 'pennlabs/website'
-        image: 'pennlabs/website'
+          - react-tools/lint
+        cache_from: pennlabs/website
+        image: pennlabs/website
         tag: '${CIRCLE_SHA1},latest'
         context: docker-publish
         extra_build_args: '--build-arg GHOST_API_KEY=$GHOST_API_KEY'
