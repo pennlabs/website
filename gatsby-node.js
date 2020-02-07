@@ -10,10 +10,9 @@ const path = require(`path`)
 const crypto = require('crypto')
 const remark = require('remark')
 const html = require('remark-html')
-
 const { paginate } = require('gatsby-awesome-pagination')
-const { postsPerPage } = require('./src/constants/blog.ts')
 
+const { postsPerPage } = require('./src/constants/blog.ts')
 const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
 const ProductTemplate = path.resolve(`src/templates/Product.tsx`)
 const TagTemplate = path.resolve(`./src/templates/Tag.tsx`)

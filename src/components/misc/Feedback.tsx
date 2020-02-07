@@ -43,7 +43,6 @@ const FeedbackLink = s.a<{}>`
     right: ${OFFSET / 2}px;
   }
 
-  &:active,
   &:focus {
     outline: 0;
     box-shadow: 0 0 0 0.2rem ${OUTLINE};
