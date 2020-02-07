@@ -4,7 +4,7 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 
 import Nav from './Nav'
 import Footer from './Footer'
-import './Layout.css'
+import './layout.css'
 import { ReactChildren } from '../types'
 import { HEADER_HEIGHT, FOOTER_HEIGHT } from '../constants/measurements'
 import { Feedback } from './misc/Feedback'
