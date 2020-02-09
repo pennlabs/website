@@ -7,7 +7,7 @@ import { Section, Container, Row, Col, P, H2, H3, Img } from '../shared'
 import { M2 } from '../constants/measurements'
 
 const highfivePath = require('../images/about/high-five.gif') as string // tslint:disable-line
-const peoplelogoPath = require('../images/about/people-labs-logo.svg') as string // tslint:disable-line
+const peoplelogoPath = require('../images/about/people-labs-logo.gif') as string // tslint:disable-line
 const speechbubblePath = require('../images/about/speech-bubbles.gif') as string // tslint:disable-line
 
 const AboutPage = (): React.ReactElement => (
