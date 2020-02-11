@@ -10,7 +10,7 @@ appStoreLink: 'https://apps.apple.com/us/app/penn-mobile/id944829399'
 googlePlayLink: 'https://play.google.com/store/apps/details?id=com.pennapps.labs.pennmobile&hl=en_US'
 ---
 
-Penn Mobile is Penn's official student app. We're bringing campus essentials to the fingertips of over 2000 monthly users.
+Penn Mobile is Penn's official student app. We're bringing campus essentials to the fingertips of over 4000 monthly users.
 
 ## Book it
 
