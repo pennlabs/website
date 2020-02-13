@@ -1,7 +1,7 @@
 version: 2.1
 orbs:
   docker: circleci/docker@0.5.19
-  helm-tools: pennlabs/helm-tools@0.1.7
+  helm-tools: pennlabs/helm-tools@0.1.8
   react-tools: pennlabs/react-tools@0.0.2
 
 branch-filters: &branch-filters
@@ -27,4 +27,5 @@ workflows:
           requires:
             - docker/publish
           context: k8s-deploy
+          deploy-tag: '${CIRCLE_BUILD_NUM}'
           <<: *branch-filters
