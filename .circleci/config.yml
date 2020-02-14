@@ -19,7 +19,7 @@ workflows:
           requires:
             - react-tools/check
           image: pennlabs/website
-          tag: '${CIRCLE_SHA1},latest'
+          tag: '${CIRCLE_SHA1},${CIRCLE_BUILD_NUM},latest'
           context: docker-publish
           extra_build_args: '--build-arg GHOST_API_KEY=$GHOST_API_KEY'
           <<: *branch-filters
@@ -27,5 +27,5 @@ workflows:
           requires:
             - docker/publish
           context: k8s-deploy
-          deploy-tag: '${CIRCLE_BUILD_NUM}'
+          deploy-tag: "${CIRCLE_BUILD_NUM}"
           <<: *branch-filters
