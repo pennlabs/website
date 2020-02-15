@@ -3,7 +3,6 @@ deploy_version: 0.1.15
 applications:
   - name: serve
     image: pennlabs/website
-    pullPolicy: Always
     ingress:
       hosts:
         - host: pennlabs.org
