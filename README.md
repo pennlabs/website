@@ -49,6 +49,7 @@ Website for Penn Labs.
 
 ### Longer term todo
 
+- [ ] Alumni profiles and page (link from team page)
 - [ ] More blog posts
 - [ ] Google tag manager
 - [ ] More visual content for each product page in markdown
