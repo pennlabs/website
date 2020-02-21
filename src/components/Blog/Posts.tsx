@@ -12,6 +12,7 @@ import {
   M3,
   maxWidth,
   PHONE,
+  M4,
 } from '../../constants/measurements'
 import { IGhostPost } from '../../types'
 
@@ -23,17 +24,21 @@ const PostThumbnail = styled(Img)`
   margin-bottom: ${M3};
 `
 
-const PostCard = styled(Card)`
+const PostCardWrapper = styled.div`
   flex-basis: 30%;
   max-width: 50%;
   min-width: 14rem;
   flex-grow: 1;
-  margin-right: ${M3};
 
   ${maxWidth(PHONE)} {
     max-width: none;
     width: 100%;
   }
+`
+
+const PostCard = styled(Card)`
+  margin-left: 1rem;
+  margin-right: 1rem;
 `
 
 const Post = ({
@@ -43,23 +48,27 @@ const Post = ({
   localImage: { childImageSharp: { fluid } } = { childImageSharp: {} },
 }: IGhostPost) => {
   return (
-    <PostCard bordered hoverable clickable shaded>
+    <PostCardWrapper>
       <Link to={BLOG_POST_ROUTE(slug)}>
-        <VFlex>
-          {fluid && <PostThumbnail fluid={fluid} />}
-          <H3 mb2>{title}</H3>
-          <P mb1 sm>
-            {excerpt}
-          </P>
-        </VFlex>
+        <PostCard bordered hoverable clickable shaded>
+          <VFlex>
+            {fluid && <PostThumbnail fluid={fluid} />}
+            <H3 mb2>{title}</H3>
+            <P mb1 sm>
+              {excerpt}
+            </P>
+          </VFlex>
+        </PostCard>
       </Link>
-    </PostCard>
+    </PostCardWrapper>
   )
 }
 
 const PostList = styled(Flex)`
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-left: -${M2};
+  width: calc(100% + ${M4});
 
   ${maxWidth(PHONE)} {
     display: block;
