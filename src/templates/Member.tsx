@@ -136,7 +136,7 @@ const ProfilePicture = styled(BackgroundImage)`
 
 interface IMemberTemplateProps {
   data: {
-    member: IMember
+    memberJson: IMember
     allGhostPost: {
       edges: Array<{ node: IGhostPost }>
     }
@@ -176,18 +176,20 @@ const Studies = ({ major, school }: { major?: string; school?: string }) => {
 
 const MemberTemplate = ({ data }: IMemberTemplateProps) => {
   const {
-    member: {
+    membersJson: {
       bio,
       github,
       graduation_year: gradYear,
       linkedin,
-      location,
+      hometown: location,
       photo,
       localImage: {
         childImageSharp: { fluid },
       },
       roles,
-      student: { name, major, school },
+      name,
+      major,
+      school,
       team,
       website,
       year_joined: yearJoined,
@@ -195,7 +197,6 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
     allGhostPost: { edges: postEdges },
   } = data
 
-  const roleNames = roles.map(({ name: roleName }) => roleName)
   const posts = postEdges.map(({ node }) => node)
 
   return (
@@ -214,7 +215,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
                 <div style={{ width: '100%', alignSelf: 'center' }}>
                   <H1 mb2>{name}</H1>
                   <div style={{ marginBottom: M1 }}>
-                    <Tags tags={roleNames} />
+                    <Tags tags={roles} />
                   </div>
                   <P mb2>Part of {team}</P>
                   <Links
@@ -269,22 +270,18 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
 }
 
 export const pageQuery = graphql`
-  query($id: String!, $url: String!) {
-    member(id: { eq: $id }) {
+  query($pennkey: String!) {
+    membersJson(pennkey: { eq: $pennkey }) {
       bio
       github
       graduation_year
       linkedin
-      location
+      hometown
       photo
-      roles {
-        name
-      }
-      student {
-        name
-        major
-        school
-      }
+      roles
+      name
+      major
+      school
       localImage {
         childImageSharp {
           fluid(maxWidth: 484) {
@@ -296,7 +293,9 @@ export const pageQuery = graphql`
       website
       year_joined(formatString: "YYYY")
     }
-    allGhostPost(filter: { authors: { elemMatch: { slug: { eq: $url } } } }) {
+    allGhostPost(
+      filter: { authors: { elemMatch: { slug: { eq: $pennkey } } } }
+    ) {
       edges {
         node {
           slug

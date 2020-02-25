@@ -126,10 +126,10 @@ export const pageQuery = graphql`
         name
       }
     }
-    allMember(filter: { url: { in: $authors } }) {
+    allMembersJson(filter: { pennkey: { in: $authors } }) {
       nodes {
         photo
-        url
+        pennkey
         bio
         localImage {
           childImageSharp {
@@ -138,9 +138,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        student {
-          name
-        }
+        name
       }
     }
   }

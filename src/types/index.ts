@@ -16,20 +16,18 @@ export interface IRole {
 }
 
 export interface IMember {
-  student: {
-    name: string
-    major?: string
-    school?: string
-  }
+  name: string
+  major?: string
+  school?: string
   photo?: string
-  roles: IRole[]
-  url: string
+  roles: string[]
+  pennkey: string
   year_joined?: string
   bio?: string
   github?: string
   graduation_year?: string
   linkedin?: string
-  location?: string
+  hometown?: string
   team?: string
   website?: string
   localImage?: {
@@ -40,7 +38,7 @@ export interface IMember {
 export interface ITeam {
   name: string
   description: string
-  children: IMember[]
+  members: IMember[]
 }
 
 export interface IGhostTag {

@@ -42,22 +42,22 @@ const Image = styled(BackgroundImage)`
 `
 
 export const TeamMemberPreview = ({
-  student: { name },
+  name,
   roles,
-  url,
+  pennkey,
   localImage: {
     childImageSharp: { fluid },
   },
   year_joined: yearJoined,
 }: IMember) => (
-  <Col margin={M2} sm={12} md={6} lg={3} key={url}>
-    <StyledLink to={TEAM_MEMBER_ROUTE(url)}>
+  <Col margin={M2} sm={12} md={6} lg={3} key={pennkey}>
+    <StyledLink to={TEAM_MEMBER_ROUTE(pennkey)}>
       {fluid && <Image fluid={fluid} />}
       <P mb1 lg>
         <strong>{name}</strong>
       </P>
       <div style={{ marginBottom: M3 }}>
-        <Tags tags={roles.map(({ name: roleName }) => roleName)} />
+        <Tags tags={roles} />
       </div>
       {yearJoined && (
         <P mb0 sm>
