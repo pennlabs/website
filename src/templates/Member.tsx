@@ -136,7 +136,7 @@ const ProfilePicture = styled(BackgroundImage)`
 
 interface IMemberTemplateProps {
   data: {
-    memberJson: IMember
+    membersJson: IMember
     allGhostPost: {
       edges: Array<{ node: IGhostPost }>
     }

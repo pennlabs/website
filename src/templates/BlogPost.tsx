@@ -88,7 +88,7 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
             <footer>
               <VFlex>
                 {authors.map(a => (
-                  <MemberBio key={a.url} author={a} />
+                  <MemberBio key={a.pennkey} author={a} />
                 ))}
               </VFlex>
             </footer>
