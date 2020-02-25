@@ -1,0 +1,18 @@
+{
+  "name": "Justin Lieb",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "pennkey": "jtlieb",
+  "bio": "I'm a Computer Science student that likes to yoyo and eat Buffalo Wing Pringles in my free time.",
+  "hometown": "Camarillo, CA",
+  "team": "Penn Clubs",
+  "roles": ["Designer"],
+  "photo": "https://i.imgur.com/5HXWOJw.jpg",
+  "linkedin": "http://linkedin.com/in/lieb",
+  "website": null,
+  "github": null,
+  "year_joined": "2019-02-01",
+  "alumnus": false,
+  "graduation_year": null,
+  "job": null
+}

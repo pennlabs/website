@@ -1,0 +1,18 @@
+{
+  "name": "Dominic Holmes",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "pennkey": "hdominic",
+  "bio": "I'm an iOS developer and product designer from the midwest! I <3 Penn Mobile",
+  "hometown": "Dell Rapids, SD",
+  "team": "Penn Mobile iOS",
+  "roles": ["Team Lead", "Mobile Engineer", "Director Emeritus"],
+  "photo": "https://github.com/DominicHolmes/profile-picture/blob/master/dominic.jpeg?raw=true",
+  "linkedin": "https://www.linkedin.com/in/dominic-holmes-21b612133/",
+  "website": "https://dominic.land",
+  "github": "https://github.com/DominicHolmes",
+  "year_joined": "2017-09-01",
+  "alumnus": false,
+  "graduation_year": 2020,
+  "job": null
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Jerry Lu",
+  "major": "Computer Science + Cognitive Science",
+  "school": "College & Engineering",
+  "pennkey": "lujerry",
+  "bio": "I'm a sophomore studying computer science and cognitive science. I work on [Penn Course Review](https://penncoursereview.com).  I like linguistics and natural language processing.",
+  "hometown": "Nashville, TN",
+  "team": "Penn Courses",
+  "roles": ["Backend Engineer"],
+  "photo": "https://avatars3.githubusercontent.com/u/35176284?s=460&v=4",
+  "linkedin": null,
+  "website": null,
+  "github": "http://github.com/jerry-lu",
+  "year_joined": "2018-09-01",
+  "alumnus": false,
+  "graduation_year": null,
+  "job": null
+}

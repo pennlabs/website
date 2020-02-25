@@ -1,0 +1,18 @@
+{
+  "name": "Charles Cunningham",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "pennkey": "ccunning",
+  "bio": "I'm a back-end developer with Penn Courses, working mainly on the Penn Course Alert refresh and Penn Course Plan.  I'm studying Computer Science at SEAS and my other academic interests include mathematics, economics, game theory, physics, design thinking, and engineering.  In my free time I love biking, sailing, and KSP.",
+  "hometown": "New York, NY",
+  "team": "Penn Courses",
+  "roles": ["Backend Engineer"],
+  "photo": "https://i.imgur.com/qf46nbE.jpg",
+  "linkedin": "https://www.linkedin.com/in/charles-cunningham-049a81193/",
+  "website": "https://www.charleycunningham.com",
+  "github": "https://github.com/mureytasroc",
+  "year_joined": "2019-09-01",
+  "alumnus": false,
+  "graduation_year": 2023,
+  "job": null
+}
