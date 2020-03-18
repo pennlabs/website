@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
+import { semesterToString } from '../../helpers'
 
 import { Col, P, Tags } from '../../shared'
 import {
@@ -48,7 +49,7 @@ export const TeamMemberPreview = ({
   localImage: {
     childImageSharp: { fluid },
   },
-  year_joined: yearJoined,
+  semester_joined: semesterJoined,
 }: IMember) => (
   <Col margin={M2} sm={12} md={6} lg={3} key={pennkey}>
     <StyledLink to={TEAM_MEMBER_ROUTE(pennkey)}>
@@ -59,9 +60,9 @@ export const TeamMemberPreview = ({
       <div style={{ marginBottom: M3 }}>
         <Tags tags={roles} />
       </div>
-      {yearJoined && (
+      {semesterJoined && (
         <P mb0 sm>
-          Member since {yearJoined}
+          Member since {semesterToString(semesterJoined)}
         </P>
       )}
     </StyledLink>

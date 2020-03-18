@@ -55,7 +55,7 @@ export const pageQuery = graphql`
           team
           pennkey
           photo
-          year_joined(formatString: "YYYY")
+          semester_joined
           roles
           localImage {
             childImageSharp {

@@ -20,7 +20,7 @@ import { M1 } from '../constants/measurements'
 interface IPostTemplateProps {
   data: {
     ghostPost: IGhostPost
-    allMember: {
+    allMembersJson: {
       nodes: IMember[]
     }
   }
@@ -42,7 +42,7 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
     tags,
   } = data.ghostPost
 
-  const { nodes: authors } = data.allMember
+  const { nodes: authors } = data.allMembersJson
   const htmlContent =
     (codeinjection_head || '') + html + (codeinjection_foot || '')
 

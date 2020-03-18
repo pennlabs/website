@@ -1,43 +1,43 @@
-import React from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
-
+import React from 'react'
+import styled from 'styled-components'
+import Posts from '../components/Blog/Posts'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import Posts from '../components/Blog/Posts'
-import { IMember, Subset, IGhostPost } from '../types'
+import { DARK_GRAY } from '../constants/colors'
 import {
-  H1,
-  P,
-  Tags,
+  BORDER_RADIUS,
+  DESKTOP,
+  M1,
+  M2,
+  M3,
+  M4,
+  maxWidth,
+  minWidth,
+  PHONE,
+} from '../constants/measurements'
+import {
+  BookOpenIcon,
+  CalendarIcon,
+  Card,
+  Col,
+  Fade,
   GitHubIcon,
+  H1,
+  H3,
+  HomeIcon,
+  HR,
   LinkedInIcon,
   LinkIcon,
-  Row,
-  Col,
-  BookOpenIcon,
-  HomeIcon,
-  CalendarIcon,
   LogOutIcon,
   MediumContainer,
-  Card,
-  HR,
-  H3,
-  Fade,
+  P,
+  Row,
+  Tags,
 } from '../shared'
-import {
-  M2,
-  BORDER_RADIUS,
-  M1,
-  M3,
-  maxWidth,
-  PHONE,
-  M4,
-  minWidth,
-  DESKTOP,
-} from '../constants/measurements'
-import { DARK_GRAY } from '../constants/colors'
+import { IGhostPost, IMember, Subset } from '../types'
+import { semesterToString } from '../helpers'
 
 type ILinks = Subset<
   IMember,
@@ -192,7 +192,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
       school,
       team,
       website,
-      year_joined: yearJoined,
+      semester_joined: semesterJoined,
     },
     allGhostPost: { edges: postEdges },
   } = data
@@ -243,8 +243,11 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
           <Row margin={M1}>
             <Studies major={major} school={school} />
             {location && <Detail text={`From ${location}`} Icon={HomeIcon} />}
-            {yearJoined && (
-              <Detail text={`Member since ${yearJoined}`} Icon={CalendarIcon} />
+            {semesterJoined && (
+              <Detail
+                text={`Member since ${semesterToString(semesterJoined)}`}
+                Icon={CalendarIcon}
+              />
             )}
             {gradYear && (
               <Detail text={`Graduates in ${gradYear}`} Icon={LogOutIcon} />
@@ -291,7 +294,7 @@ export const pageQuery = graphql`
       }
       team
       website
-      year_joined(formatString: "YYYY")
+      semester_joined
     }
     allGhostPost(
       filter: { authors: { elemMatch: { slug: { eq: $pennkey } } } }
