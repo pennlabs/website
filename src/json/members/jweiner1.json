@@ -1,0 +1,18 @@
+{
+  "name": "Josh Weiner",
+  "pennkey": "jweiner1",
+  "major": "Computer Science",
+  "school": "SEAS",
+  "bio": "Josh was born and raised in New York, where he attended Stuyvesant High School and promptly fell in love with computer science. Passionate about everything from international relations to architecture to fried chicken, he's always excited to tackle whatever challenge lies ahead.",
+  "hometown": "New York, NY",
+  "team": "Penn Mobile iOS",
+  "roles": ["Backend"],
+  "photo": "https://dl.airtable.com/.attachments/1738ce711db4042937370412a83c6f4a/b6a73249/IMG_0265.jpeg",
+  "linkedin": "linkedin.com/in/joshuamaxweiner/",
+  "website": null,
+  "github": "GitHub.com/JoshWeiner",
+  "semester_joined": "2020A",
+  "alumnus": false,
+  "graduation_year": 2023,
+  "job": null
+}
