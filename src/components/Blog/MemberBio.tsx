@@ -65,12 +65,7 @@ const StyledCenteredFlex = styled(CenteredFlex)`
 `
 
 const MemberBio = ({
-  author: {
-    url,
-    photo = '',
-    bio = '',
-    student: { name },
-  },
+  author: { pennkey, photo = '', bio = '', name },
 }: IMemberBioProps): React.ReactElement => (
   <Fade distance={M1}>
     <Card shaded>
@@ -81,7 +76,7 @@ const MemberBio = ({
           <Bio dangerouslySetInnerHTML={{ __html: bio }} />
 
           <div style={{ transform: 'scale(0.8)', transformOrigin: 'top left' }}>
-            <Link to={TEAM_MEMBER_ROUTE(url)}>
+            <Link to={TEAM_MEMBER_ROUTE(pennkey)}>
               Learn more <LinkChevronRightIcon />
             </Link>
           </div>

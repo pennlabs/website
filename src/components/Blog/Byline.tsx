@@ -55,19 +55,17 @@ interface IBylineProps {
 
 const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
   const {
-    allMember: { edges: members },
+    allMembersJson: { edges: members },
     pennLabsLogoImg: {
       childImageSharp: { fluid: pennLabsLogoFluid },
     },
   } = useStaticQuery(graphql`
     query {
-      allMember {
+      allMembersJson {
         edges {
           node {
-            url
-            student {
-              name
-            }
+            pennkey
+            name
           }
         }
       }
@@ -87,7 +85,7 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
   // an event in gatsby-node.js.
   const slugToMember = {}
   members.forEach(({ node: m }) => {
-    slugToMember[m.url] = m
+    slugToMember[m.pennkey] = m
   })
 
   if (!authorsAsMembers) {
@@ -118,8 +116,8 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
 
   return (
     <BylineContainer>
-      {authorsAsMembers.map(({ url, localImage, student: { name } }) => (
-        <AuthorLink key={url} to={TEAM_MEMBER_ROUTE(url)}>
+      {authorsAsMembers.map(({ pennkey, localImage, name }) => (
+        <AuthorLink key={pennkey} to={TEAM_MEMBER_ROUTE(pennkey)}>
           <ThumbnailWrapper>
             <Thumbnail fluid={getMemberImage(localImage)} />
           </ThumbnailWrapper>

@@ -75,5 +75,19 @@ module.exports = {
         imagePath: 'feature_image',
       },
     },
+    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/json/`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'MembersJson',
+        imagePath: 'photo',
+      },
+    },
   ],
 }

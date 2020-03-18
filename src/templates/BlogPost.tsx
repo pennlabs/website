@@ -20,7 +20,7 @@ import { M1 } from '../constants/measurements'
 interface IPostTemplateProps {
   data: {
     ghostPost: IGhostPost
-    allMember: {
+    allMembersJson: {
       nodes: IMember[]
     }
   }
@@ -42,7 +42,7 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
     tags,
   } = data.ghostPost
 
-  const { nodes: authors } = data.allMember
+  const { nodes: authors } = data.allMembersJson
   const htmlContent =
     (codeinjection_head || '') + html + (codeinjection_foot || '')
 
@@ -88,7 +88,7 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
             <footer>
               <VFlex>
                 {authors.map(a => (
-                  <MemberBio key={a.url} author={a} />
+                  <MemberBio key={a.pennkey} author={a} />
                 ))}
               </VFlex>
             </footer>
@@ -126,10 +126,10 @@ export const pageQuery = graphql`
         name
       }
     }
-    allMember(filter: { url: { in: $authors } }) {
+    allMembersJson(filter: { pennkey: { in: $authors } }) {
       nodes {
         photo
-        url
+        pennkey
         bio
         localImage {
           childImageSharp {
@@ -138,9 +138,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        student {
-          name
-        }
+        name
       }
     }
   }

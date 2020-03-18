@@ -8,44 +8,24 @@ import { ITeam } from '../types'
 import { TeamHero } from '../components/Team/Hero'
 import { Teams } from '../components/Team/Teams'
 
-const TeamPage = (): React.ReactElement => {
-  const {
-    allTeam: { edges },
-  } = useStaticQuery(graphql`
-    query {
-      allTeam(sort: { fields: name, order: ASC }) {
-        edges {
-          node {
-            name
-            description
-            children {
-              ... on Member {
-                id
-                student {
-                  name
-                }
-                photo
-                localImage {
-                  childImageSharp {
-                    fluid(maxWidth: 612) {
-                      ...GatsbyImageSharpFluid
-                    }
-                  }
-                }
-                url
-                year_joined(formatString: "YYYY")
-                roles {
-                  name
-                }
-              }
-            }
-          }
-        }
-      }
+const TeamPage = ({
+  data: {
+    allTeamsJson: { edges: teamEdges },
+    allMembersJson: { edges: memberEdges },
+  },
+}): React.ReactElement => {
+  const teams: ITeam[] = teamEdges.map(({ node }) => ({ members: [], ...node }))
+  const nameToTeam = {}
+  teams.forEach(t => {
+    nameToTeam[t.name] = t
+  })
+  memberEdges.forEach(({ node: mem }) => {
+    const { team: teamName } = mem
+    const team = nameToTeam[teamName]
+    if (team) {
+      team.members.push(mem)
     }
-  `)
-
-  const teams: ITeam[] = edges.map(({ node }) => node)
+  })
 
   return (
     <Layout>
@@ -57,5 +37,37 @@ const TeamPage = (): React.ReactElement => {
     </Layout>
   )
 }
+
+export const pageQuery = graphql`
+  query {
+    allTeamsJson {
+      edges {
+        node {
+          name
+          description
+        }
+      }
+    }
+    allMembersJson {
+      edges {
+        node {
+          name
+          team
+          pennkey
+          photo
+          semester_joined
+          roles
+          localImage {
+            childImageSharp {
+              fluid(maxWidth: 612) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`
 
 export default TeamPage

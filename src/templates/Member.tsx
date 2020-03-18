@@ -1,43 +1,43 @@
-import React from 'react'
 import { graphql } from 'gatsby'
-import styled from 'styled-components'
 import BackgroundImage from 'gatsby-background-image'
-
+import React from 'react'
+import styled from 'styled-components'
+import Posts from '../components/Blog/Posts'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
-import Posts from '../components/Blog/Posts'
-import { IMember, Subset, IGhostPost } from '../types'
+import { DARK_GRAY } from '../constants/colors'
 import {
-  H1,
-  P,
-  Tags,
+  BORDER_RADIUS,
+  DESKTOP,
+  M1,
+  M2,
+  M3,
+  M4,
+  maxWidth,
+  minWidth,
+  PHONE,
+} from '../constants/measurements'
+import {
+  BookOpenIcon,
+  CalendarIcon,
+  Card,
+  Col,
+  Fade,
   GitHubIcon,
+  H1,
+  H3,
+  HomeIcon,
+  HR,
   LinkedInIcon,
   LinkIcon,
-  Row,
-  Col,
-  BookOpenIcon,
-  HomeIcon,
-  CalendarIcon,
   LogOutIcon,
   MediumContainer,
-  Card,
-  HR,
-  H3,
-  Fade,
+  P,
+  Row,
+  Tags,
 } from '../shared'
-import {
-  M2,
-  BORDER_RADIUS,
-  M1,
-  M3,
-  maxWidth,
-  PHONE,
-  M4,
-  minWidth,
-  DESKTOP,
-} from '../constants/measurements'
-import { DARK_GRAY } from '../constants/colors'
+import { IGhostPost, IMember, Subset } from '../types'
+import { semesterToString } from '../helpers'
 
 type ILinks = Subset<
   IMember,
@@ -136,7 +136,7 @@ const ProfilePicture = styled(BackgroundImage)`
 
 interface IMemberTemplateProps {
   data: {
-    member: IMember
+    membersJson: IMember
     allGhostPost: {
       edges: Array<{ node: IGhostPost }>
     }
@@ -176,26 +176,27 @@ const Studies = ({ major, school }: { major?: string; school?: string }) => {
 
 const MemberTemplate = ({ data }: IMemberTemplateProps) => {
   const {
-    member: {
+    membersJson: {
       bio,
       github,
       graduation_year: gradYear,
       linkedin,
-      location,
+      hometown: location,
       photo,
       localImage: {
         childImageSharp: { fluid },
       },
       roles,
-      student: { name, major, school },
+      name,
+      major,
+      school,
       team,
       website,
-      year_joined: yearJoined,
+      semester_joined: semesterJoined,
     },
     allGhostPost: { edges: postEdges },
   } = data
 
-  const roleNames = roles.map(({ name: roleName }) => roleName)
   const posts = postEdges.map(({ node }) => node)
 
   return (
@@ -214,7 +215,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
                 <div style={{ width: '100%', alignSelf: 'center' }}>
                   <H1 mb2>{name}</H1>
                   <div style={{ marginBottom: M1 }}>
-                    <Tags tags={roleNames} />
+                    <Tags tags={roles} />
                   </div>
                   <P mb2>Part of {team}</P>
                   <Links
@@ -242,8 +243,11 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
           <Row margin={M1}>
             <Studies major={major} school={school} />
             {location && <Detail text={`From ${location}`} Icon={HomeIcon} />}
-            {yearJoined && (
-              <Detail text={`Member since ${yearJoined}`} Icon={CalendarIcon} />
+            {semesterJoined && (
+              <Detail
+                text={`Member since ${semesterToString(semesterJoined)}`}
+                Icon={CalendarIcon}
+              />
             )}
             {gradYear && (
               <Detail text={`Graduates in ${gradYear}`} Icon={LogOutIcon} />
@@ -269,22 +273,18 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
 }
 
 export const pageQuery = graphql`
-  query($id: String!, $url: String!) {
-    member(id: { eq: $id }) {
+  query($pennkey: String!) {
+    membersJson(pennkey: { eq: $pennkey }) {
       bio
       github
       graduation_year
       linkedin
-      location
+      hometown
       photo
-      roles {
-        name
-      }
-      student {
-        name
-        major
-        school
-      }
+      roles
+      name
+      major
+      school
       localImage {
         childImageSharp {
           fluid(maxWidth: 484) {
@@ -294,9 +294,11 @@ export const pageQuery = graphql`
       }
       team
       website
-      year_joined(formatString: "YYYY")
+      semester_joined
     }
-    allGhostPost(filter: { authors: { elemMatch: { slug: { eq: $url } } } }) {
+    allGhostPost(
+      filter: { authors: { elemMatch: { slug: { eq: $pennkey } } } }
+    ) {
       edges {
         node {
           slug

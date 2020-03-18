@@ -10,7 +10,7 @@ interface ITeams {
 
 export const Teams = ({ teams }: ITeams) => (
   <>
-    {teams.map(({ name, description, children: members }: ITeam) => (
+    {teams.map(({ name, description, members }: ITeam) => (
       <Fade key={name} distance="1rem">
         <Section>
           <H2 mb2>{name}</H2>
@@ -22,7 +22,7 @@ export const Teams = ({ teams }: ITeams) => (
 
           <Row margin={M2}>
             {members.map((props: IMember) => (
-              <TeamMemberPreview key={props.url} {...props} />
+              <TeamMemberPreview key={props.pennkey} {...props} />
             ))}
           </Row>
         </Section>
