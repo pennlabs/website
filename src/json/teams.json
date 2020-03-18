@@ -16,15 +16,11 @@
     "description": "Penn Courses manages all of our services which help students with registration and course planning. Penn Labs was started and built up around Penn Course Review, and the Penn Courses suite has grown since then to include Penn Course Alert and Penn Course Plan."
   },
   {
-    "name": "Penn Mobile Android",
-    "description": "The Android team is responsible for developing the Penn Mobile Android app, which includes developing new features and optimizing current features as well."
-  },
-  {
-    "name": "Penn Mobile iOS",
-    "description": "Penn Mobile is a tight-knit team of iOS developers and designers. We can usually be found debugging constraint layouts in Swift, trying to figure out why dining hours broke again, or attempting to figure out how the hell caching works. We hope you love using our app as much as we love working on it ??"
+    "name": "Penn Mobile",
+    "description": "Penn Mobile is a tight-knit team of developers and designers. We can usually be found debugging constraint layouts, trying to figure out why dining hours broke again, or attempting to figure out how the hell caching works. We hope you love using our app as much as we love working on it!"
   },
   {
     "name": "Platform",
-    "description": "Yo, we're the Platform Team! We consolidate all the software that Penn Labs builds by integrating our products together and making data more accessible to developers. Our goal is to help create the Penn Labs ecosystem and to help the organization scale quickly. (We also built this site!)"
+    "description": "Yo, we're the Platform Team! We consolidate all the software that Penn Labs builds by integrating our products together and making data more accessible to developers. Our goal is to help create the Penn Labs ecosystem and to help the organization scale quickly."
   }
 ]
