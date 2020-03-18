@@ -1,7 +1,11 @@
 import { graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 import React from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
+import remark from 'remark'
+import html from 'remark-html'
+
 import Posts from '../components/Blog/Posts'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
@@ -38,6 +42,8 @@ import {
 } from '../shared'
 import { IGhostPost, IMember, Subset } from '../types'
 import { semesterToString } from '../helpers'
+
+const markdownProcessor = remark().use(html)
 
 type ILinks = Subset<
   IMember,
@@ -197,6 +203,12 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
     allGhostPost: { edges: postEdges },
   } = data
 
+  // Bios may contain markdown. Make sure to parse these into HTML!
+  const [bioAsHtml, updateBioAsHtml] = useState(bio)
+  markdownProcessor
+    .process(bio || '')
+    .then(({ contents: b }) => updateBioAsHtml(b))
+
   const posts = postEdges.map(({ node }) => node)
 
   return (
@@ -231,7 +243,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
 
         {bio && (
           <Fade distance={M1} delay={450}>
-            <div dangerouslySetInnerHTML={{ __html: bio }} />
+            <div dangerouslySetInnerHTML={{ __html: bioAsHtml }} />
           </Fade>
         )}
 
