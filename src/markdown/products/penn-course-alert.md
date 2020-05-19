@@ -7,6 +7,7 @@ justifyImage: 'right'
 showOnHomepage: false
 orderOnHomepage: -1
 link: 'https://penncoursealert.com/'
+privacy: 'https://www.iubenda.com/privacy-policy/50589026'
 ---
 
 Trying to get into that one class that never seems to be open on Penn InTouch? We've got you covered.
@@ -21,4 +22,4 @@ Email and text alerts tell you when to sprint to Penn InTouch, whether you're on
 
 ## See the past and the future
 
-[COMING SOON] See the history of when courses have been open and closed. Manage your alerts in one central dashboard.
+See the history of when courses have been open and closed. [Manage](https://penncoursealert.com#manage) your alerts in one central dashboard.

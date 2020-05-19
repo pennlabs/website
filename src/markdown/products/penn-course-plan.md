@@ -7,6 +7,7 @@ justifyImage: 'right'
 showOnHomepage: false
 orderOnHomepage: -1
 link: 'https://penncourseplan.com/'
+privacy: 'https://www.iubenda.com/privacy-policy/77494274'
 ---
 
 There's lots of classes you can take at Penn, but which ones actually suit your needs? Harness the power of Penn Course Review and Penn Course Alert in one intuitive mock scheduling tool.

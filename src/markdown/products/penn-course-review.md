@@ -7,6 +7,7 @@ justifyImage: 'right'
 showOnHomepage: true
 orderOnHomepage: 1
 link: 'https://penncoursereview.com/'
+privacy: 'https://www.iubenda.com/privacy-policy/86347108'
 ---
 
 Get the inside scoop on academics at Penn, so you can make informed decisions when it comes to your coursework.
