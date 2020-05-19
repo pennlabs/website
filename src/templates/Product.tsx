@@ -86,7 +86,11 @@ const ProductTemplate = ({
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </Fade>
         <Section style={{ textAlign: 'center' }}>
-          {privacy && <a href={privacy} style={{marginRight: "1rem"}}>View Privacy Policy <LinkExternalLinkIcon /></a>}
+          {privacy && (
+            <a href={privacy} style={{ marginRight: '1rem' }}>
+              View Privacy Policy <LinkExternalLinkIcon />
+            </a>
+          )}
           <BtnLink to={PRODUCTS_ROUTE}>
             View all products <LinkChevronRightIcon />
           </BtnLink>
