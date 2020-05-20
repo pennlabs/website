@@ -1,0 +1,18 @@
+{
+  "name": "Josh Doman",
+  "major": "Computer Science + Finance",
+  "school": "Engineering & Wharton",
+  "pennkey": "joshdo",
+  "bio": "Hi! I'm an iOS and backend engineer, a Penn Mobile team lead, and a former Penn Labs director. Outside of Labs, I love playing tennis, going on hikes, and following space exploration. Penn Labs 4 life!.",
+  "hometown": "Atlanta, GA",
+  "team": "Penn Mobile",
+  "roles": ["Team Lead", "iOS + Backend Engineer", "Director Emeritus"],
+  "photo": "https://media-exp1.licdn.com/dms/image/C5603AQG5IR6n865hOw/profile-displayphoto-shrink_800_800/0?e=1593648000&v=beta&t=4aUCH9HP8jEXsMG4DWkTEZlzs4st_J_J70moO_OLlYk",
+  "linkedin": "https://www.linkedin.com/in/joshdoman/",
+  "website": null,
+  "github": "https://github.com/joshdoman",
+  "semester_joined": "2017A",
+  "alumnus": false,
+  "graduation_year": 2020,
+  "job": null
+}
