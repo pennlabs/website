@@ -10,23 +10,9 @@ import { Teams } from '../components/Team/Teams'
 
 const TeamPage = ({
   data: {
-    allTeamsJson: { edges: teamEdges },
-    allMembersJson: { edges: memberEdges },
+    allTeamsJson: { nodes: teams },
   },
 }): React.ReactElement => {
-  const teams: ITeam[] = teamEdges.map(({ node }) => ({ members: [], ...node }))
-  const nameToTeam = {}
-  teams.forEach(t => {
-    nameToTeam[t.name] = t
-  })
-  memberEdges.forEach(({ node: mem }) => {
-    const { team: teamName } = mem
-    const team = nameToTeam[teamName]
-    if (team) {
-      team.members.push(mem)
-    }
-  })
-
   return (
     <Layout>
       <SEO title="Team" />
@@ -41,16 +27,10 @@ const TeamPage = ({
 export const pageQuery = graphql`
   query {
     allTeamsJson {
-      edges {
-        node {
-          name
-          description
-        }
-      }
-    }
-    allMembersJson {
-      edges {
-        node {
+      nodes {
+        name
+        description
+        members {
           name
           team
           pennkey

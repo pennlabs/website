@@ -49,26 +49,16 @@ const BylineContainer = styled.div`
 `
 
 interface IBylineProps {
-  authors?: IGhostAuthor[]
-  authorsAsMembers?: IMember[]
+  authors: IMember[]
 }
 
-const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
+const Byline = ({ authors }: { authors: IMember[] }) => {
   const {
-    allMembersJson: { edges: members },
     pennLabsLogoImg: {
       childImageSharp: { fluid: pennLabsLogoFluid },
     },
   } = useStaticQuery(graphql`
     query {
-      allMembersJson {
-        edges {
-          node {
-            pennkey
-            name
-          }
-        }
-      }
       pennLabsLogoImg: file(relativePath: { eq: "labs-logo-gray.png" }) {
         childImageSharp {
           fluid(maxWidth: 80) {
@@ -79,23 +69,8 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
     }
   `)
 
-  // This is really pretty ugly. But for some reason, GraphQL isn't picking up on the ghost <> labs
-  // foreign key when the authors are in a list like they are under posts -- in that case,
-  // the type seems to be GhostPostAuthor instead of GhostAuthor, which doesn't trigger
-  // an event in gatsby-node.js.
-  const slugToMember = {}
-  members.forEach(({ node: m }) => {
-    slugToMember[m.pennkey] = m
-  })
-
-  if (!authorsAsMembers) {
-    authorsAsMembers = authors
-      .map(({ slug }) => slugToMember[slug])
-      .filter(mem => Boolean(mem))
-  }
-
   // If there are no authors
-  if (authorsAsMembers.length === 0) {
+  if ((authors || []).length === 0) {
     return (
       <BylineContainer>
         <AuthorLink to={HOME_ROUTE}>
@@ -116,7 +91,7 @@ const Byline = ({ authors, authorsAsMembers }: IBylineProps) => {
 
   return (
     <BylineContainer>
-      {authorsAsMembers.map(({ pennkey, localImage, name }) => (
+      {authors.map(({ pennkey, localImage, name }) => (
         <AuthorLink key={pennkey} to={TEAM_MEMBER_ROUTE(pennkey)}>
           <ThumbnailWrapper>
             <Thumbnail fluid={getMemberImage(localImage)} />

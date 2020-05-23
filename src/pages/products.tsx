@@ -73,7 +73,9 @@ const ProductsPage = (): React.ReactElement => {
     allMarkdownRemark: { edges: products },
   } = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/(products)/" } }
+      ) {
         edges {
           node {
             fileAbsolutePath

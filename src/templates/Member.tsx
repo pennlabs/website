@@ -143,9 +143,6 @@ const ProfilePicture = styled(BackgroundImage)`
 interface IMemberTemplateProps {
   data: {
     membersJson: IMember
-    allGhostPost: {
-      edges: Array<{ node: IGhostPost }>
-    }
   }
 }
 
@@ -199,8 +196,8 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
       team,
       website,
       semester_joined: semesterJoined,
+      posts,
     },
-    allGhostPost: { edges: postEdges },
   } = data
 
   // Bios may contain markdown. Make sure to parse these into HTML!
@@ -208,8 +205,6 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
   markdownProcessor
     .process(bio || '')
     .then(({ contents: b }) => updateBioAsHtml(b))
-
-  const posts = postEdges.map(({ node }) => node)
 
   return (
     <Layout>
@@ -266,7 +261,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
             )}
           </Row>
         </Fade>
-        {posts.length > 0 ? (
+        {posts && posts.length > 0 ? (
           <>
             <Fade>
               <HR />
@@ -307,16 +302,13 @@ export const pageQuery = graphql`
       team
       website
       semester_joined
-    }
-    allGhostPost(
-      filter: { authors: { elemMatch: { slug: { eq: $pennkey } } } }
-    ) {
-      edges {
-        node {
-          slug
+      posts {
+        excerpt
+        frontmatter {
           title
-          excerpt
-          localImage {
+          slug
+          customExcerpt
+          coverPhoto {
             childImageSharp {
               fluid(maxWidth: 484) {
                 ...GatsbyImageSharpFluid
