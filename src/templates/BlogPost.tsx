@@ -6,9 +6,9 @@ import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import Byline from '../components/Blog/Byline'
 import MemberBio from '../components/Blog/MemberBio'
-import { LinkedTags, Fade, WideContainer } from '../shared'
-import { IMember, IGhostPost, IPost } from '../types'
-import { BLOG_TAG_ROUTE } from '../constants/routes'
+import { Fade, WideContainer } from '../shared'
+import { IPost } from '../types'
+import { getSrc } from '../helpers'
 
 import { Section, H1, MediumContainer, VFlex, P } from '../shared'
 
@@ -25,14 +25,7 @@ interface IPostTemplateProps {
 
 const PostTemplate = ({ data }: IPostTemplateProps) => {
   const {
-    frontmatter: {
-      title,
-      authors = [],
-      coverPhoto: {
-        childImageSharp: { fluid },
-      },
-      publishedAt: publishedAt,
-    },
+    frontmatter: { title, authors = [], coverPhoto, publishedAt: publishedAt },
     html,
     excerpt,
     timeToRead,
@@ -40,7 +33,11 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
 
   return (
     <Layout>
-      <SEO title={title} image={fluid.src} description={excerpt} />
+      <SEO
+        title={title}
+        image={coverPhoto && getSrc(coverPhoto)}
+        description={excerpt}
+      />
 
       <Section>
         <article>
@@ -53,15 +50,16 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
                   {publishedAt} • {timeToRead} min read
                 </P>
               </MediumContainer>
-              {fluid && (
-                <WideContainer>
-                  <Img fluid={fluid} style={{ width: '100%' }} />
-                </WideContainer>
-              )}
             </header>
           </Fade>
 
           <MediumContainer>
+            {coverPhoto && (
+              <Img
+                fluid={coverPhoto.childImageSharp.fluid}
+                style={{ maxWidth: '25rem' }}
+              />
+            )}
             <div className={'post-full-content content'}>
               <section
                 className="post-content"

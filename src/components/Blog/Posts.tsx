@@ -15,6 +15,9 @@ import {
   M4,
 } from '../../constants/measurements'
 import { IGhostPost, IPost } from '../../types'
+import { getSrc } from '../../helpers'
+
+const blogPath = require('../../images/hero-blog.svg') as string // tslint:disable-line
 
 const PostThumbnail = styled(Img)`
   object-fit: contain;
@@ -45,15 +48,14 @@ const Post = ({
   frontmatter: { slug, title, customExcerpt, coverPhoto },
   excerpt,
 }: IPost) => {
-  const {
-    childImageSharp: { fluid },
-  } = coverPhoto
   return (
     <PostCardWrapper>
       <Link to={BLOG_POST_ROUTE(slug)}>
         <PostCard bordered hoverable clickable shaded>
           <VFlex>
-            {fluid && <PostThumbnail fluid={fluid} />}
+            {coverPhoto && (
+              <PostThumbnail fluid={coverPhoto.childImageSharp.fluid} />
+            )}
             <H3 mb2>{title}</H3>
             <P mb1 sm>
               {customExcerpt || excerpt}

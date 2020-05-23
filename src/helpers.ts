@@ -1,3 +1,5 @@
+import { GatsbyImageProps } from 'gatsby-image'
+
 /**
  * Given the absolute file path to a markdown file, return the path to the
  * markdown file in the website
@@ -23,3 +25,11 @@ export const semesterToString = (sem: string): string =>
     0,
     sem.length - 1,
   )}`
+
+export const getSrc = (photo: { childImageSharp: GatsbyImageProps }) => {
+  if (Array.isArray(photo.childImageSharp.fluid)) {
+    return photo.childImageSharp.fluid[0].src
+  } else {
+    return photo.childImageSharp.fluid.src
+  }
+}
