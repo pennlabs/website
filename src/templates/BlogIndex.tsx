@@ -47,6 +47,7 @@ export const pageQuery = graphql`
       }
       limit: $limit
       skip: $skip
+      sort: { order: DESC, fields: [frontmatter___publishedAt] }
     ) {
       nodes {
         excerpt
