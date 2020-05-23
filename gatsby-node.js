@@ -64,7 +64,7 @@ const createTagPages = (tags, createPage) => {
 }
 
 const createPostPages = (posts, createPage) => {
-  posts.forEach(({ node: { slug, authors } }) => {
+  posts.forEach(({ frontmatter: { slug } }) => {
     // This part here defines, that our posts will use
     // a `/:slug/` permalink.
     const url = `blog/${slug}/`
@@ -76,10 +76,33 @@ const createPostPages = (posts, createPage) => {
         // Data passed to context is available
         // in page queries as GraphQL variables.
         slug: slug,
-        authors: authors.map(({ slug }) => slug),
       },
     })
   })
+}
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+  type MembersJson implements Node {
+    team: String
+    posts: [MarkdownRemark] @link(by: "frontmatter.authors.pennkey", from: "pennkey")
+  }
+  type TeamsJson implements Node {
+    name: String
+    members: [MembersJson] @link(by: "team", from: "name")
+  }
+
+  type MarkdownRemark implements Node {
+    frontmatter: Frontmatter
+  }
+  type Frontmatter {
+    authors: [MembersJson] @link(by: "pennkey")
+    customExcerpt: String
+    publishedAt: Date @dateformat(formatString: "YYYY-MM-DD")
+  }`
+
+  createTypes(typeDefs)
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
@@ -128,7 +151,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     },
   } = await graphql(`
     query {
-      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___title] }) {
+      allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/products/" } }
+        sort: { order: DESC, fields: [frontmatter___title] }
+      ) {
         edges {
           node {
             fileAbsolutePath
@@ -148,6 +174,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     // Example: /Users/JawnSmith/projects/pennlabs.org/src/markdown/products/penn-mobile.md
     // -> 'products/penn-mobile
+    if (fileAbsolutePath.indexOf('/markdown') === -1) {
+      return
+    }
     const productPagePath = fileAbsolutePath
       .split('/markdown')[1]
       .split('.md')[0]
@@ -162,27 +191,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const {
     errors: ghostErrors,
     data: {
-      allGhostTag: { edges: tags },
-      allGhostPost: { edges: posts },
+      allMarkdownRemark: { nodes: posts },
     },
   } = await graphql(`
     query {
-      allGhostPost(sort: { order: ASC, fields: published_at }) {
-        edges {
-          node {
-            slug
-            authors {
-              slug
-            }
-          }
+      allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "/blog/" }
+          frontmatter: { draft: { ne: false } }
         }
-      }
-      allGhostTag(sort: { order: ASC, fields: name }) {
-        edges {
-          node {
+      ) {
+        nodes {
+          frontmatter {
             slug
-            url
-            postCount
           }
         }
       }
@@ -193,7 +214,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     throw new Error(ghostErrors)
   }
 
-  createTagPages(tags, createPage)
   createPostPages(posts, createPage)
 
   // Create pagination for the index page.

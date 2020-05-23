@@ -41,29 +41,4 @@ const TagTemplate = ({ data, pageContext }: ITagTemplateProps) => {
   )
 }
 
-export const pageQuery = graphql`
-  query($slug: String!, $limit: Int!, $skip: Int!) {
-    ghostTag(slug: { eq: $slug }) {
-      name
-      description
-      slug
-    }
-    allGhostPost(
-      sort: { order: DESC, fields: [published_at] }
-      filter: { tags: { elemMatch: { slug: { eq: $slug } } } }
-      limit: $limit
-      skip: $skip
-    ) {
-      edges {
-        node {
-          slug
-          title
-          excerpt
-          feature_image
-        }
-      }
-    }
-  }
-`
-
 export default TagTemplate

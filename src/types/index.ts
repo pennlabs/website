@@ -15,6 +15,20 @@ export interface IRole {
   name: string
 }
 
+export interface IPost {
+  html?: string
+  excerpt?: string
+  frontmatter: {
+    slug: string
+    title?: string
+    coverPhoto?: { childImageSharp: GatsbyImageProps }
+    authors?: IMember[]
+    customExcerpt?: string
+    publishedAt?: string
+  }
+  timeToRead?: number
+}
+
 export interface IMember {
   name: string
   major?: string
@@ -31,6 +45,7 @@ export interface IMember {
   team?: string
   website?: string
   localImage?: { childImageSharp: GatsbyImageProps }
+  posts?: IPost[]
 }
 
 export interface ITeam {

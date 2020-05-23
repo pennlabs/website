@@ -7,7 +7,7 @@ import SEO from '../components/SEO'
 import Byline from '../components/Blog/Byline'
 import MemberBio from '../components/Blog/MemberBio'
 import { LinkedTags, Fade, WideContainer } from '../shared'
-import { IMember, IGhostPost } from '../types'
+import { IMember, IGhostPost, IPost } from '../types'
 import { BLOG_TAG_ROUTE } from '../constants/routes'
 
 import { Section, H1, MediumContainer, VFlex, P } from '../shared'
@@ -19,39 +19,28 @@ import { M1 } from '../constants/measurements'
 
 interface IPostTemplateProps {
   data: {
-    ghostPost: IGhostPost
-    allMembersJson: {
-      nodes: IMember[]
-    }
+    markdownRemark: IPost
   }
 }
 
 const PostTemplate = ({ data }: IPostTemplateProps) => {
   const {
-    title,
-    feature_image,
-    localImage: {
-      childImageSharp: { fluid },
+    frontmatter: {
+      title,
+      authors = [],
+      coverPhoto: {
+        childImageSharp: { fluid },
+      },
+      publishedAt: publishedAt,
     },
     html,
-    codeinjection_head,
-    codeinjection_foot,
     excerpt,
-    reading_time: readingTime,
-    published_at: publishedAt,
-    tags,
-  } = data.ghostPost
-
-  const { nodes: authors } = data.allMembersJson
-  const htmlContent =
-    (codeinjection_head || '') + html + (codeinjection_foot || '')
-
-  const tagToUrl = {}
-  tags.forEach(({ name, slug }) => (tagToUrl[name] = BLOG_TAG_ROUTE(slug)))
+    timeToRead,
+  } = data.markdownRemark
 
   return (
     <Layout>
-      <SEO title={title} image={feature_image} description={excerpt} />
+      <SEO title={title} image={fluid.src} description={excerpt} />
 
       <Section>
         <article>
@@ -59,12 +48,9 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
             <header style={{ width: '100%' }}>
               <MediumContainer>
                 <H1 mb2>{title}</H1>
-                <P mb1>
-                  <LinkedTags tagToUrl={tagToUrl} />
-                </P>
-                <Byline authorsAsMembers={authors} />
+                <Byline authors={authors} />
                 <P sm opacity={0.64}>
-                  {publishedAt} • {readingTime} min read
+                  {publishedAt} • {timeToRead} min read
                 </P>
               </MediumContainer>
               {fluid && (
@@ -80,16 +66,15 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
               <section
                 className="post-content"
                 dangerouslySetInnerHTML={{
-                  __html: htmlContent,
+                  __html: html,
                 }}
               />
             </div>
 
             <footer>
               <VFlex>
-                {authors.map(a => (
-                  <MemberBio key={a.pennkey} author={a} />
-                ))}
+                {authors &&
+                  authors.map(a => <MemberBio key={a.pennkey} author={a} />)}
               </VFlex>
             </footer>
           </MediumContainer>
@@ -100,46 +85,34 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
 }
 
 export const pageQuery = graphql`
-  query($slug: String!, $authors: [String!]) {
-    ghostPost(slug: { eq: $slug }) {
-      slug
-      title
+  query($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
-      codeinjection_head
-      codeinjection_foot
-      feature_image
-      localImage {
-        childImageSharp {
-          fluid(maxWidth: 1248) {
-            ...GatsbyImageSharpFluid
+      frontmatter {
+        slug
+        title
+        authors {
+          name
+          bio
+          pennkey
+          localImage {
+            childImageSharp {
+              fluid(maxWidth: 484) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
-      }
-      excerpt
-      published_at(formatString: "MMM DD, YYYY")
-      reading_time
-      tags {
-        name
-        slug
-      }
-      authors {
-        name
-      }
-    }
-    allMembersJson(filter: { pennkey: { in: $authors } }) {
-      nodes {
-        photo
-        pennkey
-        bio
-        localImage {
+        publishedAt(formatString: "MMM DD, YYYY")
+        coverPhoto {
           childImageSharp {
-            fluid(maxWidth: 80) {
+            fluid(maxWidth: 1248) {
               ...GatsbyImageSharpFluid
             }
           }
         }
-        name
       }
+      timeToRead
     }
   }
 `

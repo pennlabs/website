@@ -21,7 +21,17 @@ module.exports = {
         path: `${__dirname}/src/markdown`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/src/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      plugins: [`gatsby-remark-reading-time`],
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -45,14 +55,6 @@ module.exports = {
           families: ['Inter, Work Sans'],
           urls: ['/fonts/fonts.css'],
         },
-      },
-    },
-    {
-      resolve: `gatsby-source-ghost`,
-      options: {
-        apiUrl: `https://ghost.pennlabs.org`,
-        contentApiKey: process.env.GHOST_API_KEY,
-        version: `v3`, // Ghost API version, optional, defaults to "v3".
       },
     },
     {
@@ -90,4 +92,7 @@ module.exports = {
       },
     },
   ],
+  mapping: {
+    'MembersJson.team': 'TeamsJson.name',
+  },
 }

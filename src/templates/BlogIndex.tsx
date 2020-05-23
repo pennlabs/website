@@ -4,15 +4,15 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { H1, Section, Fade, WideContainer } from '../shared'
-import { IGhostPost } from '../types'
+import { IGhostPost, IPost } from '../types'
 import { BlogHero } from '../components/Blog/Hero'
 import Posts from '../components/Blog/Posts'
 import Pagination from '../shared/Pagination'
 
 interface IBlogTemplateProps {
   data: {
-    allGhostPost: {
-      edges: Array<{ node: IGhostPost }>
+    allMarkdownRemark: {
+      nodes: IPost[]
     }
   }
   pageContext: object
@@ -23,10 +23,8 @@ const BlogPage = ({
   pageContext,
 }: IBlogTemplateProps): React.ReactElement => {
   const {
-    allGhostPost: { edges: postNodes },
+    allMarkdownRemark: { nodes: posts },
   } = data
-
-  const posts = postNodes.map(({ node: post }) => post)
 
   return (
     <Layout>
@@ -42,29 +40,26 @@ const BlogPage = ({
 
 export const pageQuery = graphql`
   query($limit: Int!, $skip: Int!) {
-    allGhostPost(
-      sort: { order: DESC, fields: [published_at] }
+    allMarkdownRemark(
+      filter: {
+        fileAbsolutePath: { regex: "/blog/" }
+        frontmatter: { draft: { ne: false } }
+      }
       limit: $limit
       skip: $skip
     ) {
-      edges {
-        node {
+      nodes {
+        excerpt
+        frontmatter {
           slug
           title
-          excerpt
-          localImage {
+          customExcerpt
+          coverPhoto {
             childImageSharp {
               fluid(maxWidth: 484) {
                 ...GatsbyImageSharpFluid
               }
             }
-          }
-          tags {
-            slug
-            name
-          }
-          authors {
-            slug
           }
         }
       }

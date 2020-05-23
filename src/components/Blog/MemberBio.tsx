@@ -65,12 +65,12 @@ const StyledCenteredFlex = styled(CenteredFlex)`
 `
 
 const MemberBio = ({
-  author: { pennkey, photo = '', bio = '', name },
+  author: { pennkey, localImage, bio = '', name },
 }: IMemberBioProps): React.ReactElement => (
   <Fade distance={M1}>
     <Card shaded>
       <StyledCenteredFlex>
-        <Thumbnail src={photo} />
+        <Thumbnail src={localImage.childImageSharp.fluid.src} />
         <div>
           <H4 mb2>{name}</H4>
           <Bio dangerouslySetInnerHTML={{ __html: bio }} />

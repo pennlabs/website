@@ -14,7 +14,7 @@ import {
   PHONE,
   M4,
 } from '../../constants/measurements'
-import { IGhostPost } from '../../types'
+import { IGhostPost, IPost } from '../../types'
 
 const PostThumbnail = styled(Img)`
   object-fit: contain;
@@ -42,11 +42,12 @@ const PostCard = styled(Card)`
 `
 
 const Post = ({
-  slug,
-  title,
+  frontmatter: { slug, title, customExcerpt, coverPhoto },
   excerpt,
-  localImage: { childImageSharp: { fluid } } = { childImageSharp: {} },
-}: IGhostPost) => {
+}: IPost) => {
+  const {
+    childImageSharp: { fluid },
+  } = coverPhoto
   return (
     <PostCardWrapper>
       <Link to={BLOG_POST_ROUTE(slug)}>
@@ -55,7 +56,7 @@ const Post = ({
             {fluid && <PostThumbnail fluid={fluid} />}
             <H3 mb2>{title}</H3>
             <P mb1 sm>
-              {excerpt}
+              {customExcerpt || excerpt}
             </P>
           </VFlex>
         </PostCard>
@@ -75,11 +76,11 @@ const PostList = styled(Flex)`
   }
 `
 
-const Posts = ({ posts }) => (
+const Posts = ({ posts }: { posts: IPost[] }) => (
   <Fade distance={M2}>
     <PostList>
-      {posts.map((post: IGhostPost) => (
-        <Post key={post.slug} {...post} />
+      {posts.map((post: IPost) => (
+        <Post key={post.frontmatter.slug} {...post} />
       ))}
     </PostList>
   </Fade>
