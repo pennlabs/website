@@ -25,6 +25,7 @@ export interface IPost {
     authors?: IMember[]
     customExcerpt?: string
     publishedAt?: string
+    draft?: boolean
   }
   timeToRead?: number
 }

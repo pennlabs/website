@@ -270,7 +270,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
               <H3>Posts</H3>
             </Fade>
             <Row margin={M1}>
-              <Posts posts={posts} />
+              <Posts posts={posts.filter(p => !p.frontmatter.draft)} />
             </Row>
           </>
         ) : null}
@@ -308,6 +308,7 @@ export const pageQuery = graphql`
           title
           slug
           customExcerpt
+          draft
           coverPhoto {
             childImageSharp {
               fluid(maxWidth: 484) {
