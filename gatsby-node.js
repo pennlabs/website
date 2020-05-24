@@ -19,15 +19,7 @@ const TagTemplate = path.resolve(`./src/templates/Tag.tsx`)
 const BlogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`)
 const BlogIndexTemplate = path.resolve(`./src/templates/BlogIndex.tsx`)
 
-// Ensure that env is set correctly
-const { GHOST_API_KEY } = process.env
-if (!GHOST_API_KEY) {
-  throw new Error('Missing GHOST_API_KEY in env')
-}
-
 const markdownProcessor = remark().use(html)
-
-const GhostAuthorType = `GhostAuthor`
 
 const getHash = jawn =>
   crypto
@@ -100,6 +92,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     authors: [MembersJson] @link(by: "pennkey")
     customExcerpt: String
     publishedAt: Date @dateformat(formatString: "YYYY-MM-DD")
+    draft: Boolean
   }`
 
   createTypes(typeDefs)

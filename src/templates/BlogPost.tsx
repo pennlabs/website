@@ -25,7 +25,13 @@ interface IPostTemplateProps {
 
 const PostTemplate = ({ data }: IPostTemplateProps) => {
   const {
-    frontmatter: { title, authors = [], coverPhoto, publishedAt: publishedAt },
+    frontmatter: {
+      title,
+      authors = [],
+      coverPhoto,
+      publishedAt,
+      customExcerpt,
+    },
     html,
     excerpt,
     timeToRead,
@@ -36,22 +42,20 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
       <SEO
         title={title}
         image={coverPhoto && getSrc(coverPhoto)}
-        description={excerpt}
+        description={customExcerpt || excerpt}
       />
 
       <Section>
         <article>
-          <Fade distance={M1}>
-            <header style={{ width: '100%' }}>
-              <MediumContainer>
-                <H1 mb2>{title}</H1>
-                <Byline authors={authors} />
-                <P sm opacity={0.64}>
-                  {publishedAt} • {timeToRead} min read
-                </P>
-              </MediumContainer>
-            </header>
-          </Fade>
+          <header style={{ width: '100%' }}>
+            <MediumContainer>
+              <H1 mb2>{title}</H1>
+              <Byline authors={authors} />
+              <P sm opacity={0.64}>
+                {publishedAt} • {timeToRead} min read
+              </P>
+            </MediumContainer>
+          </header>
 
           <MediumContainer>
             {coverPhoto && (
@@ -86,9 +90,12 @@ export const pageQuery = graphql`
   query($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       html
+      timeToRead
+      excerpt
       frontmatter {
         slug
         title
+        customExcerpt
         authors {
           name
           bio
@@ -110,7 +117,6 @@ export const pageQuery = graphql`
           }
         }
       }
-      timeToRead
     }
   }
 `

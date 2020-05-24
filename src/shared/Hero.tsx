@@ -51,27 +51,13 @@ export const Hero = ({
       <Row margin={M2}>
         <Col sm={12} md={6} margin={M2} flex>
           <TextWrapper>
-            <Fade delay={400} distance={M1}>
-              <H1 mb1>{title}</H1>
-            </Fade>
-            <Fade delay={450} distance={M1}>
-              <H3 normal>{subtitle}</H3>
-            </Fade>
-            {body && (
-              <Fade delay={500} distance={M1}>
-                <P>{body}</P>
-              </Fade>
-            )}
+            <H1 mb1>{title}</H1>
+            <H3 normal>{subtitle}</H3>
+            {body && <P>{body}</P>}
           </TextWrapper>
         </Col>
         <Col sm={12} md={6} margin={M2}>
-          {shouldFadeImage ? (
-            <Fade delay={400} distance="1rem">
-              <ImgWrapper>{Image}</ImgWrapper>
-            </Fade>
-          ) : (
-            <ImgWrapper>{Image}</ImgWrapper>
-          )}
+          <ImgWrapper>{Image}</ImgWrapper>
         </Col>
       </Row>
     </Section>
