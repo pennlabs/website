@@ -1,3 +1,6 @@
+require('typeface-inter')
+require('typeface-work-sans')
+
 /**
  * Implement Gatsby's Browser APIs in this file.
  */

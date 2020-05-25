@@ -50,15 +50,6 @@ module.exports = {
     `gatsby-plugin-tslint`,
     `gatsby-plugin-styled-components`,
     {
-      resolve: 'gatsby-plugin-web-font-loader',
-      options: {
-        custom: {
-          families: ['Inter, Work Sans'],
-          urls: ['/fonts/fonts.css'],
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: 'UA-21029575-11',
