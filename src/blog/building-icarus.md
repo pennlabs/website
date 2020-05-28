@@ -117,11 +117,10 @@ spec:
 
 As mentioned earlier, in our applications we can make the following assumptions to make our lives easier:
 
-- There will be exactly one container per application
 - That application, if exposed to the world, will speak HTTP and want to be secured with HTTPS
 - That application will use secrets synced into Kubernetes by our [Vault](https://www.vaultproject.io/) secret sync job
 
-With just these three assumptions, we can radically simplify our required configuration to the following for this example:
+With just these two assumptions, we can radically simplify our required configuration to the following for this example:
 
 ```yaml
 deploy_version: 0.1.15
