@@ -40,36 +40,36 @@ Kubernetes configs are hard and complicated. Kubernetes aims to be able to suppo
 apiVersion: v1
 kind: Service
 metadata:
-  name: "testsite-serve"
+  name: 'testsite-serve'
 spec:
   type: ClusterIP
   ports:
     - port: 80
       targetPort: 80
   selector:
-    name: "testsite-serve"
+    name: 'testsite-serve'
 ---
 # Source: icarus/templates/deployments.yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "testsite-serve"
+  name: 'testsite-serve'
   namespace: default
   labels:
-    name: "testsite-serve"
+    name: 'testsite-serve'
 spec:
   replicas: 1
   selector:
     matchLabels:
-      name: "testsite-serve"
+      name: 'testsite-serve'
   template:
     metadata:
       labels:
-        name: "testsite-serve"
+        name: 'testsite-serve'
     spec:
       containers:
-        - name: "worker"
-          image: "pennlabs/website:latest"
+        - name: 'worker'
+          image: 'pennlabs/website:latest'
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
@@ -85,16 +85,16 @@ metadata:
   namespace: default
 spec:
   rules:
-    - host: "pennlabs.org"
+    - host: 'pennlabs.org'
       http:
         paths:
-          - path: "/"
+          - path: '/'
             backend:
               serviceName: testsite-serve
               servicePort: 80
   tls:
     - hosts:
-        - "pennlabs.org"
+        - 'pennlabs.org'
       secretName: pennlabs-org-tls
 ---
 # Source: icarus/templates/certificates.yaml
@@ -103,12 +103,12 @@ kind: Certificate
 metadata:
   name: pennlabs-org
   annotations:
-    "helm.sh/resource-policy": keep
+    'helm.sh/resource-policy': keep
 spec:
   secretName: pennlabs-org-tls
   dnsNames:
-  - "pennlabs.org"
-  - "*.pennlabs.org"
+    - 'pennlabs.org'
+    - '*.pennlabs.org'
   issuerRef:
     name: wildcard-letsencrypt-prod
     kind: ClusterIssuer
@@ -134,7 +134,6 @@ applications:
       hosts:
         - host: pennlabs.org
           paths: ['/']
-
 ```
 
 Let's dive into how this is possible.
@@ -149,14 +148,14 @@ Helm operates off the [Go template package](https://golang.org/pkg/text/template
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ $app_id | quote }}
+  name: { { $app_id | quote } }
 spec:
-  type: {{ .svc_type }}
+  type: { { .svc_type } }
   ports:
-    - port: {{ .port }}
-      targetPort: {{ .port }}
+    - port: { { .port } }
+      targetPort: { { .port } }
   selector:
-    name: {{ $app_id | quote }}
+    name: { { $app_id | quote } }
 ```
 
 Helm lets you define default values, so in Icarus, we set `.svc_type` to be `ClusterIP` by default and `.port` to be 80 by default. We also set `$app_id` to be `<repository_name>-<application_name>`. Applying these rules, we get the resulting configuration that we see above:
@@ -166,14 +165,14 @@ Helm lets you define default values, so in Icarus, we set `.svc_type` to be `Clu
 apiVersion: v1
 kind: Service
 metadata:
-  name: "testsite-serve"
+  name: 'testsite-serve'
 spec:
   type: ClusterIP
   ports:
     - port: 80
       targetPort: 80
   selector:
-    name: "testsite-serve"
+    name: 'testsite-serve'
 ```
 
 Icarus works simply by applying substitutions like this to create the final Kubernetes manifests, and then we use the DigitalOcean API to automate the deployment of these manifests to our actual cluster. I'm glossing over a lot of detail here, but feel free to check out our [deploy orb](https://github.com/pennlabs/orb-helm-tools/blob/master/src/commands/deploy.yml) for the specifics.

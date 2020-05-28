@@ -31,7 +31,9 @@ module.exports = {
     },
     {
       resolve: `gatsby-transformer-remark`,
-      plugins: [`gatsby-remark-reading-time`],
+      options: {
+        plugins: [`gatsby-remark-reading-time`, `gatsby-remark-prismjs`],
+      },
     },
     `gatsby-plugin-sharp`,
     {

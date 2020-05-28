@@ -27,8 +27,13 @@
 }
 
 pre {
-  max-height: 20rem;
+  max-height: 25rem;
   overflow-y: scroll;
+  border-radius: 10px;
+}
+
+div.gatsby-highlight {
+  margin-bottom: 1.45rem;
 }
 
 .kg-bookmark-card {

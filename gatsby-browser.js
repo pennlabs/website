@@ -1,5 +1,6 @@
 require('typeface-inter')
 require('typeface-work-sans')
+require('prismjs/themes/prism-tomorrow.css')
 
 /**
  * Implement Gatsby's Browser APIs in this file.
