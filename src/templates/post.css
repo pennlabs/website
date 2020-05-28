@@ -10,7 +10,7 @@
  * Image galleries, which can be created from the Ghost editor, are not yet supported. Images will appear
  * sequentially on the page.
  */
- :root {
+:root {
   /* Colours */
   --blue: #3eb0ef;
   --green: #a4d037;
@@ -24,6 +24,16 @@
   --pink: #fa3a57;
   --brown: #a3821a;
   --darkmode: color(var(--darkgrey) l(+2%));
+}
+
+pre {
+  max-height: 25rem;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+
+div.gatsby-highlight {
+  margin-bottom: 1.45rem;
 }
 
 .kg-bookmark-card {

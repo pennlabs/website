@@ -61,7 +61,7 @@ const PostTemplate = ({ data }: IPostTemplateProps) => {
             {coverPhoto && (
               <Img
                 fluid={coverPhoto.childImageSharp.fluid}
-                style={{ maxWidth: '25rem' }}
+                style={{ marginBottom: '2rem' }}
               />
             )}
             <div className={'post-full-content content'}>
