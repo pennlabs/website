@@ -1,5 +1,5 @@
 ---
-title: 'Icarus - Taming the Kubernetes Beast'
+title: 'Icarus: Taming the Kubernetes Beast'
 slug: building-icarus
 authors: ['pawalt']
 publishedAt: 2020-05-27
