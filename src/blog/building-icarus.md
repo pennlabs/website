@@ -32,7 +32,7 @@ In Penn Labs, all of our web applications follow similar architectures: a single
 
 There are quite a few tools that fit together to make this system work (Hashicorp Vault, Grafana, etc.), but for the purposes of this post, I'm going to focus solely on the tool that developers actually use: Icarus.
 
-Kubernetes configs are hard and complicated. Kubernetes aims to be able to support any containerized application architecture possible, so it exposes every knob you could possibly want to turn. In simple setups, as you can see below, this leads to nothing other than repetition and confusion:
+Kubernetes configs are hard and complicated. Kubernetes aims to be able to support any containerized application architecture possible, so it exposes every knob you could possibly want to turn. In simple setups, this leads to nothing other than repetition and confusion. For example, below is the configuration required to simply deploy our website, our simplest product:
 
 ```yaml
 ---
