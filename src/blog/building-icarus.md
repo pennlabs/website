@@ -6,7 +6,7 @@ publishedAt: 2020-05-27
 coverPhoto: ../images/blog/icarus.jpg
 ---
 
-As of recent, we've moved our infrastructure away from [Dokku](http://dokku.viewdocs.io/dokku/) and onto [Kubernetes](https://kubernetes.io/). Especially for an organization with high turnover (nature of being a club), you have to carefully consider the organizational impacts of moving to a technology as complex as Kubernetes. This post should serve as a bit of insight into how we dealt with that challenge and built technology to solve it.
+Recently, we've moved our infrastructure from [Dokku](http://dokku.viewdocs.io/dokku/) to [Kubernetes](https://kubernetes.io/) as a platform to host and run our web applications. As a student organization (or club) we have a high member turnover rate as new members come and old ones leave. As such, we have to carefully consider the organizational impacts of moving to a technology as complex as Kubernetes. This post should serve as a bit of insight into how we dealt with that challenge and built technology to solve it.
 
 ## Background
 
@@ -24,9 +24,9 @@ Because of the (relative) simplicity of Penn Labs' applications and only having 
 
 In this pattern, there is a single team (or organization) that is responsible for building a high-level platform that other teams can use to deploy their applications. Building a platform involves significant up-front engineering work and a strong team to build the automation and interfaces required in order to create a frictionless deployment experience.
 
-This approach typically works best for applications with simple architectures. If you can restrict your applications to following similar architectures, you can build a platform that takes advantage of those shared architecture, abstracting away the common configuration required by your applications.
+This approach typically works best for applications with simple architectures. If you can restrict your applications to have similar architectures, you can build a platform that takes advantage of those shared architectures, abstracting away the common configuration.
 
-In Labs, all of our web applications follow similar architectures: a single frontend (usually React) and a monolithic backend (usually Django). Since we have a common, simple architecture and we don't have the personell to man every team with an SRE, we decided to go with the platform approach. This approach fit nicely into our organizational structure since we already have a platform team that manages our [authentication system](https://github.com/pennlabs/platform).
+In Penn Labs, all of our web applications follow similar architectures: a single frontend (usually React) and a monolithic backend (usually Django). Since we have a common, simple architecture and we don't have the personell to man every team with an SRE, we decided to go with the platform approach. This approach fit nicely into our organizational structure since we already have a platform team that manages our [authentication system](https://github.com/pennlabs/platform).
 
 ## Platform Abstractions
 
@@ -119,7 +119,7 @@ As mentioned earlier, in our applications we can make the following assumptions 
 
 - There will be exactly one container per application
 - That application, if exposed to the world, will speak HTTP and want to be secured with HTTPS
-- That application will use secrets synced into Kubernetes by our Vault secret sync job
+- That application will use secrets synced into Kubernetes by our [Vault](https://www.vaultproject.io/) secret sync job
 
 With just these three assumptions, we can radically simplify our required configuration to the following for this example:
 
@@ -181,8 +181,8 @@ Icarus works simply by applying substitutions like this to create the final Kube
 
 There's been a lot of talk here about organizational philosophy and YAML templating, but let's circle back to what this system actually gives us.
 
-When one of our developers wants to create a new application, they can, completely independently, create a Git repo, add in a small CI config file, create their Icarus file, and add their proper secrets into Vault. Once that's done, they can Git push up, and their application will be published to the domain of their choice in just a few minutes. If you ask me, that's pretty cool.
+When one of our developers wants to create a new application, they can, completely independently, create a Git repo, add in a small CI config file, create their Icarus file, and add their proper secrets into Vault. Once that's done, they can push upstream to Github, and their application will be published to the domain they specified in their Icarus config in just a few minutes. If you ask me, that's pretty cool.
 
 ## Reach Out
 
-If any of this looks like it's up your alley or you wanna learn more about our mission, be sure to contact us at contact@pennlabs.org or [apply to be a part of Labs](https://pennlabs.org/apply)! We've got some fantastic teams working on interesting problems with a direct impact on campus.
+If any of this looks like it's up your alley or you wanna learn more about our mission, be sure to email us at [contact@pennlabs.org](mailto:contact@pennlabs.org) or [apply to be a part of Labs](https://pennlabs.org/apply)! We've got some fantastic teams working on interesting problems with a direct impact on campus.
