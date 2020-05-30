@@ -62,7 +62,7 @@ export const Products = (): React.ReactElement => {
         <Fade>
           <ParallaxWrapper>
             <H1>Our products</H1>
-            <P>For academics, campus life, and everything in-between</P>
+            <P>For academics, campus life, and everything in-between.</P>
           </ParallaxWrapper>
         </Fade>
       </Container>
