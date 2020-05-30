@@ -1,6 +1,6 @@
 ---
 title: 'Penn Clubs'
-description: 'Discover clubs all year-round'
+description: 'Discover clubs all year-round.'
 logo: '../../images/products/logos/clubs-logo.svg'
 screenshot: '../../images/products/clubs-product.png'
 justifyImage: 'right'

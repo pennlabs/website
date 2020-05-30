@@ -1,6 +1,6 @@
 ---
 title: 'Penn Mobile'
-description: 'Making it easy to Thrive at Penn, on the go'
+description: 'Making it easy to Thrive at Penn, on the go.'
 logo: '../../images/products/logos/penn-mobile-logo.svg'
 screenshot: '../../images/products/mobile-product.png'
 justifyImage: 'left'
