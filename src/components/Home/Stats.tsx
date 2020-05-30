@@ -83,7 +83,7 @@ export const Stats = (): React.ReactElement => (
             {stats.map(({ colorAlpha, title, description }: IStat) => (
               <Col sm={12} md={4} margin={M2} flex key={title}>
                 <StatWrapper colorAlpha={colorAlpha}>
-                  <H2 color={WHITE}>{title}</H2>
+                  <H2 mb1 color={WHITE}>{title}</H2>
                   <P color={WHITE} opacity={0.8} mb0>
                     {description}
                   </P>
