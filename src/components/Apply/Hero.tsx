@@ -8,7 +8,7 @@ const applyPath = require('../../images/hero-apply.svg') as string // tslint:dis
 export const ApplyHero = () => (
   <Hero
     title="Come Build with Us"
-    subtitle="Join the Penn Labs community this semester"
+    subtitle="Join the Penn Labs community this fall"
     body={
       APPLY_FORM_ROUTE && (
         <BtnAnchor href={APPLY_FORM_ROUTE} target="_BLANK">
