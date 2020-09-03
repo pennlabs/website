@@ -21,23 +21,27 @@ export const InfoSessions = () => (
   <Section>
     <H2>Info Sessions</H2>
     <H3 normal>Learn more about life in Penn Labs</H3>
-    <P>Come meet our members and treat yourself to some Insomnia Cookies!</P>
+    <P>Come meet our members and learn more about what we do!</P>
     <Row margin={M2}>
       <Col margin={M2} sm={12} md={6} lg={4}>
         <Card shaded>
           <P mb0>
-            Thursday 1/23, 6-7pm
+            Friday 9/4, 11am-12pm EDT
             <br />
-            JMHH 250
+            <a href="https://upenn.zoom.us/j/98212208086?pwd=RnhsMTBwTDg3bkNJZi9tVkw4ZUhoQT09">
+              Zoom Link
+            </a>
           </P>
         </Card>
       </Col>
       <Col margin={M2} sm={12} md={6} lg={4}>
         <Card shaded>
           <P mb0>
-            Monday 1/27, 6-7pm
+            Monday 9/7, 6-7pm EDT
             <br />
-            JMHH 250
+            <a href="https://upenn.zoom.us/j/98212208086?pwd=RnhsMTBwTDg3bkNJZi9tVkw4ZUhoQT09">
+              Zoom Link
+            </a>
           </P>
         </Card>
       </Col>
