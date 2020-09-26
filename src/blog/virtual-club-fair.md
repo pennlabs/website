@@ -3,7 +3,7 @@ title: 'Creating a Virtual Club Fair: Redesigning & Repurposing Penn Clubs'
 slug: virtual-club-fair
 authors: ['snie']
 publishedAt: 2020-09-25
-coverPhoto: ../images/blog/icarus.jpg
+coverPhoto: ../images/blog/clubs-screenshot.png
 ---
 
 # Creating a Virtual Club Fair: Redesigning & Repurposing Penn Clubs
