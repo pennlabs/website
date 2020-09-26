@@ -6,8 +6,6 @@ publishedAt: 2020-09-25
 coverPhoto: ../images/blog/clubs-screenshot.png
 ---
 
-# Creating a Virtual Club Fair: Redesigning & Repurposing Penn Clubs
-
 - **Team:** Eric W. (team lead, developer), Davis H. (developer), Daniel T. (developer), Campbell P. (developer), Lucy X. (developer), Jong Min C. (developer), Lanting C. (developer), Ying X. (developer), Peyton W. (platform), Armaan T. (Penn Labs director, platform), Misty L. (business developer).
 
 - **My role:** Product management, UI Design, Frontend development.
