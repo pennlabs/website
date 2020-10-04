@@ -1,7 +1,7 @@
 ---
 title: 'Office Hours Queue (OHQ)'
 description: 'The most trusted source of course and instructor ratings.'
-logo: '../../images/products/logos/pcr-logo.svg'
+logo: '../../images/products/logos/ohq-logo.svg'
 screenshot: '../../images/products/pcr-product.png'
 justifyImage: 'right'
 showOnHomepage: true
