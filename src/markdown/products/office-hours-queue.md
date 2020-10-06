@@ -1,7 +1,7 @@
 ---
 title: 'Office Hours Queue'
 description: 'TODO'
-logo: '../../images/products/logos/pcr-logo.svg'
+logo: '../../images/products/logos/ohq-logo.svg'
 screenshot: '../../images/products/ohq-product1.png'
 justifyImage: 'right'
 showOnHomepage: true
