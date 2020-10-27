@@ -4,7 +4,8 @@ slug: pcr-tech-18
 publishedAt: 2018-08-28
 coverPhoto: ../images/blog/pcr18-cis120.png
 ---
-*This article was written by [Brandon Lin](https://github.com/esqu1).*
+
+_This article was written by [Brandon Lin](https://github.com/esqu1)._
 
 This article is a continuation of a previous article about Penn Course Review’s new redesign. See [here](/blog/pcr-makeover-18) for that article.
 

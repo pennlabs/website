@@ -10,7 +10,7 @@ link: 'https://ohq.io/'
 privacy: 'https://www.iubenda.com/privacy-policy/86347108'
 ---
 
-OHQ lets professors and TAs set up an online office hours queue and start helping students in minutes.  As a student, access all of your courses’ office hours on one central page. Create a Zoom link, join a queue, and get help quickly!
+OHQ lets professors and TAs set up an online office hours queue and start helping students in minutes. As a student, access all of your courses’ office hours on one central page. Create a Zoom link, join a queue, and get help quickly!
 
 ## Online office hours have never been so easy
 

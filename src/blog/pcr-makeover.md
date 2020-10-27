@@ -4,7 +4,8 @@ slug: pcr-makeover-18
 publishedAt: 2018-08-27
 coverPhoto: ../images/blog/pcr18-stats.png
 ---
-*This article was written by [Tiffany Chang](http://tifchang.com).*
+
+_This article was written by [Tiffany Chang](http://tifchang.com)._
 
 Meet the new Penn Course Review.
 
@@ -38,19 +39,18 @@ We’re so excited to finally announce the new Penn Course Review, a new experie
 
 **🎨 Color calibration:** Ratings are color coded.
 
-* 💛: < 2
+- 💛: < 2
 
-* 💜: < 3
+- 💜: < 3
 
-* 💚: ≥ 3
+- 💚: ≥ 3
 
 **☁️ Cloud:** We’ve migrated Penn Course Review from a physical server to the cloud to optimize speed and performance.
 
-*For a technical deep-dive on the update, see this [article](/blog/pcr-tech-18).*
+_For a technical deep-dive on the update, see this [article](/blog/pcr-tech-18)._
 
 ### 🙏 Special thanks to the team
 
-* **V.2018**: [Brandon Lin](https://github.com/esqu1) (PM/Backend Developer), [Cassandra Li](https://github.com/orgs/pennlabs/people/cassandrali) (Frontend Developer), [Eric Wang](https://github.com/ezwang) (Fullstack Developer),[ ](https://github.com/VinaiRachakonda)[Josh Doman](https://github.com/joshdoman) (Director), [Suzanne Knop](https://github.com/sknop8) (Frontend Developer), [Tiffany Chang](http://tifchang.com) (Director/Designer), [Vinai Rachakonda](https://github.com/VinaiRachakonda) (Backend Developer), [Yonah Mann](https://github.com/ymann) (Backend Developer).
+- **V.2018**: [Brandon Lin](https://github.com/esqu1) (PM/Backend Developer), [Cassandra Li](https://github.com/orgs/pennlabs/people/cassandrali) (Frontend Developer), [Eric Wang](https://github.com/ezwang) (Fullstack Developer),[ ](https://github.com/VinaiRachakonda)[Josh Doman](https://github.com/joshdoman) (Director), [Suzanne Knop](https://github.com/sknop8) (Frontend Developer), [Tiffany Chang](http://tifchang.com) (Director/Designer), [Vinai Rachakonda](https://github.com/VinaiRachakonda) (Backend Developer), [Yonah Mann](https://github.com/ymann) (Backend Developer).
 
-* **Our legacy**: [Adel Qalieh](https://github.com/adelq), [Adam Domingoes](https://github.com/adamdom), [Alexey Komissarouk](https://github.com/AlexeyMK), [Ceasar Bautista](https://github.com/Ceasar), [David Lakata](https://github.com/dlakata), [Derek Jobst](https://github.com/derekjobst), [Greg Terrono](http://Greg Terrono), [Kyle Hardgrave](https://github.com/kylehg), [Matt Parmett](https://github.com/mattparmett), [Nop Jiarathanakul](https://github.com/nopjia), [Prakhar Bhandari](https://github.com/pbjr23), [Reika Yoshino](http://www.reikayoshino.com/), [Sumit Shyamsukha](https://github.com/sumitshyamsukha), [Vivek Panyam](https://github.com/VivekPanyam), [Yefim Vedernikoff](https://github.com/yefim).
-
+- **Our legacy**: [Adel Qalieh](https://github.com/adelq), [Adam Domingoes](https://github.com/adamdom), [Alexey Komissarouk](https://github.com/AlexeyMK), [Ceasar Bautista](https://github.com/Ceasar), [David Lakata](https://github.com/dlakata), [Derek Jobst](https://github.com/derekjobst), [Greg Terrono](http://Greg Terrono), [Kyle Hardgrave](https://github.com/kylehg), [Matt Parmett](https://github.com/mattparmett), [Nop Jiarathanakul](https://github.com/nopjia), [Prakhar Bhandari](https://github.com/pbjr23), [Reika Yoshino](http://www.reikayoshino.com/), [Sumit Shyamsukha](https://github.com/sumitshyamsukha), [Vivek Panyam](https://github.com/VivekPanyam), [Yefim Vedernikoff](https://github.com/yefim).
