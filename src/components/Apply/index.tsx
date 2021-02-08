@@ -10,7 +10,7 @@ export const Apply = () => (
   <>
     <ApplyHero />
     <WhyLabs />
-    <InfoSessions />
+    {/* <InfoSessions /> */}
     <OpenRoles />
     <ApplicationProcess />
     <More />
