@@ -15,7 +15,6 @@ import {
 } from '../../shared'
 import { M2 } from '../../constants/measurements'
 import { INFO_SESSIONS_EVENT_ROUTE } from '../../constants/routes'
-import { WHITE, PURPLE_DEEP, PURPLE_DARK } from '../../constants/colors'
 
 export const InfoSessions = () => (
   <Section>
@@ -37,7 +36,7 @@ export const InfoSessions = () => (
           <P mb0>
             Sunday 9/5, 12pm-1pm EST
             <br />
-            <a href="https://upenn.zoom.us/j/99503873045?pwd=TWt3NDNVNHE4aXhFRkJRRStLRXNuZz09">Zoom Link</a>
+            <a href="https://upenn.zoom.us/j/93340915772?pwd=Q1F3d3NWUXBLK0pBcHRTeXRnQzdxZz09">Zoom Link</a>
           </P>
         </Card>
       </Col>
