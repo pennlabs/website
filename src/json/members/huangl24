@@ -1,0 +1,18 @@
+{
+  "name": "Larry Huang",
+  "pennkey": "huangl24",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "bio": "Hi, I am Larry and I like to code.",
+  "hometown": "Wilton, Connecticut",
+  "team": "Office Hours Queue",
+  "roles": ["Frontend Engineer"],
+  "photo": "https://i.imgur.com/WN2Znez.jpg",
+  "linkedin": "https://www.linkedin.com/in/larryjhuang/",
+  "website": "",
+  "github": "https://github.com/lhuang19",
+  "semester_joined": "2021A",
+  "alumnus": false,
+  "graduation_year": 2024,
+  "job": null
+}
