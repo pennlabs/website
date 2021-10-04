@@ -3,7 +3,7 @@
   "pennkey": "wgoeller",
   "major": "CMPE",
   "school": "Engineering",
-  "bio": "Hi I'm Will and I'm a Junior studying Computer Engineering. Outside of classes, I'm a Head TA for CIS120 and I'm working as a Software Developer Contractor for Hulu. For fun, I love tinkering, cooking, and downhill skiing!",
+  "bio": "Hi I'm Will and I'm a Senior studying Computer Engineering and also submatriculating into Computer Science. Outside of classes, I'm a Head TA for CIS120 and a Production Engineer for Jane Street. For fun, I love tinkering, cooking, and downhill skiing!",
   "hometown": "Los Angeles",
   "team": "Platform",
   "roles": ["DevOps"],
@@ -14,5 +14,5 @@
   "semester_joined": "2020A",
   "alumnus": false,
   "graduation_year": 2022,
-  "job": "Software Developer at Hulu"
+  "job": "Production Engineer at Jane Street"
 }
