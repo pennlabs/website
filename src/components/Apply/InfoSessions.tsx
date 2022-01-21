@@ -25,18 +25,18 @@ export const InfoSessions = () => (
       <Col margin={M2} sm={12} md={6} lg={4}>
         <Card shaded>
           <P mb0>
-            Friday 9/3, 5pm-6pm EST
+            Friday 1/21, 5pm-6pm EST
             <br />
-            <a href="https://upenn.zoom.us/j/93340915772?pwd=Q1F3d3NWUXBLK0pBcHRTeXRnQzdxZz09">Zoom Link</a>
+            <a href="https://upenn.zoom.us/j/96286870641?pwd=MXdBL1FFOEdhZTBqN0ZHRlBrN3B0dz09">Zoom Link</a>
           </P>
         </Card>
       </Col>
       <Col margin={M2} sm={12} md={6} lg={4}>
         <Card shaded>
           <P mb0>
-            Sunday 9/5, 12pm-1pm EST
+            TBD
             <br />
-            <a href="https://upenn.zoom.us/j/93340915772?pwd=Q1F3d3NWUXBLK0pBcHRTeXRnQzdxZz09">Zoom Link</a>
+            <a href="https://pennclubs.com/club/pennlabs">Zoom Link</a>
           </P>
         </Card>
       </Col>
