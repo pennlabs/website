@@ -1,0 +1,18 @@
+{
+  "name": "David Zhang",
+  "pennkey": "david322",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "bio": "Never skip bicep day.",
+  "hometown": "Philadelphia, Pennsylvania",
+  "team": "Penn Clubs",
+  "roles": ["Frontend Engineer"],
+  "photo": "https://i.imgur.com/VzjrF7g.jpeg",
+  "linkedin": "",
+  "website": "",
+  "github": "",
+  "semester_joined": "2022A",
+  "alumnus": false,
+  "graduation_year": 2024,
+  "job": null
+}
