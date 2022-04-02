@@ -1,9 +1,0 @@
-deploy_version: 0.1.20
-
-applications:
-  - name: serve
-    image: pennlabs/website
-    ingress:
-      hosts:
-        - host: pennlabs.org
-          paths: ['/']
