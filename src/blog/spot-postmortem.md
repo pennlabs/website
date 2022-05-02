@@ -3,6 +3,7 @@ title: 'Path@Penn Downtime Post-Mortem'
 slug: spot-postmortem
 authors: ['pawalt']
 publishedAt: 2022-05-02
+coverPhoto: ../images/blog/nodes.png
 ---
 
 Over the past month, our infrastructure has had some intermittent issues, so we wanted to drop a quick postmortem describing what the problem was and how we fixed it so we can solve these problems more quickly in the future!
