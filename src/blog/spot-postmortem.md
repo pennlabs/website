@@ -10,7 +10,7 @@ Over the past month, our infrastructure has had some intermittent issues, so we 
 
 ## Terminology
 
-I'm going to use some terminology here so lemme define it first.
+Before starting, we should define some terminology:
 
 - **Pod** - one instance of a running application (ex. Penn Courses Backend)
 - **Node** - a physical machine that our pods run on
@@ -19,11 +19,11 @@ I'm going to use some terminology here so lemme define it first.
 
 ## Background
 
-For our cluster, we use [AWS Spot Nodes](https://aws.amazon.com/ec2/spot/). These are machines that may, at any time be shut down by AWS for use in other places. In exchange for this, we pay a lower price for these nodes. Nodes going down is not a problem for us since we're running in Kubernetes which will automatically move our applications to our other nodes if one goes down.
+For our cluster, we use [AWS Spot Nodes](https://aws.amazon.com/ec2/spot/). These are machines that may, at any time, be shut down by AWS for use in other places. In exchange for this, we pay a lower price for these nodes. Nodes going down is not a problem for us since we're running in Kubernetes which will automatically move our applications to our other nodes if one goes down.
 
 When a spot node goes down, all applications (I'll use the word pods interchangeably) are moved to the other nodes. A new node is then brought up and the pods (hopefully) rebalance between the available nodes.
 
-Additionally, a few weeks ago, we switched from many smaller nodes to 3 higher-resource nodes. This gave us some cost savings as fewer thiccer nodes are cheaper than multiple smaller nodes.
+Additionally, a few weeks ago, we switched from many smaller nodes to 3 higher-resource nodes. This gave us some cost savings as fewer high-resource nodes are cheaper than many low-resource nodes.
 
 ## Symptoms
 
@@ -40,7 +40,7 @@ Upon looking at the cluster with `kubectl`, we saw that many pods were stuck in 
 
 To debug this further, we looked at Datadog, our monitoring system. Datadog showed between 1 and 2 nodes at 100% CPU usage with the third sitting almost idle at ~10% usage.
 
-At this point, the question becomes **If Kubernetes is balancing pods, why are some nodes at such higher resource usage than the others?**
+At this point, the question becomes: **If Kubernetes is balancing pods, why are some nodes at such higher resource usage than the others?**
 
 ## Deduction
 
