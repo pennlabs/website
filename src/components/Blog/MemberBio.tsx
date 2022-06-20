@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
+import remark from 'remark'
+import html from 'remark-html'
+import { useState } from 'react'
 
 import { IMember } from '../../types'
 import { TEAM_MEMBER_ROUTE } from '../../constants/routes'
@@ -14,6 +17,8 @@ import {
   maxWidth,
   M2,
 } from '../../constants/measurements'
+
+const markdownProcessor = remark().use(html)
 
 const Thumbnail = styled.img`
   min-height: 4rem;
@@ -66,24 +71,33 @@ const StyledCenteredFlex = styled(CenteredFlex)`
 
 const MemberBio = ({
   author: { pennkey, localImage, bio = '', name },
-}: IMemberBioProps): React.ReactElement => (
-  <Fade distance={M1}>
-    <Card shaded>
-      <StyledCenteredFlex>
-        <Thumbnail src={localImage.childImageSharp.fluid.src} />
-        <div>
-          <H4 mb2>{name}</H4>
-          <Bio dangerouslySetInnerHTML={{ __html: bio }} />
+}: IMemberBioProps): React.ReactElement => {
 
-          <div style={{ transform: 'scale(0.8)', transformOrigin: 'top left' }}>
-            <Link to={TEAM_MEMBER_ROUTE(pennkey)}>
-              Learn more <LinkChevronRightIcon />
-            </Link>
+  // Bios may contain markdown. Make sure to parse these into HTML!
+  const [bioAsHtml, updateBioAsHtml] = useState(bio)
+  markdownProcessor
+    .process(bio || '')
+    .then(({ contents: b }) => updateBioAsHtml(b))
+
+  return (
+    <Fade distance={M1}>
+      <Card shaded>
+        <StyledCenteredFlex>
+          <Thumbnail src={localImage.childImageSharp.fluid.src} />
+          <div>
+            <H4 mb2>{name}</H4>
+            <Bio dangerouslySetInnerHTML={{ __html: bioAsHtml }} />
+
+            <div style={{ transform: 'scale(0.8)', transformOrigin: 'top left' }}>
+              <Link to={TEAM_MEMBER_ROUTE(pennkey)}>
+                Learn more <LinkChevronRightIcon />
+              </Link>
+            </div>
           </div>
-        </div>
-      </StyledCenteredFlex>
-    </Card>
-  </Fade>
-)
+        </StyledCenteredFlex>
+      </Card>
+    </Fade>
+  )
+}
 
 export default MemberBio
