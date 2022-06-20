@@ -1,6 +1,6 @@
 import { Construct } from "constructs";
 import { App, Stack, Workflow } from "cdkactions";
-import { DeployJob, ReactProject } from "@pennlabs/kraken";
+import { DeployJob, NukeJob, ReactProject } from "@pennlabs/kraken";
 
 export class WebsiteStack extends Stack {
   constructor(scope: Construct, name: string) {
@@ -14,9 +14,32 @@ export class WebsiteStack extends Stack {
       imageName: 'website',
     });
 
+    // Add Production Deploy
     new DeployJob(workflow, {}, {
       needs: [websiteJob.publishJobId]
     });
+
+    // Add Feature Branch Deploy to Original Workflow
+    new DeployJob(
+      workflow,
+      {
+        deployToFeatureBranch: true,
+      },
+      {
+        needs: [websiteJob.publishJobId]
+      }
+    );
+
+    // Create Feature Branch Nuke Worflow
+    const featureBranchNukeWorkflow = new Workflow(
+      this,
+      "feature-branch-nuke",
+      {
+        name: "Feature Branch Nuke",
+        on: { pullRequest: { types: ["closed"] } },
+      }
+    );
+    new NukeJob(featureBranchNukeWorkflow, {}, {});
   }
 }
 
