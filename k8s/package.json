@@ -18,7 +18,7 @@
   "dependencies": {
     "@pennlabs/kittyhawk": "^1.1.5",
     "cdk8s": "^2.2.63",
-    "constructs": "^10.0.110"
+    "constructs": "^10.0.119"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
