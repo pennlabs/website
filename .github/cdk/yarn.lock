@@ -2,13 +2,13 @@
 # yarn lockfile v1
 
 
-"@pennlabs/kraken@^0.8.6":
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/@pennlabs/kraken/-/kraken-0.8.6.tgz#79a9d10bed36b699c526556cd69b6d81341847d1"
-  integrity sha512-aBblQa/661DJ2GP3Dq1KEzCZ72ZV/Jw7z4HNZoWPxGWn+tSPwvaPkSNDpK7tT+nJmu427giGU8DLyciU79hKbA==
+"@pennlabs/kraken@^0.8.7":
+  version "0.8.7"
+  resolved "https://registry.yarnpkg.com/@pennlabs/kraken/-/kraken-0.8.7.tgz#d6b49d1b12d9bcf809dec2003fce43dc4e1d9daa"
+  integrity sha512-XIkMfg9CLbMqbzS6kF6V1sEyFBKwmxxIlpgs13Kl0fEU65Cslu13Yc/11CIXJexj6RGnDFML7+menF1rpFnyKw==
   dependencies:
     cdkactions "^0.2.3"
-    constructs "^3.2.80"
+    constructs "^3.2.109"
     ts-dedent "^2.2.0"
 
 "@types/node@^14.14.22":
@@ -78,11 +78,6 @@ constructs@^3.2.109:
   version "3.2.113"
   resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.2.113.tgz#b7f6d11ad00e787558924158164adab2a7386502"
   integrity sha512-yNq5+bZFzNuygzC0nTbJ9cfktMTF7EwUerHWHSc+2sxJELhA5C2j/Ucu+fHmKIr+3TF6j2JCJiK/mO0SoRkdSQ==
-
-constructs@^3.2.80:
-  version "3.3.263"
-  resolved "https://registry.yarnpkg.com/constructs/-/constructs-3.3.263.tgz#d1c0391155d28e34534d2ab4266199f260258ba6"
-  integrity sha512-PZFnpaTjn7lHSk1+D4B6/pu1M0l+IRHt/lMIk2kkUMgsuhCSu2iFEh0uSw/PsDO4oZ1WaT9FZpvOoRJpC5jcJA==
 
 emoji-regex@^8.0.0:
   version "8.0.0"
