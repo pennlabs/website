@@ -53,7 +53,7 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
-          push: ${{ github.ref == 'refs/heads/master' }}
+          push: ${{ github.ref == 'refs/heads/master || startsWith(github.ref, 'refs/heads/feat/') == true }}
           cache-from: type=local,src=/tmp/.buildx-cache,type=registry,ref=pennlabs/website:latest
           cache-to: type=local,dest=/tmp/.buildx-cache
           tags: pennlabs/website:latest,pennlabs/website:${{ github.sha }}

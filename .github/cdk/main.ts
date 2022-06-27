@@ -12,6 +12,9 @@ export class WebsiteStack extends Stack {
 
     const websiteJob = new ReactProject(workflow, {
       imageName: 'website',
+      publishProps: {
+        push: "${{ github.ref == 'refs/heads/master || startsWith(github.ref, 'refs/heads/feat/') == true }}"
+      }
     })
 
     // Add Production Deploy
