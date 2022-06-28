@@ -20,7 +20,9 @@ export class WebsiteStack extends Stack {
     // Add Production Deploy
     new DeployJob(
       workflow,
-      {},
+      {
+        deploymentUrls: ["pennlabs.org"]
+      },
       {
         needs: [websiteJob.publishJobId],
       },
