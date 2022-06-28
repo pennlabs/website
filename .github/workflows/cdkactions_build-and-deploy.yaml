@@ -151,5 +151,6 @@ jobs:
             Deployment preview for commit `${{ github.sha }}` ready at:
             pr-${{ steps.pr.outputs.pull_request_number }}.pennlabs.org
           recreate: true
+          number: ${{ steps.pr.outputs.pull_request_number }}
     needs:
       - publish-frontend
