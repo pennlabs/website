@@ -21,7 +21,6 @@ export class WebsiteStack extends Stack {
     new DeployJob(
       workflow,
       {
-        deploymentUrls: ["pennlabs.org"]
       },
       {
         needs: [websiteJob.publishJobId],
@@ -33,6 +32,7 @@ export class WebsiteStack extends Stack {
       workflow,
       {
         deployToFeatureBranch: true,
+        deploymentUrls: ["pennlabs.org"]
       },
       {
         needs: [websiteJob.publishJobId],
