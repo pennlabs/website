@@ -147,7 +147,7 @@ jobs:
         uses: peter-evans/find-comment@v2
         id: find-announcement
         with:
-          issue-number: ${{ github.event.pull_request.number }}
+          issue-number: ${{ steps.pr.outputs.pull_request_number }}
           body-includes: Deployment preview for
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Announce successful feature branch deployment
