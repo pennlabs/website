@@ -148,8 +148,8 @@ jobs:
         id: find-announcement
         with:
           issue-number: ${{ github.event.pull_request.number }}
-          comment-author: github-actions[bot]
           body-includes: Deployment preview for
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Announce successful feature branch deployment
         uses: peter-evans/create-or-update-comment@v2
         with:
