@@ -7,6 +7,7 @@ export class FeatureBranchChart extends PennLabsChart {
 
     const prNumber = process.env.PR_NUMBER;
     
+    // Arbitrary change
     if (!prNumber) {
       console.error("No PR_NUMBER environment variable provided.");
       process.exit(1);
