@@ -6,15 +6,9 @@ on:
     types:
       - closed
 jobs:
-  testing-waters:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Nuke
-        run: |-
-          echo ${{ github.event.pull_request.base.ref }}
   nuke:
     runs-on: ubuntu-latest
-    if: startsWith(github.event.pull_request.base.ref, 'refs/heads/feat/') == true
+    if: startsWith(github.event.pull_request.base.ref, 'feat/') == true
     steps:
       - uses: actions/checkout@v2
       - id: synth
