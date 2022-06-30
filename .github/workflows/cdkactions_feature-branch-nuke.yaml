@@ -8,7 +8,7 @@ on:
 jobs:
   nuke:
     runs-on: ubuntu-latest
-    if: startsWith(github.ref_name, 'feat/') == true
+    if: startsWith(github.event.pull_request.base.ref, 'refs/heads/feat/') == true
     steps:
       - uses: actions/checkout@v2
       - id: synth
