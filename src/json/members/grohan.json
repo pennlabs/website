@@ -3,10 +3,10 @@
     "major": "Networked and Social Systems Engineering",
     "school": "Engineering",
     "pennkey": "grohan",
-    "bio": "Hi! I'm a backend developer from India. Aside from writing terrible PR and commit messages, I'm a huge fan of EDM, RuneScape, and caramel ice coffee",
+    "bio": "Junior in NETS. Likes RuneScape, snake_case, Vim, Emacs, types, distributed systems, strawberry milk. Dislikes frontend, unit tests, code coverage, Philadelphia weather, rice",
     "hometown": "Bangalore, India",
-    "team": "Penn Clubs",
-    "roles": ["Backend Engineer", "Team Lead"],
+    "team": "Directors",
+    "roles": ["Co-Director", "Backend Engineer", "Team Lead"],
     "photo": "https://i.imgur.com/hiveM31_d.webp?maxwidth=760&fidelity=grand",
     "linkedin": "https://www.linkedin.com/in/rohan-gupta2/",
     "website": "",
@@ -16,4 +16,3 @@
     "graduation_year": 2024,
     "job": null
   }
-  
