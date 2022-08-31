@@ -13,7 +13,7 @@ export const PRODUCTS_ROUTE = '/products'
 // External
 export const CONTACT_ROUTE = 'mailto:contact@pennlabs.org'
 export const GITHUB_ROUTE = 'https://github.com/pennlabs'
-export const APPLY_FORM_ROUTE = 'https://airtable.com/shrwdAPmw6hGUmKKM'
+export const APPLY_FORM_ROUTE = 'https://airtable.com/shrA02LzW53snA4G5'
 // export const APPLY_FORM_ROUTE = null
 export const INFO_SESSIONS_EVENT_ROUTE = null
 // export const INFO_SESSIONS_EVENT_ROUTE =

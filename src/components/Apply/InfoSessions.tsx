@@ -27,7 +27,9 @@ export const InfoSessions = () => (
           <P mb0>
             Friday 1/21, 5pm-6pm EST
             <br />
-            <a href="https://upenn.zoom.us/j/96286870641?pwd=MXdBL1FFOEdhZTBqN0ZHRlBrN3B0dz09">Zoom Link</a>
+            <a href="https://upenn.zoom.us/j/96200124786?pwd=Z3duWFhSQUIzM1VUMWRicVNwdENuUT09">
+              Zoom Link
+            </a>
           </P>
         </Card>
       </Col>
