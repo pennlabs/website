@@ -36,9 +36,9 @@ export const InfoSessions = () => (
       <Col margin={M2} sm={12} md={6} lg={4}>
         <Card shaded>
           <P mb0>
-            TBD
+            Friday 9/9 5pm-6pm EST
             <br />
-            <a href="https://pennclubs.com/club/pennlabs">Zoom Link</a>
+            Huntsman Hall 360
           </P>
         </Card>
       </Col>
