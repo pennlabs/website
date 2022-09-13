@@ -1,0 +1,18 @@
+{
+  "name": "Rohan Chhaya",
+  "major": "Bioengineering",
+  "school": "Engineering",
+  "pennkey": "rchhaya",
+  "bio": "A bioengineering student looking to explore mobile development and maybe learn how to debug without System.out.println()",
+  "hometown": "Plano, Texas",
+  "team": "Penn Mobile",
+  "roles": ["Android Mobile Engineer"],
+  "photo": "https://i.imgur.com/foDwf0O.jpeg",
+  "linkedin": "https://www.linkedin.com/in/rohan-chhaya/",
+  "website": null,
+  "github": "https://github.com/rchhaya",
+  "semester_joined": "2021A",
+  "alumnus": false,
+  "graduation_year": 2024,
+  "job": null
+}
