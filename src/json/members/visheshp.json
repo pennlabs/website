@@ -1,18 +1,20 @@
 {
-  "name": "Vishesh Patel",
-  "pennkey": "visheshp",
-  "major": "Chemistry and Computer Science",
-  "school": "VIPER: Engineering and CAS",
-  "bio": "Yo! I'm a freshman studying Chemistry and CIS. I'm passionate about using technology to solve problems, specifically in the field of energy and sustainibility.  In my free time, I love playing basketball and tennis, as well as watching sports. ",
-  "hometown": "Glen Mills, PA",
-  "team": "Penn Mobile",
-  "roles": ["Android Mobile Engineer"],
-  "photo": "https://i.imgur.com/TQ4Ht0g.jpg",
-  "linkedin": "https://www.linkedin.com/in/vishesh-patel-9400a512b",
-  "website": "",
-  "github": "",
-  "semester_joined": "2020C",
-  "alumnus": false,
-  "graduation_year": 2024,
-  "job": null
+    "name": "Vishesh Patel",
+    "pennkey": "visheshp",
+    "major": "Chemistry and Computer Science",
+    "school": "VIPER: Engineering and CAS",
+    "bio": "Yo! I'm a freshman studying Chemistry and CIS. I'm passionate about using technology to solve problems, specifically in the field of energy and sustainibility.  In my free time, I love playing basketball and tennis, as well as watching sports. ",
+    "hometown": "Glen Mills, PA",
+    "team": "Penn Mobile",
+    "roles": [
+        "Android Mobile Engineer"
+    ],
+    "photo": "https://i.imgur.com/TQ4Ht0g.jpg",
+    "linkedin": "https://www.linkedin.com/in/vishesh-patel-9400a512b",
+    "website": "",
+    "github": "",
+    "semester_joined": "2020C",
+    "alumnus": false,
+    "graduation_year": 2024,
+    "job": null
 }
