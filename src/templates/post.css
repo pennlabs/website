@@ -171,6 +171,11 @@ div.gatsby-highlight {
 .post-container {
   max-width: 70ch;
 }
+.image-caption {
+  text-align: center;
+  font-size: 0.8rem;
+  color: grey;
+}
 
 @media (max-width: 500px) {
   .post-full-content .kg-width-wide,
