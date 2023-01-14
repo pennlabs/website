@@ -25,20 +25,18 @@ export const InfoSessions = () => (
       <Col margin={M2} sm={12} md={6} lg={4}>
         <Card shaded>
           <P mb0>
-            Thursday 8/30, 7pm-8pm EST
+            Friday 1/20, 5:30pm-6:30pm EST
             <br />
-            <a href="https://upenn.zoom.us/j/96200124786?pwd=Z3duWFhSQUIzM1VUMWRicVNwdENuUT09">
-              Zoom Link
-            </a>
+            TBD
           </P>
         </Card>
       </Col>
       <Col margin={M2} sm={12} md={6} lg={4}>
         <Card shaded>
           <P mb0>
-            Friday 9/9 5pm-6pm EST
+            TBD
             <br />
-            Huntsman Hall 360
+            TBD
           </P>
         </Card>
       </Col>
