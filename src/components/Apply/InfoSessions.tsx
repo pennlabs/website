@@ -27,7 +27,7 @@ export const InfoSessions = () => (
           <P mb0>
             Friday 1/20, 5:30pm-6:30pm EST
             <br />
-            TBD
+            JMHH 340
           </P>
         </Card>
       </Col>
