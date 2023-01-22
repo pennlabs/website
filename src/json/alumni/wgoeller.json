@@ -1,0 +1,18 @@
+{
+  "name": "William Goeller",
+  "pennkey": "wgoeller",
+  "major": "CMPE",
+  "school": "Engineering",
+  "bio": "Hi I'm Will and I'm a Senior studying Computer Engineering and also submatriculating into Computer Science. Outside of classes, I'm a Head TA for CIS120 and a Production Engineer for Jane Street. For fun, I love tinkering, cooking, and downhill skiing!",
+  "hometown": "Los Angeles",
+  "team": "Platform",
+  "roles": ["DevOps"],
+  "photo": "https://dl.airtable.com/.attachments/337693fc2da52ff64dbba6a0ac5477da/5e621e62/ProfilePic.jpg",
+  "linkedin": "https://www.linkedin.com/in/wgoeller/",
+  "website": "",
+  "github": "https://github.com/KeenWill",
+  "semester_joined": "2020A",
+  "alumnus": false,
+  "graduation_year": 2022,
+  "job": "Production Engineer at Jane Street"
+}
