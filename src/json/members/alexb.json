@@ -1,0 +1,19 @@
+{
+    "name": "Alex Budko",
+    "pennkey": "abudko",
+    "major": "Computer Science",
+    "school": "Engineering",
+    "bio": "Hey, I'm Alex and I love coding. In my free time, I also love playing basketball, lifting, and attempting novel and crazy activites.",
+    "hometown": "Melbourne, FL",
+    "team": "Penn Courses",
+    "roles": [
+        "Backend"
+    ],
+    "photo": "https://media.licdn.com/dms/image/D4E03AQF2ES3oTGn0CA/profile-displayphoto-shrink_800_800/0/1665095976421?e=1680134400&v=beta&t=valaqD069HU9dZc4OrOJmC8i4NcXdlvag-E_gZfgnOQ",
+    "linkedin": "https://www.linkedin.com/in/alexander-budko-41baa7252/",
+    "github": "https://github.com/alex-budko/",
+    "semester_joined": "2022C",
+    "alumnus": false,
+    "graduation_year": 2026,
+    "job": null
+}
