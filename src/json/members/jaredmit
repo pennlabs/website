@@ -1,0 +1,16 @@
+{
+  "name": "Jared Mitovich",
+  "pennkey": "jaredmit",
+  "major": "Communication: Data nad Network Science",
+  "school": "College",
+  "bio": "Hi! I'm Jared. I'm a sophomore from New Jersey studying Communication with minors in Data Science and Consumer Psychology.",
+  "team": "Penn Mobile",
+  "roles": ["Business Developer"],
+  "photo": "https://imgur.com/a/E7hRHqm",
+  "linkedin": "https://www.linkedin.com/in/jared-mitovich/",
+  "website": "https://www.jared-mitovich.com/",
+  "github": "https://github.com/jaredmit",
+  "semester_joined": "2023A",
+  "alumnus": false,
+  "graduation_year": 2025
+}
