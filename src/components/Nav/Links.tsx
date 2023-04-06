@@ -20,6 +20,7 @@ import {
   BLOG_ROUTE,
   APPLY_ROUTE,
 } from '../../constants/routes'
+import DropdownButtonWithMenu from './Dropdown'
 
 interface ILinksProps {
   active: boolean
@@ -51,7 +52,7 @@ const Spacer = styled.div<{}>`
   }
 `
 
-const StyledLink = styled(Link)<{}>`
+export const StyledLink = styled(Link) <{}>`
   height: 2rem;
   line-height: 2rem;
   margin-left: 1rem;
@@ -86,10 +87,9 @@ const StyledLink = styled(Link)<{}>`
   }
 `
 
-const links: string[][] = [
+const links = [
   ['About', ABOUT_ROUTE],
-  ['Team', TEAM_ROUTE],
-  ['Alumni', ALUMNI_ROUTE],
+  ['Team', [['Current Members', TEAM_ROUTE], ['Former Members', ALUMNI_ROUTE]]],
   ['Products', PRODUCTS_ROUTE],
   ['Resources', RESOURCES_ROUTE],
   ['Blog', BLOG_ROUTE],
@@ -99,10 +99,12 @@ const links: string[][] = [
 export const Links = ({ active }: ILinksProps): React.ReactElement => (
   <LinksWrapper active={active}>
     <Spacer />
-    {links.map(([text, link]) => (
-      <StyledLink to={link} key={link}>
-        {text}
-      </StyledLink>
-    ))}
+    {links.map(([text, link]) =>
+      typeof link === 'string'
+        ? (<StyledLink to={link} key={link}>
+          {text}
+        </StyledLink>)
+        : (<DropdownButtonWithMenu label={text} key={text} links={link} />)
+    )}
   </LinksWrapper>
 )

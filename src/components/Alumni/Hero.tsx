@@ -5,7 +5,7 @@ const imgPath = require('../../images/hero-team.svg') as string // tslint:disabl
 
 export const AlumniHero = () => (
   <Hero
-    title="Alumni"
+    title="Past Penn Labs Members"
     subtitle="Where we came from"
     body={`
       Really cool people.
