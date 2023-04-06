@@ -38,7 +38,7 @@ export const Teams = ({ teams }: ITeams) => (
 
           <Row margin={M2}>
             {leadsFirst(members).map((props: IMember) => (
-              <TeamMemberPreview key={props.pennkey} {...props} />
+              <TeamMemberPreview key={props.pennkey} {...props} alumnus={false}  />
             ))}
           </Row>
         </Section>

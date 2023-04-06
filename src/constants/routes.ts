@@ -8,6 +8,8 @@ export const BLOG_TAG_ROUTE = (slug: string) => `/blog/tag/${slug}`
 export const BLOG_POST_ROUTE = (slug: string) => `/blog/${slug}`
 export const TEAM_ROUTE = '/team'
 export const TEAM_MEMBER_ROUTE = (id: string) => `/team/${id}`
+export const ALUMNI_ROUTE = '/alumni'
+export const ALUMNI_MEMBER_ROUTE = (id: string) => `/alumni/${id}`
 export const PRODUCTS_ROUTE = '/products'
 
 // External

@@ -32,6 +32,7 @@ export interface IPost {
 
 export interface IMember {
   name: string
+  alumnus?: boolean
   major?: string
   school?: string
   photo?: string

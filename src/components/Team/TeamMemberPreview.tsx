@@ -12,7 +12,7 @@ import {
   SHORT_ANIMATION_DURATION,
   M3,
 } from '../../constants/measurements'
-import { TEAM_MEMBER_ROUTE } from '../../constants/routes'
+import { ALUMNI_MEMBER_ROUTE, TEAM_MEMBER_ROUTE } from '../../constants/routes'
 import { BLACK_ALPHA } from '../../constants/colors'
 import { IMember } from '../../types'
 
@@ -46,13 +46,14 @@ export const TeamMemberPreview = ({
   name,
   roles,
   pennkey,
+  alumnus,
   localImage: {
     childImageSharp: { fluid },
   },
   semester_joined: semesterJoined,
 }: IMember) => (
   <Col margin={M2} sm={12} md={6} lg={3} key={pennkey}>
-    <StyledLink to={TEAM_MEMBER_ROUTE(pennkey)}>
+    <StyledLink to={ alumnus ? ALUMNI_MEMBER_ROUTE(pennkey) : TEAM_MEMBER_ROUTE(pennkey) }>
       {fluid && <Image fluid={fluid} />}
       <P mb1 lg>
         <strong>{name}</strong>
@@ -60,7 +61,7 @@ export const TeamMemberPreview = ({
       <div style={{ marginBottom: M3 }}>
         <Tags tags={roles} />
       </div>
-      {semesterJoined && (
+      {semesterJoined && !alumnus && (
         <P mb0 sm>
           Member since {semesterToString(semesterJoined)}
         </P>

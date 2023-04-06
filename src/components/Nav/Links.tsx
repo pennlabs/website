@@ -14,6 +14,7 @@ import { WORK_SANS } from '../../constants/fonts'
 import {
   ABOUT_ROUTE,
   TEAM_ROUTE,
+  ALUMNI_ROUTE,
   PRODUCTS_ROUTE,
   RESOURCES_ROUTE,
   BLOG_ROUTE,
@@ -88,6 +89,7 @@ const StyledLink = styled(Link)<{}>`
 const links: string[][] = [
   ['About', ABOUT_ROUTE],
   ['Team', TEAM_ROUTE],
+  ['Alumni', ALUMNI_ROUTE],
   ['Products', PRODUCTS_ROUTE],
   ['Resources', RESOURCES_ROUTE],
   ['Blog', BLOG_ROUTE],

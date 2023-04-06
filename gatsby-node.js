@@ -13,6 +13,7 @@ const html = require('remark-html')
 const { paginate } = require('gatsby-awesome-pagination')
 
 const { postsPerPage } = require('./src/constants/blog.ts')
+const AlumniTemplate = path.resolve(`./src/templates/Alumni.tsx`)
 const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
 const ProductTemplate = path.resolve(`src/templates/Product.tsx`)
 const TagTemplate = path.resolve(`./src/templates/Tag.tsx`)
@@ -126,6 +127,35 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       path: `/team/${pennkey}`,
       component: MemberTemplate,
+      context: {
+        // Data passed to context is available in page queries as GraphQL vars
+        id,
+        pennkey,
+      },
+    }),
+  )
+
+   // Retrieve ID's of all team members
+  const {
+    data: {
+      allAlumniJson: { edges:alumni },
+    },
+  } = await graphql(`
+    query {
+      allAlumniJson {
+        edges {
+          node {
+            id
+            pennkey
+          }
+        }
+      }
+    }
+  `)
+  await alumni.map(({ node: { id, pennkey } }) =>
+    createPage({
+      path: `/alumni/${pennkey}`,
+      component: AlumniTemplate,
       context: {
         // Data passed to context is available in page queries as GraphQL vars
         id,
