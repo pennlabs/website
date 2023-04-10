@@ -8,7 +8,7 @@ interface IAlumnis {
     alumni: IMember[]
 }
 
-export const Alumni = ({ alumni }) => (
+export const Alumni = ({ alumni }: IAlumnis)=> (
     <>
         <Fade distance="1rem">
             <Section>

@@ -253,8 +253,8 @@ const AlumniTemplate = ({ data }: IMemberTemplateProps) => {
                 Icon={CalendarIcon}
               />
             )}
-            {gradYear && (
-              <Detail text={`Graduates in ${gradYear}`} Icon={LogOutIcon} />
+            {semesterJoined && gradYear && (
+              <Detail text={`${semesterJoined} - ${gradYear}`} Icon={LogOutIcon} />
             )}
           </Row>
         </Fade>

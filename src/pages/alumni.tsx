@@ -7,6 +7,7 @@ import { WideContainer } from '../shared'
 import { ITeam } from '../types'
 import { AlumniHero } from '../components/Alumni/Hero'
 import { Alumni } from '../components/Alumni/Alumni'
+import { Sponsors } from '../components/Alumni/Sponsors'
 
 const AlumniPage = ({
     data: {
@@ -19,6 +20,7 @@ const AlumniPage = ({
             <WideContainer>
                 <AlumniHero />
                 <Alumni alumni={alumni} />
+                <Sponsors />
             </WideContainer>
         </Layout>
     )

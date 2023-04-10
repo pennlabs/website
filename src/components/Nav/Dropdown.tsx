@@ -126,13 +126,9 @@ const DropdownButtonWithMenu = ({ label, links }) => {
                 {showMenu && (
                     <DropdownMenu>
                         {links.map((text) => (
-                            // <StyledLink to={link} key={link}>
-                            //     {text}
-                            // </StyledLink>
                             <DropdownButton onClick={()=> console.log(links)} key={text[0]}>
                                 <DropdownLinks to={text[1]}>{text[0]}</DropdownLinks>
                             </DropdownButton>
-                            // <DropdownLinks to={link} key={link}>{text}</DropdownLinks>
                             
                         ))}
                     </DropdownMenu>
