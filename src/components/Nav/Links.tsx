@@ -104,7 +104,7 @@ export const Links = ({ active }: ILinksProps): React.ReactElement => (
         ? (<StyledLink to={link} key={link}>
           {text}
         </StyledLink>)
-        : (<DropdownButtonWithMenu label={text} key={text} links={link} />)
+        : (<DropdownButtonWithMenu label={text} key={text} links={link} />),
     )}
   </LinksWrapper>
 )

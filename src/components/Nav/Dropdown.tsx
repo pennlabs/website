@@ -11,17 +11,7 @@ import {
 } from '../../constants/measurements'
 import { BLACK } from '../../constants/colors'
 import { WORK_SANS } from '../../constants/fonts'
-import {
-    ABOUT_ROUTE,
-    TEAM_ROUTE,
-    ALUMNI_ROUTE,
-    PRODUCTS_ROUTE,
-    RESOURCES_ROUTE,
-    BLOG_ROUTE,
-    APPLY_ROUTE,
-} from '../../constants/routes'
 import { StyledLink } from './Links'
-import { relative } from 'path'
 
 export const StyledButton = styled.button`
   height: 2rem;
@@ -64,30 +54,9 @@ const DropdownMenu = styled.div`
    & button:first-child {
     border-bottom:solid #e6e6e6 .5px
   }
-`;
+`
 
-interface IDropdownProps {
-    active: boolean
-}
-
-const DropdownWrapper = styled.div<IDropdownProps>`
-    flex: 1;
-    text-align: right;
-    display: static;
-  
-    ${maxWidth(PHONE)} {
-      flex: none;
-      text-align: left;
-      display: block;
-      overflow: hidden;
-      transition: max-height ${SHORT_ANIMATION_DURATION}ms ease,
-        opacity ${SHORT_ANIMATION_DURATION}ms ease;
-      max-height: ${({ active }) => (active ? '100vh' : '0')};
-      opacity: ${({ active }) => (active ? '1' : '0')};
-    }
-  `
-
-const Wrapper = styled.div`
+const DesktopWrapper = styled.div`
     display: inline;
     position: relative;
     left: 0 !important;
@@ -97,11 +66,20 @@ const Wrapper = styled.div`
     & > div {
         height: 70px;
     }
+    ${maxWidth(PHONE)} {
+        display: none;
+    }
 `
 
-const DropdownButton = styled.button`   
-    width: 100%;
+const MobileWrapper = styled.div`
+    display: none;
+    ${maxWidth(PHONE)} {
+        display: inline;
+    }
+`
 
+const DropdownButton = styled.button`
+    width: 100%;
     border: none;
     background-color: transparent;
     :hover {
@@ -117,25 +95,31 @@ width: 100%;
 `
 
 const DropdownButtonWithMenu = ({ label, links }) => {
-    const [showMenu, setShowMenu] = useState(false);
+    const [showMenu, setShowMenu] = useState(false)
 
     return (
         <>
-            <Wrapper onMouseLeave={() => setShowMenu(false)}>
+            <DesktopWrapper onMouseLeave={() => setShowMenu(false)}>
                 <StyledButton onMouseEnter={() => setShowMenu(true)}>{label}</StyledButton>
                 {showMenu && (
                     <DropdownMenu>
-                        {links.map((text) => (
-                            <DropdownButton onClick={()=> console.log(links)} key={text[0]}>
+                        {links.map(text => (
+                            <DropdownButton key={text[0]}>
                                 <DropdownLinks to={text[1]}>{text[0]}</DropdownLinks>
                             </DropdownButton>
-                            
                         ))}
                     </DropdownMenu>
                 )}
-            </Wrapper>
+            </DesktopWrapper>
+            <MobileWrapper>
+            {links.map(([text, link]) =>
+                <StyledLink to={link} key={link}>
+                    {text}
+                </StyledLink>
+            )}
+            </MobileWrapper>
         </>
-    );
-};
+    )
+}
 
 export default DropdownButtonWithMenu
