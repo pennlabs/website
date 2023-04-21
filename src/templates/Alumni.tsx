@@ -167,9 +167,9 @@ const Detail = ({ text, Icon }) => {
 const Studies = ({ major, school }: { major?: string; school?: string }) => {
   const getStudiesText = (): string | null => {
     if (!major && !school) return null
-    if (!major) return `Studies in ${school}`
-    if (!school) return `Studies ${major}`
-    return `Studies ${major} in ${school}`
+    if (!major) return `Studied in ${school}`
+    if (!school) return `Studied ${major}`
+    return `Studied ${major} in ${school}`
   }
 
   return <Detail text={getStudiesText()} Icon={BookOpenIcon} />
@@ -247,12 +247,6 @@ const AlumniTemplate = ({ data }: IMemberTemplateProps) => {
           <Row margin={M1}>
             <Studies major={major} school={school} />
             {location && <Detail text={`From ${location}`} Icon={HomeIcon} />}
-            {semesterJoined && (
-              <Detail
-                text={`Member since ${semesterToString(semesterJoined)}`}
-                Icon={CalendarIcon}
-              />
-            )}
             {semesterJoined && gradYear && (
               <Detail text={`${semesterJoined} - ${gradYear}`} Icon={LogOutIcon} />
             )}

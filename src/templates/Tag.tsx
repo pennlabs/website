@@ -14,7 +14,7 @@ interface ITagTemplateProps {
   data: {
     ghostTag: IGhostTag
     allGhostPost: {
-      edges: Array<{ node: IGhostPost }>
+      edges: IGhostPost[]
     }
   }
   pageContext: object

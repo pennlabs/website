@@ -115,7 +115,7 @@ const DropdownButtonWithMenu = ({ label, links }) => {
             {links.map(([text, link]) =>
                 <StyledLink to={link} key={link}>
                     {text}
-                </StyledLink>
+                </StyledLink>,
             )}
             </MobileWrapper>
         </>
