@@ -32,7 +32,7 @@
     "gatsby-remark-reading-time": "^1.1.0",
     "gatsby-source-filesystem": "^2.11.0",
     "gatsby-transformer-json": "^2.11.0",
-    "gatsby-transformer-remark": "^2.16.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.12.0",
     "intersection-observer": "^0.12.0",
     "node-fetch": "^2.6.1",
