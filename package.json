@@ -12,6 +12,7 @@
     "@types/styled-components": "^5.1.7",
     "core-js": "^3.8.3",
     "crypto": "^1.0.1",
+    "fuse.js": "^6.6.2",
     "gatsby": "^2.32.3",
     "gatsby-awesome-pagination": "^0.3.5",
     "gatsby-background-image": "^1.4.1",

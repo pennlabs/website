@@ -61,7 +61,7 @@ const DesktopWrapper = styled.div`
     position: relative;
     left: 0 !important;
     &:hover > div {
-        opacity: 0.5;
+        opacity: 0.8;
     }
     & > div {
         height: 70px;
