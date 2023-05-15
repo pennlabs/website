@@ -35,7 +35,7 @@ const filterByName = (members: IMember[], name: string): IMember[] => {
         shouldSort: true,
         threshold: 0.2,
         includeScore: true,
-        keys: ['name']
+        keys: ['name'],
     }
     const fuse = new Fuse(members, options)
     const search = fuse.search(name)
@@ -49,8 +49,6 @@ const filter = (members: IMember[], name: string): IMember[] => {
 export const Alumni = ({
     alumni,
 }: IAlumnis): React.ReactElement => {
-    const handleChange = (event: React.FormEvent) => {
-    }
     const [input, setInput] = useState('')
     return (
         <>

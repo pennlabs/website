@@ -53,7 +53,10 @@ const DropdownMenu = styled.div`
    width: 200%;
    & button:first-child {
     border-bottom:solid #e6e6e6 .5px
-  }
+   }
+   & button:last-child {
+    border-radius: 0 0 15px 15px;
+   }
 `
 
 const DesktopWrapper = styled.div`
@@ -112,11 +115,11 @@ const DropdownButtonWithMenu = ({ label, links }) => {
                 )}
             </DesktopWrapper>
             <MobileWrapper>
-            {links.map(([text, link]) =>
-                <StyledLink to={link} key={link}>
-                    {text}
-                </StyledLink>,
-            )}
+                {links.map(([text, link]) =>
+                    <StyledLink to={link} key={link}>
+                        {text}
+                    </StyledLink>,
+                )}
             </MobileWrapper>
         </>
     )
