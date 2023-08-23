@@ -5,8 +5,12 @@
   "pennkey": "grohan",
   "bio": "Junior in NETS. Likes RuneScape, snake_case, Vim, Emacs, types, distributed systems, strawberry milk, green grass. Dislikes frontend, unit tests, queues, rice",
   "hometown": "Bangalore, India",
-  "team": "Directors",
-  "roles": ["Co-Director", "Backend Engineer", "Team Lead"],
+  "team": "Penn Clubs",
+  "roles": [
+    "Director Emeritus",
+    "Backend Engineer",
+    "Team Lead"
+  ],
   "photo": "https://avatars.githubusercontent.com/u/13982777?v=2",
   "linkedin": "https://www.linkedin.com/in/rohan-gupta2/",
   "website": "",

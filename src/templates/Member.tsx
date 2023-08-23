@@ -73,7 +73,7 @@ const LinksTag = styled.div<{}>`
   }
 `
 
-const StyledCard = styled(Card)<{}>`
+const StyledCard = styled(Card) <{}>`
   padding: ${M4};
   margin-top: ${M2};
 
@@ -186,9 +186,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
       linkedin,
       hometown: location,
       photo,
-      localImage: {
-        childImageSharp: { fluid },
-      },
+      localImage,
       roles,
       name,
       major,
@@ -204,7 +202,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
   const [bioAsHtml, updateBioAsHtml] = useState(bio)
   markdownProcessor
     .process(bio || '')
-    .then(({ contents: b }) => updateBioAsHtml(b))
+    .then(({ contents: b }) => updateBioAsHtml(b as any))
 
   return (
     <Layout>
@@ -213,9 +211,9 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
         <Fade distance={M1}>
           <StyledCard shaded>
             <Row>
-              {fluid && (
+              {localImage?.childImageSharp.fluid && (
                 <ProfilePictureWrapper>
-                  <ProfilePicture fluid={fluid} />
+                  <ProfilePicture fluid={localImage.childImageSharp.fluid} />
                 </ProfilePictureWrapper>
               )}
               <Col flex>
@@ -238,7 +236,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
 
         {bio && (
           <Fade distance={M1} delay={450}>
-            <div dangerouslySetInnerHTML={{ __html: bioAsHtml }} />
+            <div dangerouslySetInnerHTML={{ __html: bioAsHtml ?? "" }} />
           </Fade>
         )}
 
@@ -292,13 +290,6 @@ export const pageQuery = graphql`
       name
       major
       school
-      localImage {
-        childImageSharp {
-          fluid(maxWidth: 484) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
       team
       website
       semester_joined

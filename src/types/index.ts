@@ -1,4 +1,4 @@
-import { GatsbyImageProps } from 'gatsby-image'
+import { GatsbyImageFluidProps, GatsbyImageProps } from 'gatsby-image'
 import React from 'react'
 
 // Generic types
@@ -45,7 +45,7 @@ export interface IMember {
   hometown?: string
   team?: string
   website?: string
-  localImage?: { childImageSharp: GatsbyImageProps }
+  localImage?: { childImageSharp: GatsbyImageFluidProps }
   posts?: IPost[]
 }
 

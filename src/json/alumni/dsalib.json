@@ -6,13 +6,15 @@
   "bio": "Heyo\ud83e\udd20!  I'm Daniel and I am an iOS developer for Penn Mobile from Southern California! After switching majors countless times, I finally study Statistics and Data Science!",
   "hometown": "Rancho Cucamonga, CA",
   "team": "Penn Mobile",
-  "roles": ["iOS Mobile Engineer"],
+  "roles": [
+    "iOS Mobile Engineer"
+  ],
   "photo": "https://i.imgur.com/T09dRU6.jpg",
   "linkedin": "www.linkedin.com/in/dsalib",
   "website": "",
   "github": "www.github.com/sanieldalib",
   "semester_joined": "2018C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2020,
   "job": null
 }

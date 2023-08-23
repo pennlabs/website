@@ -6,13 +6,15 @@
   "bio": "Hey! I'm a sophomore studying Computer Science and Finance. In my free time, I love producing videos, going on runs, and binging Netflix.",
   "hometown": "Plainsboro, NJ",
   "team": "Penn Mobile",
-  "roles": ["Android Mobile Engineer"],
+  "roles": [
+    "Android Mobile Engineer"
+  ],
   "photo": "https://i.imgur.com/SF8C4e8.jpg",
   "linkedin": "https://www.linkedin.com/in/sahit-p-bb7939107/",
   "website": "https://www.sahit.me",
   "github": "https://github.com/sahitpen",
   "semester_joined": "2019C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2023,
   "job": null
 }

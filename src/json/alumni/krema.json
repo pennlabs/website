@@ -6,13 +6,15 @@
   "bio": "Catch me either pretending to code or excessively playing FIFA Ultimate Team... or making banana bread.",
   "hometown": "Cairo, Egypt",
   "team": "Penn Mobile",
-  "roles": ["Android Mobile Engineer"],
+  "roles": [
+    "Android Mobile Engineer"
+  ],
   "photo": "https://i.imgur.com/lT1Xivj.jpeg",
   "linkedin": "https://www.linkedin.com/in/ali-krema/",
   "website": "",
   "github": "https://github.com/Alikrema",
   "semester_joined": "2022C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2023,
   "job": null
 }

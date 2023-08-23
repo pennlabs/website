@@ -6,13 +6,15 @@
   "bio": "Passionate about the intersection of art and technology, architecture, and Money Heist. Budding college dorm chef. Pesto and hot sauce lover. :P",
   "hometown": "Washington, DC",
   "team": "Penn Clubs",
-  "roles": ["Designer"],
+  "roles": [
+    "Designer"
+  ],
   "photo": "https://i.imgur.com/uuYavDm.jpg",
   "linkedin": "https://www.linkedin.com/in/alicezhe/",
   "website": "https://alicezhe.github.com/",
   "github": "https://github.com/alicezhe",
   "semester_joined": "2020C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2023,
   "job": null
 }
