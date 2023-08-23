@@ -28,7 +28,7 @@ const PriorContributors = ({
         </Row>
         <Row margin={M2}>
           {alumni.map((props: IMember) => (
-            <Col sm={12} md={3} margin={M2} flex>
+            <Col key={props.pennkey} sm={12} md={3} margin={M2} flex>
               <Link to={`/alumni/${props.pennkey}`}><P mb0>{props.name}</P></Link>
             </Col>
           ))
