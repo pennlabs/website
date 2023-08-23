@@ -48,6 +48,7 @@ export const TeamMemberPreview = ({
   pennkey,
   localImage,
   semester_joined: semesterJoined,
+  alumnus,
 }: IMember) => (
   <Col margin={M2} sm={12} md={6} lg={3} key={pennkey}>
     <StyledLink to={TEAM_MEMBER_ROUTE(pennkey)}>

@@ -38,6 +38,7 @@ export interface IMember {
   roles: string[]
   pennkey: string
   semester_joined?: string
+  alumnus: boolean
   bio?: string
   github?: string
   graduation_year?: string

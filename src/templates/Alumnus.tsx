@@ -142,7 +142,7 @@ const ProfilePicture = styled(BackgroundImage)`
 
 interface IMemberTemplateProps {
   data: {
-    membersJson: IMember,
+    alumniJson: IMember,
   }
 }
 
@@ -179,7 +179,7 @@ const Studies = ({ major, school }: { major?: string; school?: string }) => {
 
 const MemberTemplate = ({ data }: IMemberTemplateProps) => {
   const {
-    membersJson: {
+    alumniJson: {
       bio,
       github,
       graduation_year: gradYear,
@@ -280,7 +280,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
 
 export const pageQuery = graphql`
   query($pennkey: String!) {
-    membersJson(pennkey: { eq: $pennkey }) {
+    alumniJson(pennkey: { eq: $pennkey }) {
       bio
       github
       graduation_year
@@ -295,22 +295,6 @@ export const pageQuery = graphql`
       website
       semester_joined
       alumnus
-      posts {
-        excerpt
-        frontmatter {
-          title
-          slug
-          customExcerpt
-          draft
-          coverPhoto {
-            childImageSharp {
-              fluid(maxWidth: 484) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
     }
   }
 `

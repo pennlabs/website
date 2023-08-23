@@ -14,6 +14,7 @@ const { paginate } = require('gatsby-awesome-pagination')
 
 const { postsPerPage } = require('./src/constants/blog.ts')
 const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
+const AlumnusTemplate = path.resolve(`./src/templates/Alumnus.tsx`)
 const ProductTemplate = path.resolve(`src/templates/Product.tsx`)
 const TagTemplate = path.resolve(`./src/templates/Tag.tsx`)
 const BlogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`)
@@ -133,6 +134,36 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     }),
   )
+
+  // Retrieve ID's of all alumni
+  const {
+    data: {
+      allAlumniJson: { edges: alumniEdges },
+    },
+  } = await graphql(`
+    query {
+      allAlumniJson {
+        edges {
+          node {
+            id
+            pennkey
+          }
+        }
+      }
+    }
+  `)
+  await alumniEdges.map(({ node: { id, pennkey } }) =>
+    createPage({
+      path: `/alumni/${pennkey}`,
+      component: AlumnusTemplate,
+      context: {
+        // Data passed to context is available in page queries as GraphQL vars
+        id,
+        pennkey,
+      },
+    }),
+  )
+
 
   /**
    * Create pages for products
