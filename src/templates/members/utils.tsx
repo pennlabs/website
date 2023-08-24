@@ -268,7 +268,7 @@ export const GenericMemberTemplate = ({ data }: IGenericMemberTemplateProps) => 
             )}
             {gradYear && (
               <Detail
-                text={`${parseInt(gradYear) < new Date().getFullYear()
+                text={`${parseInt(gradYear, 10) < new Date().getFullYear()
                   ? 'Graduated'
                   : 'Graduates'
                   } in ${gradYear}`}
@@ -286,7 +286,7 @@ export const GenericMemberTemplate = ({ data }: IGenericMemberTemplateProps) => 
               <H3>Posts</H3>
             </Fade>
             <Row margin={M1}>
-              <Posts posts={posts.filter((p) => !p.frontmatter.draft)} />
+              <Posts posts={posts.filter(p => !p.frontmatter.draft)} />
             </Row>
           </>
         ) : null}
