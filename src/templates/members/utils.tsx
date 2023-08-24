@@ -189,6 +189,17 @@ export type IGenericMemberTemplateProps = IMemberTemplateProps | IAlumniTemplate
 export const GenericMemberTemplate = ({ data }: IGenericMemberTemplateProps) => {
   // if data is alumniJson, then we are rendering an alumni page
   const isAlumni = 'alumniJson' in data
+  const json = isAlumni ? data.alumniJson : data.membersJson
+  if (!json) {
+    return (
+      <Layout>
+        <SEO title="Member not found" />
+        <MediumContainer>
+          <H1>Member not found</H1>
+        </MediumContainer>
+      </Layout>
+    )
+  }
 
   const
     {
@@ -206,9 +217,8 @@ export const GenericMemberTemplate = ({ data }: IGenericMemberTemplateProps) => 
       team,
       website,
       semester_joined: semesterJoined,
-      alumnus,
       posts,
-    } = isAlumni ? data.alumniJson : data.membersJson
+    } = json
 
   // Bios may contain markdown. Make sure to parse these into HTML!
   const [bioAsHtml, updateBioAsHtml] = useState(bio)
