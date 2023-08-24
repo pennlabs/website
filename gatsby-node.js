@@ -13,8 +13,8 @@ const html = require('remark-html')
 const { paginate } = require('gatsby-awesome-pagination')
 
 const { postsPerPage } = require('./src/constants/blog.ts')
-const MemberTemplate = path.resolve(`./src/templates/Member.tsx`)
-const AlumnusTemplate = path.resolve(`./src/templates/Alumnus.tsx`)
+const MemberTemplate = path.resolve(`./src/templates/members/Member.tsx`)
+const AlumnusTemplate = path.resolve(`./src/templates/members/Alumnus.tsx`)
 const ProductTemplate = path.resolve(`src/templates/Product.tsx`)
 const TagTemplate = path.resolve(`./src/templates/Tag.tsx`)
 const BlogPostTemplate = path.resolve(`./src/templates/BlogPost.tsx`)
@@ -109,7 +109,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Retrieve ID's of all team members
   const {
     data: {
-      allMembersJson: { edges },
+      allMembersJson: { edges: memberEdges },
+      allAlumniJson: { edges: alumniEdges },
     },
   } = await graphql(`
     query {
@@ -118,44 +119,26 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           node {
             id
             pennkey
+            alumnus
           }
         }
       }
-    }
-  `)
-  await edges.map(({ node: { id, pennkey } }) =>
-    createPage({
-      path: `/team/${pennkey}`,
-      component: MemberTemplate,
-      context: {
-        // Data passed to context is available in page queries as GraphQL vars
-        id,
-        pennkey,
-      },
-    }),
-  )
-
-  // Retrieve ID's of all alumni
-  const {
-    data: {
-      allAlumniJson: { edges: alumniEdges },
-    },
-  } = await graphql(`
-    query {
       allAlumniJson {
         edges {
           node {
             id
             pennkey
+            alumnus
           }
         }
       }
     }
   `)
-  await alumniEdges.map(({ node: { id, pennkey } }) =>
+  edges = memberEdges.concat(alumniEdges)
+  await edges.map(({ node: { id, pennkey, alumnus } }) =>
     createPage({
-      path: `/alumni/${pennkey}`,
-      component: AlumnusTemplate,
+      path: alumnus ? `/alumni/${pennkey}` : `/team/${pennkey}`,
+      component: alumnus ? AlumnusTemplate : MemberTemplate,
       context: {
         // Data passed to context is available in page queries as GraphQL vars
         id,
@@ -163,7 +146,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     }),
   )
-
 
   /**
    * Create pages for products

@@ -6,10 +6,10 @@ import styled from 'styled-components'
 import remark from 'remark'
 import html from 'remark-html'
 
-import Posts from '../components/Blog/Posts'
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
-import { DARK_GRAY } from '../constants/colors'
+import Posts from '../../components/Blog/Posts'
+import Layout from '../../components/Layout'
+import SEO from '../../components/SEO'
+import { DARK_GRAY } from '../../constants/colors'
 import {
   BORDER_RADIUS,
   DESKTOP,
@@ -20,7 +20,7 @@ import {
   maxWidth,
   minWidth,
   PHONE,
-} from '../constants/measurements'
+} from '../../constants/measurements'
 import {
   BookOpenIcon,
   CalendarIcon,
@@ -39,9 +39,9 @@ import {
   P,
   Row,
   Tags,
-} from '../shared'
-import { IGhostPost, IMember, Subset } from '../types'
-import { semesterToString } from '../helpers'
+} from '../../shared'
+import { IGhostPost, IMember, Subset } from '../../types'
+import { semesterToString } from '../../helpers'
 
 const markdownProcessor = remark().use(html)
 
@@ -140,12 +140,6 @@ const ProfilePicture = styled(BackgroundImage)`
   }
 `
 
-interface IMemberTemplateProps {
-  data: {
-    alumniJson: IMember,
-  }
-}
-
 const Detail = ({ text, Icon }) => {
   if (!text) return null
   return (
@@ -177,9 +171,27 @@ const Studies = ({ major, school }: { major?: string; school?: string }) => {
   return <Detail text={getStudiesText()} Icon={BookOpenIcon} />
 }
 
-const MemberTemplate = ({ data }: IMemberTemplateProps) => {
-  const {
-    alumniJson: {
+
+export interface IMemberTemplateProps {
+  data: {
+    membersJson: IMember,
+  }
+}
+
+export interface IAlumniTemplateProps {
+  data: {
+    alumniJson: IMember,
+  }
+}
+
+export type IGenericMemberTemplateProps = IMemberTemplateProps | IAlumniTemplateProps
+
+export const GenericMemberTemplate = ({ data }: IGenericMemberTemplateProps) => {
+  // if data is alumniJson, then we are rendering an alumni page
+  const isAlumni = 'alumniJson' in data
+
+  const
+    {
       bio,
       github,
       graduation_year: gradYear,
@@ -196,8 +208,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
       semester_joined: semesterJoined,
       alumnus,
       posts,
-    }
-  } = data
+    } = isAlumni ? data.alumniJson : data.membersJson
 
   // Bios may contain markdown. Make sure to parse these into HTML!
   const [bioAsHtml, updateBioAsHtml] = useState(bio)
@@ -237,7 +248,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
 
         {bio && (
           <Fade distance={M1} delay={450}>
-            <div dangerouslySetInnerHTML={{ __html: bioAsHtml ?? "" }} />
+            <div dangerouslySetInnerHTML={{ __html: bioAsHtml ?? '' }} />
           </Fade>
         )}
 
@@ -256,7 +267,13 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
               />
             )}
             {gradYear && (
-              <Detail text={`${parseInt(gradYear) < new Date().getFullYear() ? "Graduated" : "Graduates"} in ${gradYear}`} Icon={LogOutIcon} />
+              <Detail
+                text={`${parseInt(gradYear) < new Date().getFullYear()
+                  ? 'Graduated'
+                  : 'Graduates'
+                  } in ${gradYear}`}
+                Icon={LogOutIcon}
+              />
             )}
           </Row>
         </Fade>
@@ -269,7 +286,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
               <H3>Posts</H3>
             </Fade>
             <Row margin={M1}>
-              <Posts posts={posts.filter(p => !p.frontmatter.draft)} />
+              <Posts posts={posts.filter((p) => !p.frontmatter.draft)} />
             </Row>
           </>
         ) : null}
@@ -277,26 +294,3 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
     </Layout>
   )
 }
-
-export const pageQuery = graphql`
-  query($pennkey: String!) {
-    alumniJson(pennkey: { eq: $pennkey }) {
-      bio
-      github
-      graduation_year
-      linkedin
-      hometown
-      photo
-      roles
-      name
-      major
-      school
-      team
-      website
-      semester_joined
-      alumnus
-    }
-  }
-`
-
-export default MemberTemplate
