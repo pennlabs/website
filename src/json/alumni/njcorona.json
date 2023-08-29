@@ -6,13 +6,15 @@
   "bio": "Hi, I'm Nicolas! I'm a senior, and I'm excited to make the most out of my final year at Penn through Penn Labs as a Business Developer for [OHQ](https://pennlabs.org/products/office-hours-queue).   If you want to learn more about me, check out [my website](https://nicolascorona.com/)!",
   "hometown": "Baltimore, MD",
   "team": "Office Hours Queue",
-  "roles": ["Business Developer"],
+  "roles": [
+    "Business Developer"
+  ],
   "photo": "https://i.imgur.com/bo13cZx.png",
   "linkedin": "https://www.linkedin.com/in/njcorona/",
   "website": "https://nicolascorona.com",
   "github": "https://github.com/njcorona",
   "semester_joined": "2020C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2021,
   "job": null
 }

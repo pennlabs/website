@@ -6,13 +6,15 @@
   "bio": "Hi! I'm on the OHQ team working on the backend. In my spare time, you can find me listening to psychology/economics/true crime podcasts and cheering on my hometown Vancouver Canucks!",
   "hometown": "Vancouver, BC",
   "team": "Office Hours Queue",
-  "roles": ["Backend Engineer"],
+  "roles": [
+    "Backend Engineer"
+  ],
   "photo": "https://i.imgur.com/xRB3NmM.jpg?2",
   "linkedin": "https://www.linkedin.com/in/marco-chan/",
   "website": null,
   "github": "https://github.com/m2chan",
   "semester_joined": "2021A",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2022,
   "job": null
 }
