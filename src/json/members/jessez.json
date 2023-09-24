@@ -1,0 +1,20 @@
+{
+    "name": "Jesse Zong",
+    "pennkey": "jessez",
+    "major": "Computer Science",
+    "school": "Engineering",
+    "bio": "Hi, I'm Jesse! I'm a CIS major in engineering",
+    "hometown": "Ellicott City, Maryland",
+    "team": "Penn Mobile",
+    "roles": [
+        "Backend Engineer"
+    ],
+    "photo": "https://imgur.com/a/MLVX6es",
+    "linkedin": "https://www.linkedin.com/in/jesse-zong-607199227/",
+    "website": "",
+    "github": "https://github.com/dr-Jess",
+    "semester_joined": "2023F",
+    "alumnus": false,
+    "graduation_year": 2027,
+    "job": null
+}
