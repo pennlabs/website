@@ -1,0 +1,18 @@
+{
+    "name": "Benjamin Xu",
+    "pennkey": "benxu",
+    "major": "CIS",
+    "school": "SEAS",
+    "bio": "Hi I'm Benjamin, a sophomore studying CIS in SEA and working on Backend for OHQ",
+    "hometown": "Saratoga, California",
+    "team": "OHQ",
+    "roles": ["Backend"],
+    "photo": "https://i.imgur.com/g6wdF9D.png",
+    "linkedin": "",
+    "website": "",
+    "github": "",
+    "semester_joined": "2023C",
+    "alumnus": false,
+    "graduation_year": 2026,
+    "job": "Backend"
+  }
