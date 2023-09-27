@@ -6,13 +6,15 @@
   "bio": "Hello World! My name is Tessa and I'm a sophomore studying computer science. In my free time, I love boxing, singing (badly), and traveling. ",
   "hometown": "Irvine, CA",
   "team": "Penn Courses",
-  "roles": ["Backend Engineer"],
+  "roles": [
+    "Backend Engineer"
+  ],
   "photo": "https://dl.airtable.com/.attachments/2080cb04f321cb831a83153cad8ca5bd/b2253b4a/IMG_3088.JPG",
   "linkedin": "",
   "website": "",
   "github": "github.com/yuchenfany",
   "semester_joined": "2020A",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2022,
   "job": null
 }

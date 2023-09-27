@@ -6,13 +6,15 @@
   "bio": "Hi there! I'm a sophomore at Penn studying CIS + MATH. In my free time I can be found playing with my cat, practicing guitar, reading or sleeping ;)",
   "hometown": "Nanjing, China",
   "team": "Penn Mobile",
-  "roles": ["Backend Engineer"],
+  "roles": [
+    "Backend Engineer"
+  ],
   "photo": "https://i.imgur.com/S1kfAT4.jpg",
   "linkedin": "https://www.linkedin.com/in/anni-pan-17b95b179/",
   "website": "https://annypan.github.io/personal_website/",
   "github": "https://github.com/annypan",
   "semester_joined": "2021A",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2023,
   "job": null
 }

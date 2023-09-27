@@ -6,10 +6,10 @@ import styled from 'styled-components'
 import remark from 'remark'
 import html from 'remark-html'
 
-import Posts from '../components/Blog/Posts'
-import Layout from '../components/Layout'
-import SEO from '../components/SEO'
-import { DARK_GRAY } from '../constants/colors'
+import Posts from '../../components/Blog/Posts'
+import Layout from '../../components/Layout'
+import SEO from '../../components/SEO'
+import { DARK_GRAY } from '../../constants/colors'
 import {
   BORDER_RADIUS,
   DESKTOP,
@@ -20,7 +20,7 @@ import {
   maxWidth,
   minWidth,
   PHONE,
-} from '../constants/measurements'
+} from '../../constants/measurements'
 import {
   BookOpenIcon,
   CalendarIcon,
@@ -39,9 +39,9 @@ import {
   P,
   Row,
   Tags,
-} from '../shared'
-import { IGhostPost, IMember, Subset } from '../types'
-import { semesterToString } from '../helpers'
+} from '../../shared'
+import { IGhostPost, IMember, Subset } from '../../types'
+import { semesterToString } from '../../helpers'
 
 const markdownProcessor = remark().use(html)
 
@@ -73,7 +73,7 @@ const LinksTag = styled.div<{}>`
   }
 `
 
-const StyledCard = styled(Card)<{}>`
+const StyledCard = styled(Card) <{}>`
   padding: ${M4};
   margin-top: ${M2};
 
@@ -140,12 +140,6 @@ const ProfilePicture = styled(BackgroundImage)`
   }
 `
 
-interface IMemberTemplateProps {
-  data: {
-    membersJson: IMember
-  }
-}
-
 const Detail = ({ text, Icon }) => {
   if (!text) return null
   return (
@@ -177,18 +171,45 @@ const Studies = ({ major, school }: { major?: string; school?: string }) => {
   return <Detail text={getStudiesText()} Icon={BookOpenIcon} />
 }
 
-const MemberTemplate = ({ data }: IMemberTemplateProps) => {
-  const {
-    membersJson: {
+
+export interface IMemberTemplateProps {
+  data: {
+    membersJson: IMember,
+  }
+}
+
+export interface IAlumniTemplateProps {
+  data: {
+    alumniJson: IMember,
+  }
+}
+
+export type IGenericMemberTemplateProps = IMemberTemplateProps | IAlumniTemplateProps
+
+export const GenericMemberTemplate = ({ data }: IGenericMemberTemplateProps) => {
+  // if data is alumniJson, then we are rendering an alumni page
+  const isAlumni = 'alumniJson' in data
+  const json = isAlumni ? data.alumniJson : data.membersJson
+  if (!json) {
+    return (
+      <Layout>
+        <SEO title="Member not found" />
+        <MediumContainer>
+          <H1>Member not found</H1>
+        </MediumContainer>
+      </Layout>
+    )
+  }
+
+  const
+    {
       bio,
       github,
       graduation_year: gradYear,
       linkedin,
       hometown: location,
       photo,
-      localImage: {
-        childImageSharp: { fluid },
-      },
+      localImage,
       roles,
       name,
       major,
@@ -197,14 +218,13 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
       website,
       semester_joined: semesterJoined,
       posts,
-    },
-  } = data
+    } = json
 
   // Bios may contain markdown. Make sure to parse these into HTML!
   const [bioAsHtml, updateBioAsHtml] = useState(bio)
   markdownProcessor
     .process(bio || '')
-    .then(({ contents: b }) => updateBioAsHtml(b))
+    .then(({ contents: b }) => updateBioAsHtml(b as any))
 
   return (
     <Layout>
@@ -213,9 +233,9 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
         <Fade distance={M1}>
           <StyledCard shaded>
             <Row>
-              {fluid && (
+              {localImage?.childImageSharp.fluid && (
                 <ProfilePictureWrapper>
-                  <ProfilePicture fluid={fluid} />
+                  <ProfilePicture fluid={localImage.childImageSharp.fluid} />
                 </ProfilePictureWrapper>
               )}
               <Col flex>
@@ -238,7 +258,7 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
 
         {bio && (
           <Fade distance={M1} delay={450}>
-            <div dangerouslySetInnerHTML={{ __html: bioAsHtml }} />
+            <div dangerouslySetInnerHTML={{ __html: bioAsHtml ?? '' }} />
           </Fade>
         )}
 
@@ -257,7 +277,13 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
               />
             )}
             {gradYear && (
-              <Detail text={`Graduates in ${gradYear}`} Icon={LogOutIcon} />
+              <Detail
+                text={`${parseInt(gradYear, 10) < new Date().getFullYear()
+                  ? 'Graduated'
+                  : 'Graduates'
+                  } in ${gradYear}`}
+                Icon={LogOutIcon}
+              />
             )}
           </Row>
         </Fade>
@@ -278,48 +304,3 @@ const MemberTemplate = ({ data }: IMemberTemplateProps) => {
     </Layout>
   )
 }
-
-export const pageQuery = graphql`
-  query($pennkey: String!) {
-    membersJson(pennkey: { eq: $pennkey }) {
-      bio
-      github
-      graduation_year
-      linkedin
-      hometown
-      photo
-      roles
-      name
-      major
-      school
-      localImage {
-        childImageSharp {
-          fluid(maxWidth: 484) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      team
-      website
-      semester_joined
-      posts {
-        excerpt
-        frontmatter {
-          title
-          slug
-          customExcerpt
-          draft
-          coverPhoto {
-            childImageSharp {
-              fluid(maxWidth: 484) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-`
-
-export default MemberTemplate
