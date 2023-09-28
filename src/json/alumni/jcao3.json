@@ -6,13 +6,15 @@
   "bio": "big fan of popcorn, hiking, and penguins :)",
   "hometown": "State College, PA",
   "team": "Penn Mobile",
-  "roles": ["Frontend Engineer"],
+  "roles": [
+    "Frontend Engineer"
+  ],
   "photo": "https://i.imgur.com/YMUr2Nb.jpg",
   "linkedin": "https://linkedin.com/in/jasminecao",
   "website": "",
   "github": "https://github.com/jasminecao",
   "semester_joined": "2020C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2023,
   "job": null
 }

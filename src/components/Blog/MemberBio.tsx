@@ -17,6 +17,7 @@ import {
   maxWidth,
   M2,
 } from '../../constants/measurements'
+import { FluidObject } from 'gatsby-image'
 
 const markdownProcessor = remark().use(html)
 
@@ -77,13 +78,13 @@ const MemberBio = ({
   const [bioAsHtml, updateBioAsHtml] = useState(bio)
   markdownProcessor
     .process(bio || '')
-    .then(({ contents: b }) => updateBioAsHtml(b))
+    .then(({ contents: b }) => updateBioAsHtml(b as any))
 
   return (
     <Fade distance={M1}>
       <Card shaded>
         <StyledCenteredFlex>
-          <Thumbnail src={localImage.childImageSharp.fluid.src} />
+          <Thumbnail src={(localImage?.childImageSharp.fluid as FluidObject).src} />
           <div>
             <H4 mb2>{name}</H4>
             <Bio dangerouslySetInnerHTML={{ __html: bioAsHtml }} />

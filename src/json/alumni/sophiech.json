@@ -6,13 +6,15 @@
   "bio": "bean juice lover. sometimes codes, sometimes designs.",
   "hometown": "Hangzhou, China",
   "team": "Penn Mobile",
-  "roles": ["Designer"],
+  "roles": [
+    "Designer"
+  ],
   "photo": "https://i.imgur.com/4hAxBGZ.jpg",
   "linkedin": "https://www.linkedin.com/in/sophienchen/",
   "website": "https://sophienchen.com/",
   "github": "https://github.com/sophienchen",
   "semester_joined": "2020C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2023,
   "job": null
 }

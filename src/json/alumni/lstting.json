@@ -6,7 +6,9 @@
   "bio": "likes cats, drawing, and finding new music",
   "hometown": "Holmdel, NJ",
   "team": "Office Hours Queue",
-  "roles": ["Designer"],
+  "roles": [
+    "Designer"
+  ],
   "photo": "https://i.imgur.com/EkkYCEq.jpg",
   "linkedin": "https://www.linkedin.com/in/lindating",
   "website": "https://linda-ting.github.io/",

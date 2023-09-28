@@ -1,0 +1,18 @@
+{
+  "name": "Rachel Doman",
+  "pennkey": "rdoman",
+  "major": "Finance",
+  "school": "Wharton",
+  "bio": "Hi! I'm a sophomore from Atlanta. I love to bike, travel, and bake!",
+  "hometown": "Atlanta, GA",
+  "team": "Penn Courses",
+  "roles": ["Business Developer"],
+  "photo": "https://i.imgur.com/kfosn3q.jpeg",
+  "linkedin": "https://www.linkedin.com/in/racheldoman/",
+  "website": "",
+  "github": "",
+  "semester_joined": "2023A",
+  "alumnus": false,
+  "graduation_year": 2026,
+  "job": null
+}
