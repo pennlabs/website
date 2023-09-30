@@ -1,18 +1,22 @@
 {
-    "name": "Rohan Gupta",
-    "major": "Networked and Social Systems Engineering",
-    "school": "Engineering",
-    "pennkey": "grohan",
-    "bio": "Junior in NETS. Likes RuneScape, snake_case, Vim, Emacs, types, distributed systems, strawberry milk. Dislikes frontend, unit tests, code coverage, Philadelphia weather, rice",
-    "hometown": "Bangalore, India",
-    "team": "Directors",
-    "roles": ["Co-Director", "Backend Engineer", "Team Lead"],
-    "photo": "https://i.imgur.com/hiveM31_d.webp?maxwidth=760&fidelity=grand",
-    "linkedin": "https://www.linkedin.com/in/rohan-gupta2/",
-    "website": "",
-    "github": "https://github.com/rohan-gupta8",
-    "semester_joined": "2020C",
-    "alumnus": false,
-    "graduation_year": 2024,
-    "job": null
-  }
+  "name": "Rohan Gupta",
+  "major": "Networked and Social Systems Engineering",
+  "school": "Engineering",
+  "pennkey": "grohan",
+  "bio": "Junior in NETS. Likes RuneScape, snake_case, Vim, Emacs, types, distributed systems, strawberry milk, green grass. Dislikes frontend, unit tests, queues, rice",
+  "hometown": "Bangalore, India",
+  "team": "Penn Clubs",
+  "roles": [
+    "Director Emeritus",
+    "Backend Engineer",
+    "Team Lead"
+  ],
+  "photo": "https://avatars.githubusercontent.com/u/13982777?v=2",
+  "linkedin": "https://www.linkedin.com/in/rohan-gupta2/",
+  "website": "",
+  "github": "https://github.com/rohan-gupta8",
+  "semester_joined": "2020C",
+  "alumnus": false,
+  "graduation_year": 2024,
+  "job": null
+}

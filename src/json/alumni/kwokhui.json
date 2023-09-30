@@ -1,0 +1,20 @@
+{
+  "name": "Kelvin Hui",
+  "pennkey": "kwokhui",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "bio": "Hi, My name is Kelvin and I am a Frontend Engineer for Penn Clubs.",
+  "hometown": "Hong Kong",
+  "team": "Penn Clubs",
+  "roles": [
+    "Frontend Engineer"
+  ],
+  "photo": "https://i.imgur.com/FjcGTEe.jpg",
+  "linkedin": "",
+  "website": "",
+  "github": "",
+  "semester_joined": "2021C",
+  "alumnus": true,
+  "graduation_year": 2023,
+  "job": null
+}

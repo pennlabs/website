@@ -1,0 +1,17 @@
+{
+    "name": "Ryder Sitcawich",
+    "pennkey": "rydersit",
+    "major": "Computer Science",
+    "school": "Engineering",
+    "bio": "Hey, I'm Ryder and I'm a Sophomore from Minnesota! In my free time I enjoy playing pickup soccer, cooking beef wellington, and losing my money in poker.",
+    "hometown": "Woodbury, MN",
+    "team": "Penn Courses",
+    "roles": ["Frontend"],
+    "photo": "https://i.imgur.com/aM2cvav.png",
+    "linkedin": "https://www.linkedin.com/in/ryder-sitcawich/",
+    "github": "https://github.com/rydersitcawich",
+    "semester_joined": "2023A",
+    "alumnus": false,
+    "graduation_year": 2026,
+    "job": null
+}

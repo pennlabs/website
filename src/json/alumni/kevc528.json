@@ -1,0 +1,20 @@
+{
+  "name": "Kevin Chen",
+  "pennkey": "kevc528",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "bio": "Hello! I'm a sophomore from Minnesota studying Computer Science and I'm a backend engineer for OHQ. In my free time I enjoy playing tennis and chilling with friends.",
+  "hometown": "Woodbury, MN",
+  "team": "Office Hours Queue",
+  "roles": [
+    "Backend Engineer"
+  ],
+  "photo": "https://i.imgur.com/IwB6Ywu.jpg",
+  "linkedin": "https://www.linkedin.com/in/kevc528/",
+  "website": "https://kevnchen.com/",
+  "github": "https://github.com/kevc528",
+  "semester_joined": "2020C",
+  "alumnus": true,
+  "graduation_year": 2023,
+  "job": null
+}

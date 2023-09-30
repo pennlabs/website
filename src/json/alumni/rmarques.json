@@ -1,0 +1,20 @@
+{
+  "name": "Rafael Marques",
+  "major": "Computer Engineering + Management",
+  "school": "Engineering & Wharton",
+  "pennkey": "rmarques",
+  "bio": "Likes to think he can code. Sometimes manages to actually code.",
+  "hometown": "Rio de Janeiro, Brazil",
+  "team": "Platform",
+  "roles": [
+    "Backend Engineer"
+  ],
+  "photo": "https://i.imgur.com/6w1POGI.jpg",
+  "linkedin": "https://www.linkedin.com/in/rafael-c-marques/",
+  "website": null,
+  "github": "https://github.com/rfax",
+  "semester_joined": "2019C",
+  "alumnus": true,
+  "graduation_year": 2023,
+  "job": null
+}

@@ -1,0 +1,18 @@
+{
+  "name": "George Botros",
+  "pennkey": "gbotros",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "bio": "Hi! I'm George, and I am a sophomore majoring in Computer Science. In my freetime, I love cooking (even though I'm not very good at it) and hiking!",
+  "hometown": "Mount Laurel, New Jersey",
+  "team": "Penn Mobile",
+  "roles": ["iOS Mobile Engineer"],
+  "photo": "https://i.imgur.com/Hs4lAZU.jpg",
+  "linkedin": "https://www.linkedin.com/in/georgebotros02/",
+  "website": "",
+  "github": "https://github.com/george-botros",
+  "semester_joined": "2023C",
+  "alumnus": false,
+  "graduation_year": 2026,
+  "job": null
+}
