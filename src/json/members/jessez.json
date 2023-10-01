@@ -1,0 +1,18 @@
+{
+    "name": "Jesse Zong",
+    "pennkey": "jessez",
+    "major": "Computer Science",
+    "school": "Engineering",
+    "bio": "Hi, I'm Jesse! \n I'm a CIS major in Engineering and a backend dev for Penn Mobile. When I'm not up late coding, you can catch me cooking up something tasty, gardening at KCECH, or clowning around with my friends.",
+    "hometown": "Ellicott City, Maryland",
+    "team": "Penn Mobile",
+    "roles": ["Backend Engineer"],
+    "photo": "https://i.imgur.com/fJfugrt.png",
+    "linkedin": "https://www.linkedin.com/in/jesse-zong-607199227/",
+    "website": "",
+    "github": "https://github.com/dr-Jess",
+    "semester_joined": "2023C",
+    "alumnus": false,
+    "graduation_year": 2027,
+    "job": null
+}
