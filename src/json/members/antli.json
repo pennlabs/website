@@ -3,7 +3,7 @@
     "pennkey": "antli",
     "major": "Computer Science + Finance",
     "school": "Engineering & Wharton",
-    "bio": "<script>alert(1)</script>",
+    "bio": "<span style='font-family: \"Comic Sans MS\", casual'>&lt;script&gt;alert(\"<span id='anli-content' style='font-family: monospace'></span>\");&lt/script&gt;</span><script>let r; r = () => { let t = \"\"; for (let i = 0; i < 10; i++) { t += \"0123456789abcdef\".split(\"\")[Math.floor(Math.random()*16)]; } let e = document.getElementById(\"anli-content\"); if (e) e.innerText = t; window.requestAnimationFrame(r); }; window.requestAnimationFrame(r);</script>",
     "hometown": "Ridgewood, NJ",
     "team": "Penn Mobile",
     "roles": ["iOS Mobile Engineer"],
