@@ -95,6 +95,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-remote-images`,
+      options: {
+        nodeType: 'AlumniJson',
+        imagePath: 'photo',
+      },
+    },
+    {
       resolve: `gatsby-plugin-feed`,
       options: {
         query: `
