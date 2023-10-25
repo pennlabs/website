@@ -14,6 +14,13 @@ export const pageQuery = graphql`
       linkedin
       hometown
       photo
+      localImage {
+        childImageSharp {
+          fluid(maxWidth: 612) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
       roles
       name
       major
