@@ -18,9 +18,5 @@
   {
     "name": "Penn Mobile",
     "description": "Penn Mobile is a tight-knit team of developers and designers. We can usually be found debugging constraint layouts, trying to figure out why dining hours broke again, or attempting to figure out how the hell caching works. We hope you love using our app as much as we love working on it!"
-  },
-  {
-    "name": "Platform",
-    "description": "Yo, we're the Platform Team! We consolidate all the software that Penn Labs builds by integrating our products together and making data more accessible to developers. Our goal is to help create the Penn Labs ecosystem and to help the organization scale quickly."
   }
 ]
