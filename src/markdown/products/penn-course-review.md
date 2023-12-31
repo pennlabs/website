@@ -5,7 +5,7 @@ logo: '../../images/products/logos/pcr-logo.svg'
 screenshot: '../../images/products/pcr-product.png'
 justifyImage: 'right'
 showOnHomepage: true
-orderOnHomepage: 1
+orderOnHomepage: 2
 link: 'https://penncoursereview.com/'
 privacy: 'https://www.iubenda.com/privacy-policy/86347108'
 ---
