@@ -1,0 +1,18 @@
+{
+  "name": "Jeffrey Xiao",
+  "pennkey": "jxiao23",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "bio": "Hi! I'm a junior studying CIS from Northern Jersey, and I'm a part of the Courses team. When I'm not coding, you can probably find me binging YouTube or playing League.",
+  "hometown": "Warren, NJ",
+  "team": "Penn Courses",
+  "roles": ["Frontend Engineer"],
+  "photo": "https://i.imgur.com/Ms5bqCc.jpg",
+  "linkedin": "https://www.linkedin.com/in/jeffrey-xiao/",
+  "website": "http://jeffreyxiao.com/",
+  "github": "https://github.com/jxiao",
+  "semester_joined": "2020C",
+  "alumnus": true,
+  "graduation_year": 2023,
+  "job": null
+}
