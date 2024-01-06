@@ -11,9 +11,7 @@ interface ITeams {
 const TEAM_LEAD = 'Team Lead'
 
 const leadsFirst = (members: IMember[]): IMember[] => {
-  if (members === null) {
-    return []
-  }
+  if (!members) return []
 
   return members.sort((m1, m2): number => {
     const isLead1 = m1.roles.indexOf(TEAM_LEAD) !== -1
