@@ -33,8 +33,8 @@ export const OpenRoles = () => (
             to know you by:
           </P>
           <ul>
-            <li>Backend web</li>
-            <li>Frontend web</li>
+            <li>Backend Web</li>
+            <li>Frontend Web</li>
             <li>DevOps</li>
             <li>Android</li>
             <li>iOS</li>

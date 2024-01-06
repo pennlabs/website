@@ -22,7 +22,7 @@ const PriorContributors = ({
               These are the people who have helped make Penn Labs what it is today. We are grateful for their contributions and wish them the best in their future endeavors.
             </P>
             <P>
-              We are missing some of our prior contributors from Lab's earlier days. If you know someone who should be on this list, please let us know at <a href="mailto:contact@pennlabs.org">contact@pennlabs.org</a>.
+              We are missing some of our prior contributors from Labs' earlier days. If you know someone who should be on this list, please let us know at <a href="mailto:contact@pennlabs.org">contact@pennlabs.org</a>.
             </P>
           </Col>
         </Row>

@@ -31,7 +31,7 @@ const AboutPage = (): React.ReactElement => (
               Course Review. Although Penn had been releasing semesterly
               professor and course reviews for decades, the team at PennApps
               wanted to build a user-friendly website. They envisioned a
-              database that would serve as a the most trusted source of
+              database that would serve as the most trusted source of
               crowd-sourced academic information at Penn.
             </P>
             <P>
@@ -75,9 +75,9 @@ const AboutPage = (): React.ReactElement => (
               Penn’s support is incredibly humbling and means a lot to us. This
               support comes in many forms, including financing, data, and access
               to Penn’s technology infrastructure. With it, we’ve invested in
-              cultivating a startup-like environment to build reliable, high
-              quality products and uphold industry standards in engineering and
-              education.
+              cultivating a startup-like environment to build reliable,
+              high-quality products and uphold industry standards in engineering
+              and education.
             </P>
           </Col>
         </Row>
@@ -99,7 +99,7 @@ const AboutPage = (): React.ReactElement => (
           <Col sm={12} lg={7} margin={M2}>
             <H2>Penn Labs Today</H2>
             <H3 normal>
-              For academics, campus life, and everything in-between
+              For academics, campus life, and everything in between
             </H3>
             <P>
               We believe that Penn Labs is an organization like no other. We run
