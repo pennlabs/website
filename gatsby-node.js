@@ -100,7 +100,7 @@ exports.createSchemaCustomization = ({ actions }) => {
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
   /**
    * Create pages for members
@@ -235,5 +235,21 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         return `/blog/page`
       }
     },
+  })
+
+  // Create redirect for mobile feedback
+  
+  // HACK: This is hardcoded for now, in the future we probably want a more
+  // scalable way to handle link shortening
+  const feedbackForms = [
+    { slug: 'android', url: 'https://airtable.com/appFRa4NQvNMEbWsA/shrn4VbSQa8QDj8OG' },
+    { slug: 'ios', url: 'https://airtable.com/appFRa4NQvNMEbWsA/shrVrNXT4PpI7nqvD' },
+  ]
+
+  feedbackForms.forEach(({ slug, url }) => {
+    createRedirect({
+      fromPath: `/feedback/${slug}`,
+      toPath: url,
+    })
   })
 }
