@@ -73,7 +73,7 @@ const LinksTag = styled.div<{}>`
   }
 `
 
-const StyledCard = styled(Card) <{}>`
+const StyledCard = styled(Card)<{}>`
   padding: ${M4};
   margin-top: ${M2};
 
@@ -171,22 +171,25 @@ const Studies = ({ major, school }: { major?: string; school?: string }) => {
   return <Detail text={getStudiesText()} Icon={BookOpenIcon} />
 }
 
-
 export interface IMemberTemplateProps {
   data: {
-    membersJson: IMember,
+    membersJson: IMember
   }
 }
 
 export interface IAlumniTemplateProps {
   data: {
-    alumniJson: IMember,
+    alumniJson: IMember
   }
 }
 
-export type IGenericMemberTemplateProps = IMemberTemplateProps | IAlumniTemplateProps
+export type IGenericMemberTemplateProps =
+  | IMemberTemplateProps
+  | IAlumniTemplateProps
 
-export const GenericMemberTemplate = ({ data }: IGenericMemberTemplateProps) => {
+export const GenericMemberTemplate = ({
+  data,
+}: IGenericMemberTemplateProps) => {
   // if data is alumniJson, then we are rendering an alumni page
   const isAlumni = 'alumniJson' in data
   const json = isAlumni ? data.alumniJson : data.membersJson
@@ -201,24 +204,23 @@ export const GenericMemberTemplate = ({ data }: IGenericMemberTemplateProps) => 
     )
   }
 
-  const
-    {
-      bio,
-      github,
-      graduation_year: gradYear,
-      linkedin,
-      hometown: location,
-      photo,
-      localImage,
-      roles,
-      name,
-      major,
-      school,
-      team,
-      website,
-      semester_joined: semesterJoined,
-      posts,
-    } = json
+  const {
+    bio,
+    github,
+    graduation_year: gradYear,
+    linkedin,
+    hometown: location,
+    photo,
+    localImage,
+    roles,
+    name,
+    major,
+    school,
+    team,
+    website,
+    semester_joined: semesterJoined,
+    posts,
+  } = json
 
   // Bios may contain markdown. Make sure to parse these into HTML!
   const [bioAsHtml, updateBioAsHtml] = useState(bio)
@@ -244,7 +246,12 @@ export const GenericMemberTemplate = ({ data }: IGenericMemberTemplateProps) => 
                   <div style={{ marginBottom: M1 }}>
                     <Tags tags={roles} />
                   </div>
-                  <P mb2>Part of {team}</P>
+                  <P mb2>
+                    Part of{' '}
+                    {Array.isArray(team)
+                      ? team.map((t) => t.name).join(' / ')
+                      : team?.name ?? 'Penn Labs'}
+                  </P>
                   <Links
                     github={github}
                     linkedin={linkedin}
@@ -278,10 +285,11 @@ export const GenericMemberTemplate = ({ data }: IGenericMemberTemplateProps) => 
             )}
             {gradYear && (
               <Detail
-                text={`${parseInt(gradYear, 10) < new Date().getFullYear()
-                  ? 'Graduated'
-                  : 'Graduates'
-                  } in ${gradYear}`}
+                text={`${
+                  parseInt(gradYear, 10) < new Date().getFullYear()
+                    ? 'Graduated'
+                    : 'Graduates'
+                } in ${gradYear}`}
                 Icon={LogOutIcon}
               />
             )}
@@ -296,7 +304,7 @@ export const GenericMemberTemplate = ({ data }: IGenericMemberTemplateProps) => 
               <H3>Posts</H3>
             </Fade>
             <Row margin={M1}>
-              <Posts posts={posts.filter(p => !p.frontmatter.draft)} />
+              <Posts posts={posts.filter((p) => !p.frontmatter.draft)} />
             </Row>
           </>
         ) : null}

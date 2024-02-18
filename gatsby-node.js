@@ -22,11 +22,8 @@ const BlogIndexTemplate = path.resolve(`./src/templates/BlogIndex.tsx`)
 
 const markdownProcessor = remark().use(html)
 
-const getHash = jawn =>
-  crypto
-    .createHash(`md5`)
-    .update(JSON.stringify(jawn))
-    .digest(`hex`)
+const getHash = (jawn) =>
+  crypto.createHash(`md5`).update(JSON.stringify(jawn)).digest(`hex`)
 
 const createTagPages = (tags, createPage) => {
   tags.forEach(({ node }) => {
@@ -73,19 +70,16 @@ const createPostPages = (posts, createPage) => {
     })
   })
 }
-
-exports.createSchemaCustomization = ({ actions }) => {
+/**
+ * @param {import("gatsby/index.d.ts").CreateSchemaCustomizationArgs}
+ */
+exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
   const typeDefs = `
   type MembersJson implements Node {
-    team: String
+    team: [TeamsJson] @link(by: "name")
     posts: [MarkdownRemark] @link(by: "frontmatter.authors.pennkey", from: "pennkey")
   }
-  type TeamsJson implements Node {
-    name: String
-    members: [MembersJson] @link(by: "team", from: "name")
-  }
-
   type MarkdownRemark implements Node {
     frontmatter: Frontmatter
   }
@@ -95,8 +89,30 @@ exports.createSchemaCustomization = ({ actions }) => {
     publishedAt: Date @dateformat(formatString: "YYYY-MM-DD")
     draft: Boolean
   }`
-
+  const teamsJson = schema.buildObjectType({
+    name: 'TeamsJson',
+    interfaces: ['Node'],
+    fields: {
+      name: {
+        type: 'String',
+      },
+      members: {
+        type: '[MembersJson]',
+        resolve: (source, args, context, info) => {
+          return context.nodeModel.runQuery({
+            type: 'MembersJson',
+            query: {
+              filter: {
+                team: { elemMatch: { name: { eq: source.name } } },
+              },
+            },
+          })
+        },
+      },
+    },
+  })
   createTypes(typeDefs)
+  createTypes([teamsJson])
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
@@ -238,12 +254,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   // Create redirect for mobile feedback
-  
+
   // HACK: This is hardcoded for now, in the future we probably want a more
   // scalable way to handle link shortening
   const feedbackForms = [
-    { slug: 'android', url: 'https://airtable.com/appFRa4NQvNMEbWsA/shrn4VbSQa8QDj8OG' },
-    { slug: 'ios', url: 'https://airtable.com/appFRa4NQvNMEbWsA/shrVrNXT4PpI7nqvD' },
+    {
+      slug: 'android',
+      url: 'https://airtable.com/appFRa4NQvNMEbWsA/shrn4VbSQa8QDj8OG',
+    },
+    {
+      slug: 'ios',
+      url: 'https://airtable.com/appFRa4NQvNMEbWsA/shrVrNXT4PpI7nqvD',
+    },
   ]
 
   feedbackForms.forEach(({ slug, url }) => {
