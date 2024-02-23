@@ -1,0 +1,19 @@
+{
+    "name": "Advit Ranawade",
+    "pennkey": "advitr",
+    "major": "Computer Science, Physics", 
+    "school": "SEAS, College",
+    "bio": "Hey, I'm Advit, a freshman in VIPER studying Computer Science and Physics.",
+    "hometown": "Mumbai, India",
+    "team": "Penn Courses",
+    "roles": [
+        "Backend Engineer" 
+    ],
+    "photo": "https://i.imgur.com/Fts4rJe.jpeg",
+    "linkedin": "https://www.linkedin.com/in/advit-ranawade-79153b243/",
+    "github": "https://github.com/AdvitRanawadePenn",
+    "semester_joined": "2024A",
+    "alumnus": false,
+    "graduation_year": 2027,
+    "job": null
+}
