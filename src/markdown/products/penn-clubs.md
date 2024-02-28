@@ -5,7 +5,7 @@ logo: '../../images/products/logos/clubs-logo.svg'
 screenshot: '../../images/products/clubs-product.png'
 justifyImage: 'right'
 showOnHomepage: true
-orderOnHomepage: 3
+orderOnHomepage: 4
 link: 'https://pennclubs.com/'
 ---
 

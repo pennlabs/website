@@ -5,7 +5,7 @@ logo: '../../images/products/logos/penn-mobile-logo.svg'
 screenshot: '../../images/products/mobile-product.png'
 justifyImage: 'left'
 showOnHomepage: true
-orderOnHomepage: 2
+orderOnHomepage: 3
 appStoreLink: 'https://apps.apple.com/us/app/penn-mobile/id944829399'
 googlePlayLink: 'https://play.google.com/store/apps/details?id=com.pennapps.labs.pennmobile&hl=en_US'
 privacy: 'https://www.iubenda.com/privacy-policy/16589027'

@@ -1,6 +1,6 @@
 ---
 title: 'Penn Basics'
-description: 'Campus essentials, easily accessible on desktop and mobile'
+description: 'Campus essentials, easily accessible on desktop and mobile.'
 logo: '../../images/products/logos/basics-logo.svg'
 screenshot: '../../images/products/basics-product.png'
 justifyImage: 'left'

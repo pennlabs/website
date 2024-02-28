@@ -11,15 +11,17 @@ interface ITeams {
 const TEAM_LEAD = 'Team Lead'
 
 const leadsFirst = (members: IMember[]): IMember[] => {
+  if (!members) return []
+
   return members.sort((m1, m2): number => {
     const isLead1 = m1.roles.indexOf(TEAM_LEAD) !== -1
     const isLead2 = m2.roles.indexOf(TEAM_LEAD) !== -1
-    if (isLead1) {
-      return -1
-    } else if (isLead2) {
-      return 1
-    } else {
+    if (isLead1 === isLead2) {
       return m1.name.localeCompare(m2.name)
+    } else if (isLead1) {
+      return -1
+    } else {
+      return 1
     }
   })
 }
