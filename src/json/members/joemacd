@@ -1,0 +1,18 @@
+{
+  "name": "Joe MacDougall",
+  "pennkey": "joemacd",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "bio": "Hi, I'm a software dev interested in mobile development, biometrics research, and more!",
+  "hometown": "Golden, CO",
+  "team": "Penn Mobile",
+  "roles": ["Android Mobile Engineer"],
+  "photo": "https://imgur.com/a/rPJ4DlP.jpg",
+  "linkedin": "https://www.linkedin.com/in/joseph-macdougall-316250277/",
+  "website": "",
+  "github": "https://github.com/joemacd",
+  "semester_joined": "2024A",
+  "alumnus": false,
+  "graduation_year": 2027,
+  "job": null
+}
