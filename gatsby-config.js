@@ -127,7 +127,7 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map(edge => {
+              return allMarkdownRemark.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description:
                     edge.node.frontmatter.customExcerpt || edge.node.excerpt,
@@ -180,7 +180,4 @@ module.exports = {
       },
     },
   ],
-  mapping: {
-    'MembersJson.team': 'TeamsJson.name',
-  },
 }

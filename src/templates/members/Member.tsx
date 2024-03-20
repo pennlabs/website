@@ -25,7 +25,9 @@ export const pageQuery = graphql`
       name
       major
       school
-      team
+      team {
+        name
+      }
       website
       semester_joined
       alumnus

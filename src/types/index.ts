@@ -44,7 +44,7 @@ export interface IMember {
   graduation_year?: string
   linkedin?: string
   hometown?: string
-  team?: string
+  team?: ITeam[] | ITeam
   website?: string
   localImage?: { childImageSharp: GatsbyImageFluidProps }
   posts?: IPost[]

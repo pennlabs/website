@@ -4,14 +4,12 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/SEO'
 import { Col, Fade, H1, H2, P, Row, Section, WideContainer } from '../shared'
-import { IMember, ITeam } from '../types'
+import { IMember } from '../types'
 import { TeamHero } from '../components/Team/Hero'
 import { Teams } from '../components/Team/Teams'
 import { M2 } from '../constants/measurements'
 
-const PriorContributors = ({
-  data: alumni
-}): React.ReactElement => {
+const PriorContributors = ({ data: alumni }): React.ReactElement => {
   return (
     <Fade distance="1rem">
       <Section>
@@ -19,23 +17,29 @@ const PriorContributors = ({
         <Row>
           <Col sm={12} md={10} lg={8}>
             <P mb4>
-              These are the people who have helped make Penn Labs what it is today. We are grateful for their contributions and wish them the best in their future endeavors.
+              These are the people who have helped make Penn Labs what it is
+              today. We are grateful for their contributions and wish them the
+              best in their future endeavors.
             </P>
             <P>
-              We are missing some of our prior contributors from Labs' earlier days. If you know someone who should be on this list, please let us know at <a href="mailto:contact@pennlabs.org">contact@pennlabs.org</a>.
+              We are missing some of our prior contributors from Labs' earlier
+              days. If you know someone who should be on this list, please let
+              us know at{' '}
+              <a href="mailto:contact@pennlabs.org">contact@pennlabs.org</a>.
             </P>
           </Col>
         </Row>
         <Row margin={M2}>
           {alumni.map((props: IMember) => (
             <Col key={props.pennkey} sm={12} md={3} margin={M2} flex>
-              <Link to={`/alumni/${props.pennkey}`}><P mb0>{props.name}</P></Link>
+              <Link to={`/alumni/${props.pennkey}`}>
+                <P mb0>{props.name}</P>
+              </Link>
             </Col>
-          ))
-          }
+          ))}
         </Row>
       </Section>
-    </Fade >
+    </Fade>
   )
 }
 
@@ -65,7 +69,9 @@ export const pageQuery = graphql`
         description
         members {
           name
-          team
+          team {
+            name
+          }
           pennkey
           photo
           semester_joined
