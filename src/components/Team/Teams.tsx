@@ -30,7 +30,7 @@ export const Teams = ({ teams }: ITeams) => (
   <>
     {teams.map(({ name, description, members }: ITeam) => (
       <Fade key={name} distance="1rem">
-        <Section>
+        <Section style={{width: '100%'}}>
           <H2 mb2>{name}</H2>
           <Row>
             <Col sm={12} md={10} lg={8}>
