@@ -1,22 +1,22 @@
 {
-  "name": "Brandon Wang",
-  "pennkey": "brandw",
-  "major": "Computer Science + Finance",
-  "school": "Engineering & Wharton",
-  "bio": "Hi y’all, I’m Brandon! I’m a freshman studying M&T, and I’m working on DevOps this year. I also love hiking, tennis, and playing Avalon and Catan with friends!",
-  "hometown": "Plano, TX",
+  "name": "Baile Chen",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "pennkey": "cbaile",
+  "bio": "Hi,I am Peter studying Computer Science.",
+  "hometown": "Hong Kong",
   "teamRoles": [
     {
-      "team": "Platform",
-      "roles": ["DevOps"]
+      "team": "Office Hours Queue",
+      "roles": ["Backend Engineer", "Frontend Engineer"]
     }
   ],
-  "photo": "https://i.imgur.com/x0Qowwv.jpg",
-  "linkedin": "https://www.linkedin.com/in/brandonzwang/",
-  "website": "https://www.brandonwang.com/",
-  "github": "https://github.com/brandonwang1/",
-  "semester_joined": "2020C",
+  "photo": "https://i.imgur.com/LLPmYNK.jpg",
+  "linkedin": "https://www.linkedin.com/in/peter-chen-ba7847153/",
+  "website": null,
+  "github": "https://github.com/peterbaile",
+  "semester_joined": "2019A",
   "alumnus": true,
-  "graduation_year": 2024,
+  "graduation_year": null,
   "job": null
 }

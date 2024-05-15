@@ -1,22 +1,22 @@
 {
-  "name": "Dominic Holmes",
+  "name": "Alice He",
+  "pennkey": "healice",
   "major": "Computer Science",
   "school": "Engineering",
-  "pennkey": "hdominic",
-  "bio": "I'm an iOS developer and product designer from the midwest! I <3 Penn Mobile",
-  "hometown": "Dell Rapids, SD",
+  "bio": "Passionate about the intersection of art and technology, architecture, and Money Heist. Budding college dorm chef. Pesto and hot sauce lover. :P",
+  "hometown": "Washington, DC",
   "teamRoles": [
     {
-      "team": "Penn Mobile",
-      "roles": ["Team Lead", "iOS Mobile Engineer", "Director Emeritus"]
+      "team": "Penn Clubs",
+      "roles": ["Designer"]
     }
   ],
-  "photo": "https://github.com/DominicHolmes/profile-picture/blob/master/dominic.jpeg?raw=true",
-  "linkedin": "https://www.linkedin.com/in/dominic-holmes-21b612133/",
-  "website": "https://dominic.land",
-  "github": "https://github.com/DominicHolmes",
-  "semester_joined": "2017C",
+  "photo": "https://i.imgur.com/uuYavDm.jpg",
+  "linkedin": "https://www.linkedin.com/in/alicezhe/",
+  "website": "https://alicezhe.github.com/",
+  "github": "https://github.com/alicezhe",
+  "semester_joined": "2020C",
   "alumnus": true,
-  "graduation_year": 2020,
+  "graduation_year": 2023,
   "job": null
 }
