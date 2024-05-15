@@ -5,8 +5,12 @@
   "school": "",
   "bio": "",
   "hometown": "",
-  "team": "",
-  "roles": [],
+  "teamRoles": [
+    {
+      "team": "Penn Courses",
+      "roles": []
+    }
+  ],
   "photo": "https://i.imgur.com/QLVYZ5H.png",
   "linkedin": "",
   "website": "",

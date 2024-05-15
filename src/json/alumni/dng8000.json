@@ -5,10 +5,11 @@
   "pennkey": "dng8000",
   "bio": "Hi! I'm a Business Development Team Lead studying Computer Science and Finance. I’m interested in edtech, finance, and product management. Outside of Labs and Penn, I enjoy catching up on politics, eating new foods and exploring new places.",
   "hometown": "San Francisco Bay Area, CA",
-  "team": "Penn Courses",
-  "roles": [
-    "Team Lead",
-    "Business Developer"
+  "teamRoles": [
+    {
+      "team": "Penn Courses",
+      "roles": ["Team Lead", "Business Developer"]
+    }
   ],
   "photo": "https://s3.amazonaws.com/profilepictures.danielng.org/profilec.png",
   "linkedin": "https://www.linkedin.com/in/danielykng/",

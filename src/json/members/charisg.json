@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "CIS major with a love for watching sunsets, taking personality tests, and chai lattes.",
   "hometown": "Princeton, NJ",
-  "team": "Office Hours Queue",
-  "roles": ["Frontend Engineer"],
+  "teamRoles": [
+    {
+      "team": "Office Hours Queue",
+      "roles": ["Frontend Engineer"]
+    }
+  ],
   "photo": "https://i.imgur.com/X3WCRH3.png",
   "linkedin": "https://www.linkedin.com/in/charisgao/",
   "website": "",

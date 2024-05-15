@@ -4,8 +4,12 @@
   "major": "Communication: Data and Network Science",
   "school": "College",
   "bio": "Hi! I'm Jared. I'm a junior from New Jersey studying Communication with minors in Data Science and Consumer Psychology.",
-  "team": "Penn Mobile",
-  "roles": ["Business Developer"],
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["Business Developer"]
+    }
+  ],
   "photo": "https://i.imgur.com/aSQadYM.jpeg",
   "linkedin": "https://www.linkedin.com/in/jared-mitovich/",
   "website": "https://www.jared-mitovich.com/",

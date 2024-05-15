@@ -21,11 +21,15 @@ export const pageQuery = graphql`
           }
         }
       }
-      roles
+      teamRoles {
+        team {
+          name
+        }
+        roles
+      }
       name
       major
       school
-      team
       website
       semester_joined
       alumnus

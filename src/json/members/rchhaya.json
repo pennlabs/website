@@ -5,8 +5,12 @@
   "pennkey": "rchhaya",
   "bio": "A bioengineering, computer science, and data science student looking to explore mobile development and maybe learn how to debug without System.out.println()",
   "hometown": "Plano, Texas",
-  "team": "Penn Mobile",
-  "roles": ["Team Lead", "Android Mobile Engineer"],
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["Team Lead", "Android Mobile Engineer"]
+    }
+  ],
   "photo": "https://i.imgur.com/foDwf0O.jpeg",
   "linkedin": "https://www.linkedin.com/in/rohan-chhaya/",
   "website": "https://rohanchhaya.com/",

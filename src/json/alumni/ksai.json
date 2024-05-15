@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "Hey, my name is Karthik. I'm a freshman majoring in Computer Science. Outside of Labs, I'm a national chess master and love watching sports, especially basketball and football!",
   "hometown": "Minneapolis, MN",
-  "team": "Penn Mobile",
-  "roles": ["iOS Mobile Engineer"],
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["iOS Mobile Engineer"]
+    }
+  ],
   "photo": "https://i.imgur.com/5eFjYmk.jpeg",
   "linkedin": "https://www.linkedin.com/in/kspadman/",
   "website": null,

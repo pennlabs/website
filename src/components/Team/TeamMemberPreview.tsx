@@ -42,14 +42,8 @@ const Image = styled(BackgroundImage)`
   border-radius: ${BORDER_RADIUS};
 `
 
-export const TeamMemberPreview = ({
-  name,
-  roles,
-  pennkey,
-  localImage,
-  semester_joined: semesterJoined,
-  alumnus,
-}: IMember) => (
+export const TeamMemberPreview = ({ name, roles, pennkey, localImage, semesterJoined}: IMember): React.ReactElement => {
+  return (
   <Col margin={M2} sm={12} md={6} lg={3} key={pennkey}>
     <StyledLink to={TEAM_MEMBER_ROUTE(pennkey)}>
       {
@@ -68,4 +62,5 @@ export const TeamMemberPreview = ({
       )}
     </StyledLink>
   </Col>
-)
+  )
+}

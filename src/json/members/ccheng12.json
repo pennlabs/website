@@ -5,8 +5,12 @@
     "school": "College of Arts & Sciences",
     "bio": "Hi, I'm Chelsea! I'm a Designer for Penn Mobile studying CogSci. In my free time, I like reading, playing guitar and drawing :)",
     "hometown": "Chicago, Illinois",
-    "team": "Penn Mobile",
-    "roles": ["Designer"],
+    "teamRoles": [
+      {
+        "team": "Penn Mobile",
+        "roles": ["Designer"]
+      }
+    ],
     "photo": "https://i.imgur.com/HLVUv4I.jpg",
     "linkedin": "https://www.linkedin.com/in/chelsea-cheng-12/",
     "website": "https://chelseacheng.com",
@@ -15,4 +19,5 @@
     "alumnus": false,
     "graduation_year": 2024,
     "job": null
-}
+  }
+  
