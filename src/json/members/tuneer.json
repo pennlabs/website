@@ -5,12 +5,8 @@
   "school": "Engineering",
   "bio": "Food tries to kill me a lot, but I'm still here! I like biking and playing guitar although I can't do either particularly well.",
   "hometown": "Nashville, TN",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Backend Engineer", "Team Lead"]
-    }
-  ],
+  "team": "Penn Mobile",
+  "roles": ["Backend Engineer", "Team Lead"],
   "photo": "https://i.imgur.com/1zDQ0UG.png",
   "linkedin": "https://www.linkedin.com/in/tuneer-roy-a792a11a4",
   "website": "https://tuneer-roy.com/",

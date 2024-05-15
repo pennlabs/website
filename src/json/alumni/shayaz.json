@@ -2,14 +2,12 @@
   "name": "Shaya Zarkesh",
   "pennkey": "shayaz",
   "major": "Computer Science + Markting",
-  "school": "Engineering, Wharton",
+  "school": "Engineering,Wharton",
   "bio": "Hi! I'm Shaya. I'm a sophomore from Saratoga, CA, and I study Computer Science and Business. I do a lot of frontend web development and UX design, both for Labs and an education startup I've been working on. Outside of Labs and class, you can find me on the soccer field or playing FIFA with friends.",
   "hometown": "Saratoga, CA",
-  "teamRoles": [
-    {
-      "team": "Penn Courses",
-      "roles": ["Frontend Engineer"]
-    }
+  "team": "Penn Courses",
+  "roles": [
+    "Frontend Engineer"
   ],
   "photo": "https://i.imgur.com/gNpdtAx.jpg",
   "linkedin": "https://www.linkedin.com/in/shaya-z-1042729a/",

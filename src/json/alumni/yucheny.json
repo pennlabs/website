@@ -5,11 +5,9 @@
   "school": "Engineering",
   "bio": "Hello World! My name is Tessa and I'm a sophomore studying computer science. In my free time, I love boxing, singing (badly), and traveling. ",
   "hometown": "Irvine, CA",
-  "teamRoles": [
-    {
-      "team": "Penn Courses",
-      "roles": ["Backend Engineer"]
-    }
+  "team": "Penn Courses",
+  "roles": [
+    "Backend Engineer"
   ],
   "photo": "https://i.imgur.com/V4RclNb.png",
   "linkedin": "",

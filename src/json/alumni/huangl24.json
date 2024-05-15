@@ -5,12 +5,8 @@
   "school": "Engineering",
   "bio": "Hi, I am Larry and I like to code.",
   "hometown": "Wilton, Connecticut",
-  "teamRoles": [
-    {
-      "team": "Office Hours Queue",
-      "roles": ["Frontend Engineer"]
-    }
-  ],
+  "team": "Office Hours Queue",
+  "roles": ["Frontend Engineer"],
   "photo": "https://i.imgur.com/WN2Znez.jpg",
   "linkedin": "https://www.linkedin.com/in/larryjhuang/",
   "website": "",

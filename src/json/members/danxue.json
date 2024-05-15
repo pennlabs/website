@@ -5,12 +5,8 @@
   "school": "Engineering",
   "bio": "NETS major with an interest in computing and public policy. Often found breaking things (by accident, mostly) and building things.",
   "hometown": "Princeton, NJ",
-  "teamRoles": [
-    {
-      "team": "Office Hours Queue",
-      "roles": ["Frontend Engineer", "Team Lead"]
-    }
-  ],
+  "team": "Office Hours Queue",
+  "roles": ["Frontend Engineer", "Team Lead"],
   "photo": "https://i.imgur.com/VlRqhvH.jpg",
   "linkedin": "https://www.linkedin.com/in/daniel-l-xue/",
   "website": "",

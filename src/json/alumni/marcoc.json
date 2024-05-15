@@ -5,11 +5,9 @@
   "school": "Engineering",
   "bio": "Hi! I'm on the OHQ team working on the backend. In my spare time, you can find me listening to psychology/economics/true crime podcasts and cheering on my hometown Vancouver Canucks!",
   "hometown": "Vancouver, BC",
-  "teamRoles": [
-    {
-      "team": "Office Hours Queue",
-      "roles": ["Backend Engineer"]
-    }
+  "team": "Office Hours Queue",
+  "roles": [
+    "Backend Engineer"
   ],
   "photo": "https://i.imgur.com/xRB3NmM.jpg?2",
   "linkedin": "https://www.linkedin.com/in/marco-chan/",

@@ -5,11 +5,9 @@
   "school": "College",
   "bio": "hawaiian shirt enthusiast",
   "hometown": "Red Hook, NY",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["iOS Mobile Engineer"]
-    }
+  "team": "Penn Mobile",
+  "roles": [
+    "iOS Mobile Engineer"
   ],
   "photo": "https://i.imgur.com/lOFooMx.jpeg",
   "linkedin": "",

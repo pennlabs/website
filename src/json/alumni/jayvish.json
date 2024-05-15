@@ -5,12 +5,8 @@
   "school": "SEAS",
   "bio": "Freshman in NETS working on the platform team! Hit me up if you want to play ping pong!",
   "hometown": "Santa Clara, CA",
-  "teamRoles": [
-    {
-      "team": "Platform",
-      "roles": ["Backend Engineer"]
-    }
-  ],
+  "team": "Platform",
+  "roles": ["Backend Engineer"],
   "photo": "https://i.imgur.com/Nsygmq9.jpg",
   "linkedin": "https://www.linkedin.com/in/jay-vishwarupe-72a999155/",
   "website": "",

@@ -5,11 +5,10 @@
   "school": "Engineering",
   "bio": "Hi! I'm a current junior studying CIS. I'm really interested in astronomy, code, movies, and, of course, foooood!",
   "hometown": "Holmdel, NJ",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Team Lead", "Backend Engineer"]
-    }
+  "team": "Penn Mobile",
+  "roles": [
+    "Team Lead",
+    "Backend Engineer"
   ],
   "photo": "https://i.imgur.com/0Rm6ewe.jpg",
   "linkedin": "https://www.linkedin.com/in/justin-a-zhang/",

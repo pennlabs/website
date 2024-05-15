@@ -74,34 +74,21 @@ const createPostPages = (posts, createPage) => {
  * @param {import("gatsby/index.d.ts").CreateSchemaCustomizationArgs}
  */
 exports.createSchemaCustomization = ({ actions, schema }) => {
-  const { createTypes } = actions;
+  const { createTypes } = actions
   const typeDefs = `
   type MembersJson implements Node {
-    teamRoles: [TeamRole]
+    team: [TeamsJson] @link(by: "name")
     posts: [MarkdownRemark] @link(by: "frontmatter.authors.pennkey", from: "pennkey")
   }
-
-  type AlumniJson implements Node {
-    teamRoles: [TeamRole]
-    posts: [MarkdownRemark] @link(by: "frontmatter.authors.pennkey", from: "pennkey")
-  }
-  
-  type TeamRole {
-    team: TeamsJson @link(by: "name", from: "team")
-    roles: [String]
-  }
-
   type MarkdownRemark implements Node {
     frontmatter: Frontmatter
   }
-  
   type Frontmatter {
     authors: [MembersJson] @link(by: "pennkey")
     customExcerpt: String
     publishedAt: Date @dateformat(formatString: "YYYY-MM-DD")
     draft: Boolean
-  }`;
-
+  }`
   const teamsJson = schema.buildObjectType({
     name: 'TeamsJson',
     interfaces: ['Node'],
@@ -111,27 +98,22 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       },
       members: {
         type: '[MembersJson]',
-        resolve: async (source, args, context, info) => {
-          const members = await context.nodeModel.runQuery({
+        resolve: (source, args, context, info) => {
+          return context.nodeModel.runQuery({
             type: 'MembersJson',
             query: {
               filter: {
-                teamRoles: { elemMatch: { team: { name: { eq: source.name } } } },
+                team: { elemMatch: { name: { eq: source.name } } },
               },
             },
-          });
-          return members.map(member => ({
-            ...member,
-            roles: member.teamRoles.filter(role => role.team === source.name)[0].roles,
-          }));
+          })
         },
       },
     },
-  });
-
-  createTypes(typeDefs);
-  createTypes([teamsJson]);
-};
+  })
+  createTypes(typeDefs)
+  createTypes([teamsJson])
+}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage, createRedirect } = actions

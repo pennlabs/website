@@ -3,13 +3,11 @@
   "major": "Business Analytics",
   "school": "Wharton",
   "pennkey": "njcorona",
-  "bio": "Hi, I'm Nicolas! I'm a senior, and I'm excited to make the most out of my final year at Penn through Penn Labs as a Business Developer for [OHQ](https://pennlabs.org/products/office-hours-queue). If you want to learn more about me, check out [my website](https://nicolascorona.com/)!",
+  "bio": "Hi, I'm Nicolas! I'm a senior, and I'm excited to make the most out of my final year at Penn through Penn Labs as a Business Developer for [OHQ](https://pennlabs.org/products/office-hours-queue).   If you want to learn more about me, check out [my website](https://nicolascorona.com/)!",
   "hometown": "Baltimore, MD",
-  "teamRoles": [
-    {
-      "team": "Office Hours Queue",
-      "roles": ["Business Developer"]
-    }
+  "team": "Office Hours Queue",
+  "roles": [
+    "Business Developer"
   ],
   "photo": "https://i.imgur.com/bo13cZx.png",
   "linkedin": "https://www.linkedin.com/in/njcorona/",

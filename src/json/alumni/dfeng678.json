@@ -5,12 +5,8 @@
   "school": "Engineering",
   "bio": "",
   "hometown": "Albuquerque, New Mexico",
-  "teamRoles": [
-    {
-      "team": "Penn Clubs",
-      "roles": ["Backend Engineer"]
-    }
-  ],
+  "team": "Penn Clubs",
+  "roles": ["Backend Engineer"],
   "photo": "https://i.imgur.com/PHuZxIT.jpg",
   "linkedin": "https://www.linkedin.com/in/david-feng-8b601921b/",
   "website": "",
@@ -20,3 +16,4 @@
   "graduation_year": 2024,
   "job": null
 }
+  

@@ -5,11 +5,9 @@
   "school": "Engineering & Wharton",
   "bio": "Hey! I'm a sophomore studying Computer Science and Finance. In my free time, I love producing videos, going on runs, and binging Netflix.",
   "hometown": "Plainsboro, NJ",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Android Mobile Engineer"]
-    }
+  "team": "Penn Mobile",
+  "roles": [
+    "Android Mobile Engineer"
   ],
   "photo": "https://i.imgur.com/SF8C4e8.jpg",
   "linkedin": "https://www.linkedin.com/in/sahit-p-bb7939107/",

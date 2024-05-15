@@ -1,5 +1,5 @@
 import React from 'react'
-import { ITeam, IMember, ITeamMember } from '../../types'
+import { ITeam, IMember } from '../../types'
 import { Fade, Section, H2, Row, Col, P } from '../../shared'
 import { M2 } from '../../constants/measurements'
 import { TeamMemberPreview } from './TeamMemberPreview'
@@ -10,7 +10,7 @@ interface ITeams {
 
 const TEAM_LEAD = 'Team Lead'
 
-const leadsFirst = (members: ITeamMember[]): ITeamMember[] => {
+const leadsFirst = (members: IMember[]): IMember[] => {
   if (!members) return []
 
   return members.sort((m1, m2): number => {
@@ -39,7 +39,7 @@ export const Teams = ({ teams }: ITeams) => (
           </Row>
 
           <Row margin={M2}>
-            {leadsFirst(members).map((props: ITeamMember) => (
+            {leadsFirst(members).map((props: IMember) => (
               <TeamMemberPreview key={props.pennkey} {...props} />
             ))}
           </Row>

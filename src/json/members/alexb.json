@@ -3,13 +3,11 @@
     "pennkey": "abudko",
     "major": "Computer Science",
     "school": "Engineering",
-    "bio": "Hey, I'm Alex and I love coding. In my free time, I also love playing basketball, lifting, and attempting novel and crazy activities.",
+    "bio": "Hey, I'm Alex and I love coding. In my free time, I also love playing basketball, lifting, and attempting novel and crazy activites.",
     "hometown": "Melbourne, FL",
-    "teamRoles": [
-      {
-        "team": "Penn Courses",
-        "roles": ["Backend Engineer"]
-      }
+    "team": "Penn Courses",
+    "roles": [
+        "Backend Engineer"
     ],
     "photo": "https://i.imgur.com/j1qoSMK.jpg",
     "linkedin": "https://www.linkedin.com/in/alexander-budko-41baa7252/",
@@ -18,5 +16,4 @@
     "alumnus": false,
     "graduation_year": 2026,
     "job": null
-  }
-  
+}

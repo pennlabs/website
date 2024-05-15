@@ -5,20 +5,8 @@
   "school": "Engineering",
   "bio": "Stay TypeSafe™, everyone",
   "hometown": "Seoul, South Korea",
-  "teamRoles": [
-    {
-      "team": "Penn Courses",
-      "roles": ["Team Lead", "Frontend Engineer"]
-    },
-    {
-      "team": "Penn Clubs",
-      "roles": ["Frontend Engineer"]
-    },
-    {
-      "team": "Platform",
-      "roles": ["DevOps"]
-    }
-  ],
+  "team": ["Penn Courses", "Penn Clubs", "Platform"],
+  "roles": ["Frontend Engineer", "Team Lead", "DevOps"],
   "photo": "https://avatars3.githubusercontent.com/u/62971511?s=460&u=c9f59555a34989c2c527df86478fadbf3edafaae&v=4",
   "linkedin": "https://www.linkedin.com/in/esinx",
   "website": "https://esinx.net",

@@ -5,12 +5,8 @@
   "school": "SAS",
   "bio": "Cog Sci and CIS major interested in trying new restaurants!",
   "hometown": "Naperville, IL",
-  "teamRoles": [
-    {
-      "team": "Office Hours Queue",
-      "roles": ["Backend Engineer"]
-    }
-  ],
+  "team": "Office Hours Queue",
+  "roles": ["Backend Engineer"],
   "photo": "https://i.imgur.com/I0IbvVo.png",
   "linkedin": "www.linkedin.com/in/ethanwang04",
   "website": "",

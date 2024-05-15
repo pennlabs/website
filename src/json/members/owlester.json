@@ -5,12 +5,8 @@
   "school": "SEAS",
   "bio": "Hi!",
   "hometown": "Villanova",
-  "teamRoles": [
-    {
-      "team": "Penn Clubs",
-      "roles": ["Frontend Engineer"]
-    }
-  ],
+  "team": "Penn Clubs",
+  "roles": ["Frontend Engineer"],
   "photo": "https://i.imgur.com/iyxC0v0.jpeg",
   "linkedin": "https://www.linkedin.com/in/owen-lester-7b16b8289/",
   "website": "",

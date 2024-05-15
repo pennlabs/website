@@ -5,11 +5,9 @@
   "school": "Engineering",
   "bio": "former wii fit user",
   "hometown": "Saratoga, CA",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Designer"]
-    }
+  "team": "Penn Mobile",
+  "roles": [
+    "Designer"
   ],
   "photo": "https://i.imgur.com/QAXyuBW.jpg",
   "linkedin": "https://www.linkedin.com/in/annalinwang/",

@@ -5,12 +5,8 @@
   "pennkey": "dhaupt",
   "bio": "I'm Team Lead for Penn Course Alert and Penn Course Plan. Outside of Labs and CS, I'm a space exploration enthusiast and politics junkie.",
   "hometown": "New York, NY",
-  "teamRoles": [
-    {
-      "team": "Penn Courses",
-      "roles": ["Director Emeritus", "Team Lead", "Full Stack Engineer"]
-    }
-  ],
+  "team": "Penn Courses",
+  "roles": ["Director Emeritus", "Team Lead", "Full Stack Engineer"],
   "photo": "https://avatars1.githubusercontent.com/u/436045?s=400&u=92519faf207e6f2ccc75df519ad89d9609a1aea4&v=4",
   "linkedin": "https://www.linkedin.com/in/davishaupt/",
   "website": "https://davi.sh/",

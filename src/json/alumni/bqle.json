@@ -5,12 +5,8 @@
   "school": "Engineering",
   "bio": "Hi! I'm a freshman from Vietnam and I'm a backend engineer for OHQ. In my freetime, I like to watch movie summaries and take long walks",
   "hometown": "Ho Chi Minh City, Vietnam",
-  "teamRoles": [
-    {
-      "team": "Office Hours Queue",
-      "roles": ["Backend Engineer"]
-    }
-  ],
+  "team": "Office Hours Queue",
+  "roles": ["Backend Engineer"],
   "photo": "https://i.imgur.com/RfPYyuL.jpg",
   "linkedin": "https://www.linkedin.com/in/bqle/",
   "website": "",
@@ -20,3 +16,4 @@
   "graduation_year": 2025,
   "job": null
 }
+  

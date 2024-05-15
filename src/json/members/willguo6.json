@@ -5,12 +5,8 @@
   "school": "Wharton",
   "bio": "Hi! I'm William, sophomore studying Statistics. Find me in a Huntsman GSR eating Chipotle or playing pickup soccer at Penn Park.",
   "hometown": "Portland, OR",
-  "teamRoles": [
-    {
-      "team": "Office Hours Queue",
-      "roles": ["Frontend Engineer"]
-    }
-  ],
+  "team": "Office Hours Queue",
+  "roles": ["Frontend Engineer"],
   "photo": "https://i.imgur.com/RvGNbJY.jpg",
   "linkedin": "https://www.linkedin.com/in/william-guo-0b458118a/",
   "website": "",

@@ -5,12 +5,8 @@
   "school": "Engineering",
   "bio": "Love CIS, love learning about new tech, love bubble tea",
   "hometown": "Taipei, Taiwan",
-  "teamRoles": [
-    {
-      "team": "Platform",
-      "roles": ["Backend Engineer"]
-    }
-  ],
+  "team": "Platform",
+  "roles": ["Backend Engineer"],
   "photo": "https://i.imgur.com/6tLGUQm.jpg",
   "linkedin": "www.linkedin.com/in/lantingchiang",
   "website": "",

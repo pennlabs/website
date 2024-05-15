@@ -5,12 +5,8 @@
   "school": "College of Arts and Sciences",
   "bio": "Major, undecided. Career, undecided. Life Purpose? Undecided.",
   "hometown": "Portland, Oregon",
-  "teamRoles": [
-    {
-      "team": "Penn Courses",
-      "roles": ["Frontend Engineer"]
-    }
-  ],
+  "team": "Penn Courses",
+  "roles": ["Frontend Engineer"],
   "photo": "https://i.imgur.com/jKnoFd7.jpg",
   "linkedin": "https://www.linkedin.com/in/amy-liu-94919b216/",
   "website": "",

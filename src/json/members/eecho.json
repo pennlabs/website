@@ -5,12 +5,8 @@
   "school": "College of Arts and Sciences",
   "bio": "",
   "hometown": "San Diego, CA",
-  "teamRoles": [
-    {
-      "team": "Penn Courses",
-      "roles": ["Designer"]
-    }
-  ],
+  "team": "Penn Courses",
+  "roles": ["Designer"],
   "photo": "https://i.imgur.com/QLVYZ5H.png",
   "linkedin": "https://linkedin.com/in/eecho-yuan-01a23a28b",
   "website": "",

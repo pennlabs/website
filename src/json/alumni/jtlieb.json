@@ -5,11 +5,9 @@
   "pennkey": "jtlieb",
   "bio": "I'm a Computer Science student that likes to yoyo and eat Buffalo Wing Pringles in my free time.",
   "hometown": "Camarillo, CA",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Designer"]
-    }
+  "team": "Penn Mobile",
+  "roles": [
+    "Designer"
   ],
   "photo": "https://i.imgur.com/5HXWOJw.jpg",
   "linkedin": "http://linkedin.com/in/lieb",

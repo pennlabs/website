@@ -4,12 +4,10 @@
   "major": "Computer Science & Business",
   "school": "Engineering & Wharton",
   "bio": "Hi! I'm a sophomore from the Bay Area and Taiwan. I'm obsessed with cute cafes, cats, and electronic music. You can always find me sipping on boba/iced coffee! :)",
-  "hometown": "Fremont, California",
-  "teamRoles": [
-    {
-      "team": "Office Hours Queue",
-      "roles": ["Business Developer"]
-    }
+  "hometown": "Fremont, California ",
+  "team": "Office Hours Queue",
+  "roles": [
+    "Business Developer"
   ],
   "photo": "https://i.imgur.com/djfiXv9.jpg",
   "linkedin": "https://www.linkedin.com/in/karenyen27/",

@@ -3,13 +3,11 @@
   "pennkey": "dsalib",
   "major": "Statistics + Data Science",
   "school": "Wharton,Engineering",
-  "bio": "Heyo 🤠! I'm Daniel and I am an iOS developer for Penn Mobile from Southern California! After switching majors countless times, I finally study Statistics and Data Science!",
+  "bio": "Heyo\ud83e\udd20!  I'm Daniel and I am an iOS developer for Penn Mobile from Southern California! After switching majors countless times, I finally study Statistics and Data Science!",
   "hometown": "Rancho Cucamonga, CA",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["iOS Mobile Engineer"]
-    }
+  "team": "Penn Mobile",
+  "roles": [
+    "iOS Mobile Engineer"
   ],
   "photo": "https://i.imgur.com/T09dRU6.jpg",
   "linkedin": "www.linkedin.com/in/dsalib",

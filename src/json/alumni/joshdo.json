@@ -5,11 +5,12 @@
   "pennkey": "joshdo",
   "bio": "Hi! I'm an iOS and backend engineer, a Penn Mobile team lead, and a former Penn Labs director. Outside of Labs, I love playing tennis, going on hikes, and following space exploration. Penn Labs 4 life!.",
   "hometown": "Atlanta, GA",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Team Lead", "iOS Engineer", "Backend Engineer", "Director Emeritus"]
-    }
+  "team": "Penn Mobile",
+  "roles": [
+    "Team Lead",
+    "iOS Engineer",
+    "Backend Engineer",
+    "Director Emeritus"
   ],
   "photo": "https://i.imgur.com/bNUrz8V.jpg",
   "linkedin": "https://www.linkedin.com/in/joshdoman/",

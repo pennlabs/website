@@ -5,12 +5,8 @@
   "school": "Engineering",
   "bio": "Hi! I'm a software developer studying CS and linguistics who loves building cool things. I love my dog and the Yankees :)",
   "hometown": "New York, NY",
-  "teamRoles": [
-    {
-      "team": "Directors",
-      "roles": ["Co-Director", "Backend Engineer"]
-    }
-  ],
+  "team": "Directors",
+  "roles": ["Co-Director", "Backend Engineer"],
   "photo": "https://i.imgur.com/o1mNkTP.jpeg",
   "linkedin": "https://www.linkedin.com/in/christopher-liu-a343511a8/",
   "website": "",
