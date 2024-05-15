@@ -5,8 +5,12 @@
     "school": "CAS & Wharton",
     "bio": "loves all things art & design <3.",
     "hometown": "Princeton, New Jersey",
-    "team": "Penn Mobile",
-    "roles": ["Designer"],
+    "teamRoles": [
+      {
+        "team": "Penn Mobile",
+        "roles": ["Designer"]
+      }
+    ],
     "photo": "https://i.imgur.com/h4Cxqlg.jpg",
     "linkedin": "https://www.linkedin.com/in/christinecheng/",
     "website": "",
@@ -15,4 +19,5 @@
     "alumnus": false,
     "graduation_year": 2025,
     "job": null
-}
+  }
+  

@@ -1,19 +1,22 @@
 {
-    "name": "Pulkith Paruchuri",
-    "pennkey": "pulkith",
-    "major": "Computer Science & Statistics",
-    "school": "Engineering & Wharton",
-    "bio": "Howdy! I enjoy building (and especially, breaking) things.",
-    "hometown": "Frisco, TX",
-    "team": "Penn Mobile",
-    "roles": ["iOS Mobile Engineer"],
-    "photo": "https://i.imgur.com/X79uZK1.jpg",
-    "linkedin": "https://www.linkedin.com/in/pulkith",
-    "website": "https://pulkith.com",
-    "github": "https://github.com/DespicableMonkey",
-    "semester_joined": "2023C",
-    "alumnus": false,
-    "graduation_year": 2027,
-    "job": null
-  }
-  
+  "name": "Pulkith Paruchuri",
+  "pennkey": "pulkith",
+  "major": "Computer Science & Statistics",
+  "school": "Engineering & Wharton",
+  "bio": "Howdy! I enjoy building (and especially, breaking) things.",
+  "hometown": "Frisco, TX",
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["iOS Mobile Engineer"]
+    }
+  ],
+  "photo": "https://i.imgur.com/X79uZK1.jpg",
+  "linkedin": "https://www.linkedin.com/in/pulkith",
+  "website": "https://pulkith.com",
+  "github": "https://github.com/DespicableMonkey",
+  "semester_joined": "2023C",
+  "alumnus": false,
+  "graduation_year": 2027,
+  "job": null
+}

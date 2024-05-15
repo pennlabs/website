@@ -5,8 +5,12 @@
   "school": "Engineering,Wharton",
   "bio": "I'm a junior studying Computer Science and Finance. In free time, I like to explore new restaurants with friends. My favorite restaurant at Phily is Rangoon.",
   "hometown": "Shenzhen, China",
-  "team": "Penn Clubs",
-  "roles": ["Back-End Engineer"],
+  "teamRoles": [
+    {
+      "team": "Penn Clubs",
+      "roles": ["Backend Engineer"]
+    }
+  ],
   "photo": "https://i.imgur.com/sQC78zH.jpg",
   "linkedin": "https://www.linkedin.com/in/xiayufeilucy/",
   "website": "xiayufeilucy.me",

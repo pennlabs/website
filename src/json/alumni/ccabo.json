@@ -1,18 +1,22 @@
 {
-  "name": "Cameron Cabo",
-  "major": "Computer Science + Management",
-  "school": "Engineering & Wharton",
-  "pennkey": "ccabo",
-  "bio": "I'm a senior studying Computer Science and Management of Entrepreneurship and Innovation. I'm passionate for building products which people enjoy using and learn from. In my free time I like working out, learning new things, and exploring new places ?",
-  "hometown": "Wellesley, MA",
-  "team": "Penn Basics",
-  "roles": ["Team Lead", "Frontend Engineer", "Director Emeritus"],
-  "photo": "https://i.imgur.com/3yQizZb.jpg",
-  "linkedin": "https://www.linkedin.com/in/cameroncabo",
-  "website": "https://www.cameroncabo.com",
-  "github": "https://www.github.com/ccabo1",
-  "semester_joined": "2017C",
-  "alumnus": false,
+  "name": "Baile Chen",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "pennkey": "cbaile",
+  "bio": "Hi,I am Peter studying Computer Science.",
+  "hometown": "Hong Kong",
+  "teamRoles": [
+    {
+      "team": "Office Hours Queue",
+      "roles": ["Backend Engineer", "Frontend Engineer"]
+    }
+  ],
+  "photo": "https://i.imgur.com/LLPmYNK.jpg",
+  "linkedin": "https://www.linkedin.com/in/peter-chen-ba7847153/",
+  "website": null,
+  "github": "https://github.com/peterbaile",
+  "semester_joined": "2019A",
+  "alumnus": true,
   "graduation_year": null,
   "job": null
 }

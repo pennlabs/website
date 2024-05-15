@@ -5,9 +5,11 @@
   "school": "College of Arts and Science",
   "bio": "bean juice lover. sometimes codes, sometimes designs.",
   "hometown": "Hangzhou, China",
-  "team": "Penn Mobile",
-  "roles": [
-    "Designer"
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["Designer"]
+    }
   ],
   "photo": "https://i.imgur.com/4hAxBGZ.jpg",
   "linkedin": "https://www.linkedin.com/in/sophienchen/",

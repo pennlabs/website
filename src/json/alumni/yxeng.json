@@ -5,8 +5,12 @@
   "pennkey": "yxeng",
   "bio": "I'm a front-end engineer for Penn Course Search!",
   "hometown": "Malaysia",
-  "team": "Office Hours Queue",
-  "roles": ["Team Lead", "Frontend Engineer"],
+  "teamRoles": [
+    {
+      "team": "Office Hours Queue",
+      "roles": ["Team Lead", "Frontend Engineer"]
+    }
+  ],
   "photo": "https://i.imgur.com/kVcnwdf.jpg",
   "linkedin": null,
   "website": null,
