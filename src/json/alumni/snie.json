@@ -5,11 +5,10 @@
   "pennkey": "snie",
   "bio": "A lover of Akzidenz-Grotesk, #E62B1E, and Magic Carpet",
   "hometown": "The Hague, The Netherlands",
-  "teamRoles": [
-    {
-      "team": "Penn Clubs",
-      "roles": ["Team Lead", "Designer"]
-    }
+  "team": "Penn Clubs",
+  "roles": [
+    "Team Lead",
+    "Designer"
   ],
   "photo": "https://i.imgur.com/puZ1J6e.jpg",
   "linkedin": "https://www.linkedin.com/in/selina-nie-8aa67a145/",

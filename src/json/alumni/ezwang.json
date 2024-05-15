@@ -5,18 +5,14 @@
   "pennkey": "ezwang",
   "bio": "Hello!",
   "hometown": "Lorton, VA",
-  "teamRoles": [
-    {
-      "team": "Penn Clubs",
-      "roles": ["Team Lead", "Backend Engineer", "Frontend Engineer"]
-    }
-  ],
+  "team": "Penn Clubs",
+  "roles": ["Team Lead", "Backend Engineer", "Frontend Engineer"],
   "photo": "https://avatars1.githubusercontent.com/u/4441174?s=460&v=4",
   "linkedin": null,
   "website": null,
   "github": "https://github.com/ezwang",
   "semester_joined": "2017C",
-  "alumnus": true,
-  "graduation_year": 2021,
+  "alumnus": false,
+  "graduation_year": null,
   "job": null
 }

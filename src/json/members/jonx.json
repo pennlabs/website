@@ -5,11 +5,9 @@
   "school": "Wharton",
   "bio": "Hi! I'm a sophomore at Penn who enjoys building things big and small! Running frontend on Penn Mobile Portal (even though my job's about to be replaced by AI..) Love to connect! ✌️",
   "hometown": "Lower Merion, PA",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Frontend Engineer"]
-    }
+  "team": "Penn Mobile",
+  "roles": [
+    "Frontend Engineer"
   ],
   "photo": "https://i.ibb.co/3BZKGJg/profile.png",
   "linkedin": "https://www.linkedin.com/in/jonathanrxu/",

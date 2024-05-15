@@ -5,12 +5,8 @@
   "school": "Engineering",
   "bio": "Hi! I'm a junior studying CIS from Northern Jersey, and I'm a part of the Courses team. When I'm not coding, you can probably find me binging YouTube or playing League.",
   "hometown": "Warren, NJ",
-  "teamRoles": [
-    {
-      "team": "Penn Courses",
-      "roles": ["Frontend Engineer"]
-    }
-  ],
+  "team": "Penn Courses",
+  "roles": ["Frontend Engineer"],
   "photo": "https://i.imgur.com/Ms5bqCc.jpg",
   "linkedin": "https://www.linkedin.com/in/jeffrey-xiao/",
   "website": "http://jeffreyxiao.com/",

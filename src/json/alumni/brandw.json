@@ -5,12 +5,8 @@
   "school": "Engineering & Wharton",
   "bio": "Hi y’all, I’m Brandon! I’m a freshman studying M&T, and I’m working on DevOps this year. I also love hiking, tennis, and playing Avalon and Catan with friends!",
   "hometown": "Plano, TX",
-  "teamRoles": [
-    {
-      "team": "Platform",
-      "roles": ["DevOps"]
-    }
-  ],
+  "team": "Platform",
+  "roles": ["DevOps"],
   "photo": "https://i.imgur.com/x0Qowwv.jpg",
   "linkedin": "https://www.linkedin.com/in/brandonzwang/",
   "website": "https://www.brandonwang.com/",

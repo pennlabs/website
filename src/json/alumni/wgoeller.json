@@ -5,11 +5,9 @@
   "school": "Engineering",
   "bio": "Hi I'm Will and I'm a Senior studying Computer Engineering and also submatriculating into Computer Science. Outside of classes, I'm a Head TA for CIS120 and a Production Engineer for Jane Street. For fun, I love tinkering, cooking, and downhill skiing!",
   "hometown": "Los Angeles",
-  "teamRoles": [
-    {
-      "team": "Platform",
-      "roles": ["DevOps"]
-    }
+  "team": "Platform",
+  "roles": [
+    "DevOps"
   ],
   "photo": "https://i.imgur.com/mc5UWeC.jpg",
   "linkedin": "https://www.linkedin.com/in/wgoeller/",

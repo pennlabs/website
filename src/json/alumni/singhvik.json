@@ -5,12 +5,8 @@
   "school": "Engineering",
   "bio": "coffee addict, mediocre tennis player, insecure coder.",
   "hometown": "Hong Kong",
-  "teamRoles": [
-    {
-      "team": "Platform",
-      "roles": ["Backend Engineer"]
-    }
-  ],
+  "team": "Platform",
+  "roles": ["Backend Engineer"],
   "photo": "https://i.imgur.com/e9i9TRn.jpg",
   "linkedin": "https://www.linkedin.com/in/vikram-singh-2002/",
   "github": "https://github.com/vsingh18567",

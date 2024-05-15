@@ -5,12 +5,8 @@
   "school": "Engineering",
   "bio": "Yo! I'm a CS student interested in ~socially beneficial~ technology. In my spare time, I enjoy watching Netflix, playing guitar, and watching football. GO BIRDS!",
   "hometown": "Philadelphia, PA",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["iOS Mobile Engineer"]
-    }
-  ],
+  "team": "Penn Mobile",
+  "roles": ["iOS Mobile Engineer"],
   "photo": "https://i.imgur.com/3OEHNEn.jpeg",
   "linkedin": "https://www.linkedin.com/in/raunaq-singh-2024/",
   "website": "",

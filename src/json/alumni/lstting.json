@@ -5,11 +5,9 @@
   "pennkey": "lstting",
   "bio": "likes cats, drawing, and finding new music",
   "hometown": "Holmdel, NJ",
-  "teamRoles": [
-    {
-      "team": "Office Hours Queue",
-      "roles": ["Designer"]
-    }
+  "team": "Office Hours Queue",
+  "roles": [
+    "Designer"
   ],
   "photo": "https://i.imgur.com/EkkYCEq.jpg",
   "linkedin": "https://www.linkedin.com/in/lindating",

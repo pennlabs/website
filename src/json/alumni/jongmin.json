@@ -5,11 +5,10 @@
   "school": "Engineering & Wharton",
   "bio": "Hello, I'm a Korean iOS developer from Hong Kong. In my free time, I love to practice close-up card magic.",
   "hometown": "Hong Kong/Seoul",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Team Lead", "iOS Mobile Engineer"]
-    }
+  "team": "Penn Mobile",
+  "roles": [
+    "Team Lead",
+    "iOS Mobile Engineer"
   ],
   "photo": "https://i.imgur.com/4xw5g6G.jpg",
   "linkedin": "http://www.linkedin.com/in/jong-min-choi",

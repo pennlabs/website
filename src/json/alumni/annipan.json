@@ -5,11 +5,9 @@
   "school": "Engineering",
   "bio": "Hi there! I'm a sophomore at Penn studying CIS + MATH. In my free time I can be found playing with my cat, practicing guitar, reading or sleeping ;)",
   "hometown": "Nanjing, China",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Backend Engineer"]
-    }
+  "team": "Penn Mobile",
+  "roles": [
+    "Backend Engineer"
   ],
   "photo": "https://i.imgur.com/S1kfAT4.jpg",
   "linkedin": "https://www.linkedin.com/in/anni-pan-17b95b179/",

@@ -212,10 +212,11 @@ export const GenericMemberTemplate = ({
     hometown: location,
     photo,
     localImage,
+    roles,
     name,
     major,
     school,
-    teamRoles,
+    team,
     website,
     semester_joined: semesterJoined,
     posts,
@@ -226,9 +227,6 @@ export const GenericMemberTemplate = ({
   markdownProcessor
     .process(bio || '')
     .then(({ contents: b }) => updateBioAsHtml(b as any))
-
-  const roles = [...new Set(teamRoles?.map(t => t.roles).flat())] ?? []
-  const team = teamRoles?.map(t => t.team).flat() ?? ['Penn Labs']
 
   return (
     <Layout>

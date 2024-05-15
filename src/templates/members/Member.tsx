@@ -21,14 +21,12 @@ export const pageQuery = graphql`
           }
         }
       }
+      roles
       name
       major
       school
-      teamRoles {
-        team {
-          name
-        }
-        roles
+      team {
+        name
       }
       website
       semester_joined

@@ -5,12 +5,8 @@
   "pennkey": "evakill",
   "bio": "labs OG athletic director, react animation god, has own slack channel #eva",
   "hometown": "Little Compton, Rhode Island",
-  "teamRoles": [
-    {
-      "team": "Penn Clubs",
-      "roles": ["Frontend Engineer"]
-    }
-  ],
+  "team": "Penn Clubs",
+  "roles": ["Frontend Engineer"],
   "photo": "https://i.imgur.com/v1IkXXK.jpg",
   "linkedin": null,
   "website": null,

@@ -5,11 +5,9 @@
   "school": "Engineering",
   "bio": "Passionate about the intersection of art and technology, architecture, and Money Heist. Budding college dorm chef. Pesto and hot sauce lover. :P",
   "hometown": "Washington, DC",
-  "teamRoles": [
-    {
-      "team": "Penn Clubs",
-      "roles": ["Designer"]
-    }
+  "team": "Penn Clubs",
+  "roles": [
+    "Designer"
   ],
   "photo": "https://i.imgur.com/uuYavDm.jpg",
   "linkedin": "https://www.linkedin.com/in/alicezhe/",

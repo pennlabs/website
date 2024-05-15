@@ -5,11 +5,9 @@
   "school": "Engineering",
   "bio": "Hi, My name is Kelvin and I am a Frontend Engineer for Penn Clubs.",
   "hometown": "Hong Kong",
-  "teamRoles": [
-    {
-      "team": "Penn Clubs",
-      "roles": ["Frontend Engineer"]
-    }
+  "team": "Penn Clubs",
+  "roles": [
+    "Frontend Engineer"
   ],
   "photo": "https://i.imgur.com/FjcGTEe.jpg",
   "linkedin": "",

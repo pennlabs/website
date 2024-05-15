@@ -5,11 +5,9 @@
   "school": "Engineering",
   "bio": "Hello friends, I'm a sophomore who likes long walks in urban parks and fluffy things :)",
   "hometown": "Toronto, Canada",
-  "teamRoles": [
-    {
-      "team": "Office Hours Queue",
-      "roles": ["Frontend Engineer"]
-    }
+  "team": "Office Hours Queue",
+  "roles": [
+    "Frontend Engineer"
   ],
   "photo": "https://i.imgur.com/wXKaQ3H.jpg",
   "linkedin": "https://www.linkedin.com/in/conswang/",

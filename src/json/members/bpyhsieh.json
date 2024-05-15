@@ -5,12 +5,8 @@
   "school": "College of Arts and Sciences",
   "bio": "Hello! I'm currently an aspiring programmer who hopes to expand my skillset in app design and gamedev.",
   "hometown": "Taipei, Taiwan",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Android Mobile Engineer"]
-    }
-  ],
+  "team": "Penn Mobile",
+  "roles": ["Android Mobile Engineer"],
   "photo": "https://i.imgur.com/wDs56DN.jpg",
   "linkedin": "https://www.linkedin.com/in/baron-ping-yeh-hsieh-976376290/",
   "website": "",

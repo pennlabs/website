@@ -5,11 +5,11 @@
   "pennkey": "hdominic",
   "bio": "I'm an iOS developer and product designer from the midwest! I <3 Penn Mobile",
   "hometown": "Dell Rapids, SD",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Team Lead", "iOS Mobile Engineer", "Director Emeritus"]
-    }
+  "team": "Penn Mobile",
+  "roles": [
+    "Team Lead",
+    "iOS Mobile Engineer",
+    "Director Emeritus"
   ],
   "photo": "https://github.com/DominicHolmes/profile-picture/blob/master/dominic.jpeg?raw=true",
   "linkedin": "https://www.linkedin.com/in/dominic-holmes-21b612133/",

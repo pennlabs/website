@@ -5,12 +5,8 @@
   "pennkey": "vfu",
   "bio": "I'm a UI/UX designer and bizdev who dabbles in frontend. I'm focused on creating integrative experiences in tech, life sciences, and healthcare. Always eating: talk to me about food.",
   "hometown": "Germantown, MD",
-  "teamRoles": [
-    {
-      "team": "Penn Basics",
-      "roles": ["Business Developer", "Designer", "Director Emeritus"]
-    }
-  ],
+  "team": "Penn Basics",
+  "roles": ["Business Developer", "Designer", "Director Emeritus"],
   "photo": "https://i.imgur.com/44AB66h.jpg",
   "linkedin": "https://www.linkedin.com/in/valenciafu/",
   "website": "https://www.valenciafu.me/",

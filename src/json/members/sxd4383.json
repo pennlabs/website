@@ -5,13 +5,9 @@
     "school": "Engineering, Wharton, and Design",
     "bio": "A story-driven designer who leads with empathy & a passion for global development",
     "hometown": "Qingdao, China",
-    "teamRoles": [
-      {
-        "team": "Penn Mobile",
-        "roles": ["Designer"]
-      }
-    ],
-    "photo": "https://i.imgur.com/etk3YqO.jpg",
+    "team": "Penn Mobile",
+    "roles": ["Designer"],
+    "photo":"https://i.imgur.com/etk3YqO.jpg",
     "linkedin": "https://www.linkedin.com/in/sherry-xue/",
     "website": "https://sherryx.webflow.io/",
     "github": "",
@@ -19,5 +15,4 @@
     "alumnus": false,
     "graduation_year": 2025,
     "job": null
-  }
-  
+}

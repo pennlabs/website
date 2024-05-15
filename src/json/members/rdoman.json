@@ -5,12 +5,8 @@
   "school": "Wharton",
   "bio": "Hi! I'm a sophomore from Atlanta. I love to bike, travel, and bake!",
   "hometown": "Atlanta, GA",
-  "teamRoles": [
-    {
-      "team": "Penn Courses",
-      "roles": ["Business Developer"]
-    }
-  ],
+  "team": "Penn Courses",
+  "roles": ["Business Developer"],
   "photo": "https://i.imgur.com/EPD2YHl.jpeg",
   "linkedin": "https://www.linkedin.com/in/racheldoman/",
   "website": "",

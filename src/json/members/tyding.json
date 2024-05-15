@@ -5,12 +5,8 @@
   "school": "SEAS & Wharton",
   "bio": "Hi, I use VIM.",
   "hometown": "Toronto, ON",
-  "teamRoles": [
-    {
-      "team": "Penn Mobile",
-      "roles": ["Backend Engineer"]
-    }
-  ],
+  "team": "Penn Mobile",
+  "roles": ["Backend Engineer"],
   "photo": "https://jeffersonding.com/headshot.png",
   "linkedin": "https://www.linkedin.com/in/dingjefferson",
   "website": "https://jeffersonding.com",

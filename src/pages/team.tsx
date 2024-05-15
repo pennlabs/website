@@ -69,6 +69,9 @@ export const pageQuery = graphql`
         description
         members {
           name
+          team {
+            name
+          }
           pennkey
           photo
           semester_joined
@@ -87,16 +90,12 @@ export const pageQuery = graphql`
     allAlumniJson {
       nodes {
         name
+        team
         pennkey
         photo
         semester_joined
         alumnus
-        teamRoles {
-          team {
-            name
-          }
-          roles
-        }
+        roles
       }
     }
   }

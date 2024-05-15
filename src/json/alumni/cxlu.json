@@ -5,12 +5,8 @@
   "school": "Wharton,Engineering",
   "bio": "Big fan of short stories, hedgehogs, and horror. This semester I'm learning resin casting through Wharton Passion Projects - hit me up if you'd like to join!",
   "hometown": "Plano, TX",
-  "teamRoles": [
-    {
-      "team": "Penn Clubs",
-      "roles": ["Front-End Engineer"]
-    }
-  ],
+  "team": "Penn Clubs",
+  "roles": ["Front-End Engineer"],
   "photo": "https://i.imgur.com/3L2Qe4a.jpg",
   "linkedin": "https://www.linkedin.com/in/christina-lu-964235144/",
   "website": "",
