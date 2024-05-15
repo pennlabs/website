@@ -4,12 +4,17 @@
   "school": "Wharton",
   "pennkey": "tifchang",
   "hometown": "Honolulu, HI",
-  "team": "Directors",
-  "roles": ["Designer", "Director Emeritus"],
+  "teamRoles": [
+    {
+      "team": "Directors",
+      "roles": ["Designer", "Director Emeritus"]
+    }
+  ],
   "photo": "https://i.imgur.com/wDkP3rs.jpg",
   "linkedin": "https://www.linkedin.com/in/tobaccowallaa/",
   "website": "https://armaan.tobaccowalla.com",
   "github": "https://github.com/ArmaanT",
+  "semester_joined": null,
   "alumnus": true,
   "graduation_year": null,
   "job": null

@@ -5,11 +5,11 @@
   "pennkey": "cphalen",
   "bio": "I'm a junior studying Networked Social Systems Engineering. When I'm not hiding from the Penn Labs front-end, I love watching old movies, studying mathematics, and playing lacrosse!",
   "hometown": "Chicago, IL",
-  "team": "Penn Clubs",
-  "roles": [
-    "Director Emeritus",
-    "Team Lead",
-    "Backend Engineer"
+  "teamRoles": [
+    {
+      "team": "Penn Clubs",
+      "roles": ["Director Emeritus", "Team Lead", "Backend Engineer"]
+    }
   ],
   "photo": "https://i.imgur.com/CgHENoB.jpg",
   "linkedin": "https://www.linkedin.com/in/campbell-phalen",

@@ -5,9 +5,11 @@
   "pennkey": "sophiaye",
   "bio": "I'm an aspiring UI/UX designer with an interest in web development and data science. I want to use technology to better create and enhance connections between people.",
   "hometown": "Newtown, PA",
-  "team": "Penn Mobile",
-  "roles": [
-    "Designer"
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["Designer"]
+    }
   ],
   "photo": "https://i.imgur.com/rIe9M74.jpg",
   "linkedin": null,

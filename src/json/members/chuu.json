@@ -1,18 +1,22 @@
 {
-    "name": "Christina Qiu",
-    "pennkey": "chuu",
-    "major": "Digital Media Design",
-    "school": "Engineering",
-    "bio": "Hi! My name is Christina Qiu and I'm a Digital Media Design major (Computer Graphics). I love drawing, listening to music, and watching anime.",
-    "hometown": "Montclair, NJ",
-    "team": "Penn Mobile",
-    "roles": ["iOS Mobile Engineer"],
-    "photo": "https://i.imgur.com/DIrp3lH.jpeg",
-    "linkedin": "https://www.linkedin.com/in/christina-qiu-6094301b6/",
-    "website": "",
-    "github": "https://github.com/christinaqiu3",
-    "semester_joined": "2023C",
-    "alumnus": false,
-    "graduation_year": 2026,
-    "job": null
-  }
+  "name": "Christina Qiu",
+  "pennkey": "chuu",
+  "major": "Digital Media Design",
+  "school": "Engineering",
+  "bio": "Hi! My name is Christina Qiu and I'm a Digital Media Design major (Computer Graphics). I love drawing, listening to music, and watching anime.",
+  "hometown": "Montclair, NJ",
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["iOS Mobile Engineer"]
+    }
+  ],
+  "photo": "https://i.imgur.com/DIrp3lH.jpeg",
+  "linkedin": "https://www.linkedin.com/in/christina-qiu-6094301b6/",
+  "website": "",
+  "github": "https://github.com/christinaqiu3",
+  "semester_joined": "2023C",
+  "alumnus": false,
+  "graduation_year": 2026,
+  "job": null
+}

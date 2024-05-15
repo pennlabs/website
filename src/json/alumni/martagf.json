@@ -5,8 +5,12 @@
   "pennkey": "martagf",
   "bio": "Hi! I'm an Android developer (<3 Penn Mobile) from Spain, currently studying CIS at Penn. On a usual day, you can find me complaining about the Fahrenheit scale, coding, reading, or pretending to work out by sitting at the gym watching Netflix. I also love art, exploring new places and good food.",
   "hometown": "Santiago de Compostela, Spain",
-  "team": "Penn Mobile",
-  "roles": ["Director Emeritus", "Team Lead", "Android Mobile Engineer"],
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["Director Emeritus", "Team Lead", "Android Mobile Engineer"]
+    }
+  ],
   "photo": "https://i.imgur.com/HdLTlAU.jpg",
   "linkedin": "https://www.linkedin.com/in/marta-garcia-ferreiro/",
   "website": null,

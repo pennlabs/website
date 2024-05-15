@@ -5,8 +5,12 @@
   "pennkey": "dlike",
   "bio": "I'm a sophomore studying CIS from New Jersey. At Penn Labs, I'm working on Penn Course Plan. When I'm not coding, I enjoy biking and running.",
   "hometown": "East Brunswick, New Jersey",
-  "team": "Penn Courses",
-  "roles": ["Frontend Engineer"],
+  "teamRoles": [
+    {
+      "team": "Penn Courses",
+      "roles": ["Frontend Engineer"]
+    }
+  ],
   "photo": "https://i.imgur.com/33gebgh.jpg",
   "linkedin": "https://www.linkedin.com/in/daniel-like-b18857133/",
   "website": null,

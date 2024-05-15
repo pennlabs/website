@@ -5,8 +5,12 @@
     "school": "College",
     "bio": "Hi! I'm a freshmen on the Courses team. I like biking and horror movies.",
     "hometown": "Princeton, New Jersey",
-    "team": "Penn Courses",
-    "roles": ["Frontend Engineer"],
+    "teamRoles": [
+      {
+        "team": "Penn Courses",
+        "roles": ["Frontend Engineer"]
+      }
+    ],
     "photo": "https://avatars.githubusercontent.com/u/56455367?v=4",
     "linkedin": "https://www.linkedin.com/in/luke-rt",
     "website": "https://lukert.me",
@@ -15,5 +19,5 @@
     "alumnus": false,
     "graduation_year": 2027,
     "job": null
-}
+  }
   

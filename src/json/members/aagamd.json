@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "Hi! I'm Aagam. I'm studying Computer Engineering, with an interest in pursuing robotics. In my free time, I enjoy watching movies and running.",
   "hometown": "Columbus, Ohio",
-  "team": "Penn Courses",
-  "roles": ["Backend Engineer"],
+  "teamRoles": [
+    {
+      "team": "Penn Courses",
+      "roles": ["Backend Engineer"]
+    }
+  ],
   "photo": "https://i.imgur.com/Sle1FFU.jpeg",
   "linkedin": "https://www.linkedin.com/in/aagam-dalal",
   "website": "https://aadalal.github.io/",

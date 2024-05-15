@@ -5,8 +5,12 @@
   "school": "College of Arts and Sciences",
   "bio": "Hi! I'm a freshman in the College considering Cognitive Science and Design. I love painting, reading, and music.",
   "hometown": "Rochester, NY",
-  "team": "Penn Mobile",
-  "roles": ["Designer", "Team Lead"],
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["Designer", "Team Lead"]
+    }
+  ],
   "photo": "https://i.imgur.com/ShB1x2E.jpg",
   "linkedin": "www.linkedin.com/in/jenny-li-4a7880202",
   "website": "https://byjennny.wixsite.com/website-1",

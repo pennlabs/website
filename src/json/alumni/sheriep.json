@@ -5,9 +5,11 @@
   "school": "College of Arts & Sciences",
   "bio": "Dreaming about going for a swim at the beach, hanging out with the watermelon birds, and having an endless supply of mangoes.",
   "hometown": "Sydney, Australia",
-  "team": "Penn Mobile",
-  "roles": [
-    "Business Developer"
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["Business Developer"]
+    }
   ],
   "photo": "https://imgur.com/lj0H2OZ.jpg",
   "linkedin": "https://www.linkedin.com/in/sherie-pan/",

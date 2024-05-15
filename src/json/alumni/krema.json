@@ -5,9 +5,11 @@
   "school": "Engineering",
   "bio": "Catch me either pretending to code or excessively playing FIFA Ultimate Team... or making banana bread.",
   "hometown": "Cairo, Egypt",
-  "team": "Penn Mobile",
-  "roles": [
-    "Android Mobile Engineer"
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["Android Mobile Engineer"]
+    }
   ],
   "photo": "https://i.imgur.com/lT1Xivj.jpeg",
   "linkedin": "https://www.linkedin.com/in/ali-krema/",

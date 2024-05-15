@@ -5,8 +5,12 @@
   "pennkey": "pawalt",
   "bio": "Hey y'all, I'm Peyton, and I'm currently working on [infrastructure](https://github.com/pennlabs/infrastructure) for Labs. Outside of Labs, I'm an instructor for [CIS 188](https://cis188.org/). If I'm not doing those things, I'm probably skiing or hiking!",
   "hometown": "Richmond, VA",
-  "team": "Platform",
-  "roles": ["DevOps"],
+  "teamRoles": [
+    {
+      "team": "Platform",
+      "roles": ["DevOps"]
+    }
+  ],
   "photo": "https://pawa.lt/img/avatar.jpg",
   "linkedin": "https://www.linkedin.com/in/peyton-walters-a26559158/",
   "website": "https://pawa.lt/",

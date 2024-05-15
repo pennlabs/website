@@ -3,10 +3,14 @@
   "major": "Computer Science + Cognitive Science",
   "school": "College & Engineering",
   "pennkey": "kiruba",
-  "bio": "Hey there, I'm Arun and I'm currently leading efforts in data science and people management. Previously, I was the team lead for Platform and Penn Clubs! Outside of Penn Labs I also research machine learning in Penn's [NLP Group](http://penn-nlp.github.io/) and I teach CIS 192 (Python) at Penn. Other than that, I like skateboarding,  brewing coffee, and watching cartoons!",
+  "bio": "Hey there, I'm Arun and I'm currently leading efforts in data science and people management. Previously, I was the team lead for Platform and Penn Clubs! Outside of Penn Labs I also research machine learning in Penn's [NLP Group](http://penn-nlp.github.io/) and I teach CIS 192 (Python) at Penn. Other than that, I like skateboarding, brewing coffee, and watching cartoons!",
   "hometown": "Mississauga, Canada",
-  "team": "Platform",
-  "roles": ["Backend Engineer", "Business Developer"],
+  "teamRoles": [
+    {
+      "team": "Platform",
+      "roles": ["Backend Engineer", "Business Developer"]
+    }
+  ],
   "photo": "https://avatars2.githubusercontent.com/u/6424868?s=400&u=481199032fa2426a9c4bb60dcb937966cd8c3ce0&v=4",
   "linkedin": "https://www.linkedin.com/in/arunkirubarajan/",
   "website": "https://kirubarajan.com",

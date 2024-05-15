@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "CIS major interested in cars. Enjoys singing out-of-tune with his ukulele.",
   "hometown": "Pleasanton, CA",
-  "team": "Office Hours Queue",
-  "roles": ["Designer"],
+  "teamRoles": [
+    {
+      "team": "Office Hours Queue",
+      "roles": ["Designer"]
+    }
+  ],
   "photo": "https://i.imgur.com/HSsH8Op.jpg",
   "linkedin": "https://www.linkedin.com/in/willjhliang/",
   "website": "https://www.seas.upenn.edu/~wjhliang/",

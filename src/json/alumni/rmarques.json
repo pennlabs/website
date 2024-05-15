@@ -5,9 +5,11 @@
   "pennkey": "rmarques",
   "bio": "Likes to think he can code. Sometimes manages to actually code.",
   "hometown": "Rio de Janeiro, Brazil",
-  "team": "Platform",
-  "roles": [
-    "Backend Engineer"
+  "teamRoles": [
+    {
+      "team": "Platform",
+      "roles": ["Backend Engineer"]
+    }
   ],
   "photo": "https://i.imgur.com/6w1POGI.jpg",
   "linkedin": "https://www.linkedin.com/in/rafael-c-marques/",

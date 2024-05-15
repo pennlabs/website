@@ -1,18 +1,22 @@
 {
-    "name": "Shiva Menta",
-    "pennkey": "smenta",
-    "major": "Economics",
-    "school": "Wharton",
-    "bio": "Hey! I'm Shiva and I study Economics and Computer Science. In my free time, I love listening to EDM and DJ'ing. Hit me up if you want to rave together.",
-    "hometown": "Burr Ridge, Illinois",
-    "team": "Penn Courses",
-    "roles": ["Backend Engineer", "Team Lead"],
-    "photo": "https://i.imgur.com/Cbh9UsT.jpeg",
-    "linkedin": "https://www.linkedin.com/in/shiva-menta-472750147/",
-    "website": "https://shivamenta.me/",
-    "github": "https://github.com/shiva-menta",
-    "semester_joined": "2023A",
-    "alumnus": false,
-    "graduation_year": 2024,
-    "job": null
-  }
+  "name": "Shiva Menta",
+  "pennkey": "smenta",
+  "major": "Economics",
+  "school": "Wharton",
+  "bio": "Hey! I'm Shiva and I study Economics and Computer Science. In my free time, I love listening to EDM and DJ'ing. Hit me up if you want to rave together.",
+  "hometown": "Burr Ridge, Illinois",
+  "teamRoles": [
+    {
+      "team": "Penn Courses",
+      "roles": ["Backend Engineer", "Team Lead"]
+    }
+  ],
+  "photo": "https://i.imgur.com/Cbh9UsT.jpeg",
+  "linkedin": "https://www.linkedin.com/in/shiva-menta-472750147/",
+  "website": "https://shivamenta.me/",
+  "github": "https://github.com/shiva-menta",
+  "semester_joined": "2023A",
+  "alumnus": false,
+  "graduation_year": 2024,
+  "job": null
+}

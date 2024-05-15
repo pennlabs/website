@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "Never skip bicep day.",
   "hometown": "Philadelphia, Pennsylvania",
-  "team": "Penn Clubs",
-  "roles": ["Frontend Engineer"],
+  "teamRoles": [
+    {
+      "team": "Penn Clubs",
+      "roles": ["Frontend Engineer"]
+    }
+  ],
   "photo": "https://i.imgur.com/VzjrF7g.jpeg",
   "linkedin": "",
   "website": "",

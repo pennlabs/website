@@ -5,9 +5,11 @@
   "pennkey": "cfair",
   "bio": "Cole is an M&T student interested in how the worlds of business and engineering intersect in fields ranging from technology to fashion to food. He spends his free time exploring interests in film, cooking, basketball, and service in the local community.",
   "hometown": "Charlottesville, VA",
-  "team": "Penn Clubs",
-  "roles": [
-    "Business Developer"
+  "teamRoles": [
+    {
+      "team": "Penn Clubs",
+      "roles": ["Business Developer"]
+    }
   ],
   "photo": "https://i.imgur.com/linhR2x.jpg",
   "linkedin": "https://www.linkedin.com/in/cole-fairchild-a78522174",
