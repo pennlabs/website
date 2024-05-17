@@ -1,26 +1,8 @@
-import { Construct } from 'constructs'
 import { App } from 'cdk8s'
-import { PennLabsChart, ReactApplication } from '@pennlabs/kittyhawk'
+import { ProductionChart } from './config/production'
+import { FeatureBranchChart } from './config/featureBranch'
 
-export class MyChart extends PennLabsChart {
-  constructor(scope: Construct) {
-    super(scope)
-
-    const image = 'pennlabs/website'
-    const domain = 'pennlabs.org'
-
-    new ReactApplication(this, 'serve', {
-      deployment: {
-        image,
-      },
-      domain: {
-        host: domain,
-        paths: ['/'],
-      },
-    })
-  }
-}
-
-const app = new App()
-new MyChart(app)
-app.synth()
+const deployToFeatureBranch = process.env.DEPLOY_TO_FEATURE_BRANCH == 'true';
+const app = new App();
+deployToFeatureBranch ? new FeatureBranchChart(app) : new ProductionChart(app);
+app.synth();
