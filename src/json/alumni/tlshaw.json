@@ -5,8 +5,12 @@
   "school": "College of Arts and Sciences",
   "bio": "Hey! I'm Thomas, an undergrad from Philly working here at PennLabs on some freaky internal tools and whatnot. I'm a huge frontend TypeScript fan, and when I'm not programming I'm making digital art or awful game prototypes.",
   "hometown": "Philadelphia",
-  "team": "Platform",
-  "roles": ["Frontend"],
+  "teamRoles": [
+    {
+      "team": "Platform",
+      "roles": ["Frontend"]
+    }
+  ],
   "photo": "https://i.imgur.com/jVkGDrO.jpg",
   "linkedin": "https://www.linkedin.com/in/thomas-shaw-54468b222/",
   "website": null,

@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "Photography, eating, coffee, music, and forever trying to get into crocheting",
   "hometown": "Holmdel, NJ",
-  "team": "Penn Clubs",
-  "roles": ["Business Developer"],
+  "teamRoles": [
+    {
+      "team": "Penn Clubs",
+      "roles": ["Business Developer"]
+    }
+  ],
   "photo": "https://i.imgur.com/S0APygI.jpeg",
   "linkedin": "https://www.linkedin.com/in/melaniechen864/",
   "website": "",

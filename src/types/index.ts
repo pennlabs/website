@@ -30,12 +30,16 @@ export interface IPost {
   timeToRead?: number
 }
 
+export interface ITeamRole {
+  team: ITeam
+  roles: IRole[]
+}
+
 export interface IMember {
   name: string
   major?: string
   school?: string
   photo?: string
-  roles: string[]
   pennkey: string
   semester_joined?: string
   alumnus: boolean
@@ -44,10 +48,14 @@ export interface IMember {
   graduation_year?: string
   linkedin?: string
   hometown?: string
-  team?: ITeam[] | ITeam
+  teamRoles: ITeamRole[]
   website?: string
   localImage?: { childImageSharp: GatsbyImageFluidProps }
   posts?: IPost[]
+}
+
+export interface ITeamMember extends IMember {
+  roles: string[]
 }
 
 export interface ITeam {

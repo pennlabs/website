@@ -5,8 +5,12 @@
   "school": "Wharton",
   "bio": "Hi! I'm Elisa, a student in Wharton. Big fan of yelp-ing and drinking iced oat milk lattes.",
   "hometown": "San Jose, CA",
-  "team": "Penn Mobile",
-  "roles": ["Business Developer"],
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["Business Developer"]
+    }
+  ],
   "photo": "https://i.imgur.com/VF5rtns.jpg",
   "linkedin": "https://www.linkedin.com/in/elisa-zhang/",
   "website": "",

@@ -1,18 +1,22 @@
 {
-    "name": "Jordan Hochman",
-    "pennkey": "jhawkman",
-    "major": "Computer Science + Mathematics",
-    "school": "Engineering",
-    "bio": "Hi! I'm Jordan, a junior at UPenn, and I'm pursuing a BSE in Computer Science, a second major in Mathematics, and a minor in Statistics! I'm very interested in machine learning, and in my free time I love playing pickleball, making educational YouTube videos, and playing the piano!",
-    "hometown": "Naples, Florida",
-    "team": "Penn Mobile",
-    "roles": ["iOS Mobile Engineer", "Team Lead"],
-    "photo": "https://i.imgur.com/31gi0lQ.png",
-    "linkedin": "https://www.linkedin.com/in/jhochman24/",
-    "website": "https://jordanh.xyz/",
-    "github": "https://github.com/jhawk0224",
-    "semester_joined": "2022C",
-    "alumnus": false,
-    "graduation_year": 2025,
-    "job": null
-  }
+  "name": "Jordan Hochman",
+  "pennkey": "jhawkman",
+  "major": "Computer Science + Mathematics",
+  "school": "Engineering",
+  "bio": "Hi! I'm Jordan, a junior at UPenn, and I'm pursuing a BSE in Computer Science, a second major in Mathematics, and a minor in Statistics! I'm very interested in machine learning, and in my free time I love playing pickleball, making educational YouTube videos, and playing the piano!",
+  "hometown": "Naples, Florida",
+  "teamRoles": [
+    {
+      "team": "Penn Mobile",
+      "roles": ["iOS Mobile Engineer", "Team Lead"]
+    }
+  ],
+  "photo": "https://i.imgur.com/31gi0lQ.png",
+  "linkedin": "https://www.linkedin.com/in/jhochman24/",
+  "website": "https://jordanh.xyz/",
+  "github": "https://github.com/jhawk0224",
+  "semester_joined": "2022C",
+  "alumnus": false,
+  "graduation_year": 2025,
+  "job": null
+}

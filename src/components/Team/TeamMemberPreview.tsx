@@ -14,7 +14,7 @@ import {
 } from '../../constants/measurements'
 import { TEAM_MEMBER_ROUTE } from '../../constants/routes'
 import { BLACK_ALPHA } from '../../constants/colors'
-import { IMember } from '../../types'
+import { ITeamMember } from '../../types'
 
 const StyledLink = styled(Link) <{}>`
   width: calc(100% + ${M2} + ${M2});
@@ -42,14 +42,8 @@ const Image = styled(BackgroundImage)`
   border-radius: ${BORDER_RADIUS};
 `
 
-export const TeamMemberPreview = ({
-  name,
-  roles,
-  pennkey,
-  localImage,
-  semester_joined: semesterJoined,
-  alumnus,
-}: IMember) => (
+export const TeamMemberPreview = ({ name, roles, pennkey, localImage, semester_joined}: ITeamMember): React.ReactElement => {
+  return (
   <Col margin={M2} sm={12} md={6} lg={3} key={pennkey}>
     <StyledLink to={TEAM_MEMBER_ROUTE(pennkey)}>
       {
@@ -61,11 +55,12 @@ export const TeamMemberPreview = ({
       <div style={{ marginBottom: M3 }}>
         <Tags tags={roles} />
       </div>
-      {semesterJoined && (
+      {semester_joined && (
         <P mb0 sm>
-          Member since {semesterToString(semesterJoined)}
+          Member since {semesterToString(semester_joined)}
         </P>
       )}
     </StyledLink>
   </Col>
-)
+  )
+}

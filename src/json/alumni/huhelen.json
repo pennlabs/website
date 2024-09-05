@@ -4,8 +4,12 @@
   "major": "Finance and Business Analytics",
   "school": "Wharton",
   "bio": "Hi! My name’s Helen, and I’m a sophomore at Wharton. Outside of Labs, I love going on coffee dates, exploring farmer’s markets, and casually hiking at national parks. Nice to meet you!",
-  "team": "Penn Clubs",
-  "roles": ["Business Developer"],
+  "teamRoles": [
+    {
+      "team": "Penn Clubs",
+      "roles": ["Business Developer"]
+    }
+  ],
   "photo": "https://i.imgur.com/0pe8d1A.jpeg",
   "linkedin": "https://www.linkedin.com/in/helentianhu/",
   "website": "",
