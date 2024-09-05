@@ -25,18 +25,18 @@ export const InfoSessions = () => (
       <Col margin={M2} sm={12} md={6} lg={4}>
         <Card shaded>
           <P mb0>
-            Sunday 9/3, 12:00-1:00pm
+            Monday 9/2/24, 7:00-8:00pm
             <br />
-            JMHH (Room TBD)
+            TOWN 100
           </P>
         </Card>
       </Col>
       <Col margin={M2} sm={12} md={6} lg={4}>
         <Card shaded>
           <P mb0>
-            Friday 9/8, 4:30-5:30pm
+            Friday 9/6/24, 5:30-6:30pm
             <br />
-            JMHH (Room TBD)
+            JMHH F65
           </P>
         </Card>
       </Col>
