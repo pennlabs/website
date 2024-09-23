@@ -1,0 +1,18 @@
+{
+  "name": "James Doh",
+  "pennkey": "dohj0109",
+  "major": "CIS",
+  "school": "Engineering",
+  "bio": "Ex-light machine gunner from the South Korean Army",
+  "hometown": "Seoul, South Korea",
+  "team": "Penn Courses",
+  "roles": ["Frontend Engineer"],
+  "photo": "https://i.imgur.com/8wKzhX0.jpeg",
+  "linkedin": "https://www.linkedin.com/in/james-doh",
+  "website": "https://jamesdoh.dev",
+  "github": "https://github.com/jamesdoh0109",
+  "semester_joined": "2024C",
+  "alumnus": false,
+  "graduation_year": 2026,
+  "job": null
+}
