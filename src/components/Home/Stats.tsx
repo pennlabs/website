@@ -27,12 +27,12 @@ import {
 } from '../../constants/measurements'
 
 const StatWrapper = styled.div<{ colorAlpha: (a: number) => string }>`
-  background: ${(props) => props.colorAlpha(1)};
+  background: ${props => props.colorAlpha(1)};
   padding: 1rem;
   border-radius: ${BORDER_RADIUS_LG};
   margin-bottom: 1.5rem;
   width: 100%;
-  box-shadow: 0 1px 8px ${(props) => props.colorAlpha(0.5)};
+  box-shadow: 0 1px 8px ${props => props.colorAlpha(0.5)};
 
   display: flex;
   justify-content: space-between;

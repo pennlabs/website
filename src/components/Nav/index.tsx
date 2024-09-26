@@ -30,7 +30,7 @@ const StyledNav = styled.nav<{ active: boolean }>`
     padding-bottom: 0.5rem;
     background: ${WHITE};
     min-height: 0;
-    max-height: ${(props) => {
+    max-height: ${props => {
       // Kinda kills the close transition, but it's a hack to get the height right
       return props.active ? '100vh' : MOBILE_HEADER_HEIGHT
     }};

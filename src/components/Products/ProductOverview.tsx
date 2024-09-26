@@ -9,24 +9,23 @@ const Image = styled.img<{ isEven: boolean }>`
   width: 100%;
 
   ${maxWidth(TABLET)} {
-    ${(props) => (props.isEven ? 'padding-left: 15%;' : 'padding-right: 15%;')}
+    ${props => (props.isEven ? 'padding-left: 15%;' : 'padding-right: 15%;')}
   }
 
   ${maxWidth(PHONE)} {
-    ${(props) =>
-      props.isEven ? 'padding-left: 1rem;' : 'padding-right: 1rem;'}
+    ${props => (props.isEven ? 'padding-left: 1rem;' : 'padding-right: 1rem;')}
   }
 `
 
-const Img = (props) => <Image as={GatsbyImage} {...props} />
+const Img = props => <Image as={GatsbyImage} {...props} />
 
 const StyledContainer = styled(Container)<{ isEven: boolean }>`
   display: flex;
   justify-content: center;
-  align-items: ${(props) => (props.isEven ? 'flex-end' : 'flex-start')};
+  align-items: ${props => (props.isEven ? 'flex-end' : 'flex-start')};
   flex-direction: column;
 
-  ${(props) =>
+  ${props =>
     props.isEven &&
     `
     * {

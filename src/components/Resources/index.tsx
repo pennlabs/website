@@ -39,7 +39,7 @@ export const Resources = () => (
     <Section style={{ paddingTop: 0 }}>
       <Fade>
         <Row margin={M1}>
-          {resources.map((props) => (
+          {resources.map(props => (
             <Resource key={props.name} {...props} />
           ))}
         </Row>
