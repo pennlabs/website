@@ -81,13 +81,11 @@ const Btn = ({
   font-family: ${INTER};
   border: none;
   border-radius: ${BORDER_RADIUS};
-  padding: ${
-    size === EBtnSize.LG
-      ? '0.75rem 1rem'
-      : size === EBtnSize.SM
-      ? '0.25rem 0.75rem'
-      : '0.5rem 1rem'
-  };
+  padding: ${size === EBtnSize.LG
+    ? '0.75rem 1rem'
+    : size === EBtnSize.SM
+    ? '0.25rem 0.75rem'
+    : '0.5rem 1rem'};
   display: inline-block;
   text-decoration: none;
   cursor: pointer;
@@ -98,9 +96,11 @@ const Btn = ({
   border-width: ${bordered ? '2px' : '0'};
   border-style: solid;
 
-  font-size: ${
-    size === EBtnSize.LG ? '120%' : size === EBtnSize.SM ? '80%' : 'inherit'
-  };
+  font-size: ${size === EBtnSize.LG
+    ? '120%'
+    : size === EBtnSize.SM
+    ? '80%'
+    : 'inherit'};
 
   &:visited {
     text-decoration: none;

@@ -62,7 +62,7 @@ export class Mailchimp extends React.Component<{}, IMailchimpState> {
                 name="EMAIL"
                 id="email"
                 required
-                onChange={e =>
+                onChange={(e) =>
                   this.handleChange(e as React.ChangeEvent<HTMLInputElement>)
                 }
               />
@@ -76,7 +76,7 @@ export class Mailchimp extends React.Component<{}, IMailchimpState> {
                 name="FNAME"
                 id="firstName"
                 required={false}
-                onChange={e =>
+                onChange={(e) =>
                   this.handleChange(e as React.ChangeEvent<HTMLInputElement>)
                 }
               />
@@ -89,7 +89,7 @@ export class Mailchimp extends React.Component<{}, IMailchimpState> {
                 name="LNAME"
                 id="lastName"
                 required={false}
-                onChange={e =>
+                onChange={(e) =>
                   this.handleChange(e as React.ChangeEvent<HTMLInputElement>)
                 }
               />

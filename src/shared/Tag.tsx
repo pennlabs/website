@@ -24,7 +24,7 @@ export const Tags = ({ tags }: ITagsProps) => {
   if (!tags || !tags.length) return null
   return (
     <span style={{ marginBottom: '-4rem' }}>
-      {tags.map(tag => (
+      {tags.map((tag) => (
         <Tag key={tag}>{tag}</Tag>
       ))}
     </span>

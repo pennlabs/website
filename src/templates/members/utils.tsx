@@ -249,7 +249,7 @@ export const GenericMemberTemplate = ({
                   <P mb2>
                     Part of{' '}
                     {Array.isArray(team)
-                      ? team.map(t => t.name).join(' / ')
+                      ? team.map((t) => t.name).join(' / ')
                       : team?.name ?? 'Penn Labs'}
                   </P>
                   <Links
@@ -304,7 +304,7 @@ export const GenericMemberTemplate = ({
               <H3>Posts</H3>
             </Fade>
             <Row margin={M1}>
-              <Posts posts={posts.filter(p => !p.frontmatter.draft)} />
+              <Posts posts={posts.filter((p) => !p.frontmatter.draft)} />
             </Row>
           </>
         ) : null}
