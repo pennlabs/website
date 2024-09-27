@@ -1,0 +1,19 @@
+{
+    "name": "Ruth Zhao",
+    "pennkey": "ruthzhao",
+    "major": "Physics, Cognitive Science", 
+    "school": "College",
+    "bio": "Sophomore currently studying physics & cognitive science. You can find me hiking, eating ketchup chips and painting!",
+    "hometown": "Vancouver, Canada",
+    "team": "Penn Mobile",
+    "roles": [
+        "Frontend Designer" 
+    ],
+    "photo": "https://i.imgur.com/6Waheky.png",
+    "linkedin": "https://www.linkedin.com/in/ruth-zhao-450446251/",
+    "github": "",
+    "semester_joined": "2024C",
+    "alumnus": false,
+    "graduation_year": 2027,
+    "job": null
+}
