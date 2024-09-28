@@ -1,0 +1,20 @@
+{
+    "name": "Minghan Sun",
+    "pennkey": "sunmi",
+    "major": "Computer Science",
+    "school": "Engineering",
+    "bio": "Hey, I’m Minghan, a sophomore at UPenn. I love playing soccer and making orange chicken.",
+    "hometown": "Seattle, WA”
+    "team": "Penn Mobile",
+    "roles": [
+        "Backend Engineer"
+    ],
+    "photo": " https://imgur.com/a/wjOEnaj",
+    "linkedin": " https://www.linkedin.com/in/minghan-sun-46a591236/",
+    "website": " https://minghansun.com/”,
+    "github": " https://github.com/minghansun1",
+    "semester_joined": "2022C",
+    "alumnus": false,
+    "graduation_year": 2027,
+    "job": null
+}
