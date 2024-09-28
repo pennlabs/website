@@ -23,7 +23,7 @@ const FadeNode = styled.div<IFadeNodeProps>(
     will-change: opacity, visibility;
 
     ${show &&
-      `
+    `
     opacity: 1;
     transform: translate(0, 0);
     display: flex;
@@ -46,7 +46,7 @@ export const Fade = ({ delay, distance, children }: IFadeProps) => {
   const [show, setShow] = React.useState<boolean>(false)
 
   React.useEffect(() => {
-    const observer = new IntersectionObserver(entries => {
+    const observer = new IntersectionObserver((entries) => {
       // In your case there's only one element to observe:
       if (entries[0].isIntersecting) {
         // Not possible to set it back to false like this:

@@ -52,7 +52,7 @@ interface IStat {
 const stats: IStat[] = [
   {
     colorAlpha: TEAL_ALPHA,
-    title: '9 years',
+    title: '12 years',
     description: 'of supporting the Penn community',
   },
   {
