@@ -21,9 +21,9 @@ export const Card = styled.div<ICardProps>`
   border-radius: ${BORDER_RADIUS_LG};
   background: ${WHITE};
   box-shadow: 0 0 0 ${BLACK_ALPHA(0)};
-  ${props => props.bordered && `border: 1px solid ${BORDER};`}
-  ${props => props.shaded && `box-shadow: 0 1px 6px ${BLACK_ALPHA(0.125)};`}
-  ${props =>
+  ${(props) => props.bordered && `border: 1px solid ${BORDER};`}
+  ${(props) => props.shaded && `box-shadow: 0 1px 6px ${BLACK_ALPHA(0.125)};`}
+  ${(props) =>
     props.clickable &&
     `
     cursor: pointer;
@@ -36,7 +36,7 @@ export const Card = styled.div<ICardProps>`
       transform: translateY(-2px);
     }
   `}
-  ${props =>
+  ${(props) =>
     props.hoverable &&
     `
     transition: all ${SHORT_ANIMATION_DURATION}ms ease;

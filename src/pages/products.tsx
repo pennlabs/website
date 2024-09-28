@@ -25,7 +25,7 @@ const Logo = styled.div<{ src: string }>`
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url(${props => props.src});
+  background-image: url(${(props) => props.src});
   margin-right: ${M2};
   margin-bottom: 0;
 
