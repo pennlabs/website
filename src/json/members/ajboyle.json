@@ -1,0 +1,19 @@
+{
+    "name": "AJ Boyle",
+    "pennkey": "ajboyle",
+    "major": "Computer Science",
+    "school": "Engineering",
+    "bio": "Chronic yapper, grass touching enthusiast",
+    "hometown": "New Providence, NJ",
+    "team": "Penn Clubs",
+    "roles": [
+        "Frontend Engineer"
+    ],
+    "photo": "https://i.imgur.com/qW5pkL9.jpeg",
+    "linkedin": "https://www.linkedin.com/in/aj-boyle/",
+    "github": "https://github.com/ajboyle806",
+    "semester_joined": "2024C",
+    "alumnus": false,
+    "graduation_year": 2028,
+    "job": null
+}

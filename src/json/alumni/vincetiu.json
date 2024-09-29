@@ -6,9 +6,7 @@
   "bio": "Hey, my name's Vince and I'm a DevOps engineer studying Computer Science! Outside of coding, I love playing basketball, eating ice cream and watching anime. I also love meeting new people and going to hackathons, so feel free to reach out!",
   "hometown": "Manila, Philippines",
   "team": "Platform",
-  "roles": [
-      "DevOps"
-  ],
+  "roles": ["DevOps"],
   "photo": "https://i.imgur.com/1Ct4Yu7.jpg",
   "linkedin": "https://www.linkedin.com/in/vincetiu8/",
   "github": "https://github.com/vincetiu8/",

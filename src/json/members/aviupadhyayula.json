@@ -1,18 +1,17 @@
 {
-    "name": "Avi Upadhyayula",
-    "major": "Computer Science",
-    "school": "Engineering",
-    "pennkey": "aviu",
-    "bio": "Issues lead 😔",
-    "hometown": "San Jose, CA",
-    "team": "Penn Clubs",
-    "roles": ["Backend Engineer"],
-    "photo": "https://i.imgur.com/nAR1gcv.jpeg?1",
-    "linkedin": "https://www.linkedin.com/in/aupadhy/",
-    "github": "https://github.com/aviupadhyayula",
-    "semester_joined": "2022C",
-    "alumnus": false,
-    "graduation_year": 2025,
-    "job": null
-  }
-  
+  "name": "Avi Upadhyayula",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "pennkey": "aviu",
+  "bio": "Issues lead 😔",
+  "hometown": "San Jose, CA",
+  "team": "Penn Clubs",
+  "roles": ["Backend Engineer"],
+  "photo": "https://i.imgur.com/nAR1gcv.jpeg?1",
+  "linkedin": "https://www.linkedin.com/in/aupadhy/",
+  "github": "https://github.com/aviupadhyayula",
+  "semester_joined": "2022C",
+  "alumnus": false,
+  "graduation_year": 2025,
+  "job": null
+}

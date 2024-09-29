@@ -16,7 +16,7 @@ import { TEAM_MEMBER_ROUTE } from '../../constants/routes'
 import { BLACK_ALPHA } from '../../constants/colors'
 import { IMember } from '../../types'
 
-const StyledLink = styled(Link) <{}>`
+const StyledLink = styled(Link)<{}>`
   width: calc(100% + ${M2} + ${M2});
   padding: ${M2};
   border-radius: ${BORDER_RADIUS_LG};
@@ -52,9 +52,9 @@ export const TeamMemberPreview = ({
 }: IMember) => (
   <Col margin={M2} sm={12} md={6} lg={3} key={pennkey}>
     <StyledLink to={TEAM_MEMBER_ROUTE(pennkey)}>
-      {
-        localImage?.childImageSharp.fluid && <Image fluid={localImage.childImageSharp.fluid} />
-      }
+      {localImage?.childImageSharp.fluid && (
+        <Image fluid={localImage.childImageSharp.fluid} />
+      )}
       <P mb1 lg>
         <strong>{name}</strong>
       </P>

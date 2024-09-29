@@ -73,7 +73,6 @@ const StyledCenteredFlex = styled(CenteredFlex)`
 const MemberBio = ({
   author: { pennkey, localImage, bio = '', name },
 }: IMemberBioProps): React.ReactElement => {
-
   // Bios may contain markdown. Make sure to parse these into HTML!
   const [bioAsHtml, updateBioAsHtml] = useState(bio)
   markdownProcessor
@@ -84,12 +83,16 @@ const MemberBio = ({
     <Fade distance={M1}>
       <Card shaded>
         <StyledCenteredFlex>
-          <Thumbnail src={(localImage?.childImageSharp.fluid as FluidObject).src} />
+          <Thumbnail
+            src={(localImage?.childImageSharp.fluid as FluidObject).src}
+          />
           <div>
             <H4 mb2>{name}</H4>
             <Bio dangerouslySetInnerHTML={{ __html: bioAsHtml }} />
 
-            <div style={{ transform: 'scale(0.8)', transformOrigin: 'top left' }}>
+            <div
+              style={{ transform: 'scale(0.8)', transformOrigin: 'top left' }}
+            >
               <Link to={TEAM_MEMBER_ROUTE(pennkey)}>
                 Learn more <LinkChevronRightIcon />
               </Link>

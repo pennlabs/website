@@ -6,10 +6,7 @@
   "bio": "I'm a freshman studying [hipster CS](https://www.nets.upenn.edu/). I know a little too much about Japanese rhythm games. I think the harrier jump jet is overrated, especially compared to stairs.",
   "hometown": "Chicago, IL",
   "team": "Penn Courses",
-  "roles": [
-    "Team Lead",
-    "Full Stack Engineer"
-  ],
+  "roles": ["Team Lead", "Full Stack Engineer"],
   "photo": "https://danxtao.com/assets/headshot.jpg",
   "linkedin": "https://www.linkedin.com/in/xdtao/",
   "website": "http://danxtao.com/about.html",

@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
-import { FluidObject, GatsbyImageFluidProps, GatsbyImageProps } from 'gatsby-image'
+import {
+  FluidObject,
+  GatsbyImageFluidProps,
+  GatsbyImageProps,
+} from 'gatsby-image'
 import BackgroundImage from 'gatsby-background-image'
 
 import { TEAM_MEMBER_ROUTE, HOME_ROUTE } from '../../constants/routes'
@@ -83,7 +87,9 @@ const Byline = ({ authors }: { authors: IMember[] }) => {
     )
   }
 
-  const getMemberImage = (localImage: { childImageSharp: GatsbyImageFluidProps }) =>
+  const getMemberImage = (localImage: {
+    childImageSharp: GatsbyImageFluidProps
+  }) =>
     (localImage &&
       localImage.childImageSharp &&
       localImage.childImageSharp.fluid) ||
