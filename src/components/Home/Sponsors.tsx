@@ -25,6 +25,13 @@ export const Sponsors = (): React.ReactElement => {
           }
         }
       }
+      imc: file(relativePath: { eq: "sponsors/imc.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -32,6 +39,10 @@ export const Sponsors = (): React.ReactElement => {
     {
       fluid: data.jane_street.childImageSharp.fluid,
       alt: 'Jane Street',
+    },
+    {
+      fluid: data.imc.childImageSharp.fluid,
+      alt: 'IMC Trading',
     },
   ]
 
@@ -59,7 +70,7 @@ export const Sponsors = (): React.ReactElement => {
                     <Img
                       fluid={fluid}
                       alt={alt}
-                      style={{ maxWidth: '60%', height: 'auto' }}
+                      style={{ maxHeight: '100px', maxWidth: '60%' }}
                     />
                   </div>
                 </Col>
