@@ -134,7 +134,7 @@ module.exports = {
                   date: edge.node.frontmatter.publishedAt,
                   url:
                     site.siteMetadata.siteUrl +
-                    'blog/' +
+                    '/blog/' +
                     edge.node.frontmatter.slug,
                   guid:
                     site.siteMetadata.siteUrl +
