@@ -1,0 +1,18 @@
+{
+  "name": "Aaron Mei",
+  "pennkey": "meiron",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "bio": "Hello! I'm a sophomore studying CIS from Maryland. In my free time, I enjoy running, playing video games and thinking about algorithms.",
+  "hometown": "North Potomac, MD",
+  "team": "Penn Mobile",
+  "roles": ["Android Mobile Engineer", "Team Lead"],
+  "photo": "https://i.imgur.com/9SWyLAQ.jpg",
+  "linkedin": "https://www.linkedin.com/in/aaron-mei-513b73a2/",
+  "website": "",
+  "github": "https://github.com/meiron03",
+  "semester_joined": "2023A",
+  "alumnus": true,
+  "graduation_year": 2025,
+  "job": null
+}
