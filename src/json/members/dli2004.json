@@ -1,0 +1,20 @@
+{
+    "name": "Daniel Li",
+    "pennkey": "dli2004",
+    "major": "Computer Science",
+    "school": "SEAS",
+    "bio": "Eats. Dabbles in poker. Has an obnoxious laugh.",
+    "hometown": "Philadelphia, PA",
+    "team": "Penn Courses",
+    "roles": [
+        "Frontend Engineer"
+    ],
+    "photo": "https://imgur.com/a/ATOPix6",
+    "linkedin": "https://github.com/lidanielm",
+    "website": "",
+    "github": "https://github.com/lidanielm",
+    "semester_joined": "2025A",
+    "alumnus": false,
+    "graduation_year": 2027,
+    "job": null
+}
