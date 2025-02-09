@@ -1,2 +1,3 @@
 language: typescript
-app: node main.js
+app: echo "Hello"
+# should be node main.ts
