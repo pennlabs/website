@@ -32,6 +32,13 @@ export const Sponsors = (): React.ReactElement => {
           }
         }
       }
+      de_shaw: file(relativePath: { eq: "sponsors/deshaw.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -43,6 +50,10 @@ export const Sponsors = (): React.ReactElement => {
     {
       fluid: data.imc.childImageSharp.fluid,
       alt: 'IMC Trading',
+    },
+    {
+      fluid: data.de_shaw.childImageSharp.fluid,
+      alt: 'D. E. Shaw group',
     },
   ]
 
