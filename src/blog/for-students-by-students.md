@@ -1,5 +1,5 @@
 ---
-title: 'For Students, By Students: Penn Labs' Role in an Interconnected Student Body'
+title: '\"For Students, By Students\": Penn Labs\' Role in an Interconnected Student Body'
 slug: for-students-by-students
 authors: ['melitski']
 publishedAt: 2025-09-08
