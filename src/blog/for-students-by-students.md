@@ -1,10 +1,11 @@
 ---
-title: '\"For Students, By Students\": Penn Labs\' Role in an Interconnected Student Body'
+title: 'For Students, By Students: The Role of Penn Labs in an Interconnected Student Body'
 slug: for-students-by-students
 authors: ['melitski']
 publishedAt: 2025-09-08
 coverPhoto: ../images/blog/product-direction.png
 ---
+
 Last week, I pitched Penn Labs to students at the annual SAC Fair, our informational sessions, and other recruiting events. Like other student organizations, these events are crucial touchpoints for prospective members. Though, I noticed that my conversations often started with:
 
 > **Me**: *Are you interested in joining Penn Labs?*
