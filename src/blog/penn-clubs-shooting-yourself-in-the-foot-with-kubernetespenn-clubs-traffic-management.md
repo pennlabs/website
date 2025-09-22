@@ -4,7 +4,7 @@ slug: penn-clubs-shooting-yourself-in-the-foot-with-kubernetes
 authors: ['esinx']
 publishedAt: 2025-09-18
 customExcerpt: 'The Fall 2025 War Room reminded us why we watch so closely: scaling isn't about "more" — it's about scaling "everything" together.'
-coverPhoto: ../images/blog/penn-clubs-shooting-yourself-in-the-foot-cover.png
+coverPhoto: '../images/blog/penn-clubs-shooting-yourself-in-the-foot-cover.png'
 ---
 
 # Penn Clubs: Shooting Yourself in the Foot with Kubernetes
