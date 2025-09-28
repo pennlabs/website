@@ -1,0 +1,19 @@
+{
+    "name": "Zhiyao Tang",
+    "pennkey": "zhiyaot",
+    "major": "Electrical Engineering", 
+    "school": "Engineering",
+    "bio": "Full time cat dad, part time engineer.",
+    "hometown": "Shanghai, China",
+    "team": "Platform",
+    "roles": [
+        "DevOps" 
+    ],
+    "photo": "https://avatars.githubusercontent.com/u/32091356",
+    "linkedin": "https://www.linkedin.com/in/zhiyaot/",
+    "github": "https://github.com/zhiyaot",
+    "semester_joined": "2025C",
+    "alumnus": false,
+    "graduation_year": 2028,
+    "job": null
+}
