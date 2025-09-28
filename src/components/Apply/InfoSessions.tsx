@@ -25,7 +25,9 @@ export const InfoSessions = () => (
       <Col margin={M2} sm={12} md={6} lg={4}>
         <Card shaded>
           <P mb0>
-            Monday 9/2/24, 7:00-8:00pm
+            Info Session
+            <br />
+            Tuesday 9/2/25, 6:45-7:45pm
             <br />
             TOWN 100
           </P>
@@ -34,9 +36,11 @@ export const InfoSessions = () => (
       <Col margin={M2} sm={12} md={6} lg={4}>
         <Card shaded>
           <P mb0>
-            Friday 9/6/24, 5:30-6:30pm
+            Open House GBM (encouraged to attend)
             <br />
-            JMHH F65
+            Friday 9/5/25, 5:00-6:30pm
+            <br />
+            JMHH 260
           </P>
         </Card>
       </Col>

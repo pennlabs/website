@@ -7,7 +7,7 @@ import { BORDER_RADIUS_LG } from '../../constants/measurements'
 export const AboutHero = () => {
   const data = useStaticQuery(graphql`
     query {
-      aboutHeroImg: file(relativePath: { eq: "labs-group-sp22.jpg" }) {
+      aboutHeroImg: file(relativePath: { eq: "labs-group-sp24.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 1000, quality: 100) {
             ...GatsbyImageSharpFluid
