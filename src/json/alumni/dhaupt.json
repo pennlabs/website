@@ -12,7 +12,7 @@
   "website": "https://davi.sh/",
   "github": "https://github.com/davish/",
   "semester_joined": "2017C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2021,
   "job": null
 }

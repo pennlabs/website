@@ -12,7 +12,7 @@
   "website": "https://www.valenciafu.me/",
   "github": "https://github.com/valenciafu",
   "semester_joined": "2017C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": null,
   "job": null
 }
