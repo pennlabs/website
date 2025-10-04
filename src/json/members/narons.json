@@ -1,0 +1,18 @@
+{
+    "name": "Nathan Aronson",
+    "pennkey": "narons",
+    "major": "Computer Science",
+    "school": "Engineering",
+    "bio": "Aspiring ski bum.",
+    "hometown": "Wynnewood, PA",
+    "team": "Penn Mobile",
+    "roles": ["iOS Mobile Engineer"],
+    "photo": "https://www.seas.upenn.edu/~narons/headshot.png",
+    "linkedin": "https://www.linkedin.com/in/nathanaronson/",
+    "website": "https://www.seas.upenn.edu/~narons/",
+    "github": "https://github.com/nathanaronson/",
+    "semester_joined": "2025C",
+    "alumnus": false,
+    "graduation_year": 2028,
+    "job": null
+}
