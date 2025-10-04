@@ -12,7 +12,7 @@
   "website": "https://www.vardnan.com/",
   "github": "https://github.com/vardnan",
   "semester_joined": "2022C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2024,
   "job": null
 }
