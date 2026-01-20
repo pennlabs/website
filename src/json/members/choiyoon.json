@@ -5,7 +5,7 @@
   "school": "SAS",
   "bio": "Hi, this is Yoonjung. I'm a BizDev for Penn Clubs.",
   "hometown": "Hong Kong",
-  "team": ["Penn Clubs"],
+  "team": "Penn Clubs",
   "roles": ["Director Emeritus", "Business Developer", "Team Lead"],
   "photo": "https://i.imgur.com/grmQbtV.jpeg",
   "linkedin": "https://www.linkedin.com/in/yoonjungchoi05/",
