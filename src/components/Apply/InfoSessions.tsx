@@ -27,14 +27,14 @@ export const InfoSessions = () => (
           <P mb0>
             Info Session
             <br />
-            Tuesday 9/2/25, 6:45-7:45pm
+            Friday 1/23/26, 5:30-6:30pm
             <br />
-            TOWN 100
+            JMHH F70
           </P>
         </Card>
       </Col>
       <Col margin={M2} sm={12} md={6} lg={4}>
-        <Card shaded>
+        {/* <Card shaded>
           <P mb0>
             Open House GBM (encouraged to attend)
             <br />
@@ -42,7 +42,7 @@ export const InfoSessions = () => (
             <br />
             JMHH 260
           </P>
-        </Card>
+        </Card> */}
       </Col>
     </Row>
 
