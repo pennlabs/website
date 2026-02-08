@@ -1,0 +1,20 @@
+{
+  "name": "Benjamin Liu",
+  "pennkey": "bliu8",
+  "major": "Computer Science",
+  "school": "Engineering",
+  "bio": "Studying CS @ Penn. Avid runner. Golden State Warriors fan.",
+  "hometown": "Palo Alto, CA",
+  "team": "Penn Mobile",
+  "roles": [
+    "Backend Engineer"
+  ],
+  "photo": "https://imgur.com/a/80Or9Zo",
+  "linkedin": "https://www.linkedin.com/in/benliu8/",
+  "website": "https://benliu.vercel.app/",
+  "github": "https://github.com/bliu8",
+  "semester_joined": "2026A",
+  "alumnus": false,
+  "graduation_year": 2029,
+  "job": null
+}
