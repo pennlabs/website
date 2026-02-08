@@ -1,0 +1,18 @@
+{
+  "name": "Grace Chi",
+  "pennkey": "gracechi",
+  "major": "Artificial Intelligence",
+  "school": "SEAS",
+  "bio": "Hi I'm Grace! I'm an AI major in SEAS and I'm working on backend dev for Penn Mobile. I really like pineapple on pizza!",
+  "hometown": "Mason, Ohio",
+  "team": "Part of Penn Mobile",
+  "roles": ["Backend Engineer"],
+  "photo": "https://i.imgur.com/TP0TOdN.jpeg",
+  "linkedin": "linkedin.com/in/grace-chi-917413297",
+  "website": "",
+  "github": "https://github.com/gracech1",
+  "semester_joined": "2026S",
+  "alumnus": false,
+  "graduation_year": 2028,
+  "job": null
+}
