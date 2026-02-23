@@ -6,13 +6,13 @@
   "bio": "Hi, I'm Vedha and my favorite things are food and my golden retriever.",
   "hometown": "Pittsburgh, PA",
   "team": "Penn Mobile",
-  "roles": ["Android Mobile Engineer", "Team Lead"],
+  "roles": ["Android Mobile Engineer"],
   "photo": "https://i.imgur.com/bVCbRVf.jpg",
   "linkedin": "https://www.linkedin.com/in/vedha-avali/",
   "website": "",
   "github": "https://github.com/vavali08",
   "semester_joined": "2023C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2026,
   "job": null
 }
