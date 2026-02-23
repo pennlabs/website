@@ -5,11 +5,11 @@
     "school": "SEAS",
     "bio": "Hi, I like to eat watermelon.",
     "hometown": "San Antonio, Texas",
-    "team": "Penn Courses",
+    "team": ["Penn Courses"],
     "roles": [
         "Designer" 
     ],
-    "photo": "https://imgur.com/a/Sns6dW4",
+    "photo": "https://imgur.com/a/Sns6dW4.jpeg",
     "linkedin": "https://www.linkedin.com/in/helen-luo-74b999310/",
     "github": "",
     "semester_joined": "2026A",
