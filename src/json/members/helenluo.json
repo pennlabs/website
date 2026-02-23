@@ -1,1 +1,19 @@
-
+{
+    "name": "Helen Luo",
+    "pennkey": "helenluo",
+    "major": "Computer Science", 
+    "school": "SEAS",
+    "bio": "Hi, I like to eat watermelon.",
+    "hometown": "San Antonio, Texas",
+    "team": "Penn Courses",
+    "roles": [
+        "Designer" 
+    ],
+    "photo": "https://imgur.com/a/Sns6dW4",
+    "linkedin": "https://www.linkedin.com/in/helen-luo-74b999310/",
+    "github": "",
+    "semester_joined": "2026A",
+    "alumnus": false,
+    "graduation_year": 2028,
+    "job": null
+}
