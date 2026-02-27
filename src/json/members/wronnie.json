@@ -1,0 +1,20 @@
+{
+    "name": "Ronnie Wang",
+    "pennkey": "wronnie",
+    "major": "Computer Science",
+    "school": "Engineering",
+    "bio": "Hello hello",
+    "hometown": "Pittsburgh, PA",
+    "team": "Penn Mobile",
+    "roles": [
+        "Android Mobile Engineer"
+    ],
+    "photo": "https://i.imgur.com/OpKBcn6.jpeg",
+    "linkedin": null,
+    "website": null,
+    "github": "https://github.com/RonTonPeso",
+    "semester_joined": "2025A",
+    "alumnus": false,
+    "graduation_year": 2028,
+    "job": null
+}
