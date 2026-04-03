@@ -275,3 +275,28 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 }
+
+const DEFAULT_IMAGE_PATH = path.resolve('./src/images/default-avatar.png')
+
+exports.onCreateNode = async ({
+  node,
+  actions,
+  createNodeId,
+  cache,
+  store,
+}) => {
+  const { createRemoteFileNode } = require('gatsby-source-filesystem')
+  const { createNodeField } = actions
+
+  if (
+    (node.internal.type === 'MembersJson' || node.internal.type === 'AlumniJson') &&
+    !node.localImage
+  ) {
+    // node.photo failed to download, create a field pointing to default image
+    createNodeField({
+      node,
+      name: 'localImage',
+      value: DEFAULT_IMAGE_PATH,
+    })
+  }
+}
