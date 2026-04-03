@@ -100,6 +100,7 @@ module.exports = {
       options: {
         nodeType: 'MembersJson',
         imagePath: 'photo',
+        filter: node => node.photo && node.photo.length > 0,
       },
     },
     {
@@ -107,6 +108,7 @@ module.exports = {
       options: {
         nodeType: 'AlumniJson',
         imagePath: 'photo',
+        filter: node => node.photo && node.photo.length > 0,
       },
     },
     {
