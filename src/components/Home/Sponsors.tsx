@@ -70,11 +70,11 @@ export const Sponsors = (): React.ReactElement => {
       alt: 'D. E. Shaw group',
     },
     {
-      fluid: data.citadel.childImageSharp.fluid
+      fluid: data.citadel.childImageSharp.fluid,
       alt: 'Citadel',
     },
     {
-      fluid: data.est.ChildImageSharp.fluid
+      fluid: data.est.ChildImageSharp.fluid,
       alt: 'Evergreen Statistical Trading',
     },
   ]
