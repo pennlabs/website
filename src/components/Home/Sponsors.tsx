@@ -39,6 +39,20 @@ export const Sponsors = (): React.ReactElement => {
           }
         }
       }
+      citadel: file(relativePath: { eq: "sponsors/citadel.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      est: file(relativePath: { eq: "sponsors/est.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 500, quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -54,6 +68,14 @@ export const Sponsors = (): React.ReactElement => {
     {
       fluid: data.de_shaw.childImageSharp.fluid,
       alt: 'D. E. Shaw group',
+    },
+    {
+      fluid: data.citadel.childImageSharp.fluid
+      alt: 'Citadel',
+    },
+    {
+      fluid: data.est.ChildImageSharp.fluid
+      alt: 'Evergreen Statistical Trading',
     },
   ]
 
