@@ -74,7 +74,7 @@ export const Sponsors = (): React.ReactElement => {
       alt: 'Citadel',
     },
     {
-      fluid: data.est.ChildImageSharp.fluid,
+      fluid: data.est.childImageSharp.fluid,
       alt: 'Evergreen Statistical Trading',
     },
   ]
