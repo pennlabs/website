@@ -2,7 +2,7 @@
   "name": "Derek Cho",
   "pennkey": "derekcho",
   "major": "Computer Science + Finance/Stats",
-  "school": "CAS & Wharton",
+  "school": "SEAS & Wharton",
   "bio": "Lives on brown sugar oolong milk tea",
   "hometown": "Tenafly, NJ",
   "team": "Office Hours Queue",
@@ -13,6 +13,6 @@
   "github": "https://github.com/dkwncho",
   "semester_joined": "2024C",
   "alumnus": false,
-  "graduation_year": 2028,
+  "graduation_year": null,
   "job": null
 }
