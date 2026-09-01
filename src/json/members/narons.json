@@ -5,7 +5,7 @@
     "school": "Engineering",
     "bio": "Aspiring ski bum.",
     "hometown": "Park City, UT",
-    "team": "Penn Mobile",
+    "team": ["Penn Mobile"],
     "roles": ["iOS Mobile Engineer"],
     "photo": "https://www.engineering.upenn.edu/~narons/headshot.png",
     "linkedin": "https://www.linkedin.com/in/nathanaronson/",
