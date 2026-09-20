@@ -21,4 +21,5 @@ RUN yarn build
 ENV GHOST_API_KEY ""
 
 FROM nginx:1.12
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=build-deps /app/public/ /usr/share/nginx/html
