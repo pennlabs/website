@@ -1,4 +1,5 @@
 {
+  "name": "Cassie Mai",
   "pennkey": "cassieym",
   "major": "Computer Science",
   "school": "SEAS",
@@ -11,4 +12,7 @@
   "website": "",
   "github": "https://github.com/cassieym",
   "semester_joined": "2026A",
+  "alumnus": false,
+  "graduation_year": 2029,
+  "job": null
 }
