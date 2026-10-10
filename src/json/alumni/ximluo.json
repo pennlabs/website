@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": " ",
   "hometown": "Ellicott City, MD",
-  "team": "Penn Mobile",
-  "roles": ["iOS Mobile Engineer"],
+  "team": [
+    "Penn Mobile"
+  ],
+  "roles": [
+    "iOS Mobile Engineer"
+  ],
   "photo": "https://i.imgur.com/bY8Gi6Z.jpeg",
   "linkedin": "https://www.linkedin.com/in/ximingluo/",
   "website": "https://www.ximingluo.com",

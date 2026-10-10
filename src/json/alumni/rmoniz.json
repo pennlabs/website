@@ -5,8 +5,13 @@
   "school": "Engineering",
   "bio": "Always locked in 🔐",
   "hometown": "Glen Ridge, NJ",
-  "team": "Penn Clubs",
-  "roles": ["Backend Engineer", "Team Lead"],
+  "team": [
+    "Penn Clubs"
+  ],
+  "roles": [
+    "Backend Engineer",
+    "Team Lead"
+  ],
   "photo": "https://avatars.githubusercontent.com/u/60864468?v=4",
   "linkedin": "https://www.linkedin.com/in/rohan-moniz/",
   "website": "https://www.rohanmoniz.com",

@@ -5,7 +5,9 @@
   "pennkey": "hdominic",
   "bio": "I'm an iOS developer and product designer from the midwest! I <3 Penn Mobile",
   "hometown": "Dell Rapids, SD",
-  "team": "Penn Mobile",
+  "team": [
+    "Penn Mobile"
+  ],
   "roles": [
     "Team Lead",
     "iOS Mobile Engineer",

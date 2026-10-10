@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "Ex-light machine gunner from the South Korean Army",
   "hometown": "Seoul, South Korea",
-  "team": "Penn Courses",
-  "roles": ["Frontend Engineer"],
+  "team": [
+    "Penn Courses"
+  ],
+  "roles": [
+    "Frontend Engineer"
+  ],
   "photo": "https://i.imgur.com/8wKzhX0.jpeg",
   "linkedin": "https://www.linkedin.com/in/james-doh",
   "website": "https://jamesdoh.dev",

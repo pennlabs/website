@@ -5,8 +5,12 @@
   "school": "SEAS",
   "bio": "Hi, I'm Preetam! I'm an MSE CIS student specializing in systems, with a strong interest in cloud computing, distributed systems, and backend infrastructure. Outside of CS, I'm a lifelong fan of Real Madrid and love to work out.",
   "hometown": "Augusta, GA",
-  "team": "Platform",
-  "roles": ["Platform Engineer"],
+  "team": [
+    "Platform"
+  ],
+  "roles": [
+    "Platform Engineer"
+  ],
   "photo": "https://i.imgur.com/3fyxEV8.jpeg",
   "linkedin": "https://www.linkedin.com/in/preetam-jain",
   "website": "https://preetamjain.com",

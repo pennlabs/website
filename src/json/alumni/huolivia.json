@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "Hi, I'm Olivia! I study Computer Science in Engineering. I'm from St. Louis, Missouri, and I am a Frontend Engineer on the Courses team.",
   "hometown": "St. Louis, Missouri",
-  "team": "Penn Courses",
-  "roles": ["Frontend Engineer"],
+  "team": [
+    "Penn Courses"
+  ],
+  "roles": [
+    "Frontend Engineer"
+  ],
   "photo": "https://i.imgur.com/OS6tkdp.jpeg",
   "linkedin": "https://www.linkedin.com/in/olivianhu/",
   "website": "",
