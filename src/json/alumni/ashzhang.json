@@ -5,14 +5,18 @@
   "school": "Engineering, Wharton",
   "bio": "Sophomore in M&T studying computer science and finance who enjoys grabbing food with friends, violin/music, and traveling!",
   "hometown": "Paoli, PA",
-  "team": "Penn Mobile",
-  "roles": ["Backend Engineer"],
+  "team": [
+    "Penn Mobile"
+  ],
+  "roles": [
+    "Backend Engineer"
+  ],
   "photo": "https://i.imgur.com/eYv9bAg.jpg",
   "linkedin": "https://www.linkedin.com/in/ashley-zhang-b66701209/",
   "website": "",
   "github": "",
   "semester_joined": "2023C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2026,
   "job": null
 }

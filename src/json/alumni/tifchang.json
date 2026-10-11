@@ -4,8 +4,13 @@
   "school": "Wharton",
   "pennkey": "tifchang",
   "hometown": "Honolulu, HI",
-  "team": "Directors",
-  "roles": ["Designer", "Director Emeritus"],
+  "team": [
+    "Directors"
+  ],
+  "roles": [
+    "Designer",
+    "Director Emeritus"
+  ],
   "photo": "https://i.imgur.com/wDkP3rs.jpg",
   "linkedin": "https://www.linkedin.com/in/tobaccowallaa/",
   "website": "https://armaan.tobaccowalla.com",

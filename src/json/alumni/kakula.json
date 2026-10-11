@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "Hi, I'm interested in building cool things, including web and mobile software and metal stuff.",
   "hometown": "Frisco, TX",
-  "team": "Penn Mobile",
-  "roles": ["Android Mobile Engineer"],
+  "team": [
+    "Penn Mobile"
+  ],
+  "roles": [
+    "Android Mobile Engineer"
+  ],
   "photo": "https://i.imgur.com/KNH9bsW.jpeg",
   "linkedin": "https://www.linkedin.com/in/kaushik-akula/",
   "website": "",
