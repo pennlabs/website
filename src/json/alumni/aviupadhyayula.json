@@ -5,8 +5,12 @@
   "pennkey": "aviu",
   "bio": "Issues lead 😔",
   "hometown": "San Jose, CA",
-  "team": "Penn Clubs",
-  "roles": ["Backend Engineer"],
+  "team": [
+    "Penn Clubs"
+  ],
+  "roles": [
+    "Backend Engineer"
+  ],
   "photo": "https://i.imgur.com/nAR1gcv.jpeg?1",
   "linkedin": "https://www.linkedin.com/in/aupadhy/",
   "github": "https://github.com/aviupadhyayula",

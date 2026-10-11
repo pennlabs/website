@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "Hi! I like to cycle, play pickleball, and try new foods.",
   "hometown": "Irvine, CA",
-  "team": "Penn Courses",
-  "roles": ["Frontend Engineer"],
+  "team": [
+    "Penn Courses"
+  ],
+  "roles": [
+    "Frontend Engineer"
+  ],
   "photo": "https://i.imgur.com/WC8KaYY.jpeg",
   "linkedin": "https://linkedin.com/in/helena-zhou/",
   "website": "",

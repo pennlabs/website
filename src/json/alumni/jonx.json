@@ -5,14 +5,18 @@
   "school": "Wharton",
   "bio": "Hi! I'm a sophomore at Penn who enjoys building things big and small! Running frontend on Penn Mobile Portal (even though my job's about to be replaced by AI..) Love to connect! ✌️",
   "hometown": "Lower Merion, PA",
-  "team": "Penn Mobile",
-  "roles": ["Frontend Engineer"],
+  "team": [
+    "Penn Mobile"
+  ],
+  "roles": [
+    "Frontend Engineer"
+  ],
   "photo": "https://i.imgur.com/9akopBR.png",
   "linkedin": "https://www.linkedin.com/in/jonathanrxu/",
   "website": "https://jonrxu.site",
   "github": "https://github.com/jonrxu",
   "semester_joined": "2024A",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2026,
   "job": null
 }

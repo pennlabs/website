@@ -5,8 +5,13 @@
   "school": "Engineering",
   "bio": "CIS major who really enjoys eating. Can usually be found binging youtube.",
   "hometown": "Hockessin, DE",
-  "team": "Penn Mobile",
-  "roles": ["Backend Engineer", "Team Lead"],
+  "team": [
+    "Penn Mobile"
+  ],
+  "roles": [
+    "Backend Engineer",
+    "Team Lead"
+  ],
   "photo": "https://i.imgur.com/C2woD6V.jpeg",
   "linkedin": "https://www.linkedin.com/in/caiv",
   "website": "https://www.seas.upenn.edu/~caiv/",

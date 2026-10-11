@@ -5,14 +5,18 @@
   "school": "SEAS",
   "bio": "Hi!",
   "hometown": "Villanova",
-  "team": "Penn Clubs",
-  "roles": ["Frontend Engineer"],
+  "team": [
+    "Penn Clubs"
+  ],
+  "roles": [
+    "Frontend Engineer"
+  ],
   "photo": "https://i.imgur.com/iyxC0v0.jpeg",
   "linkedin": "https://www.linkedin.com/in/owen-lester-7b16b8289/",
   "website": "",
   "github": "owlester12",
   "semester_joined": "2024A",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2026,
   "job": null
 }

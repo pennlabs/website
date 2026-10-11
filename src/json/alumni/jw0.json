@@ -5,14 +5,19 @@
   "school": "Engineering & Wharton",
   "bio": "Passionate about building tech that generates real value and getting eight hours of sleep.",
   "hometown": "Westport, Connecticut",
-  "team": "Penn Clubs",
-  "roles": ["Frontend Engineer", "Team Lead"],
+  "team": [
+    "Penn Clubs"
+  ],
+  "roles": [
+    "Frontend Engineer",
+    "Team Lead"
+  ],
   "photo": "https://i.imgur.com/EJmmGhS.jpg",
   "linkedin": "https://www.linkedin.com/in/julianweng/",
   "website": "https://julianweng.com/",
   "github": "https://github.com/julianweng",
   "semester_joined": "2022C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2026,
   "job": null
 }
