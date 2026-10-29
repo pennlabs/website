@@ -5,8 +5,14 @@
   "pennkey": "ezwang",
   "bio": "Hello!",
   "hometown": "Lorton, VA",
-  "team": "Penn Clubs",
-  "roles": ["Team Lead", "Backend Engineer", "Frontend Engineer"],
+  "team": [
+    "Penn Clubs"
+  ],
+  "roles": [
+    "Team Lead",
+    "Backend Engineer",
+    "Frontend Engineer"
+  ],
   "photo": "https://avatars1.githubusercontent.com/u/4441174?s=460&v=4",
   "linkedin": null,
   "website": null,
