@@ -4,4 +4,15 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-// You can delete this file if you're not using it
+const React = require('react')
+
+exports.onRenderBody = ({ setHeadComponents }) => {
+  setHeadComponents([
+    <script
+      key="pennlabs-status-banner"
+      src="https://status.pennlabs.org/banner.js"
+      data-product="all-products"
+      defer
+    />,
+  ])
+}
