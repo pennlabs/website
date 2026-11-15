@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "lover of mcdonald's fries",
   "hometown": "Brooklyn, NY",
-  "team": "Penn Mobile",
-  "roles": ["iOS Mobile Engineer"],
+  "team": [
+    "Penn Mobile"
+  ],
+  "roles": [
+    "iOS Mobile Engineer"
+  ],
   "photo": "https://i.imgur.com/dZ6gM3E.jpg",
   "linkedin": "https://www.linkedin.com/in/jackyfang0/",
   "website": "",

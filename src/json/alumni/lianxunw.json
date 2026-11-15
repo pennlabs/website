@@ -5,8 +5,12 @@
   "school": "College",
   "bio": "I'm a junior UX designer at Penn Clubs.",
   "hometown": "Wuhan, China",
-  "team": "Penn Clubs",
-  "roles": ["Designer"],
+  "team": [
+    "Penn Clubs"
+  ],
+  "roles": [
+    "Designer"
+  ],
   "photo": "https://i.imgur.com/Vb0RRQR.jpeg",
   "linkedin": "https://www.linkedin.com/in/lianxun-wang/",
   "website": "https://jasminewangux.com/",
