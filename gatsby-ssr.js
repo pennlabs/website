@@ -11,6 +11,7 @@ exports.onRenderBody = ({ setHeadComponents }) => {
     <script
       key="pennlabs-status-banner"
       src="https://status.pennlabs.org/banner.js"
+      data-product="all-products"
       defer
     />,
   ])
