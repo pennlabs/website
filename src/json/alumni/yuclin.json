@@ -5,8 +5,12 @@
   "school": "Engineering",
   "bio": "Exploring Philly and bubble teas!",
   "hometown": "Taipei, Taiwan",
-  "team": "Penn Clubs",
-  "roles": ["Designer"],
+  "team": [
+    "Penn Clubs"
+  ],
+  "roles": [
+    "Designer"
+  ],
   "photo": "https://i.imgur.com/UFO71vO.png",
   "linkedin": "https://www.linkedin.com/in/yuhsinlinn",
   "website": null,

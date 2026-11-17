@@ -5,8 +5,12 @@
   "school": "Engineering, Weitzman, Wharton",
   "bio": "Interdisciplinary product design student. Spending most of my time questioning if DIG or Sweetgreens is better",
   "hometown": "Oslo, Norway",
-  "team": "Penn Clubs",
-  "roles": ["Designer"],
+  "team": [
+    "Penn Clubs"
+  ],
+  "roles": [
+    "Designer"
+  ],
   "photo": "https://i.imgur.com/nY8UMlv.jpg",
   "linkedin": "https://www.linkedin.com/in/vardnan/",
   "website": "https://www.vardnan.com/",

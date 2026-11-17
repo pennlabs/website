@@ -5,8 +5,12 @@
   "school": "Engineering & Wharton",
   "bio": "Howdy! I enjoy building (and especially, breaking) things.",
   "hometown": "Frisco, TX",
-  "team": "Penn Mobile",
-  "roles": ["iOS Mobile Engineer"],
+  "team": [
+    "Penn Mobile"
+  ],
+  "roles": [
+    "iOS Mobile Engineer"
+  ],
   "photo": "https://i.imgur.com/X79uZK1.jpg",
   "linkedin": "https://www.linkedin.com/in/pulkith",
   "website": "https://pulkith.com",

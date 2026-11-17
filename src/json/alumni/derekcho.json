@@ -5,14 +5,18 @@
   "school": "CAS & Wharton",
   "bio": "Lives on brown sugar oolong milk tea",
   "hometown": "Tenafly, NJ",
-  "team": "Office Hours Queue",
-  "roles": ["Backend Engineer"],
+  "team": [
+    "Office Hours Queue"
+  ],
+  "roles": [
+    "Backend Engineer"
+  ],
   "photo": "https://i.imgur.com/uINHySd.jpeg",
   "linkedin": "https://www.linkedin.com/in/derek-w-cho/",
   "website": "",
   "github": "https://github.com/dkwncho",
   "semester_joined": "2024C",
-  "alumnus": false,
+  "alumnus": true,
   "graduation_year": 2028,
   "job": null
 }
